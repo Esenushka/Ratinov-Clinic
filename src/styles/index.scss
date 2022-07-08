@@ -1,0 +1,254 @@
+.btn {
+  outline: none;
+  border: none;
+  background: none;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.btn-big-bg {
+  font-size: 14px;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 40px;
+  background: #0097DB;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background: #008DD1;
+    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.4);
+  }
+
+  &:focus {
+    background: #0083C7;
+    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.4);
+  }
+
+  &:disabled {
+    background: #C4C4C4;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
+  }
+}
+
+.btn-small {
+  color: black;
+  border: 1px solid #0097DB;
+  border-radius: 10px;
+  font-size: 11px;
+  padding: 10px 20px;
+
+  &:hover {
+    color: white;
+    background: #0097DB;
+    border: 1px solid #008DD1;
+    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus {
+    color: white;
+    background: #0083C7;
+    border: 1px solid #0083C7;
+    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.2);
+  }
+
+  &:disabled {
+    background: none;
+    box-shadow: none;
+    cursor: not-allowed;
+    border: 1px solid #C4C4C4;
+    color: #C4C4C4;
+  }
+}
+
+.btn-radius-bg {
+  background: #0097DB;
+  border-radius: 25px;
+  font-size: 11px;
+  color: white;
+  padding: 10px 22px;
+  border: 1px solid #0097DB;
+
+  &:focus {
+    border: 1px solid #0097DB;
+    background: none;
+    color: black;
+  }
+
+  &:disabled {
+    border: 1px solid #0097DB;
+    background: none;
+    color: black;
+    cursor: not-allowed;
+  }
+}
+
+.btn-radius {
+  border-radius: 25px;
+  font-size: 11px;
+  color: black;
+  padding: 10px 22px;
+  border: 1px solid #0097DB;
+
+  &:hover {
+    background: #E3F4FB;
+  }
+
+  &:focus {
+    border: 1px solid #0097DB;
+    background: rgba(0, 151, 219, 0.2);
+  }
+
+  &:disabled {
+    border: 1px solid #0097DB;
+    background: #0097DB;
+    color: white;
+    cursor: not-allowed;
+  }
+}
+
+.btn-radius_dis {
+  border-radius: 25px;
+  font-size: 11px;
+  color: black;
+  padding: 10px 22px;
+  border: 1px solid #0097DB;
+
+  &:disabled {
+    cursor: not-allowed;
+    color: #C4C4C4;
+    background: none;
+    border: 1px solid #C4C4C4;
+  }
+}
+
+.btn-watch {
+  color: #0097DB;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: url(../../public/images/watch-blue.svg);
+    border: #0097DB 1px solid;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 34px;
+    margin-right: 7px;
+    padding-left: 2px;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover {
+    &::before {
+      content: url(../../public/images/watch-white.svg);
+      background: #0097DB;
+    }
+  }
+
+  &:focus {
+    &::before {
+      content: url(../../public/images/watch-white.svg);
+      background: #0097DB;
+    }
+  }
+
+  &:disabled {
+    color: #C4C4C4;
+    cursor: not-allowed;
+
+    &::before {
+      content: url(../../public/images/watch-disabled.svg);
+      background: none;
+      border: 1px solid #C4C4C4;
+    }
+  }
+}
+
+.checkbox {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  grid-gap: 14px;
+  transition: .3s;
+
+  input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: relative;
+    transition: .3s;
+    z-index: 2;
+
+    &:hover {
+      &::before {
+        content: "";
+        border-radius: 2px;
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        border: 2px solid #008DD1;
+        outline: none;
+        background: #E3F4FB;
+        z-index: 1;
+      }
+    }
+
+    &:checked {
+      &::before {
+        content: none;
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      &::before {
+        content: none;
+      }
+
+      +p {
+        color: #C4C4C4;
+      }
+    }
+  }
+}
+
+.select_wrapper {
+  width: 240px;
+
+  .select {
+    width: 100%;
+    display: flex;
+    padding: 15px 0px;
+    justify-content: space-between;
+    color: #0097DB;
+    cursor: pointer;
+    border-top: 2px solid #0097DB;
+
+    img {
+      transform: scale(1, -1);
+      transition: .5s;
+      &.active {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .checkboxs {
+    transition: .3s;
+    height: 0px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    margin-top: 15px;
+
+    &.active {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+}
