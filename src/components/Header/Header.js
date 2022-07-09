@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import Logo from '../assets/image/Logo.svg';
-import CalendarSvg from '../assets/image/HeaderCalendar.svg';
-import PhoneSvg from '../assets/image/HeaderPhone.svg';
-import SelectArrow from '../assets/image/SelectArrow.svg';
+import Logo from '../../assets/image/Logo.svg';
+import CalendarSvg from '../../assets/image/HeaderCalendar.svg';
+import PhoneSvg from '../../assets/image/HeaderPhone.svg';
+import SelectArrow from '../../assets/image/SelectArrow.svg';
 import styles from './Header.module.scss';
 
 const Header = () => {
