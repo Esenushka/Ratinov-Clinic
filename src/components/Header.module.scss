@@ -1,0 +1,88 @@
+// header styles start
+$font-stack: Montserrat, sans-serif;
+$font-weight400: 400;
+$font-weight500: 500;
+$black: #000000;
+$white: #ffffff;
+$blue:#0097db;
+
+header{
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+}
+.headerTop,
+.headerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+.headerTopLeft a,
+.headerTopRight a {
+  font-family: 100% $font-stack;
+  font-style: normal;
+  font-weight: $font-weight400;
+  font-size: 15px;
+  line-height: 18px;
+  text-decoration: none;
+}
+.headerTopLeft a {
+  color: #636363;
+  margin: 0 10px 0 20px;
+}
+.headerTopRight {
+  display: flex;
+  align-items: center;
+  a {
+    color: $black;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    padding-top: 7px;
+    img {
+      margin-right: 10px;
+    }
+  }
+}
+.headerBottomLeft {
+  display: flex;
+  align-items: center;
+  a {
+    font-family: 100% $font-stack;
+    font-style: normal;
+    font-weight: $font-weight500            ;
+    font-size: 16px;
+    line-height: 20px;
+    color: $black;
+    text-decoration: none;
+    margin-right: 35px;
+  }
+  a img {
+    margin-left: 10px;
+  }
+}
+.headerBottomRight {
+  display: flex;
+  button {
+    font-family: 100% $font-stack;
+    font-style: normal;
+    font-weight: $font-weight400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $black;
+    background: $white;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid $blue;
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin-left: 30px;
+  }
+  button:hover {
+    background: $blue;
+    border: 1px solid #008dd1;
+    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.2);
+    color: $white;
+  }
+  
+}
+// header styles end
