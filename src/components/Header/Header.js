@@ -44,8 +44,8 @@ const Header = () => {
                 </span>
               </div>
               <div className={styles.headerBottomRight}>
-                <button>Онлайн консультация</button>
-                <button>Пройти тест</button>
+                <button className='btn btn-small'>Онлайн консультация</button>
+                <button className='btn btn-small'>Пройти тест</button>
               </div>
             </div>
           </div>
