@@ -1,11 +1,10 @@
 // header styles start
-$font-family: Montserrat, sans-serif;
 $font-weight: 400;
 $black: #000000;
 $white: #ffffff;
 
-@mixin fonts($font-family, $font-weight) {
-  font-family: 100% $font-family;
+@mixin fonts($font-weight) {
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: $font-weight;
   text-decoration: none;
@@ -22,21 +21,23 @@ header {
   height: 90px;
 }
 .headerTopLeft a,
-.headerTopRight a {
-  @include fonts($font-family, $font-weight);
+.headerTopRight a,
+span {
+  @include fonts($font-weight);
   font-size: 15px;
   line-height: 18px;
 }
 .headerTopLeft a {
   color: #636363;
-  margin: 0 10px 0 20px;
+  margin: 0 5px 0 20px;
 }
 .headerTopRight {
   display: flex;
   align-items: center;
-  a {
+  a,
+  span {
     color: $black;
-    margin-left: 20px;
+    margin-left: 10px;
     display: flex;
     align-items: center;
     padding-top: 7px;
@@ -48,8 +49,10 @@ header {
 .headerBottomLeft {
   display: flex;
   align-items: center;
-  a {
-    font-family: 100% $font-family;
+  justify-content: space-around;
+  a,
+  span {
+    font-family: 'Montserrat',sans-serif;
     font-style: normal;
     text-decoration: none;
     font-weight: 500;
@@ -65,7 +68,7 @@ header {
 .headerBottomRight {
   display: flex;
   button {
-    @include fonts($font-family, $font-weight);
+    @include fonts($font-weight);
     font-size: 14px;
     line-height: 17px;
     color: $black;
@@ -73,7 +76,7 @@ header {
     cursor: pointer;
     border: 1px solid #0097db;
     border-radius: 10px;
-    padding: 15px 30px;
+    padding: 15px 17px;
     margin-left: 30px;
   }
   button:hover {
@@ -83,4 +86,63 @@ header {
     color: $white;
   }
 }
+
+@media (max-width: 1200px) {
+  .headerTopLeft a,
+  .headerTopRight a {
+    @include fonts($font-weight);
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .headerBottomRight {
+    button {
+      padding: 7px 43px;
+      margin-left: 10px;
+      width: 100%;
+    }
+  }
+  .headerBottomLeft {
+    a,
+    span {
+      font-size: 16px;
+      margin-right: 25px;
+    }
+  }
+}
+
+@media (max-width: 996px) {
+  header {
+    height: 230px;
+  }
+  .headerTopLeft a,
+  .headerTopRight a {
+    @include fonts($font-weight);
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .headerBottomLeft {
+    a,
+    span {
+      font-size: 13px;
+      margin-right: 35px;
+    }
+  }
+  .headerTop {
+    justify-content: space-around;
+    height: 50px;
+    flex-direction: column;
+  }
+  .headerBottom {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerTop {
+    flex-direction: column;
+  }
+}
+
 // header styles end

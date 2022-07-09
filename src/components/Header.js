@@ -19,29 +19,29 @@ const Header = () => {
                 <Link to="/">Отзывы</Link>
               </div>
               <div className={styles.headerTopRight}>
-                <Link to="/">
+                <span>
                   <img src={CalendarSvg} alt="calendar" /> ПН - СБ: 8:00 - 20:00
-                </Link>
-                <Link to="/">
+                </span>
+                <a href='tel: + 996 (501) 420 420'>
                   <img src={PhoneSvg} alt="calendar" /> + 996 (501) 420 420
-                </Link>
-                <Link to="/">
+                </a>
+                <a href='tel: + 996( 555) 142 020'>
                   <img src={PhoneSvg} alt="calendar" />+ 996( 555) 142 020
-                </Link>
+                </a>
               </div>
             </div>
             <div className={styles.headerBottom}>
               <div className={styles.headerBottomLeft}>
                 <img src={Logo} alt="logo" />
-                <Link to="/">
+                <span>
                   Услуги <img alt="select" src={SelectArrow} />
-                </Link>
+                </span>
                 <Link to="/">Специалисты</Link>
                 <Link to="/">Результаты</Link>
                 <Link to="/">Цены</Link>
-                <Link to="/">
+                <span>
                   Ещё <img alt="select" src={SelectArrow} />
-                </Link>
+                </span>
               </div>
               <div className={styles.headerBottomRight}>
                 <button>Онлайн консультация</button>
