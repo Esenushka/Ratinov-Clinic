@@ -29,7 +29,7 @@ span {
 }
 .headerTopLeft a {
   color: #636363;
-  margin: 0 5px 0 20px;
+  margin: 0 20px 0 0;
 }
 .headerTopRight {
   display: flex;
@@ -50,9 +50,13 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  div {
+    display: flex;
+    align-items: center;
+  }
   a,
   span {
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     text-decoration: none;
     font-weight: 500;
@@ -62,7 +66,10 @@ span {
     margin-right: 35px;
   }
   a img {
-    margin-left: 10px;
+    margin: 0 15px;
+  }
+  img{
+    margin-right: 15px;
   }
 }
 .headerBottomRight {
