@@ -288,3 +288,34 @@
     cursor: default;
   }
 }
+
+.youtube_slider {
+  .slick-track {
+    display: flex;
+    height: 55vh;
+
+    .slick-slide {
+      transform: scale(0.8);
+      margin: 0 30px;
+      z-index: -1;
+    }
+    .slick-active{
+      z-index: 1;
+      transform: scale(1);
+      width: 80px !important;
+      margin-left: 0;
+      position: relative;
+      left: -4%;
+    }
+    .slick-current{
+     left: 0;
+      width: fit-content !important;
+      + div{
+        left: -15px;
+        margin-left: 20px;
+        margin-right: 0;
+      }
+    }
+    
+  }
+}
