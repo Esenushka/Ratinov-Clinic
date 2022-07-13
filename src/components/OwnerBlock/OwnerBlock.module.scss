@@ -1,0 +1,79 @@
+@mixin fonts {
+  font-style: normal;
+  font-weight: 400;
+}
+@mixin d-flex-center {
+  display: flex;
+  align-items: center;
+}
+.ownerBlock {
+  @include d-flex-center;
+  justify-content: space-between;
+  padding: 60px 0;
+
+  .ownerBlockLeft {
+    width: 47%;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+    }
+    > div img {
+      margin-right: 15px;
+    }
+    h1 {
+      @include fonts;
+      font-size: 32px;
+      line-height: 49px;
+      text-transform: uppercase;
+      color: #000000;
+    }
+    > p {
+      @include fonts;
+      font-size: 18px;
+      line-height: 22px;
+      color: #000000;
+    }
+    div p {
+      @include fonts;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000000;
+    }
+    span {
+      font-style: italic;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000000;
+    }
+    h1,
+    p,
+    span {
+      padding-bottom: 18px;
+      padding-top: 36px;
+    }
+    .logoBtn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      div {
+        @include d-flex-center;
+        justify-content: center;
+      }
+      button {
+        @include fonts;
+        font-size: 18px;
+        line-height: 22px;
+        color: #ffffff;
+      }
+    }
+  }
+  .ownerBlockRight {
+    width: 48%;
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,8 +1,4 @@
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/image/Logo.svg';
-import CalendarSvg from '../../assets/image/HeaderCalendar.svg';
-import PhoneSvg from '../../assets/image/HeaderPhone.svg';
-import SelectArrow from '../../assets/image/SelectArrow.svg';
 import styles from './Header.module.scss';
 
 const Header = () => {
@@ -20,32 +16,36 @@ const Header = () => {
               </div>
               <div className={styles.headerTopRight}>
                 <span>
-                  <img src={CalendarSvg} alt="calendar" /> ПН - СБ: 8:00 - 20:00
+                  <img src="/images/HeaderCalendar.svg" alt="calendar" /> ПН - СБ: 8:00 -
+                  20:00
                 </span>
-                <a href='tel: + 996 (501) 420 420'>
-                  <img src={PhoneSvg} alt="calendar" /> + 996 (501) 420 420
+                <a href="tel: + 996 (501) 420 420">
+                  <img src="/images/HeaderPhone.svg" alt="calendar" /> + 996 (501) 420 420
                 </a>
-                <a href='tel: + 996( 555) 142 020'>
-                  <img src={PhoneSvg} alt="calendar" />+ 996( 555) 142 020
+                <a href="tel: + 996( 555) 142 020">
+                  <img src="/images/HeaderPhone.svg" alt="calendar" />+ 996( 555) 142 020
                 </a>
               </div>
             </div>
             <div className={styles.headerBottom}>
               <div className={styles.headerBottomLeft}>
-                <img src={Logo} alt="logo" />
+                <div>
+                  <img src="/images/LogoImg.svg" alt="logo" />
+                  <img src="/images/LogoText.svg" alt="logo" />
+                </div>
                 <span>
-                  Услуги <img alt="select" src={SelectArrow} />
+                  Услуги <img alt="select" src="/images/SelectArrow.svg" />
                 </span>
                 <Link to="/">Специалисты</Link>
                 <Link to="/">Результаты</Link>
                 <Link to="/">Цены</Link>
                 <span>
-                  Ещё <img alt="select" src={SelectArrow} />
+                  Ещё <img alt="select" src="/images/SelectArrow.svg" />
                 </span>
               </div>
               <div className={styles.headerBottomRight}>
-                <button className='btn btn-small'>Онлайн консультация</button>
-                <button className='btn btn-small'>Пройти тест</button>
+                <button className="btn btn-small">Онлайн консультация</button>
+                <button className="btn btn-small">Пройти тест</button>
               </div>
             </div>
           </div>
