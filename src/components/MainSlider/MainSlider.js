@@ -34,7 +34,10 @@ export default function MainSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+    customPaging: () => (
+      <span className={scss.dots}></span>
+    )
   };
   return (
     <div className={"container main_slider " + scss.wrapper}>

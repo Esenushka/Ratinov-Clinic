@@ -1,14 +1,15 @@
 import scss from "./YouTubeSlider.module.scss"
+import { Link } from "react-router-dom"
 
-export default function YouTubeSliderCard() {
+export default function YouTubeSliderCard({ text }) {
   return (
     <div className={scss.card}>
       <span className={scss.camera}>
-        <img src="/images/camera.svg" />
+        <img src="/images/camera.svg" alt={text} />
       </span>
-      <p>
-        Как вылечить грыжу позвоночника без операции?
-      </p>
+      <Link to="/">
+        {text}
+      </Link>
     </div>
   )
 }

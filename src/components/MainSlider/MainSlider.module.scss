@@ -38,6 +38,7 @@
 .card {
   display: flex;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
 .right {
@@ -59,5 +60,19 @@
   img {
     width: 60px;
     height: 40px;
+  }
+}
+.dots {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid #C4C4C4;
+  transition: .15s;
+
+  &:hover {
+    background: #0097DB;
+    border-color: #0097DB;
   }
 }

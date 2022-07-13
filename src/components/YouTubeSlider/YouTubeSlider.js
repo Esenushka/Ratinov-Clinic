@@ -1,6 +1,7 @@
 import scss from "./YouTubeSlider.module.scss"
 import Slider from "react-slick"
 import YouTubeSliderCard from "./YouTubeSliderCard";
+import { YouTubeSliderList } from "../../constants/YoutubeSliderList";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -31,23 +32,20 @@ export default function YouTubeSlider() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    centerPadding: "150px",
-    centerMode: true,
+    slidesToShow: 5,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+    customPaging: () => (
+      <span className={scss.dots}></span>
+    )
   };
   return (
     <div className={"container youtube_slider " + scss.wrapper}>
       <Slider {...settings}>
-        <YouTubeSliderCard/>
-        <YouTubeSliderCard />
-        <YouTubeSliderCard />
-        <YouTubeSliderCard />
-        <YouTubeSliderCard />
-        <YouTubeSliderCard />
-        <YouTubeSliderCard />
+        {
+          YouTubeSliderList.map((el) => <YouTubeSliderCard key={el.id} {...el}/>)
+        }
       </Slider>
     </div>
   )
