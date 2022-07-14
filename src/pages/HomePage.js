@@ -1,5 +1,6 @@
 import Header from "../components/Header/Header";
 import MainSlider from "../components/MainSlider/MainSlider";
+import YouTubeSlider from "../components/YouTubeSlider/YouTubeSlider";
 
 import OwnerBlock from "../components/OwnerBlock/OwnerBlock";
 
@@ -11,11 +12,9 @@ export default function HomePage() {
     <div>
       <Header />
       <MainSlider />
-
-      <OwnerBlock/>
-
       <TreatBlock />
-
+      <OwnerBlock/>
+      <YouTubeSlider/>
     </div>
   )
 }
