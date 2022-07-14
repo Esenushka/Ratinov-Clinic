@@ -1,3 +1,4 @@
+import Consultaition from "../components/Consultation/Consultation";
 import Header from "../components/Header/Header";
 import MainSlider from "../components/MainSlider/MainSlider";
 
@@ -11,7 +12,7 @@ export default function HomePage() {
     <div>
       <Header />
       <MainSlider />
-
+      <Consultaition />
       <OwnerBlock/>
 
       <TreatBlock />
