@@ -5,6 +5,7 @@ import YouTubeSlider from "../components/YouTubeSlider/YouTubeSlider";
 import OwnerBlock from "../components/OwnerBlock/OwnerBlock";
 
 import TreatBlock from "../components/TreatBlock/TreatBlock";
+import Consultaition from "../components/Consultation/Consultation";
 
 
 export default function HomePage() {
@@ -12,6 +13,7 @@ export default function HomePage() {
     <div>
       <Header />
       <MainSlider />
+      <Consultaition />
       <TreatBlock />
       <OwnerBlock/>
       <YouTubeSlider/>
