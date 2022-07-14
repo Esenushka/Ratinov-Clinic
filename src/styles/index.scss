@@ -2,7 +2,7 @@
   outline: none;
   border: none;
   background: none;
-  transition: .3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -11,21 +11,21 @@
   color: white;
   border-radius: 10px;
   padding: 20px 55px;
-  background: #0097DB;
+  background: #0097db;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    background: #008DD1;
+    background: #008dd1;
     box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.4);
   }
 
   &:focus {
-    background: #0083C7;
+    background: #0083c7;
     box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.4);
   }
 
   &:disabled {
-    background: #C4C4C4;
+    background: #c4c4c4;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     cursor: not-allowed;
   }
@@ -33,22 +33,22 @@
 
 .btn-small {
   color: black;
-  border: 1px solid #0097DB;
+  border: 1px solid #0097db;
   border-radius: 10px;
   font-size: 14px;
   padding: 10px 20px;
 
   &:hover {
     color: white;
-    background: #0097DB;
-    border: 1px solid #008DD1;
+    background: #0097db;
+    border: 1px solid #008dd1;
     box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.2);
   }
 
   &:focus {
     color: white;
-    background: #0083C7;
-    border: 1px solid #0083C7;
+    background: #0083c7;
+    border: 1px solid #0083c7;
     box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.2);
   }
 
@@ -56,27 +56,27 @@
     background: none;
     box-shadow: none;
     cursor: not-allowed;
-    border: 1px solid #C4C4C4;
-    color: #C4C4C4;
+    border: 1px solid #c4c4c4;
+    color: #c4c4c4;
   }
 }
 
 .btn-radius-bg {
-  background: #0097DB;
+  background: #0097db;
   border-radius: 25px;
   font-size: 14px;
   color: white;
   padding: 10px 22px;
-  border: 1px solid #0097DB;
+  border: 1px solid #0097db;
 
   &:focus {
-    border: 1px solid #0097DB;
+    border: 1px solid #0097db;
     background: none;
     color: black;
   }
 
   &:disabled {
-    border: 1px solid #0097DB;
+    border: 1px solid #0097db;
     background: none;
     color: black;
     cursor: not-allowed;
@@ -88,20 +88,20 @@
   font-size: 14px;
   color: black;
   padding: 10px 22px;
-  border: 1px solid #0097DB;
+  border: 1px solid #0097db;
 
   &:hover {
-    background: #E3F4FB;
+    background: #e3f4fb;
   }
 
   &:focus {
-    border: 1px solid #0097DB;
+    border: 1px solid #0097db;
     background: rgba(0, 151, 219, 0.2);
   }
 
   &:disabled {
-    border: 1px solid #0097DB;
-    background: #0097DB;
+    border: 1px solid #0097db;
+    background: #0097db;
     color: white;
     cursor: not-allowed;
   }
@@ -112,24 +112,24 @@
   font-size: 14px;
   color: black;
   padding: 10px 22px;
-  border: 1px solid #0097DB;
+  border: 1px solid #0097db;
 
   &:disabled {
     cursor: not-allowed;
-    color: #C4C4C4;
+    color: #c4c4c4;
     background: none;
-    border: 1px solid #C4C4C4;
+    border: 1px solid #c4c4c4;
   }
 }
 
 .btn-watch {
-  color: #0097DB;
+  color: #0097db;
   display: flex;
   align-items: center;
 
   &::before {
     content: url(../../public/images/watch-blue.svg);
-    border: #0097DB 1px solid;
+    border: #0097db 1px solid;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -144,25 +144,25 @@
   &:hover {
     &::before {
       content: url(../../public/images/watch-white.svg);
-      background: #0097DB;
+      background: #0097db;
     }
   }
 
   &:focus {
     &::before {
       content: url(../../public/images/watch-white.svg);
-      background: #0097DB;
+      background: #0097db;
     }
   }
 
   &:disabled {
-    color: #C4C4C4;
+    color: #c4c4c4;
     cursor: not-allowed;
 
     &::before {
       content: url(../../public/images/watch-disabled.svg);
       background: none;
-      border: 1px solid #C4C4C4;
+      border: 1px solid #c4c4c4;
     }
   }
 }
@@ -172,26 +172,26 @@
   display: flex;
   align-items: center;
   grid-gap: 14px;
-  transition: .3s;
+  transition: 0.3s;
 
   input {
     width: 16px;
     height: 16px;
     cursor: pointer;
     position: relative;
-    transition: .3s;
+    transition: 0.3s;
     z-index: 2;
 
     &:hover {
       &::before {
-        content: "";
+        content: '';
         border-radius: 2px;
         width: 11px;
         height: 11px;
         position: absolute;
-        border: 2px solid #008DD1;
+        border: 2px solid #008dd1;
         outline: none;
-        background: #E3F4FB;
+        background: #e3f4fb;
         z-index: 1;
       }
     }
@@ -209,8 +209,8 @@
         content: none;
       }
 
-      +p {
-        color: #C4C4C4;
+      + p {
+        color: #c4c4c4;
       }
     }
   }
@@ -224,13 +224,13 @@
     display: flex;
     padding: 15px 0px;
     justify-content: space-between;
-    color: #0097DB;
+    color: #0097db;
     cursor: pointer;
-    border-top: 2px solid #0097DB;
+    border-top: 2px solid #0097db;
 
     img {
       transform: scale(1, -1);
-      transition: .5s;
+      transition: 0.5s;
 
       &.active {
         transform: scale(1);
@@ -239,7 +239,7 @@
   }
 
   .checkboxs {
-    transition: .3s;
+    transition: 0.3s;
     height: 0px;
     opacity: 0;
     display: flex;
@@ -261,7 +261,7 @@
 
     .slick-active {
       button::before {
-        color: #0097DB;
+        color: #0097db;
       }
     }
   }
@@ -269,7 +269,7 @@
   .slick-arrow {
     width: 15px;
     height: 15px;
-    transform: .3s;
+    transform: 0.3s;
   }
 
   .slick-prev {
@@ -280,6 +280,43 @@
 
   .slick-next {
     top: 35%;
+    right: -50px;
+  }
+
+  .slick-disabled {
+    opacity: 0;
+    cursor: default;
+  }
+}
+
+.result_slider {
+  .slick-dots.slick-dots {
+    margin-top: 5px;
+    position: relative;
+
+    .slick-active {
+      button::before {
+        color: #636363;
+      }
+    }
+  }
+
+  .slick-arrow {
+    width: 10px;
+    height: 16px;
+    transform: 0.3s;
+  }
+
+  .slick-prev {
+    top: 45%;
+    left: -50px;
+  }
+  .slick-slide img {
+    width: 100%;
+  }
+
+  .slick-next {
+    top: 45%;
     right: -50px;
   }
 
