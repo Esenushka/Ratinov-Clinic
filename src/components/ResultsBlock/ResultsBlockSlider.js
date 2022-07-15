@@ -1,4 +1,5 @@
 import Slider from 'react-slick';
+import { ResultsCard } from './ResultsCard';
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -36,20 +37,11 @@ export default function ResultSlider() {
     prevArrow: <SamplePrevArrow />,
   };
   return (
-    <div className='result_slider'>
+    <div className="result_slider">
       <Slider {...settings}>
-        <div>
-          <p>СНИМОК №1</p>
-          <img src="/images/SliderImg.png" alt="ResultsBlockSlider" />
-        </div>
-        <div>
-          <p>СНИМОК №2</p>
-          <img src="/images/SliderImg.png" alt="ResultsBlockSlider" />
-        </div>
-        <div>
-          <p>СНИМОК №3</p>
-          <img src="/images/SliderImg.png" alt="ResultsBlockSlider" />
-        </div>
+        <ResultsCard />
+        <ResultsCard />
+        <ResultsCard />
       </Slider>
     </div>
   );

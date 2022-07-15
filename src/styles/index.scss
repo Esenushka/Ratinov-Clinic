@@ -291,35 +291,31 @@
 
 .result_slider {
   .slick-dots.slick-dots {
-    margin-top: 5px;
     position: relative;
-
+    margin-top: 10px;
     .slick-active {
       button::before {
         color: #636363;
       }
     }
   }
-
+  .slick-dots {
+    text-align: left !important;
+    margin: 0 0 0 133px;
+  }
   .slick-arrow {
     width: 10px;
     height: 16px;
     transform: 0.3s;
   }
-
   .slick-prev {
     top: 45%;
     left: -50px;
   }
-  .slick-slide img {
-    width: 100%;
-  }
-
   .slick-next {
     top: 45%;
-    right: -50px;
+    left: 39%;
   }
-
   .slick-disabled {
     opacity: 0;
     cursor: default;
