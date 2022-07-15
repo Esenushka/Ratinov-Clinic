@@ -6,6 +6,7 @@ import OwnerBlock from "../components/OwnerBlock/OwnerBlock";
 
 import TreatBlock from "../components/TreatBlock/TreatBlock";
 import Consultaition from "../components/Consultation/Consultation";
+import DoctorSlider from "../components/DoctorSlider/DoctorSlider";
 
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <TreatBlock />
       <OwnerBlock/>
       <YouTubeSlider/>
+      <DoctorSlider />
     </div>
   )
 }
