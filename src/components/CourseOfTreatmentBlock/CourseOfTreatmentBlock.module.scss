@@ -40,11 +40,11 @@
 .info {
   margin-bottom: 50px;
 
-  p {
+  span {
     font-size: 14px;
   }
 
-  >p:nth-of-type(2) {
+  > p{
     margin-top: 20px;
   }
 }
@@ -56,9 +56,60 @@
     line-height: 20px;
     text-transform: uppercase;
     color: #0097DB;
-    margin-bottom: 35px;
+    margin-bottom: 60px;
+    width: 60%;
   }
 }
-.procedure_blocks_wrapper{
+
+.procedure_blocks_wrapper {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+  .procedure_block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 7px;
+    font-size: 13px;
+    width: 30%;
+    margin-right: 20px;
+    border-left: #0097DB 2px solid;
+    padding: 0 24px;
+
+    span {
+      color: #0097DB;
+    }
+    &::before{
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: #0097DB;
+      border-radius: 50%;
+      position: absolute;
+      left: -4px;
+      top: 0;
+    }
+  }
+
+  >div:nth-of-type(1) {
+    padding-bottom: 45px;
+  }
+
+  >div:nth-of-type(2) {
+    padding-bottom: 45px;
+  }
+
+  >div:nth-of-type(3) {
+    padding-bottom: 45px;
+  }
+
+}
+.btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.wrapper{
+  margin-bottom: 100px;
 }
