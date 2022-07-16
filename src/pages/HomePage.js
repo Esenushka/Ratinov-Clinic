@@ -6,7 +6,6 @@ import TreatBlock from "../components/TreatBlock/TreatBlock";
 import Consultaition from "../components/Consultation/Consultation";
 import CourseOfTreatmentBlock from "../components/CourseOfTreatmentBlock/CourseOfTreatmentBlock";
 
-
 export default function HomePage() {
   return (
     <div>
