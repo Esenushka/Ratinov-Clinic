@@ -1,13 +1,10 @@
 import Header from "../components/Header/Header";
 import MainSlider from "../components/MainSlider/MainSlider";
 import YouTubeSlider from "../components/YouTubeSlider/YouTubeSlider";
-
 import OwnerBlock from "../components/OwnerBlock/OwnerBlock";
-
 import TreatBlock from "../components/TreatBlock/TreatBlock";
 import Consultaition from "../components/Consultation/Consultation";
-import DoctorSlider from "../components/DoctorSlider/DoctorSlider";
-
+import CourseOfTreatmentBlock from "../components/CourseOfTreatmentBlock/CourseOfTreatmentBlock";
 
 export default function HomePage() {
   return (
@@ -16,8 +13,9 @@ export default function HomePage() {
       <MainSlider />
       <Consultaition />
       <TreatBlock />
-      <OwnerBlock/>
-      <YouTubeSlider/>
+      <OwnerBlock />
+      <YouTubeSlider />
+      <CourseOfTreatmentBlock />
     </div>
   )
 }
