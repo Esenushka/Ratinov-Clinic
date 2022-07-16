@@ -18,7 +18,6 @@ export default function HomePage() {
       <TreatBlock />
       <OwnerBlock/>
       <YouTubeSlider/>
-      <DoctorSlider />
     </div>
   )
 }
