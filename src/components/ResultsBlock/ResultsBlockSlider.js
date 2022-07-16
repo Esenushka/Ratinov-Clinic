@@ -1,5 +1,5 @@
 import Slider from 'react-slick';
-import { ResultsCard } from './ResultsCard';
+
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -26,22 +26,33 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function ResultSlider() {
+export default function ResultSlider({ setActiveSlide }) {
   const settings = {
+    focusOnSelect: true,
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    afterChange: (current) => setActiveSlide(current),
   };
   return (
     <div className="result_slider">
       <Slider {...settings}>
-        <ResultsCard />
-        <ResultsCard />
-        <ResultsCard />
+        <div>
+          <p>СНИМОК №1</p>
+          <img src="/images/SliderImg.png" alt="ResultsBlockSlider" />
+        </div>
+        <div>
+          <p>СНИМОК №2</p>
+          <img src="/images/SliderImg.png" alt="ResultsBlockSlider" />
+        </div>
+        <div>
+          <p>СНИМОК №3</p>
+          <img src="/images/SliderImg.png" alt="ResultsBlockSlider" />
+        </div>
       </Slider>
     </div>
   );
