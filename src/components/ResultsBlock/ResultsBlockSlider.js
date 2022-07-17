@@ -1,4 +1,5 @@
 import Slider from 'react-slick';
+import { resultSliderImages } from '../../constants/ResultBlock';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -26,7 +27,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function ResultSlider({ setActiveSlide }) {
+export default function ResultSlider({ setActiveSlide, activeSlide }) {
   const settings = {
     focusOnSelect: true,
     dots: true,
@@ -37,22 +38,19 @@ export default function ResultSlider({ setActiveSlide }) {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     afterChange: (current) => setActiveSlide(current),
+    beforeChange: (current, next) => setActiveSlide(next),
   };
   return (
     <div className="result_slider">
       <Slider {...settings}>
-        <div>
-          <p>СНИМОК №1</p>
-          <img src="/images/SliderImg.png" alt="ResultsBlockSlider" />
-        </div>
-        <div>
-          <p>СНИМОК №2</p>
-          <img src="/images/SliderImg.png" alt="ResultsBlockSlider" />
-        </div>
-        <div>
-          <p>СНИМОК №3</p>
-          <img src="/images/SliderImg.png" alt="ResultsBlockSlider" />
-        </div>
+        {resultSliderImages.map((img, index) => (
+          <div
+            className={index === activeSlide ? 'resultSlider resultSliderActive' : 'resultSlider'}
+            key={index}>
+            <p>{img.text}</p>
+            <img src={img.img} alt="ResultsBlockSlider" />
+          </div>
+        ))}
       </Slider>
     </div>
   );

@@ -1,13 +1,8 @@
 @mixin fonts {
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-}
-@mixin font-family {
-  font-family: 'Montserrat';
-  font-style: normal;
 }
 
 .resultsWrapper {
@@ -30,7 +25,7 @@
       }
       div h1 {
         margin-bottom: 60px;
-        @include font-family;
+        font-style: normal;
         font-weight: 400;
         font-size: 40px;
         line-height: 49px;
@@ -47,52 +42,15 @@
         color: #000000;
       }
     }
-
     .resultsBottom {
       display: flex;
       > div {
         width: 50%;
       }
-      .resultSliderLeft {
-        position: relative;
-        div {
-          width: 396px;
-          height: 368px;
-          border-radius: 68px;
-          background-color: #ffffff;
-          box-shadow: 0px 3.59528px 13.4823px rgba(0, 0, 0, 0.2);
-          position: relative;
-          p {
-            text-align: center;
-            @include font-family;
-            font-weight: 700;
-            font-size: 18.2161px;
-            line-height: 22px;
-            color: #000000;
-            padding: 18px;
-          }
-        }
-        .sliderBg {
-          border-radius: 68px;
-          background-color: #ffffff;
-          box-shadow: 0px 3.59528px 13.4823px rgba(0, 0, 0, 0.2);
-          width: 341px;
-          height: 324px;
-          position: absolute;
-          right: 51px;
-          top: 21px;
-          filter: blur(5px);
-        }
-        .sliderBg img {
-          width: 341.55px;
-          height: 252.47px;
-          border-radius: 0 0 68px 68px;
-        }
-      }
     }
     .resultsBlockBottomRight {
       > p {
-        @include font-family;
+        font-style: normal;
         font-weight: 700;
         font-size: 16px;
         line-height: 20px;
@@ -104,7 +62,7 @@
       }
 
       div p:first-child {
-        @include font-family;
+        font-style: normal;
         font-weight: 700;
         font-size: 16px;
         line-height: 20px;
@@ -129,7 +87,7 @@
           margin-right: 30px;
         }
         .beforeTreat p:first-child {
-          @include font-family;
+          font-style: normal;
           font-weight: 700;
           font-size: 16px;
           line-height: 20px;

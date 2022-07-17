@@ -1,52 +1,7 @@
 import { useState } from 'react';
+import { resultBlockInfo } from '../../constants/ResultBlock';
 import styles from './ResultsBlock.module.scss';
 import ResultSlider from './ResultsBlockSlider';
-
-export const resultBlockInfo = [
-  {
-    id: 1,
-    imgSlider: '/images/SliderImg.png',
-    imgPlus: '/images/ResultBlockPlus.png',
-    before: 'Жалобы до лечения',
-    beforeFirstText: 'Онемение руки,боль в плече, приступы головной боли.',
-    beforeSecondText: 'Грыжа в 5.8 мм',
-    treatmentCourse: 'Назначили 2 курса физиотерапевтического лечения',
-    imgMinus: '/images/ResultBlockMinus.png',
-    after: 'После лечения:',
-    afterFirstText: 'Грыжа уменьшилась в 2 раза ',
-    afterSecondText: 'Никакого болевого синдрома, вместо грыжи рубец.',
-    result: 'Результат за 4 месяца(с учетомперерывов между курсами, в течение от 1 до 3 месяцев)',
-  },
-  {
-    id: 2,
-    imgSlider: '/images/SliderImg.png',
-    imgPlus: '/images/ResultBlockPlus.png',
-    before: 'Жалобы до лечения',
-    beforeFirstText: 'Практически постоянная интенсивная боль в спине и ноге.',
-    beforeSecondText: 'Грыжа в 5.8 мм',
-    treatmentCourse: 'Назначили 2 курса физиотерапевтического лечения',
-    imgMinus: '/images/ResultBlockMinus.png',
-    after: 'После лечения:',
-    afterFirstText:
-      'Ежедневный прием обезболивающих препаратов, которые купировали боль лишь частично',
-    afterSecondText: 'Никакого болевого синдрома, вместо грыжи рубец.',
-    result: 'Результат за 4 месяца (с учетомперерывов между курсами, в течение от 1 до 3 месяцев)',
-  },
-  {
-    id: 3,
-    imgSlider: '/images/SliderImg.png',
-    imgPlus: '/images/ResultBlockPlus.png',
-    before: 'Жалобы до лечения',
-    beforeFirstText: 'Онемение и покалывание регрессировали.',
-    beforeSecondText: 'Грыжа в 5.8 мм',
-    treatmentCourse: 'Назначили 2 курса физиотерапевтического лечения',
-    imgMinus: '/images/ResultBlockMinus.png',
-    after: 'После лечения:',
-    afterFirstText: 'Ограничение движений в туловище и снижение повседневной активности ',
-    afterSecondText: 'Никакого болевого синдрома, вместо грыжи рубец.',
-    result: 'Результат за 4 месяца (с учетомперерывов между курсами, в течение от 1 до 3 месяцев)',
-  },
-];
 
 const ResultsBlock = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -68,11 +23,7 @@ const ResultsBlock = () => {
           </div>
           <div className={styles.resultsBottom}>
             <div className={styles.resultSliderLeft}>
-              <div className={styles.sliderBg}>
-                <p>СНИМОК №1</p>
-                <img alt="" src={resultBlockInfo[activeSlide].imgSlider} />
-              </div>
-              <ResultSlider setActiveSlide={setActiveSlide} />
+              <ResultSlider setActiveSlide={setActiveSlide} activeSlide={activeSlide} />
             </div>
             <div className={styles.resultsBlockBottomRight}>
               <div>
