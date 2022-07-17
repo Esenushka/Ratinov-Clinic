@@ -254,6 +254,24 @@
   }
 }
 
+.comment_slider{
+  .slick-arrow {
+    width: 15px;
+    height: 15px;
+    transform: 0.3s;
+  }
+
+  .slick-prev {
+    transform: rotate(180deg);
+    top: 0;
+    left: -50px;
+  }
+
+  .slick-next {
+    top: 0;
+    right: -50px;
+  }
+}
 .main_slider {
   .slick-disabled.slick-disabled {
     filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(83%) contrast(94%);
