@@ -11,7 +11,7 @@
 
     .block {
       width: 45%;
-
+      margin-bottom: 30px;
       >span {
         cursor: pointer;
         padding: 30px 40px;
@@ -26,14 +26,6 @@
           width: 10px;
           height: 10px;
         }
-
-        &.active {
-          +div {
-            top: 0 !important;
-            opacity: 1;
-            height: fit-content;
-          }
-        }
       }
 
       .info_wrapper {
@@ -42,7 +34,14 @@
         opacity: 0;
         height: 0;
         transition: .3s;
-        
+        z-index: -1;
+
+        &.active {
+          top: 0 !important;
+          opacity: 1;
+          height: 100%;
+        }
+
         .info {
           margin-bottom: 25px;
           font-size: 15px;
