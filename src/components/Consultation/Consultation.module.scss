@@ -1,86 +1,75 @@
-@mixin fonts {
-    font-style: normal;
-    font-weight: 400;
-}
-
-@mixin d-flex-center {
-    display: flex;
-    align-items: center;
-}
-
 .wrapper {
-    margin-top: 50px;
-    height: 80vh;
+  margin-top: 50px;
 
-    .consultation {
-        position: relative;
-        height: 40vh;
-        background-image: url('../../../public/images/consultation.svg');
-        background-repeat: no-repeat;
-        background-size: cover;
+  .consultation {
+    position: relative;
+    height: 45vh;
+    background-image: url("../../../public/images/consultation.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
 
-        .wrap {
-            width: 60%;
-            height: 50%;
-            background-color: #ffffff;
-            border-radius: 10px;
-            position: absolute;
-            top: 25%;
-            right: 15%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 45px 70px 45px 70px;
+    .wrap {
+      position: relative;
+      width: 75%;
+      height: 50%;
+      background-color: #ffffff;
+      border-radius: 10px;
+      top: 25%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 45px 70px;
+      margin: 0 10%!important;
 
-            .consul_des {
-                width: 60%;
-
-                span {
-                    font-size: 28px;
-                    line-height: 34px;
-                    text-transform: uppercase;
-                    font-weight: 400;
-                }
-
-                .b {
-                    font-weight: 500 !important;
-                }
-            }
+      .consul_des {
+        margin-right: 15px;
+        span {
+          font-size: 28px;
+          line-height: 34px;
+          text-transform: uppercase;
+          font-weight: 400;
         }
+
+        .b {
+          font-weight: 500 !important;
+        }
+      }
+    }
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 3em;
+
+    h1 {
+      margin-top: 40px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 49px;
+      text-transform: uppercase;
     }
 
+    .about_card {
+      display: flex;
+      justify-content: space-between;
 
-    .about {
+      .card {
+        width: 30%;
         display: flex;
+        grid-gap: 1.5em;
         flex-direction: column;
-        grid-gap: 3em;
 
-        h1 {
-            margin-top: 40px;
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 49px;
-            text-transform: uppercase;
+        img {
+          width: 70px;
         }
 
-        .about_card {
-            display: flex;
-            justify-content: space-between;
-
-            .card {
-                width: 30%;
-                display: flex;
-                grid-gap: 1.5em;
-                flex-direction: column;
-
-                img {
-                    width: 70px;
-                }
-
-                b {
-                    font-weight: 700;
-                }
-            }
+        b {
+          font-weight: 700;
         }
+      }
     }
+  }
 }
