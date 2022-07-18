@@ -43,7 +43,7 @@ const CommentBlock = () => {
       <div className={`${css.wrapper} container`}>
         <div className={css.title}>
           <h1>Отзывы</h1>
-          <button className="btn btn-small">Все отзывы</button>
+          <Link to="/"><button className="btn btn-small">Все отзывы</button></Link>
         </div>
         <Slider className={`${css.slider} comment_slider`} {...settings} >
           {
