@@ -2,6 +2,7 @@ import css from "./Comment.module.scss"
 import { commentList } from "../../constants/commentList";
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
+import { Link } from "react-router-dom";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
