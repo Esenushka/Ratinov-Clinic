@@ -9,7 +9,7 @@ const CallMe = () => {
       <div className={css.opacity}>
         <div className={`${css.wrapper} container`}>
           <span className={css.title}>Хотите, <span className={css.b}>мы вам перезвоним?</span></span>
-          <p>Как уменьшить грыжу без операции и избавиться от боли в спине? <br /> Расскажем о лечении и запишем на консультацию к специалисту</p>
+          <p className={css.des}>Как уменьшить грыжу без операции и избавиться от боли в спине? Расскажем о лечении и запишем на консультацию к специалисту</p>
           <div className={css.input_block}>
             <div className={css.input}>
               <p>Имя</p>
@@ -60,7 +60,7 @@ const CallMe = () => {
             </div>
             <Link to={"/"}><button className={css.btn}>Записаться на приём</button></Link>
           </div>
-          <span className={css.bottom}>Нажимая на кнопку "Заказать звонок", я подтверждаю, что ознакомлен и согласен с условиями <Link to={"/"}>политики <br /> конфиденциальности</Link>  и <Link to={"/"}> правилами обработки персональных данных</Link></span>
+          <span className={css.bottom}>Нажимая на кнопку "Заказать звонок", я подтверждаю, что ознакомлен и согласен с условиями <Link to={"/"}>политики конфиденциальности</Link>  и <Link to={"/"}> правилами обработки персональных данных</Link></span>
         </div>
       </div>
     </div>
