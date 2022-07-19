@@ -2,6 +2,7 @@ import css from './Doctor.module.scss';
 import Slider from "react-slick";
 import { doctorList } from '../../constants/DoctorList';
 import DoctorCard from './DoctorCard';
+import { Link } from 'react-router-dom';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -37,19 +38,21 @@ const DoctorSlider = () => {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
-  }; 
+  };
   return (
     <div className={`${css.wrapper} container`}>
       <h1>Наши <b>Врачи</b></h1>
-      <Slider className={`${css.slider} main_slider`} {...settings}>
-        {doctorList.map((e)=> (
-          <DoctorCard key={e.id} {...e}/>
+      <Slider className={`${css.slider} doctor_slider`} {...settings}>
+        {doctorList.map((e) => (
+          <DoctorCard key={e.id} {...e} />
         ))}
       </Slider>
-      <div className={css.all_doc}>
-        <img src="/images/arrow.svg" alt="select-arrow" />
-        Показать всех специалистов
-      </div>
+      <Link to="/">
+        <div className={css.all_doc}>
+          <img src="/images/arrow.svg" alt="select-arrow" />
+          Показать всех специалистов
+        </div>
+      </Link>
     </div>
   );
 }

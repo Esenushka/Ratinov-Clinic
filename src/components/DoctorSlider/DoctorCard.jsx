@@ -10,7 +10,6 @@ const DoctorCard = ({ img, link,  name, des, day_work, price }) => {
           <Link to={`/${link}`}>{name}</Link>
           <span>{des}</span>
         </div>
-        <hr />
         <div className={css.other}>
           <div className={css.other_text}>
             <p>{day_work}</p>
