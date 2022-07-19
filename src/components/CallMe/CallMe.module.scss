@@ -38,8 +38,8 @@
 
       .input_block {
         display: flex;
-        justify-content: space-between;
         align-items: flex-end;
+        grid-gap: 2em;
 
         .input {
           display: flex;
