@@ -7,6 +7,7 @@ import Consultaition from "../components/Consultation/Consultation";
 import CourseOfTreatmentBlock from "../components/CourseOfTreatmentBlock/CourseOfTreatmentBlock";
 import DoctorSlider from "../components/DoctorSlider/DoctorSlider";
 import CommentBlock from "../components/CommentBlock/CommentBlock";
+import CallMe from "../components/CallMe/CallMe";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <CourseOfTreatmentBlock />
       <DoctorSlider />
       <CommentBlock />
+      <CallMe />
     </div>
   )
 }
