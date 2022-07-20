@@ -1,0 +1,116 @@
+.callme_block {
+  height: 580px;
+  background-image: url("../../../public/images/callme-back.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  .opacity {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-top: 110px;
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 3em;
+      width: 100%;
+
+      .title {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 49px;
+        text-transform: uppercase;
+        color: #000000;
+
+        .b {
+          font-weight: 700;
+          font-size: 40px;
+          line-height: 49px;
+          text-transform: uppercase;
+          color: #000000;
+        }
+      }
+
+      .des {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+        width: 600px;
+      }
+
+      .input_block {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        grid-gap: 2em;
+
+        .input {
+          display: flex;
+          flex-direction: column;
+          grid-gap: 1em;
+          font-weight: 400;
+
+          p {
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+          }
+
+          input {
+            font-size: 14px;
+            line-height: 17px;
+            width: 300px;
+            height: 60px;
+            border: none;
+            border-radius: 10px;
+            padding-left: 20px;
+            color: #0097db;
+          }
+        }
+
+        .input1 {
+          display: flex;
+          flex-direction: column;
+          grid-gap: 1em;
+          font-weight: 400;
+
+          p {
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+          }
+
+          input {
+            font-size: 14px;
+            line-height: 17px;
+            border: none;
+            color: #0097db;
+          }
+        }
+
+        .btn {
+          background-color: #0097db;
+          border: none;
+          color: #fff;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          width: 300px;
+          height: 60px;
+          border-radius: 10px;
+        }
+      }
+      .bottom {
+        width: 680px;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000000;
+        text-transform: none;
+
+        a {
+          color: #0097db;
+        }
+      }
+    }
+  }
+}
