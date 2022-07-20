@@ -254,9 +254,48 @@
   }
 }
 
+.doctor_slider {
+  .slick-arrow {
+    width: 15px;
+    height: 15px;
+    transform: 0.3s;
+  }
+
+  .slick-prev {
+    transform: rotate(180deg);
+    top: 50%;
+    left: -50px;
+  }
+
+  .slick-next {
+    top: 50%;
+    right: -50px;
+  }
+}
+
+.comment_slider {
+  .slick-arrow {
+    width: 15px;
+    height: 15px;
+    transform: 0.3s;
+  }
+
+  .slick-prev {
+    transform: rotate(180deg);
+    top: 0;
+    left: -50px;
+  }
+
+  .slick-next {
+    top: 0;
+    right: -50px;
+  }
+}
+
 .main_slider {
   .slick-disabled.slick-disabled {
-    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(83%) contrast(94%);
+    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg)
+      brightness(83%) contrast(94%);
     cursor: not-allowed;
   }
 
@@ -319,7 +358,8 @@
   }
 
   .slick-disabled.slick-disabled {
-    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(83%) contrast(94%);
+    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg)
+      brightness(83%) contrast(94%);
   }
 
   .slick-track {
@@ -427,5 +467,7 @@
   .slick-disabled {
     opacity: 0;
     cursor: default;
+  }
+    }
   }
 }
