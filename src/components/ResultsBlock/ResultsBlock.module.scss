@@ -57,8 +57,15 @@
         color: #000000;
         margin-bottom: 20px;
       }
-      div {
-        padding-top: 12px;
+      > div {
+        > div:last-child {
+          padding-top: 12px;
+        }
+      }
+      > div:nth-child(3) {
+        > div:first-child img {
+          padding-bottom: 5px;
+        }
       }
 
       div p:first-child {
@@ -84,6 +91,7 @@
 
       > div {
         display: flex;
+        align-items: baseline;
         img {
           margin-right: 30px;
         }

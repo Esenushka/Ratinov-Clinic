@@ -28,7 +28,7 @@ const ResultsBlock = () => {
             <div className={styles.resultsBlockBottomRight}>
               <div>
                 <div>
-                  <img alt="" src={resultBlockInfo[activeSlide].imgPlus} />
+                  <img alt="Плюс" src={resultBlockInfo[activeSlide].imgPlus} />
                 </div>
                 <div className={styles.beforeTreat}>
                   <p>{resultBlockInfo[activeSlide].before}</p>
@@ -39,7 +39,7 @@ const ResultsBlock = () => {
               <p>{resultBlockInfo[activeSlide].treatmentCourse}</p>
               <div>
                 <div>
-                  <img alt="" src={resultBlockInfo[activeSlide].imgMinus} />
+                  <img alt="Минус" src={resultBlockInfo[activeSlide].imgMinus} />
                 </div>
                 <div>
                   <p> {resultBlockInfo[activeSlide].after}</p>
