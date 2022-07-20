@@ -3,8 +3,8 @@ import scss from "./FAQ.module.scss"
 import FAQCard from "./FAQCard"
 
 export default function FAQ() {
-  const part1 = FAQList.slice(0, FAQList.length / 2)
-  const part2 = FAQList.slice(FAQList.length / 2)
+  const part1 = FAQList.slice(0, (FAQList.length / 2) + 1)
+  const part2 = FAQList.slice((FAQList.length / 2) + 1)
   return (
     <div className={scss.wrapper + " container"}>
       <h1>ВОПРОСЫ</h1>

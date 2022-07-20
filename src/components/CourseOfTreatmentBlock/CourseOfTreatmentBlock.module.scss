@@ -1,6 +1,7 @@
 .title {
   font-weight: 400;
   text-transform: uppercase;
+
   span {
     font-size: xx-large;
     font-weight: 600;
@@ -44,7 +45,7 @@
     font-size: 14px;
   }
 
-  > p{
+  >p {
     margin-top: 20px;
   }
 }
@@ -81,7 +82,8 @@
     span {
       color: #0097DB;
     }
-    &::before{
+
+    &::before {
       content: "";
       width: 6px;
       height: 6px;
@@ -106,10 +108,31 @@
   }
 
 }
-.btn{
+
+.btn {
   display: flex;
   justify-content: flex-end;
 }
-.wrapper.wrapper{
+
+.wrapper.wrapper {
   margin-bottom: 100px;
+}
+
+.col {
+  width: 100%;
+  justify-content: space-evenly;
+
+  .procedure_block {
+    grid-gap: 0px;
+    width: 45%;
+    font-size: 12px;
+
+    h3 {
+      font-size: 12px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
 }

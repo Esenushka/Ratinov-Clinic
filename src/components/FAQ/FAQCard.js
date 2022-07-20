@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import ProcedureBlock from "../CourseOfTreatmentBlock/ProcedureBlock";
 import scss from "./FAQ.module.scss"
 
 export default function FAQCard({ title, buttons, info, type }) {
@@ -14,16 +15,22 @@ export default function FAQCard({ title, buttons, info, type }) {
       <div className={scss.info_wrapper + " " + (active ? scss.active : "")}>
         {
           type === 1 ? <div className={scss.info + " " + scss.bold}>
-            <p>{info[0]}</p>
-            <p>{info[1]}</p>
+            {
+              info.map((el)=> <p key={el.id}>{el.text}</p>)
+            }
           </div> : type === 1.1 ?
             <div className={scss.info + " " + scss.bold_reverse}>
-              <p>{info[0]}</p>
-              <p>{info[1]}</p>
+                {
+                  info.map((el) => <p key={el.id}>{el.text}</p>)
+                }
             </div> : type === 2 ?
               <div className={scss.info}>
-                <p><span>{info[0]}</span> - {info[1]}</p>
-                <p>{info[2]}</p>
+                  {
+                    info.map((el) => <p key={el.id}>
+                      <span>{el.bold}</span> - 
+                      {el.text}
+                      </p>)
+                  }
               </div> : type === 3 ?
                 <div className={scss.info + " " + scss.with_link}>
                   {
@@ -43,20 +50,27 @@ export default function FAQCard({ title, buttons, info, type }) {
                   <div className={scss.info + " " + scss.phone}>
                     {
                       info.map((el) => <p key={el.id}>
-                        <img src="/images/HeaderPhone.svg" />
+                        <img src="/images/HeaderPhone.svg" alt="Телефон" />
                         {el.phone}
                         {el.whatsapp ? " (WhatsApp)" : ""}
                       </p>)
                     }
                   </div> : type === 4 ?
                     <div className={scss.info}>
-                      {info.map((el, index) => <p key={index}>{el}</p>)}
+                      {info.map((el) => <p key={el.id}>{el.text}</p>)}
                     </div> : type === 5 ?
                       <div className={scss.info}>
                         {
                           info.map((el) => <p key={el.id}>{el.text}<span> {el.bold}</span></p>)
                         }
-                      </div> : ""
+                      </div> : type === 6 ?
+                        <div className={scss.info + " " + scss.procedure_bold}>
+                          {
+                            info.map((el) => <p key={el.id}>{el.text}</p>)
+                          }
+                          <p>В эту стоимотсь входит:</p>
+                          <ProcedureBlock col={true} />
+                        </div> : ""
         }
 
         {
