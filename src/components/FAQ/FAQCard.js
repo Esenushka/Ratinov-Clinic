@@ -76,7 +76,7 @@ export default function FAQCard({ title, buttons, info, type }) {
         {
           buttons.length > 0 ? <div className={scss.btns + " " + (buttons?.length === 1 ? scss.only_one : "")}>
             {
-              buttons.map((el, index) => <button key={index} className="btn btn-small">{el}</button>)
+              buttons.map((el) => <Link key={el.id} to={el.path}><button className="btn btn-small">{el.btn}</button></Link>)
             }
           </div> : ""
         }
