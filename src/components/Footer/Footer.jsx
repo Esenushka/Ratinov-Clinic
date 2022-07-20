@@ -35,8 +35,8 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={css.btn}>
-                    <button className="btn btn-footer">Онлайн консультация</button>
-                    <button className="btn btn-footer">Пройти тест</button>
+                    <Link to="/"><button className="btn btn-footer">Онлайн консультация</button></Link>
+                    <Link to="/"><button className="btn btn-footer">Пройти тест</button></Link>
                 </div>
             </div>
         </div>
