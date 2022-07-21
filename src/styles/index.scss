@@ -294,8 +294,7 @@
 
 .main_slider {
   .slick-disabled.slick-disabled {
-    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg)
-      brightness(83%) contrast(94%);
+    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(83%) contrast(94%);
     cursor: not-allowed;
   }
 
@@ -358,8 +357,7 @@
   }
 
   .slick-disabled.slick-disabled {
-    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg)
-      brightness(83%) contrast(94%);
+    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(83%) contrast(94%);
   }
 
   .slick-track {
@@ -430,9 +428,9 @@
     left: 86%;
     z-index: 1;
   }
-  .slick-slider {
-    width: 480px;
-  }
+  // .slick-slider {
+  //   width: 480px;
+  // }
   .slick-slide div {
     width: 380px;
   }
@@ -470,7 +468,5 @@
   .slick-disabled {
     opacity: 0;
     cursor: default;
-  }
-    }
   }
 }
