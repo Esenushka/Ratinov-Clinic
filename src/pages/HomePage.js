@@ -9,6 +9,7 @@ import FAQ from "../components/FAQ/FAQ";
 import DoctorSlider from "../components/DoctorSlider/DoctorSlider";
 import CommentBlock from "../components/CommentBlock/CommentBlock";
 import CallMe from "../components/CallMe/CallMe";
+import { ClinicSpecialistsBlock } from "../components/ClinicSpecialists/ClinicSpecialistsBlock";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
       <DoctorSlider />
       <CommentBlock />
       <CallMe />
+      <ClinicSpecialistsBlock/>
     </div>
   )
 }
