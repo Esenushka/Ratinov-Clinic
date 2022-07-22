@@ -9,6 +9,7 @@ import FAQ from "../components/FAQ/FAQ";
 import DoctorSlider from "../components/DoctorSlider/DoctorSlider";
 import CommentBlock from "../components/CommentBlock/CommentBlock";
 import CallMe from "../components/CallMe/CallMe";
+import ResultsSlider from "../components/ResultsSlider/ResultsSlider";
 
 export default function HomePage() {
   return (
@@ -19,10 +20,11 @@ export default function HomePage() {
       <TreatBlock />
       <OwnerBlock />
       <YouTubeSlider />
+      <ResultsSlider />
       <CourseOfTreatmentBlock />
-      <FAQ />
       <DoctorSlider />
       <CommentBlock />
+      <FAQ />
       <CallMe />
     </div>
   )
