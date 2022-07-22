@@ -52,15 +52,15 @@ export default function ResultsSlider() {
             <p>
               Уже более 3 000 довольных пациентов избавились
               от боли в спине и уменьшили грыжу без операции!
-              <Slider {...settings}>
-                {
-                  result.map((result) => <div key={result.id} className={scss.card}>
-                    <h3>СНИМОК №{result.number}</h3>
-                    <img src={result.img} alt={"СнимокТ №" + result.number} />
-                  </div>)
-                }
-              </Slider>
             </p>
+            <Slider {...settings}>
+              {
+                result.map((result) => <div key={result.id} className={scss.card}>
+                  <h3>СНИМОК №{result.number}</h3>
+                  <img src={result.img} alt={"СнимокТ №" + result.number} />
+                </div>)
+              }
+            </Slider>
           </div>
           <div className={scss.right}>
             <Link to="/results">
@@ -89,7 +89,7 @@ export default function ResultsSlider() {
         </div>
       </div>
       <span className={scss.bg}>
-        <img src="/images/result-bg.svg" alt="Результат задний фон"/>
+        <img src="/images/result-bg.svg" alt="Результат задний фон" />
       </span>
     </div>
   )

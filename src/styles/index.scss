@@ -399,6 +399,15 @@
 }
 
 .result_slider {
+  .slick-dots {
+    left: -80px;
+    .slick-active {
+      span{
+        background: #636363;
+      }
+    }
+  }
+
   .slick-track {
     padding: 50px 0;
     display: flex;
@@ -443,7 +452,14 @@
     }
   }
 
-  .slick-prev {
+  .slick-prev.slick-prev {
     transform: scale(-1, 1);
+    top: 49%;
+    filter: invert(89%) sepia(17%) saturate(0%) hue-rotate(203deg) brightness(82%) contrast(103%);
+  }
+
+  .slick-next.slick-next {
+    right: 100px;
+    filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(170%) contrast(101%);
   }
 }
