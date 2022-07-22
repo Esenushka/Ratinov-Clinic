@@ -209,7 +209,7 @@
         content: none;
       }
 
-      + p {
+      +p {
         color: #c4c4c4;
       }
     }
@@ -294,8 +294,7 @@
 
 .main_slider {
   .slick-disabled.slick-disabled {
-    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg)
-      brightness(83%) contrast(94%);
+    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(83%) contrast(94%);
     cursor: not-allowed;
   }
 
@@ -358,8 +357,7 @@
   }
 
   .slick-disabled.slick-disabled {
-    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg)
-      brightness(83%) contrast(94%);
+    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(83%) contrast(94%);
   }
 
   .slick-track {
@@ -373,7 +371,7 @@
       font-weight: 600;
     }
 
-    .slick-current + div {
+    .slick-current+div {
       font-weight: 500;
       filter: blur(0px);
       transform: scale(1.4);
@@ -381,13 +379,13 @@
       left: -80px;
       z-index: 1;
 
-      + div {
+      +div {
         font-weight: 500;
         filter: blur(0px);
         transform: scale(1.4);
         z-index: 1;
 
-        + div {
+        +div {
           font-weight: 500;
           filter: blur(0px);
           transform: scale(1.4);
@@ -397,5 +395,71 @@
         }
       }
     }
+  }
+}
+
+.result_slider {
+  .slick-dots {
+    left: -80px;
+    .slick-active {
+      span{
+        background: #636363;
+      }
+    }
+  }
+
+  .slick-track {
+    padding: 50px 0;
+    display: flex;
+  }
+
+  .slick-slide {
+    z-index: -1;
+
+    >div>div {
+      transition: opacity 1.2s;
+      position: relative;
+      opacity: 0;
+    }
+  }
+
+  .slick-current {
+    z-index: 10;
+    margin: 0;
+
+    >div>div {
+      opacity: 1;
+      transition: transform 1.1s, filter 1s, left .8s;
+      filter: blur(0);
+      transform: scale(1.2);
+      left: 15px;
+    }
+
+    +div {
+      >div>div {
+        transition: transform 1.1s, filter 1.2s, left .8s;
+        opacity: 1;
+        z-index: -1;
+        left: -80px;
+      }
+    }
+
+    +div+div {
+      >div>div {
+        transition: transform 1.1s, filter 1.2s, left .8s;
+        opacity: 1;
+      }
+    }
+  }
+
+  .slick-prev.slick-prev {
+    transform: scale(-1, 1);
+    top: 49%;
+    filter: invert(89%) sepia(17%) saturate(0%) hue-rotate(203deg) brightness(82%) contrast(103%);
+  }
+
+  .slick-next.slick-next {
+    right: 100px;
+    filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(170%) contrast(101%);
   }
 }

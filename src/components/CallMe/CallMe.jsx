@@ -26,7 +26,7 @@ const CallMe = () => {
                   name: "phone",
                   country: "us",
                   required: true,
-                  autoFocus: true
+                  autoFocus: false
                 }}
                 // Set your inline styles here
 
