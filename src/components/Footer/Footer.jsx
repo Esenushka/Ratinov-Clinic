@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div className={css.footer}>
+            <div className={css.white_block}></div>
             <div className={`${css.wrapper} container`}>
                 <div className={css.other}>
                     <div className={css.link_block}>
@@ -34,9 +35,14 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div className={css.btn}>
-                    <Link to="/"><button className="btn btn-footer">Онлайн консультация</button></Link>
-                    <Link to="/"><button className="btn btn-footer">Пройти тест</button></Link>
+                <div className={css.footerRight}>
+                    <div className={css.btn}>
+                        <Link to="/"><button className="btn btn-footer">Онлайн консультация</button></Link>
+                        <Link to="/"><button className="btn btn-footer">Пройти тест</button></Link>
+                    </div>
+                    <div className={css.img}>
+                        <Link to="/"><img src="/images/logo.svg" alt="" /></Link>
+                    </div>
                 </div>
             </div>
         </div>
