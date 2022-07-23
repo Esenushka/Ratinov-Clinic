@@ -9,6 +9,7 @@ import FAQ from "../components/FAQ/FAQ";
 import DoctorSlider from "../components/DoctorSlider/DoctorSlider";
 import CommentBlock from "../components/CommentBlock/CommentBlock";
 import CallMe from "../components/CallMe/CallMe";
+import Footer from "../components/Footer/Footer";
 import ResultsSlider from "../components/ResultsSlider/ResultsSlider";
 import { ClinicSpecialistsBlock } from "../components/ClinicSpecialists/ClinicSpecialistsBlock";
 
@@ -28,6 +29,7 @@ export default function HomePage() {
       <CommentBlock />
       <FAQ />
       <CallMe />
+      <Footer />
     </div>
   )
 }
