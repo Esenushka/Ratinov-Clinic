@@ -9,17 +9,17 @@ const Footer = () => {
                 <div className={css.other}>
                     <div className={css.link_block}>
                         <div className={css.link}>
-                            <Link to="/">Услуги</Link>
-                            <Link to="/">Специалисты</Link>
-                            <Link to="/">Результаты</Link>
-                            <Link to="/">Цены</Link>
-                            <Link to="/">Ещё</Link>
+                            <Link to="/service">Услуги</Link>
+                            <Link to="/doctor">Специалисты</Link>
+                            <Link to="/result">Результаты</Link>
+                            <Link to="/price">Цены</Link>
+                            <Link to="/more">Ещё</Link>
                         </div>
                         <div className={css.link}>
-                            <Link to="/">О клинике</Link>
-                            <Link to="/">Информация для пациентов</Link>
-                            <Link to="/">Время приема</Link>
-                            <Link to="/">Отзывы</Link>
+                            <Link to="/about">О клинике</Link>
+                            <Link to="/faq">Информация для пациентов</Link>
+                            <Link to="/reception">Время приема</Link>
+                            <Link to="/comment">Отзывы</Link>
                         </div>
                     </div>
                     <div className={css.footerBottom}>
