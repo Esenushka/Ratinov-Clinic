@@ -21,10 +21,9 @@ export default function DoctorsPage() {
         snapshot.forEach((doc) => {
           doctorsArr.push({ ...doc.data(), id: doc.id });
         })
-        setDoctors(doctorsArr)
+        setDoctors(doctorsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
       })
   }, []);
-  console.log(paramArr);
   return (
     <div>
       <Header />
@@ -35,10 +34,10 @@ export default function DoctorsPage() {
           {
             doctors.map((doctor) =>
               paramArr.length === 0 ?
-                <DoctorsCard {...doctor} /> :
+                <DoctorsCard key={doctor.id} {...doctor} /> :
                 paramArr.some((param) =>
                   doctor.post.includes(param)) ?
-                  <DoctorsCard {...doctor} /> : "")
+                  <DoctorsCard key={doctor.id} {...doctor} /> : "")
           }
         </div>
       </div>
