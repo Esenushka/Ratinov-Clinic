@@ -167,7 +167,7 @@
   }
 }
 
-.btn-footer{
+.btn-footer {
   font-size: 14px;
   color: white;
   border-radius: 10px;
@@ -175,7 +175,7 @@
   background: #0097db;
   border: 1px solid #e3f4fb;
 
-  &:hover{
+  &:hover {
     background-color: #e3f4fb;
     color: #0097db;
   }
@@ -238,15 +238,22 @@
     display: flex;
     padding: 15px 0px;
     justify-content: space-between;
-    color: #0097db;
+    color: #979797;
     cursor: pointer;
-    border-top: 2px solid #0097db;
+    border-top: 2px solid #979797;
 
     img {
       transform: scale(1, -1);
       transition: 0.5s;
+      filter: invert(68%) sepia(0%) saturate(7%) hue-rotate(157deg) brightness(89%) contrast(86%);
+    }
 
-      &.active {
+    &.active {
+      color: #0097db;
+      border-top: 2px solid #0097db;
+
+      img {
+        filter: none;
         transform: scale(1);
       }
     }
@@ -415,8 +422,9 @@
 .result_slider {
   .slick-dots {
     left: -80px;
+
     .slick-active {
-      span{
+      span {
         background: #636363;
       }
     }
@@ -475,5 +483,15 @@
   .slick-next.slick-next {
     right: 100px;
     filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(170%) contrast(101%);
+  }
+}
+.doctors-page_wrapper{
+  display: flex;
+  justify-content: space-between;
+  .doctors_wrapper{
+    display: flex;
+    width: 75%;
+    flex-wrap: wrap;
+    grid-gap: 40px;
   }
 }

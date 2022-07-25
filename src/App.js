@@ -4,12 +4,14 @@ import './App.css';
 import "./styles/index.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import DoctorsPage from './pages/DoctorsPage';
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
+        <Route path="/doctors" element={<DoctorsPage />}></Route>
       </Routes>
     </>
   );

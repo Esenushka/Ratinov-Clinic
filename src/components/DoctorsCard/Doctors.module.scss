@@ -1,0 +1,27 @@
+.card {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  img {
+    width: 100%;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}
+
+.wrap_card {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 42%;
+}
+
+.name {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 5px;
+}
