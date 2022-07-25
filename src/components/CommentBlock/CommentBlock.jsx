@@ -41,6 +41,10 @@ const CommentBlock = () => {
   };
   return (
     <div className={css.comment_block}>
+      <div className={css.bg_block}>
+        <img src="/images/comment-back.svg" alt="background_image" />
+        <div className={css.color_block}></div>
+      </div>
       <div className={`${css.wrapper} container`}>
         <div className={css.title}>
           <h1>Отзывы</h1>
