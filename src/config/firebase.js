@@ -4,13 +4,13 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDMVCziTsvGeBUXPz5HaQaT0WTL9ps8lto",
-  authDomain: "ratinov-clinic.firebaseapp.com",
-  projectId: "ratinov-clinic",
-  storageBucket: "ratinov-clinic.appspot.com",
-  messagingSenderId: "325525592288",
-  appId: "1:325525592288:web:7684f1c7ccedbfda38d885",
-  measurementId: "G-EVKDC7YB9K"
+  apiKey: "AIzaSyCJwVqGRRZeGWMyOLaFV-QzMz2VUJaP_78",
+  authDomain: "ratinov-clinic-401b0.firebaseapp.com",
+  projectId: "ratinov-clinic-401b0",
+  storageBucket: "ratinov-clinic-401b0.appspot.com",
+  messagingSenderId: "150132533358",
+  appId: "1:150132533358:web:00559ebafa39dabaa4de7f",
+  measurementId: "G-XS7FSK6P1Y"
 };
 
 try {
