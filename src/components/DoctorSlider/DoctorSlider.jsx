@@ -1,8 +1,9 @@
 import css from './Doctor.module.scss';
 import Slider from "react-slick";
-import { doctorList } from '../../constants/DoctorList';
-import DoctorCard from './DoctorCard';
 import { Link } from 'react-router-dom';
+import DoctorsCard from '../DoctorsCard/DoctorsCard';
+import { useEffect, useState } from "react";
+import { db } from '../../config/firebase';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -30,6 +31,18 @@ function SamplePrevArrow(props) {
 
 
 const DoctorSlider = () => {
+  const [doctors, setDoctors] = useState([])
+  useEffect(() => {
+    db.collection("doctors")
+      .get()
+      .then((snapshot) => {
+        const doctorsArr = []
+        snapshot.forEach((doc) => {
+          doctorsArr.push({ ...doc.data(), id: doc.id });
+        })
+        setDoctors(doctorsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
+      })
+  }, []);
   const settings = {
     dots: false,
     infinite: false,
@@ -43,11 +56,11 @@ const DoctorSlider = () => {
     <div className={`${css.wrapper} container`}>
       <h1>Наши <b>Врачи</b></h1>
       <Slider className={`${css.slider} doctor_slider`} {...settings}>
-        {doctorList.map((e) => (
-          <DoctorCard key={e.id} {...e} />
+        {doctors.map((doctor) => (
+          <DoctorsCard key={doctor.id} {...doctor} />
         ))}
       </Slider>
-      <Link to="/">
+      <Link to="/doctors">
         <div className={css.all_doc}>
           <img src="/images/arrow.svg" alt="select-arrow" />
           Показать всех специалистов
