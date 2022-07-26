@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import CallMe from "../components/CallMe/CallMe";
 import DoctorsCard from "../components/DoctorsCard/DoctorsCard";
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Select from "../components/Select/Select";
 import TopBlock from "../components/TopBlock/TopBlock";
@@ -41,6 +43,8 @@ export default function DoctorsPage() {
           }
         </div>
       </div>
+      <CallMe />
+      <Footer />
     </div>
   )
 }
