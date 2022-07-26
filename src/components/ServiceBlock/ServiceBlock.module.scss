@@ -1,0 +1,19 @@
+.card{
+  width: 23%;
+  height: 420px;
+  img{
+    width: 100%;
+  }
+  span{
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .text{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35%;
+  }
+}

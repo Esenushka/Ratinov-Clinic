@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className={css.other}>
                     <div className={css.link_block}>
                         <div className={css.link}>
-                            <Link to="/service">Услуги</Link>
+                            <Link to="/services">Услуги</Link>
                             <Link to="/doctors">Специалисты</Link>
                             <Link to="/result">Результаты</Link>
                             <Link to="/price">Цены</Link>
