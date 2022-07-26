@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import DoctorsPage from './pages/DoctorsPage';
 import SpinePage from './pages/services/SpinePage';
+import ServicesPage from './pages/ServicesPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/doctors" element={<DoctorsPage />}></Route>
+        <Route path="/services" element={<ServicesPage />}></Route>
         <Route path="/services/spine" element={<SpinePage />}></Route>
       </Routes>
     </>
