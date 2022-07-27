@@ -1,75 +1,82 @@
 .wrapper {
   margin-top: 50px;
+}
 
-  .consultation {
-    position: relative;
-    height: 45vh;
-    background-image: url("../../../public/images/consultation.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: flex-end;
+.consultation {
+  position: relative;
+  height: 45vh;
+  background-image: url("../../../public/images/consultation.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+}
 
-    .wrap {
-      position: relative;
-      width: 75%;
-      height: 50%;
-      background-color: #ffffff;
-      border-radius: 10px;
-      top: 25%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 45px 70px;
-      margin: 0 10% !important;
+.wrap {
+  position: relative;
+  width: 75%;
+  height: 50%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  top: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px 70px;
+  margin: 0 10% !important;
 
-      .consul_des {
-        margin-right: 15px;
 
-        span {
-          font-size: 28px;
-          line-height: 34px;
-          text-transform: uppercase;
-          font-weight: 400;
-        }
+}
 
-        .b {
-          font-weight: 500 !important;
-        }
-      }
-    }
+.b {
+  font-weight: 500 !important;
+}
+
+.consul_des {
+  margin-right: 15px;
+
+  span {
+    font-size: 28px;
+    line-height: 34px;
+    text-transform: uppercase;
+    font-weight: 400;
   }
 
-  .about {
+
+}
+
+
+
+
+.about {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 3em;
+
+  h1 {
+    margin-top: 40px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 49px;
+    text-transform: uppercase;
+  }
+
+  .about_card {
     display: flex;
-    flex-direction: column;
-    grid-gap: 3em;
+    justify-content: space-between;
 
-    h1 {
-      margin-top: 40px;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 49px;
-      text-transform: uppercase;
-    }
-
-    .about_card {
+    .card {
+      width: 30%;
       display: flex;
-      justify-content: space-between;
+      grid-gap: 1.5em;
+      flex-direction: column;
 
-      .card {
-        width: 30%;
-        display: flex;
-        grid-gap: 1.5em;
-        flex-direction: column;
+      img {
+        width: 70px;
+      }
 
-        img {
-          width: 70px;
-        }
-
-        b {
-          font-weight: 700;
-        }
+      b {
+        font-weight: 700;
       }
     }
   }
