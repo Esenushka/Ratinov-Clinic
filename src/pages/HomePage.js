@@ -12,6 +12,7 @@ import CallMe from "../components/CallMe/CallMe";
 import Footer from "../components/Footer/Footer";
 import ResultsSlider from "../components/ResultsSlider/ResultsSlider";
 import { ClinicSpecialistsBlock } from "../components/ClinicSpecialists/ClinicSpecialistsBlock";
+import About from "../components/Consultation/About";
 
 export default function HomePage() {
   return (
@@ -19,12 +20,13 @@ export default function HomePage() {
       <Header />
       <MainSlider />
       <Consultaition />
+      <About />
       <TreatBlock />
       <OwnerBlock />
       <YouTubeSlider />
       <ResultsSlider />
       <CourseOfTreatmentBlock />
-      <ClinicSpecialistsBlock/>
+      <ClinicSpecialistsBlock />
       <DoctorSlider />
       <CommentBlock />
       <FAQ />
