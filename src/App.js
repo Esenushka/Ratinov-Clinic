@@ -8,6 +8,7 @@ import DoctorsPage from './pages/DoctorsPage';
 import SpinePage from './pages/services/SpinePage';
 import ServicesPage from './pages/ServicesPage';
 import MassagePage from './pages/services/MassagePage';
+import PhysiotherapyPage from './pages/services/PhysiotherapyPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/services" element={<ServicesPage />}></Route>
         <Route path="/services/spine" element={<SpinePage />}></Route>
         <Route path="/services/massage" element={<MassagePage />}></Route>
+        <Route path="/services/physiotherapy" element={<PhysiotherapyPage />}></Route>
       </Routes>
     </>
   );
