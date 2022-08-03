@@ -1,0 +1,170 @@
+.wrapper {
+  h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+
+    span {
+      font-size: xx-large;
+      font-weight: 600;
+    }
+  }
+}
+
+.bg {
+  width: 700px;
+  height: 800px;
+  border-radius: 150px;
+  transform: rotate(55deg);
+  position: absolute;
+  z-index: -1;
+  right: -440px;
+  top: 0px;
+  overflow: hidden;
+
+  img {
+    height: 144%;
+    width: 76%;
+    object-fit: cover;
+    transform: rotate(-40deg);
+    position: absolute;
+    left: 62px;
+    top: 132px;
+    filter: opacity(0.3);
+  }
+}
+
+.bg_left {
+  width: 700px;
+  height: 1011px;
+  border-radius: 276px;
+  transform: rotate(53deg);
+  position: absolute;
+  z-index: -1;
+  left: -156px;
+  bottom: 1400px;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 86%;
+    object-fit: cover;
+    transform: rotate(-31deg);
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    filter: opacity(0.3);
+    border-radius: 419px;
+  }
+}
+
+.wrapper_bg {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.therapies_types {
+  .therapy_type {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 50px;
+  }
+}
+
+.methods_right_block {
+  width: 80%;
+  margin-left: 334px;
+}
+
+.what_we_treat {
+  margin-top: 100px;
+  height: 850px;
+  background-image: url("../../../public/images/treat.png");
+
+  .treat_center {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      z-index: 10;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-right: 697px;
+
+      span {
+        font-size: xx-large;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.treatment_wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.treatment_left {
+  margin-left: 102px;
+  margin-top: 40px;
+  height: 563px;
+  width: 352px;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+
+  ul {
+    margin-top: 20px;
+    margin-left: 20px;
+    li {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+  }
+}
+
+.treatment_right {
+  width: 63%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+
+  .treatment_right_block {
+    width: 416px;
+    height: auto;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 50px;
+  }
+  ul {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}
+
+.about_health{
+  h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 90px 0 40px 0;
+    span {
+      font-size: xx-large;
+      font-weight: 600;
+    }
+  }
+  
+  p{
+    margin-bottom: 40px;
+  }
+}
