@@ -44,7 +44,7 @@ export default function Joint() {
         {therapiesList.map((type) => (
           <div className={scss.therapies_types} key={type.id}>
             <h4 className={scss.therapy_type}>{type.therapy}</h4>
-            <hr style={{ width: "300px", marginBottom: "25px" }} />
+            <hr />
             <p>{type.desc}</p>
           </div>
         ))}
@@ -52,7 +52,7 @@ export default function Joint() {
           {therapiesList2.map((type) => (
             <div className={scss.therapies_types} key={type.id}>
               <h4 className={scss.therapy_type}>{type.therapy}</h4>
-              <hr style={{ width: "300px", marginBottom: "25px" }} />
+              <hr />
               <p>{type.desc}</p>
             </div>
           ))}
