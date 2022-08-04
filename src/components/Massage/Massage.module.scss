@@ -1,0 +1,43 @@
+.block {
+  width: 50%;
+  margin-bottom: 60px;
+  p{
+    font-size: 14px;
+  }
+  > p:nth-of-type(1) {
+    width: 50%;
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+}
+.blocks_wrapper{
+  margin-top: 30px;
+  margin-bottom: 100px;
+  > h1{
+    margin-bottom: 35px;
+  }
+}
+.bg{
+  transform: rotate(-15deg);
+  position: absolute;
+  right: -40%;
+  z-index: -1;
+  width: 950px;
+  height: 750px;
+  overflow: hidden;
+  border-radius: 100px;
+  opacity: 0.5;
+  img{
+    top: -100px;
+    width: 60%;
+    left: -18%;
+    position: absolute;
+    transform: rotate(15deg);
+  }
+}
+.wrapper{
+  overflow-x: hidden;
+  position: relative;
+}

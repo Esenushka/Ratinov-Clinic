@@ -1,0 +1,36 @@
+.wrapper {
+  background: #0097DB;
+  width: 100%;
+  padding: 50px;
+
+  h1 {
+    color: white;
+    font-size: xx-large;
+    text-transform: uppercase;
+
+    span {
+      text-transform: uppercase;
+      font-size: xx-large;
+      margin-left: 10px;
+    }
+  }
+}
+
+.reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+
+  span {
+    margin-right: 10px;
+    margin-left: 0;
+  }
+}
+
+.path {
+  color: #939393;
+  padding: 44px 0;
+  line-height: 17px;
+}

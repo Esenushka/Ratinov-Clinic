@@ -13,6 +13,7 @@ $white: #ffffff;
 header {
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
 }
+
 .headerTop,
 .headerBottom {
   display: flex;
@@ -20,6 +21,7 @@ header {
   align-items: center;
   height: 90px;
 }
+
 .headerTopLeft a,
 .headerTopRight a,
 span {
@@ -27,13 +29,16 @@ span {
   font-size: 15px;
   line-height: 18px;
 }
+
 .headerTopLeft a {
   color: #636363;
   margin: 0 20px 0 0;
 }
+
 .headerTopRight {
   display: flex;
   align-items: center;
+
   a,
   span {
     color: $black;
@@ -41,19 +46,18 @@ span {
     display: flex;
     align-items: center;
     padding-top: 7px;
+
     img {
       margin-right: 10px;
     }
   }
 }
+
 .headerBottomLeft {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  div {
-    display: flex;
-    align-items: center;
-  }
+
   a,
   span {
     font-family: 'Montserrat', sans-serif;
@@ -65,25 +69,36 @@ span {
     color: $black;
     margin-right: 35px;
   }
+
   a img {
     margin: 0 15px;
   }
-  img{
+
+  img {
     margin-right: 15px;
   }
+
+  >a:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
 }
+
 .headerBottomRight {
   display: flex;
   grid-gap: 30px;
 }
 
 @media (max-width: 1200px) {
+
   .headerTopLeft a,
   .headerTopRight a {
     @include fonts($font-weight);
     font-size: 12px;
     line-height: 20px;
   }
+
   .headerBottomRight {
     button {
       padding: 7px 43px;
@@ -91,7 +106,9 @@ span {
       width: 100%;
     }
   }
+
   .headerBottomLeft {
+
     a,
     span {
       font-size: 16px;
@@ -104,24 +121,29 @@ span {
   header {
     height: 230px;
   }
+
   .headerTopLeft a,
   .headerTopRight a {
     @include fonts($font-weight);
     font-size: 14px;
     line-height: 20px;
   }
+
   .headerBottomLeft {
+
     a,
     span {
       font-size: 13px;
       margin-right: 35px;
     }
   }
+
   .headerTop {
     justify-content: space-around;
     height: 50px;
     flex-direction: column;
   }
+
   .headerBottom {
     display: flex;
     flex-direction: column;

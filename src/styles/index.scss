@@ -167,7 +167,7 @@
   }
 }
 
-.btn-footer{
+.btn-footer {
   font-size: 14px;
   color: white;
   border-radius: 10px;
@@ -175,7 +175,7 @@
   background: #0097db;
   border: 1px solid #e3f4fb;
 
-  &:hover{
+  &:hover {
     background-color: #e3f4fb;
     color: #0097db;
   }
@@ -238,15 +238,22 @@
     display: flex;
     padding: 15px 0px;
     justify-content: space-between;
-    color: #0097db;
+    color: #979797;
     cursor: pointer;
-    border-top: 2px solid #0097db;
+    border-top: 2px solid #979797;
 
     img {
       transform: scale(1, -1);
       transition: 0.5s;
+      filter: invert(68%) sepia(0%) saturate(7%) hue-rotate(157deg) brightness(89%) contrast(86%);
+    }
 
-      &.active {
+    &.active {
+      color: #0097db;
+      border-top: 2px solid #0097db;
+
+      img {
+        filter: none;
         transform: scale(1);
       }
     }
@@ -269,6 +276,7 @@
 }
 
 .doctor_slider {
+  
   .slick-arrow {
     width: 15px;
     height: 15px;
@@ -413,10 +421,12 @@
 }
 
 .result_slider {
+  position: relative;
   .slick-dots {
     left: -80px;
+
     .slick-active {
-      span{
+      span {
         background: #636363;
       }
     }
@@ -475,5 +485,71 @@
   .slick-next.slick-next {
     right: 100px;
     filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(170%) contrast(101%);
+  }
+}
+.doctors-page_wrapper{
+  display: flex;
+  justify-content: space-between;
+  .doctors_wrapper{
+    display: flex;
+    width: 75%;
+    flex-wrap: wrap;
+    grid-gap: 40px;
+  }
+}
+.services_wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 30px;
+}
+.page-blocks_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 50px 0;
+
+  >div:nth-of-type(1)::before {
+    content: "1";
+
+  }
+
+  >div:nth-of-type(2)::before {
+    content: "2";
+
+  }
+
+  >div:nth-of-type(3)::before {
+    content: "3";
+
+  }
+
+  .page-block {
+    background: white;
+    position: relative;
+    width: 30%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 40px 50px;
+
+    &::before {
+      left: 0;
+      top: 0;
+      position: absolute;
+      z-index: 10;
+      padding: 16px 20px;
+      background: #ECF9FF;
+      border-radius: 10px;
+      color: #0097DB;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 13px;
+
+      span {
+        color: #0097DB;
+        font-size: 13px;
+      }
+    }
   }
 }

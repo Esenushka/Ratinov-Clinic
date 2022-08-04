@@ -29,14 +29,12 @@ const Header = () => {
             </div>
             <div className={styles.headerBottom}>
               <div className={styles.headerBottomLeft}>
-                <div>
+                <Link to="/">
                   <img src="/images/LogoImg.svg" alt="logo" />
                   <img src="/images/LogoText.svg" alt="logo" />
-                </div>
-                <span>
-                  Услуги <img alt="select" src="/images/SelectArrow.svg" />
-                </span>
-                <Link to="/">Специалисты</Link>
+                </Link>
+                <Link to="/services">Услуги</Link>
+                <Link to="/doctors">Специалисты</Link>
                 <Link to="/">Результаты</Link>
                 <Link to="/">Цены</Link>
                 <span>
