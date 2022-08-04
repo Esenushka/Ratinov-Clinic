@@ -10,6 +10,7 @@ import ServicesPage from './pages/ServicesPage';
 import MassagePage from './pages/services/MassagePage';
 import PhysiotherapyPage from './pages/services/PhysiotherapyPage';
 import StocksPage from './pages/StocksPage';
+import RehabilitationPage from './pages/services/RehabilitationPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/services/massage" element={<MassagePage />}></Route>
         <Route path="/services/physiotherapy" element={<PhysiotherapyPage />}></Route>
         <Route path="/services/stocks" element={<StocksPage />}></Route>
+        <Route path="/services/rehabilitation" element={<RehabilitationPage />}></Route>
       </Routes>
     </>
   );
