@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
+import { db } from "../../config/firebase";
 import css from "./Comment.module.scss"
-import { commentList } from "../../constants/commentList";
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
 import { Link } from "react-router-dom";
@@ -39,6 +40,20 @@ const CommentBlock = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
+
+  const [comments, setComments] = useState([])
+  useEffect(() => {
+    db.collection("comments")
+      .get()
+      .then((snapshot) => {
+        const commentsArr = []
+        snapshot.forEach((doc) => {
+          commentsArr.push({ ...doc.data(), id: doc.id });
+        })
+        setComments(commentsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
+      })
+  }, []);
+
   return (
     <div className={css.comment_block}>
       <div className={css.bg_block}>
@@ -52,7 +67,7 @@ const CommentBlock = () => {
         </div>
         <Slider className={`${css.slider} comment_slider`} {...settings} >
           {
-            commentList.map((e) => (
+            comments.map((e) => (
               <CommentCard key={e.id} {...e} />
             ))
           }
