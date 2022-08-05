@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import styles from './Header.module.scss';
+import { Link } from "react-router-dom";
+import styles from "./Header.module.scss";
 
 const Header = () => {
   return (
@@ -12,18 +12,20 @@ const Header = () => {
                 <Link to="/">О клинике</Link>
                 <Link to="/">Информация для пациентов</Link>
                 <Link to="/">Обучение</Link>
-                <Link to="/">Отзывы</Link>
+                <Link to="/comment">Отзывы</Link>
               </div>
               <div className={styles.headerTopRight}>
                 <span>
-                  <img src="/images/HeaderCalendar.svg" alt="calendar" /> ПН - СБ: 8:00 -
-                  20:00
+                  <img src="/images/HeaderCalendar.svg" alt="calendar" /> ПН -
+                  СБ: 8:00 - 20:00
                 </span>
                 <a href="tel: + 996 (501) 420 420">
-                  <img src="/images/HeaderPhone.svg" alt="calendar" /> + 996 (501) 420 420
+                  <img src="/images/HeaderPhone.svg" alt="calendar" /> + 996
+                  (501) 420 420
                 </a>
                 <a href="tel: + 996( 555) 142 020">
-                  <img src="/images/HeaderPhone.svg" alt="calendar" />+ 996( 555) 142 020
+                  <img src="/images/HeaderPhone.svg" alt="calendar" />+ 996(
+                  555) 142 020
                 </a>
               </div>
             </div>
@@ -36,7 +38,7 @@ const Header = () => {
                 <Link to="/services">Услуги</Link>
                 <Link to="/doctors">Специалисты</Link>
                 <Link to="/">Результаты</Link>
-                <Link to="/">Цены</Link>
+                <Link to="/price">Цены</Link>
                 <span>
                   Ещё <img alt="select" src="/images/SelectArrow.svg" />
                 </span>
