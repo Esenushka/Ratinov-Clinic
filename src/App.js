@@ -13,6 +13,8 @@ import MassagePage from './pages/services/MassagePage';
 import PhysiotherapyPage from './pages/services/PhysiotherapyPage';
 import StocksPage from './pages/StocksPage';
 import BotulinumPage from './pages/services/BotulinumPage';
+import RehabilitationPage from './pages/services/RehabilitationPage';
+import TherapeuticPage from './pages/services/TherapeuticPage';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/services/physiotherapy" element={<PhysiotherapyPage />}></Route>
         <Route path="/services/stocks" element={<StocksPage />}></Route>
         <Route path="/services/botulinum" element={<BotulinumPage />}></Route>
+        <Route path="/services/rehabilitation" element={<RehabilitationPage />}></Route>
+        <Route path="/services/therapeutic" element={<TherapeuticPage />}></Route>
       </Routes>
     </>
   );
