@@ -12,6 +12,7 @@ import Price from './pages/Price';
 import MassagePage from './pages/services/MassagePage';
 import PhysiotherapyPage from './pages/services/PhysiotherapyPage';
 import StocksPage from './pages/StocksPage';
+import TherapeuticPage from './pages/services/TherapeuticPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/services/massage" element={<MassagePage />}></Route>
         <Route path="/services/physiotherapy" element={<PhysiotherapyPage />}></Route>
         <Route path="/services/stocks" element={<StocksPage />}></Route>
+        <Route path="/services/therapeutic" element={<TherapeuticPage />}></Route>
       </Routes>
     </>
   );
