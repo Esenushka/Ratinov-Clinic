@@ -10,8 +10,8 @@ export default function Select({ doctors }) {
   const paramArr = Object.keys(fromEntries);
   const handleChange = (e, proffesion, type) => {
     type ? navigate("/doctors") : e.target.checked
-      ? navigate(`${location.pathname} ? ${proffesion} & ${(paramArr.map((param) => param + "&").join(""))}`)
-      : navigate(`${location.pathname} ? ${(paramArr.filter((param) => param !== proffesion).map((param) => param + "&").join(""))}`)
+      ? navigate(location.pathname + "?" + proffesion + "&" + (paramArr.map((param) => param + "&").join("")))
+      : navigate(location.pathname + "?" + (paramArr.filter((param) => param !== proffesion).map((param) => param + "&").join("")))
   }
   return (
     <div className="select_wrapper">
