@@ -37,7 +37,7 @@ const Header = () => {
                 </Link>
                 <Link to="/services">Услуги</Link>
                 <Link to="/doctors">Специалисты</Link>
-                <Link to="/">Результаты</Link>
+                <Link to="/result">Результаты</Link>
                 <Link to="/price">Цены</Link>
                 <span>
                   Ещё <img alt="select" src="/images/SelectArrow.svg" />
