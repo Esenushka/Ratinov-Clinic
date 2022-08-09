@@ -26,10 +26,6 @@
 
   .right {
     width: 30%;
-    a{
-      position: absolute;
-      right: 0;
-    }
   }
 }
 
@@ -55,7 +51,7 @@
 }
 
 .before_after_wrapper {
-  margin-top: 165px;
+  margin-top: 130px;
   display: flex;
   flex-direction: column;
   grid-gap: 20px;
@@ -135,15 +131,16 @@
   transform: rotate(-15deg);
   z-index: -1;
   opacity: 0.3;
-  right: -30%;
+  right: -40%;
   top: -25px;
 
   img {
     position: relative;
     transform: rotate(15deg);
     left: -100px;
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
   }
 }
 

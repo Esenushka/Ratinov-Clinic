@@ -62,7 +62,7 @@ const DoctorSlider = () => {
       </Slider>
       <Link to="/doctors">
         <div className={css.all_doc}>
-          <img src="/images/arrow.svg" alt="select-arrow" />
+          <img src="/images/slider-arrow.svg" alt="select-arrow" />
           Показать всех специалистов
         </div>
       </Link>

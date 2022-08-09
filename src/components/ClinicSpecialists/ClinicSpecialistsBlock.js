@@ -10,7 +10,9 @@ export const ClinicSpecialistsBlock = () => {
           <p>
             <b>Специалисты </b>клиники
           </p>
-          <button className="btn btn-big-bg">Записаться на приём</button>
+          <Link to={"/consultation"}>
+            <button className="btn btn-big-bg">Записаться на приём</button>
+          </Link>
           <div className={styles.clinicBlockCard}>
             {clinicSpecialistsInfo.map((clinic) => (
               <div key={clinic.id}>

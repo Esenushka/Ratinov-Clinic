@@ -31,7 +31,7 @@ export default function YouTubeSlider() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 5,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,

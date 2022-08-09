@@ -58,7 +58,7 @@ const CallMe = () => {
                 required
               />
             </div>
-            <Link to={"/"}><button className={css.btn}>Записаться на приём</button></Link>
+            <Link to={"/consultation"}><button className="btn btn-big-bg">Записаться на приём</button></Link>
           </div>
           <span className={css.bottom}>Нажимая на кнопку "Заказать звонок", я подтверждаю, что ознакомлен и согласен с условиями <Link to={"/"}>политики конфиденциальности</Link>  и <Link to={"/"}> правилами обработки персональных данных</Link></span>
         </div>

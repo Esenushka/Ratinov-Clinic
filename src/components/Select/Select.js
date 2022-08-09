@@ -17,7 +17,7 @@ export default function Select({ doctors }) {
     <div className="select_wrapper">
       <span className={"select" + (active ? " active" : "")} onClick={() => setActive(!active)}>
         <p>Специализация</p>
-        <img src="/images/arrow.svg" alt="Стрелка" />
+        <img src="/images/slider-arrow.svg" alt="Стрелка" />
       </span>
       <div className={`checkboxs ${active ? "active" : ""}`}>
         {doctors.map((el) =>

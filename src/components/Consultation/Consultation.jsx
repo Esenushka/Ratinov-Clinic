@@ -1,4 +1,5 @@
 import css from './Consultation.module.scss';
+import { Link } from "react-router-dom";
 
 const Consultaition = () => {
   return (
@@ -9,7 +10,9 @@ const Consultaition = () => {
             <span><span className={css.b}>Получить</span> онлайн-консультацию</span>
             <p>Предварительная дистанционная консультация из которой вы узнаете о прогнозах вашего лечения в нашей клинике</p>
           </div>
-          <button className='btn-big-bg btn'>Получить консультацию</button>
+          <Link to={"/consultation"}>
+            <button className='btn-big-bg btn'>Получить консультацию</button>
+          </Link>
         </div>
       </div>
     </div>
