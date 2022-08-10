@@ -95,7 +95,7 @@ export default function FAQCard({ title, buttons, info, type }) {
             }
           >
             {buttons.map((el) => (
-              <Link key={el.id} to={el.path}>
+              <Link key={el.id} to={"/doctors?" + el.path + "&"}>
                 <button className="btn btn-small">{el.btn}</button>
               </Link>
             ))}

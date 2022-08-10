@@ -1,6 +1,6 @@
 export const result = [
   {
-    img: "/images/result1.svg",
+    img: "/images/result1.png",
     number: 1,
     before: [
       {
@@ -26,7 +26,7 @@ export const result = [
     id: 1
   },
   {
-    img: "/images/result1.svg",
+    img: "/images/result1.png",
     number: 2,
 
     before: [
@@ -53,7 +53,7 @@ export const result = [
     id: 2
   },
   {
-    img: "/images/result1.svg",
+    img: "/images/result1.png",
     before: [
       {
         text: "Онемение руки, боль в плече, приступы головной боли.",
@@ -79,7 +79,7 @@ export const result = [
     id: 3
   },
   {
-    img: "/images/result1.svg",
+    img: "/images/result1.png",
     number: 4,
     before: [
       {
