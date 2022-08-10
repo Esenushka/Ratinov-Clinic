@@ -1,20 +1,6 @@
-import { useEffect, useState } from "react"
-import { db } from "../../config/firebase"
 import scss from "./Physiotherapy.module.scss"
 
-export default function Physiotherapy() {
-  const [physiotherapy, setPhysiotherapy] = useState([]);
-  useEffect(() => {
-    db.collection("physiotherapy")
-      .get()
-      .then((snapshot) => {
-        const physiotherapyArr = []
-        snapshot.forEach((doc) => {
-          physiotherapyArr.push({ ...doc.data(), id: doc.id })
-        })
-        setPhysiotherapy(physiotherapyArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)));
-      });
-  }, []);
+export default function Physiotherapy({physiotherapy}) {
   return (
     <div className={"container " + scss.wrapper}>
       <div className={scss.blocks_wrapper}>

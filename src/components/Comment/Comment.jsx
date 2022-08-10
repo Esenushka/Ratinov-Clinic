@@ -1,21 +1,7 @@
-import { useEffect, useState } from "react";
-import { db } from "../../config/firebase";
 import css from "./Comment.module.scss"
 import { Link } from "react-router-dom";
 
-export default function Comment() {
-  const [comments, setComments] = useState([])
-  useEffect(() => {
-    db.collection("comments")
-      .get()
-      .then((snapshot) => {
-        const commentsArr = []
-        snapshot.forEach((doc) => {
-          commentsArr.push({ ...doc.data(), id: doc.id });
-        })
-        setComments(commentsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-      })
-  }, []);
+export default function Comment({comments}) {
   return (
     <div className={css.wrapper}>
       <div className={css.bg}>

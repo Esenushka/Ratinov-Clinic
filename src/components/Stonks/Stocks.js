@@ -1,20 +1,6 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { db } from "../../config/firebase";
 import scss from "./Stocks.module.scss"
-export default function Stocks() {
-  const [stocks, setStocks] = useState([]);
-  useEffect(() => {
-    db.collection("stock")
-      .get()
-      .then((snapshot) => {
-        const stocksArr = [];
-        snapshot.forEach((doc) => {
-          stocksArr.push({ ...doc.data(), id: doc.id });
-        });
-        setStocks(stocksArr);
-      });
-  }, [])
+export default function Stocks({stocks}) {
 
   return (
     <div className={scss.main_wrapper}>

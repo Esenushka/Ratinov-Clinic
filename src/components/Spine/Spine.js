@@ -1,21 +1,7 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { db } from "../../config/firebase";
 import scss from "./Spine.module.scss";
 
-export default function Spine() {
-  const [infoList, setInfoList] = useState([]);
-  useEffect(() => {
-    db.collection("spine")
-      .get()
-      .then((snapshot) => {
-        const infoArr = []
-        snapshot.forEach((doc) => {
-          infoArr.push({ ...doc.data(), id: doc.id })
-        })
-        setInfoList(infoArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-      })
-  }, []);
+export default function Spine({infoList}) {
   return (
     <div className={scss.wrapper_bg}>
       <div className={scss.bg}>

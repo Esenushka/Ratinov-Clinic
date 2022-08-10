@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import CallMe from "../components/CallMe/CallMe";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import Preloader from "../components/Preloader/Preloader";
 import PriceCard from "../components/Price/PriceCard";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
 
 export default function Price() {
   const [price, setComments] = useState([])
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     db.collection("price")
       .get()
@@ -17,8 +19,12 @@ export default function Price() {
           priceArr.push({ ...doc.data(), id: doc.id });
         })
         setComments(priceArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
+        setLoading(false)
       })
   }, []);
+  if (loading) {
+    return <Preloader />
+  }
   return (
     <div>
       <Header />
