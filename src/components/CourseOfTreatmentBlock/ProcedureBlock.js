@@ -1,14 +1,28 @@
-import { procedureList } from "../../constants/procedureList"
+import { useEffect, useState } from "react"
+import { db } from "../../config/firebase";
 import scss from "./CourseOfTreatmentBlock.module.scss"
 
-export default function ProcedureBlock({col}) {
+export default function ProcedureBlock({ col }) {
+  const [procedure, setProcedure] = useState([]);
+  useEffect(() => {
+    db.collection("procedure")
+      .orderBy("pos", "asc")
+      .get()
+      .then((snapshot) => {
+        const procedureArr = [];
+        snapshot.forEach((doc) => {
+          procedureArr.push({ ...doc.data(), id: doc.id });
+        });
+        setProcedure(procedureArr);
+      });
+  }, []);
   return (
     <div className={scss.procedure_blocks_wrapper + " " + (col ? scss.col : "")}>
       {
-        procedureList.map((el) => <div className={scss.procedure_block} key={el.id}>
-          <h3>{el.title}</h3>
-          <p>{el.info}</p>
-          <span>{el.procedures}</span>
+        procedure.map((info) => <div className={scss.procedure_block} key={info.id}>
+          <h3>{info.title}</h3>
+          <p>{info.info}</p>
+          <span>{info.procedures}</span>
         </div>)
       }
     </div>
