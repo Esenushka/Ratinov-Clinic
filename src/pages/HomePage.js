@@ -13,23 +13,86 @@ import Footer from "../components/Footer/Footer";
 import ResultsSlider from "../components/ResultsSlider/ResultsSlider";
 import { ClinicSpecialistsBlock } from "../components/ClinicSpecialists/ClinicSpecialistsBlock";
 import About from "../components/Consultation/About";
+import { useEffect, useState } from "react";
+import { db } from "../config/firebase";
+import Preloader from "../components/Preloader/Preloader";
 
 export default function HomePage() {
+  const [about, setAbout] = useState([]);
+  const [specialists, setSpecialists] = useState([]);
+  const [doctors, setDoctors] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [faq, setFaq] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    db.collection("about")
+      .get()
+      .then((snapshot) => {
+        const aboutArr = [];
+        snapshot.forEach((doc) => {
+          aboutArr.push({ ...doc.data(), id: doc.id });
+        })
+        setAbout(aboutArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
+      });
+    db.collection("clinicSpecialists")
+      .orderBy("pos", "asc")
+      .get()
+      .then((snapshot) => {
+        const specialistsArr = [];
+        snapshot.forEach((doc) => {
+          specialistsArr.push({ ...doc.data(), id: doc.id });
+        });
+        setSpecialists(specialistsArr)
+      });
+    db.collection("doctors")
+      .get()
+      .then((snapshot) => {
+        const doctorsArr = []
+        snapshot.forEach((doc) => {
+          doctorsArr.push({ ...doc.data(), id: doc.id });
+        })
+        setDoctors(doctorsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
+      });
+    db.collection("comments")
+      .get()
+      .then((snapshot) => {
+        const commentsArr = []
+        snapshot.forEach((doc) => {
+          commentsArr.push({ ...doc.data(), id: doc.id });
+        })
+        setComments(commentsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
+      });
+    db.collection("faq")
+      .orderBy("pos", "asc")
+      .get()
+      .then((snapshot) => {
+        const faqArr = [];
+        snapshot.forEach((doc) => {
+          faqArr.push({ ...doc.data(), id: doc.id });
+        });
+        setFaq(faqArr);
+        setLoading(false);
+      });
+  }, []);
+  if (loading) {
+    return <Preloader />
+  }
   return (
     <div>
       <Header />
       <MainSlider />
       <Consultaition />
-      <About />
+      <About about={about} />
       <TreatBlock />
       <OwnerBlock />
       <YouTubeSlider />
       <ResultsSlider />
       <CourseOfTreatmentBlock />
-      <ClinicSpecialistsBlock />
-      <DoctorSlider />
-      <CommentBlock />
-      <FAQ />
+      <ClinicSpecialistsBlock specialists={specialists} />
+      <DoctorSlider doctors={doctors} />
+      <CommentBlock comments={comments} />
+      <FAQ faq={faq} />
       <CallMe />
       <Footer />
     </div>

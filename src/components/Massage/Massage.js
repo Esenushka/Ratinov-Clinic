@@ -1,20 +1,7 @@
-import { useEffect, useState } from "react"
-import { db } from "../../config/firebase";
 import scss from "./Massage.module.scss"
 
-export default function Massage() {
-  const [massage, setMassage] = useState([]);
-  useEffect(() => {
-    db.collection("massage")
-      .get()
-      .then((snapshot) => {
-        const massageArr = [];
-        snapshot.forEach((doc) => {
-          massageArr.push({ ...doc.data(), id: doc.id })
-        })
-        setMassage(massageArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-      })
-  }, [])
+export default function Massage({massage}) {
+
   return (
     <div className={scss.wrapper}>
       <div className={scss.bg}>

@@ -1,20 +1,7 @@
-import { useEffect, useState } from 'react';
-import { db } from '../../config/firebase';
 import css from './Consultation.module.scss';
 
-export default function About() {
-  const [about, setAbout] = useState([]);
-  useEffect(() => {
-    db.collection("about")
-      .get()
-      .then((snapshot) => {
-        const aboutArr = [];
-        snapshot.forEach((doc) => {
-          aboutArr.push({ ...doc.data(), id: doc.id });
-        })
-        setAbout(aboutArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-      });
-  }, []);
+export default function About({about}) {
+  
   return (
     <div id="about" className={`${css.about} container`}>
       <h1>О НАШЕЙ КЛИНИКЕ</h1>

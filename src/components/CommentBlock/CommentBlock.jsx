@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { db } from "../../config/firebase";
 import css from "./Comment.module.scss"
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
@@ -30,7 +28,7 @@ function SamplePrevArrow(props) {
 }
 
 
-const CommentBlock = () => {
+const CommentBlock = ({comments}) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -41,18 +39,6 @@ const CommentBlock = () => {
     prevArrow: <SamplePrevArrow />,
   };
 
-  const [comments, setComments] = useState([])
-  useEffect(() => {
-    db.collection("comments")
-      .get()
-      .then((snapshot) => {
-        const commentsArr = []
-        snapshot.forEach((doc) => {
-          commentsArr.push({ ...doc.data(), id: doc.id });
-        })
-        setComments(commentsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-      })
-  }, []);
   return (
     <div className={css.comment_block}>
       <div className={css.bg_block}>
