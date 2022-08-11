@@ -1,103 +1,104 @@
-.therap{
+.therap {
   width: 100vw;
   position: relative;
   overflow: hidden;
 
-.main_bg {
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  margin-bottom: 80px;
-  grid-gap: 50px;
-
-  &::before {
-    content: "";
-    background: url("https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F56890d3d9445bfaa9e863dc98daf01f0.svg?alt=media&token=a00c729f-c780-477c-9d0f-4b3af0a03488");
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    opacity: 0.5;
-  }
-
-  p {
-    width: 65%;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-
-    span {
-      font-weight: 700;
-      font-size: 20px;
-    }
-  }
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 3em;
-  margin-bottom: 80px;
-  position: relative;
-
-  .block {
+  .main_bg {
+    height: 50vh;
     display: flex;
     flex-direction: column;
-    grid-gap: 1.5em;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 80px;
+    grid-gap: 50px;
 
-    .title {
-      text-transform: uppercase;
-      font-weight: 400;
-      font-size: 40px;
-      line-height: 49px;
-
-      span {
-        font-size: 40px;
-        line-height: 49px;
-      }
-    }
-
-    span {
-      font-weight: 700;
-      font-size: 16px;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.5;
+      left: 0;
+      top: 0;
     }
 
     p {
+      width: 65%;
+      font-size: 20px;
+      line-height: 24px;
       font-weight: 400;
-      font-size: 16px;
-      line-height: 20px;
-    }
+      text-transform: uppercase;
+      margin-bottom: 40px;
 
-    .list {
+      span {
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 3em;
+    margin-bottom: 80px;
+    position: relative;
+
+    .block {
       display: flex;
       flex-direction: column;
       grid-gap: 1.5em;
-      width: 700px;
 
-      ul {
-        margin-left: 50px;
-        display: flex;
-        flex-direction: column;
-        grid-gap: 5px;
+      .title {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 49px;
 
-        li {
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 20px;
+        span {
+          font-size: 40px;
+          line-height: 49px;
         }
       }
-    }
 
-    button {
-      width: fit-content;
+      span {
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 1.5em;
+        width: 700px;
+
+        ul {
+          margin-left: 50px;
+          display: flex;
+          flex-direction: column;
+          grid-gap: 5px;
+
+          li {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+      }
+
+      button {
+        width: fit-content;
+      }
     }
   }
-}
+
   &::before {
     content: "";
     background: #E4F6FF;

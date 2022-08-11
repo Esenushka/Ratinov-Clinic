@@ -11,19 +11,20 @@ import CommentBlock from "../components/CommentBlock/CommentBlock";
 import CallMe from "../components/CallMe/CallMe";
 import Footer from "../components/Footer/Footer";
 import ResultsSlider from "../components/ResultsSlider/ResultsSlider";
-import { ClinicSpecialistsBlock } from "../components/ClinicSpecialists/ClinicSpecialistsBlock";
+import ClinicSpecialistsBlock from "../components/ClinicSpecialists/ClinicSpecialistsBlock";
 import About from "../components/Consultation/About";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { db } from "../config/firebase";
 import Preloader from "../components/Preloader/Preloader";
 
-export default function HomePage() {
+export default React.memo(function HomePage() {
   const [about, setAbout] = useState([]);
   const [specialists, setSpecialists] = useState([]);
   const [doctors, setDoctors] = useState([]);
   const [comments, setComments] = useState([]);
   const [faq, setFaq] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingImage, setLoadingImage] = useState(true);
 
   useEffect(() => {
     db.collection("about")
@@ -72,14 +73,12 @@ export default function HomePage() {
           faqArr.push({ ...doc.data(), id: doc.id });
         });
         setFaq(faqArr);
-        setLoading(false);
+        setLoading(false)
       });
   }, []);
-  if (loading) {
-    return <Preloader />
-  }
   return (
     <div>
+      <Preloader loadingImage={loadingImage} loading={loading} />
       <Header />
       <MainSlider />
       <Consultaition />
@@ -91,10 +90,11 @@ export default function HomePage() {
       <CourseOfTreatmentBlock />
       <ClinicSpecialistsBlock specialists={specialists} />
       <DoctorSlider doctors={doctors} />
-      <CommentBlock comments={comments} />
+      <CommentBlock setLoadingImage={setLoadingImage} comments={comments} />
       <FAQ faq={faq} />
       <CallMe />
       <Footer />
     </div>
   )
 }
+)

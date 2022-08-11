@@ -1,11 +1,16 @@
 import css from "./Comment.module.scss"
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
-export default function Comment({comments}) {
+export default memo(function Comment({ setLoadingImage, comments }) {
   return (
     <div className={css.wrapper}>
       <div className={css.bg}>
-        <img src="/images/comment-back.svg" alt="Background for CommentPage" />
+        <img
+          onLoad={() => setLoadingImage(false)}
+          src="/images/comment-back.svg"
+          alt="Background for CommentPage"
+        />
         <div className={css.color}></div>
       </div >
       <div className={`${css.comment} container`}>
@@ -29,4 +34,4 @@ export default function Comment({comments}) {
       </div>
     </div>
   )
-}
+})

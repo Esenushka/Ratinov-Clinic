@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import scss from "./ResultsSlider.module.scss"
 import { Link } from "react-router-dom"
 import { result } from "../../constants/results";
-import { useState } from "react";
+import { memo, useState } from "react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -28,7 +28,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function ResultsSlider() {
+export default memo(function ResultsSlider() {
   const [activeSlide, setActiveSlide] = useState(0);
   const settings = {
     dots: true,
@@ -96,4 +96,4 @@ export default function ResultsSlider() {
       </span>
     </div>
   )
-}
+})

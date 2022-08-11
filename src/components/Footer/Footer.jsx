@@ -1,5 +1,6 @@
 import css from "./Footer.module.scss"
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
 const Footer = () => {
     return (
@@ -49,4 +50,4 @@ const Footer = () => {
     );
 }
 
-export default Footer;
+export default memo(Footer);

@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ClinicSpecialistsBlock.module.scss';
 
-export const ClinicSpecialistsBlock = ({specialists}) => {  
+export default memo(function ClinicSpecialistsBlock ({specialists}) {  
   return (
     <div className={styles.clinicWrapper}>
       <div className="container">
@@ -34,4 +35,4 @@ export const ClinicSpecialistsBlock = ({specialists}) => {
       </div>
     </div>
   );
-};
+})

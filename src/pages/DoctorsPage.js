@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import CallMe from "../components/CallMe/CallMe";
 import DoctorsCard from "../components/DoctorsCard/DoctorsCard";
@@ -9,9 +9,10 @@ import Select from "../components/Select/Select";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
 
-export default function DoctorsPage() {
+export default React.memo(function DoctorsPage() {
   const [doctors, setDoctors] = useState([])
   const [loading, setLoading] = useState(true);
+  const [loadingImage, setLoadingImage] = useState(true);
   const location = useLocation();
   const paramEntries = new URLSearchParams(location.search).entries()
   const fromEntries = Object.fromEntries(paramEntries)
@@ -28,11 +29,9 @@ export default function DoctorsPage() {
         setLoading(false)
       })
   }, []);
-  if (loading) {
-    return <Preloader />
-  }
   return (
     <div>
+      <Preloader loading={loading} loadingImage={loadingImage}/>
       <Header />
       <TopBlock path={"Специалисты клиники"} text={"клиники"} bold={"Специалисты"} />
       <div className="container doctors-page_wrapper">
@@ -41,10 +40,10 @@ export default function DoctorsPage() {
           {
             doctors.map((doctor) =>
               paramArr.length === 0 ?
-                <DoctorsCard key={doctor.id} {...doctor} /> :
+                <DoctorsCard setLoadingImage={setLoadingImage} key={doctor.id} {...doctor} /> :
                 paramArr.some((param) =>
                   doctor.post.includes(param)) ?
-                  <DoctorsCard key={doctor.id} {...doctor} /> : "")
+                  <DoctorsCard setLoadingImage={setLoadingImage} key={doctor.id} {...doctor} /> : "")
           }
         </div>
       </div>
@@ -52,4 +51,4 @@ export default function DoctorsPage() {
       <Footer />
     </div>
   )
-}
+})

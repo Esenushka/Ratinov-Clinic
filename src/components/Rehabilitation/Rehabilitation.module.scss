@@ -6,17 +6,15 @@
   position: relative;
   margin-bottom: 80px;
 
-  &::before {
-    content: "";
-    background: url("https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F56890d3d9445bfaa9e863dc98daf01f0.png?alt=media&token=90526426-4fa8-4e66-9391-bfb16f5ddccd");
+  img {
     position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: -1;
     opacity: 0.5;
+    left: 0;
+    top: 0;
   }
 
   p {

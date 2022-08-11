@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import scss from './TreatBlock.module.scss'
 
-export default function TreatBlock() {
+export default memo(function TreatBlock() {
   return (
     <div className={scss.wrapper}>
       <div className='container'>
@@ -30,4 +31,4 @@ export default function TreatBlock() {
       </div>
     </div>
   )
-}
+})

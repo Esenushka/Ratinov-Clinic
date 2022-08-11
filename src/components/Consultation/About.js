@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import css from './Consultation.module.scss';
 
-export default function About({about}) {
+export default memo(function About({about}) {
   
   return (
     <div id="about" className={`${css.about} container`}>
@@ -26,4 +27,4 @@ export default function About({about}) {
       </div>
     </div>
   )
-}
+})

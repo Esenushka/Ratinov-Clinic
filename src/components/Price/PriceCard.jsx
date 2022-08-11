@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import css from "./PriceCard.module.scss"
 
-export default function PriceCard({ list, group }) {
+export default memo(function PriceCard({ list, group }) {
   const [active, setActive] = useState(false);
 
     return (
@@ -26,4 +26,4 @@ export default function PriceCard({ list, group }) {
             </div>
         </div>
     )
-}
+})

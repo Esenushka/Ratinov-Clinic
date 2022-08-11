@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import ProcedureBlock from "../CourseOfTreatmentBlock/ProcedureBlock";
 import scss from "./FAQ.module.scss";
 
-export default function FAQCard({ title, buttons, info, type }) {
+export default memo(function FAQCard({ title, buttons, info, type }) {
   const [active, setActive] = useState(false);
 
   return (
@@ -106,4 +106,4 @@ export default function FAQCard({ title, buttons, info, type }) {
       </div>
     </div>
   );
-}
+})

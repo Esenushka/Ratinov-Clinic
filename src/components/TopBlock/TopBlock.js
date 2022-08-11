@@ -1,6 +1,7 @@
+import { memo } from "react"
 import scss from "./TopBlock.module.scss"
 
-export default function TopBlock({ text, bold, reverse, path, secondPath }) {
+export default memo(function TopBlock({ text, bold, reverse, path, secondPath }) {
   return (
     <>
       <div className={scss.wrapper}>
@@ -20,4 +21,4 @@ export default function TopBlock({ text, bold, reverse, path, secondPath }) {
       </div>
     </>
   )
-}
+})
