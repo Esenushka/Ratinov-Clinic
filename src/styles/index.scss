@@ -173,10 +173,10 @@
   border-radius: 10px;
   padding: 15px 30px;
   background: #0097db;
-  border: 1px solid #e3f4fb;
+  border: 1px solid white;
 
   &:hover {
-    background-color: #e3f4fb;
+    background-color: white;
     color: #0097db;
   }
 }
@@ -243,9 +243,11 @@
     border-top: 2px solid #979797;
 
     img {
-      transform: scale(1, -1);
+      transform: rotate(90deg);
       transition: 0.5s;
       filter: invert(68%) sepia(0%) saturate(7%) hue-rotate(157deg) brightness(89%) contrast(86%);
+      width: 15px;
+      height: 15px;
     }
 
     &.active {
@@ -254,7 +256,7 @@
 
       img {
         filter: none;
-        transform: scale(1);
+        transform: rotate(90deg) scale(-1, 1);
       }
     }
   }
@@ -276,7 +278,7 @@
 }
 
 .doctor_slider {
-  
+
   .slick-arrow {
     width: 15px;
     height: 15px;
@@ -391,6 +393,7 @@
       z-index: -1;
       filter: blur(5px);
       font-weight: 600;
+      transition: .4s;
     }
 
     .slick-current+div {
@@ -422,6 +425,7 @@
 
 .result_slider {
   position: relative;
+
   .slick-dots {
     left: -80px;
 
@@ -487,21 +491,25 @@
     filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(170%) contrast(101%);
   }
 }
-.doctors-page_wrapper{
+
+.doctors-page_wrapper {
   display: flex;
   justify-content: space-between;
-  .doctors_wrapper{
+
+  .doctors_wrapper {
     display: flex;
     width: 75%;
     flex-wrap: wrap;
     grid-gap: 40px;
   }
 }
-.services_wrapper{
+
+.services_wrapper {
   display: flex;
   flex-wrap: wrap;
   grid-gap: 30px;
 }
+
 .page-blocks_wrapper {
   display: flex;
   flex-wrap: wrap;

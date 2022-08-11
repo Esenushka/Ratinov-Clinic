@@ -30,5 +30,10 @@
         align-items: center;
         justify-content: center;
         grid-gap: 0.5em;
+        img{
+            transform: rotate(90deg);
+            width: 15px;
+            height: 15px;
+        }
     }
 }

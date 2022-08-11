@@ -33,7 +33,7 @@ export default function CourseOfTreatmentBlock() {
           Мы создаем необходимые условия, чтобы запустить и  ускорить процесс резорбции, применяя комплексную физиотерапию:
         </h2>
         <ProcedureBlock col={false}/>
-        <Link className={scss.btn} to="/">
+        <Link className={scss.btn} to="/consultation">
           <button className="btn btn-big-bg">Записаться на приём</button>
         </Link>
       </div>

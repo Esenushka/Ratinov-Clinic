@@ -5,7 +5,7 @@
 .consultation {
   position: relative;
   height: 45vh;
-  background-image: url("../../../public/images/consultation.svg");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fconsultation.svg?alt=media&token=f90529de-2f00-4f42-8dbd-513758882a63");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -70,7 +70,6 @@
       display: flex;
       grid-gap: 1.5em;
       flex-direction: column;
-
       img {
         width: 70px;
       }

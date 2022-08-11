@@ -3,7 +3,7 @@ import scss from "./Therapeutic.module.scss";
 
 export default function Therapeutic() {
   return (
-    <>
+    <div className={scss.therap}>
       <div className={scss.main_bg}>
         <div className="container">
           <p>
@@ -55,6 +55,6 @@ export default function Therapeutic() {
           </Link>
         </div>
       </section>
-    </>
+    </div>
   )
 }

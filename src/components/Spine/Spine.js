@@ -19,7 +19,10 @@ export default function Spine() {
   return (
     <div className={scss.wrapper_bg}>
       <div className={scss.bg}>
-        <img src="/images/spine-bg.png" alt="Задний блок" />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fspine-bg.png?alt=media&token=b2881cab-f1cf-4306-bf62-e832abe459be"
+          alt="Задний блок"
+        />
       </div>
       <div className={"container " + scss.wrapper}>
         <h1>Как проходит лечение грыж <span>без операции</span></h1>

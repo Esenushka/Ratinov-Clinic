@@ -1,4 +1,4 @@
-import css from "../components/Result/Result.module.scss"
+import scss from "../components/Result/Result.module.scss"
 import CallMe from "../components/CallMe/CallMe"
 import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
@@ -9,6 +9,17 @@ import ResultCard from "../components/Result/ResultCard"
 
 export default function ResultPage() {
   const [result, setResult] = useState([])
+  const [filtered, setFiltered] = useState([result])
+
+  function resultFilter(type) {
+    if (type === 'all') {
+      setFiltered(result)
+    } else {
+      const newResult = [...result].filter(e => e.type === type)
+      setFiltered(newResult)
+    }
+  }
+
   useEffect(() => {
     db.collection("result")
       .get()
@@ -24,12 +35,24 @@ export default function ResultPage() {
     <div>
       <Header />
       <TopBlock path={'Результаты'} bold={'Результаты'} />
-      <div className={`container ${css.result__wrapper}`} >
-        {
-          result.map((e) => (
-            <ResultCard  key={e.id} {...e} />
-          ))
-        }
+      <div className={`container ${scss.result__wrapper}`} >
+        <div className={scss.title}>
+          <p>Это результаты лечения наших пациентов.</p>
+          <span>Вдохновляют и дарят надежду!</span>
+        </div>
+        <div className={scss.btn__group}>
+          <button className="btn btn-small" onClick={() => resultFilter('all')}>Все</button>
+          <button className="btn btn-small" onClick={() => resultFilter('neck')}>Шейный отдел</button>
+          <button className="btn btn-small" onClick={() => resultFilter('lumbar')}>Поясничный отдел</button>
+        </div>
+        <div className={scss.result}>
+          {
+            filtered.map((e) => (
+              <ResultCard key={e.id} {...e} />
+            ))
+          }
+
+        </div>
       </div>
       <CallMe />
       <Footer />

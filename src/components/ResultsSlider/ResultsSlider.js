@@ -89,7 +89,10 @@ export default function ResultsSlider() {
         </div>
       </div>
       <span className={scss.bg}>
-        <img src="/images/result-bg.svg" alt="Результат задний фон" />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/results%2Fresult-bg.png?alt=media&token=71ce467f-ba29-48ff-bfe2-80ea74a56453"
+          alt="Результат задний фон"
+        />
       </span>
     </div>
   )

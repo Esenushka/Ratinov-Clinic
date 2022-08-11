@@ -7,7 +7,6 @@ import Header from "../components/Header/Header";
 import Select from "../components/Select/Select";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
-import { proffesionList } from "../constants/proffesionList";
 
 export default function DoctorsPage() {
   const [doctors, setDoctors] = useState([])
@@ -31,7 +30,7 @@ export default function DoctorsPage() {
       <Header />
       <TopBlock path={"Специалисты клиники"} text={"клиники"} bold={"Специалисты"} />
       <div className="container doctors-page_wrapper">
-        <Select doctors={proffesionList} />
+        <Select/>
         <div className="doctors_wrapper">
           {
             doctors.map((doctor) =>
