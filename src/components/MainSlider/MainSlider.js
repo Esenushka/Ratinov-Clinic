@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import MainSliderCard from "./MainSliderCard";
 import scss from "./MainSlider.module.scss"
 import { Link } from "react-router-dom"
+import { memo } from "react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -27,7 +28,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function MainSlider() {
+export default memo(function MainSlider() {
   const settings = {
     dots: true,
     infinite: false,
@@ -64,4 +65,4 @@ export default function MainSlider() {
       </Slider>
     </div>
   )
-}
+})

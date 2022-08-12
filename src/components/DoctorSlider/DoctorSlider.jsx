@@ -2,6 +2,7 @@ import css from './Doctor.module.scss';
 import Slider from "react-slick";
 import { Link } from 'react-router-dom';
 import DoctorsCard from '../DoctorsCard/DoctorsCard';
+import { memo } from 'react';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -56,4 +57,4 @@ const DoctorSlider = ({doctors}) => {
   );
 }
 
-export default DoctorSlider;
+export default memo(DoctorSlider);

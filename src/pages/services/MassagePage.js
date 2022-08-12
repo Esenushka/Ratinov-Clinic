@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Consultaition from "../../components/Consultation/Consultation";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -7,9 +7,10 @@ import Preloader from "../../components/Preloader/Preloader";
 import TopBlock from "../../components/TopBlock/TopBlock";
 import { db } from "../../config/firebase";
 
-export default function MassagePage() {
+export default React.memo(function MassagePage() {
   const [massage, setMassage] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingImage, setLoadingImage] = useState(true);
   useEffect(() => {
     db.collection("massage")
       .get()
@@ -22,16 +23,14 @@ export default function MassagePage() {
         setLoading(false)
       })
   }, [])
-  if (loading) {
-    return <Preloader />
-  }
   return (
     <div>
+      <Preloader loadingImage={loadingImage} loading={loading} />
       <Header />
       <TopBlock bold="Массаж" path={"Услуги"} secondPath={"Массаж"} />
-      <Massage massage={massage}/>
+      <Massage setLoadingImage={setLoadingImage} massage={massage}/>
       <Consultaition />
       <Footer />
     </div>
   )
-}
+})

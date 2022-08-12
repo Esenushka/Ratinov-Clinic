@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import CallMe from "../components/CallMe/CallMe";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
@@ -7,9 +7,10 @@ import Stocks from "../components/Stonks/Stocks";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
 
-export default function StocksPage() {
+export default React.memo( function StocksPage() {
   const [stocks, setStocks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingImage, setLoadingImage] = useState(true);
   useEffect(() => {
     db.collection("stock")
       .get()
@@ -22,16 +23,14 @@ export default function StocksPage() {
         setLoading(false)
       });
   }, []);
-  if (loading) {
-    return <Preloader />
-  }
   return (
     <div>
+      <Preloader loadingImage={loadingImage} loading={loading}/>
       <Header />
       <TopBlock path={"Услугии"} secondPath={"Акции"} bold={"Акции"} />
-      <Stocks stocks={stocks} />
+      <Stocks setLoadingImage={setLoadingImage} stocks={stocks} />
       <CallMe />
       <Footer />
     </div>
   )
-}
+})

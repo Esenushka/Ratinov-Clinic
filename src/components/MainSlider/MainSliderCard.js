@@ -1,5 +1,6 @@
+import { memo } from "react"
 import scss from "./MainSlider.module.scss"
-export default function MainSliderCard() {
+export default memo(function MainSliderCard() {
   return (
     <div className={scss.card}>
       <div className={scss.right}>
@@ -9,4 +10,4 @@ export default function MainSliderCard() {
       </div>
     </div>
   )
-}
+})

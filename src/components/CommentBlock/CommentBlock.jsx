@@ -2,6 +2,7 @@ import css from "./Comment.module.scss"
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -28,7 +29,7 @@ function SamplePrevArrow(props) {
 }
 
 
-const CommentBlock = ({comments}) => {
+const CommentBlock = ({ comments, setLoadingImage }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -43,6 +44,7 @@ const CommentBlock = ({comments}) => {
     <div className={css.comment_block}>
       <div className={css.bg_block}>
         <img
+          onLoad={() => setLoadingImage(false)}
           src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fvrachi-izuchajut-analizy%202.png?alt=media&token=83a0e367-513b-4bc4-8b31-6a88b7ecea5e"
           alt="Врачи берут анализ"
         />
@@ -65,4 +67,4 @@ const CommentBlock = ({comments}) => {
   );
 }
 
-export default CommentBlock;
+export default memo(CommentBlock);

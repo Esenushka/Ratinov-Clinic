@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Consultaition from "../../components/Consultation/Consultation";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -8,9 +8,10 @@ import Spine from "../../components/Spine/Spine";
 import TopBlock from "../../components/TopBlock/TopBlock";
 import { db } from "../../config/firebase";
 
-export default function SpinePage() {
+export default React.memo(function SpinePage() {
   const [infoList, setInfoList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingImage, setLoadingImage] = useState(true);
   useEffect(() => {
     db.collection("spine")
       .get()
@@ -23,17 +24,15 @@ export default function SpinePage() {
         setLoading(false)
       })
   }, []);
-  if (loading) {
-    return <Preloader />
-  }
   return (
     <>
+      <Preloader loading={loading} loadingImage={loadingImage} />
       <Header />
       <TopBlock bold={"Позвоночника"} text={"Лечение"} reverse path={"Услуги"} secondPath={"Лечение позвночника"} />
-      <Spine infoList={infoList} />
+      <Spine setLoadingImage={setLoadingImage} infoList={infoList} />
       <ResultsSlider />
       <Consultaition />
       <Footer />
     </>
   )
-}
+})

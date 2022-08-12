@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import CallMe from "../components/CallMe/CallMe";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
@@ -7,7 +7,7 @@ import PriceCard from "../components/Price/PriceCard";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
 
-export default function Price() {
+export default React.memo(function Price() {
   const [price, setComments] = useState([])
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -22,11 +22,9 @@ export default function Price() {
         setLoading(false)
       })
   }, []);
-  if (loading) {
-    return <Preloader />
-  }
   return (
     <div>
+      <Preloader loadingImage={false} loading={loading}/>
       <Header />
       <TopBlock bold={"Цены"} path={"Цены"} />
       {
@@ -38,4 +36,4 @@ export default function Price() {
       <Footer />
     </div>
   )
-}
+})

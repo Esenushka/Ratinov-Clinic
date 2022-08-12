@@ -1,6 +1,7 @@
+import { memo } from "react"
 import scss from "./Physiotherapy.module.scss"
 
-export default function Physiotherapy({physiotherapy}) {
+export default memo(function Physiotherapy({ setLoadingImage, physiotherapy }) {
   return (
     <div className={"container " + scss.wrapper}>
       <div className={scss.blocks_wrapper}>
@@ -15,7 +16,11 @@ export default function Physiotherapy({physiotherapy}) {
               info.top.map((top) => <div key={info.id} className={scss.info}>
                 <div className={scss.left}>
                   <h4>{top.device}</h4>
-                  <img src={top.img} alt={top.device} />
+                  <img
+                    onLoad={() => setLoadingImage(false)}
+                    src={top.img}
+                    alt={top.device}
+                  />
                 </div>
                 <div className={scss.right}>
                   {
@@ -60,4 +65,4 @@ export default function Physiotherapy({physiotherapy}) {
       </div>
     </div>
   )
-}
+})
