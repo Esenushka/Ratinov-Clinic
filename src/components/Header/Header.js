@@ -1,5 +1,6 @@
 import { memo } from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import LinkTop from "../../hooks/LinkTop";
 import styles from "./Header.module.scss";
 
 const Header = () => {
@@ -10,10 +11,10 @@ const Header = () => {
           <div>
             <div className={styles.headerTop}>
               <div className={styles.headerTopLeft}>
-                <a href="#about">О клинике</a>
-                <a href="#faq">Информация для пациентов</a>
-                <Link to="/">Обучение</Link>
-                <Link to="/comment">Отзывы</Link>
+                <HashLink to="/#about">О клинике</HashLink>
+                <HashLink to="/#faq">Информация для пациентов</HashLink>
+                <LinkTop to="/">Обучение</LinkTop>
+                <LinkTop to="/comment">Отзывы</LinkTop>
               </div>
               <div className={styles.headerTopRight}>
                 <span>
@@ -32,14 +33,14 @@ const Header = () => {
             </div>
             <div className={styles.headerBottom}>
               <div className={styles.headerBottomLeft}>
-                <Link className={styles.logo} to="/">
+                <LinkTop className={styles.logo} to="/">
                   <img src="/images/Logo.svg" alt="Логотип" />
-                </Link>
+                </LinkTop>
                 <div className={styles.nav}>
-                  <Link to="/services">Услуги</Link>
-                  <Link to="/doctors">Специалисты</Link>
-                  <Link to="/">Результаты</Link>
-                  <Link to="/price">Цены</Link>
+                  <LinkTop to="/services">Услуги</LinkTop>
+                  <LinkTop to="/doctors">Специалисты</LinkTop>
+                  <LinkTop to="/">Результаты</LinkTop>
+                  <LinkTop to="/price">Цены</LinkTop>
                   <span>
                     Ещё <img alt="Стрелка" src="/images/slider-arrow.svg" />
                   </span>

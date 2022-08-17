@@ -82,7 +82,7 @@ export default React.memo(function HomePage() {
       <Header />
       <MainSlider />
       <Consultaition />
-      <About about={about} />
+      <About setLoadingImage={setLoadingImage} about={about} />
       <TreatBlock />
       <OwnerBlock />
       <YouTubeSlider />
@@ -90,7 +90,7 @@ export default React.memo(function HomePage() {
       <CourseOfTreatmentBlock />
       <ClinicSpecialistsBlock specialists={specialists} />
       <DoctorSlider doctors={doctors} />
-      <CommentBlock setLoadingImage={setLoadingImage} comments={comments} />
+      <CommentBlock comments={comments} />
       <FAQ faq={faq} />
       <CallMe />
       <Footer />
