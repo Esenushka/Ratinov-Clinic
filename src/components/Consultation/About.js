@@ -1,15 +1,14 @@
 import { memo } from 'react';
 import css from './Consultation.module.scss';
 
-export default memo(function About({about}) {
-  
+export default memo(function About({about,setLoadingImage}) {
   return (
-    <div id="about" className={`${css.about} container`}>
+    <div id={"about"} className={`${css.about} container`}>
       <h1>О НАШЕЙ КЛИНИКЕ</h1>
       <div className={css.about_card}>
         {
           about.map((info) => <div className={css.card} key={info.id}>
-            <img src={info.img} alt={"Картинка о клиники"} />
+            <img onLoad={() => setLoadingImage(false)} src={info.img} alt={"Картинка о клиники"} />
             {
               info.reverse ?
                 <div>

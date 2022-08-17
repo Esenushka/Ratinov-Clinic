@@ -29,7 +29,7 @@ function SamplePrevArrow(props) {
 }
 
 
-const CommentBlock = ({ comments, setLoadingImage }) => {
+const CommentBlock = ({ comments }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -44,7 +44,6 @@ const CommentBlock = ({ comments, setLoadingImage }) => {
     <div className={css.comment_block}>
       <div className={css.bg_block}>
         <img
-          onLoad={() => setLoadingImage(false)}
           src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fvrachi-izuchajut-analizy%202.png?alt=media&token=83a0e367-513b-4bc4-8b31-6a88b7ecea5e"
           alt="Врачи берут анализ"
         />

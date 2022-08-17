@@ -1,6 +1,7 @@
 import css from "./Footer.module.scss"
-import { Link } from "react-router-dom";
 import { memo } from "react";
+import LinkTop from "../../hooks/LinkTop";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
     return (
@@ -10,17 +11,17 @@ const Footer = () => {
                 <div className={css.other}>
                     <div className={css.link_block}>
                         <div className={css.link}>
-                            <Link to="/services">Услуги</Link>
-                            <Link to="/doctors">Специалисты</Link>
-                            <Link to="/result">Результаты</Link>
-                            <Link to="/price">Цены</Link>
-                            <Link to="/more">Ещё</Link>
+                            <LinkTop to="/services">Услуги</LinkTop>
+                            <LinkTop to="/doctors">Специалисты</LinkTop>
+                            <LinkTop to="/result">Результаты</LinkTop>
+                            <LinkTop to="/price">Цены</LinkTop>
+                            <LinkTop to="/more">Ещё</LinkTop>
                         </div>
                         <div className={css.link}>
-                            <a href="#about">О клинике</a>
-                            <a href="#faq">Информация для пациентов</a>
-                            <Link to="/reception">Время приема</Link>
-                            <Link to="/comment">Отзывы</Link>
+                            <HashLink to={"/#about"}>О клинике</HashLink>
+                            <HashLink to={"/#faq"}>Информация для пациентов</HashLink>
+                            <LinkTop to="/reception">Время приема</LinkTop>
+                            <LinkTop to="/comment">Отзывы</LinkTop>
                         </div>
                     </div>
                     <div className={css.footerBottom}>
@@ -38,11 +39,11 @@ const Footer = () => {
                 </div>
                 <div className={css.footerRight}>
                     <div className={css.btn}>
-                        <Link to="/"><button className="btn btn-footer">Онлайн консультация</button></Link>
-                        <Link to="/"><button className="btn btn-footer">Пройти тест</button></Link>
+                        <LinkTop to="/"><button className="btn btn-footer">Онлайн консультация</button></LinkTop>
+                        <LinkTop to="/"><button className="btn btn-footer">Пройти тест</button></LinkTop>
                     </div>
                     <div className={css.img}>
-                        <Link to="/"><img src="/images/logo.svg" alt="Логотип" /></Link>
+                        <LinkTop to="/"><img src="/images/logo.svg" alt="Логотип" /></LinkTop>
                     </div>
                 </div>
             </div>
