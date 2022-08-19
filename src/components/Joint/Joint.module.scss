@@ -1,4 +1,8 @@
 .wrapper {
+  p {
+    font-size: 14px;
+  }
+
   h1 {
     font-weight: 400;
     text-transform: uppercase;
@@ -18,7 +22,7 @@
   position: absolute;
   z-index: -1;
   right: -440px;
-  top: 0px;
+  top: 180px;
   overflow: hidden;
 
   img {
@@ -41,7 +45,7 @@
   position: absolute;
   z-index: -1;
   left: -156px;
-  bottom: 1400px;
+  bottom: 1600px;
   overflow: hidden;
 
   img {
@@ -64,10 +68,14 @@
 }
 
 .therapies_types {
+  width: 80%;
 
-  hr{
+  hr {
     width: 300px;
     margin-bottom: 25px;
+    background: black;
+    border: none;
+    height: 1px;
   }
 
   .therapy_type {
@@ -85,6 +93,9 @@
 .methods_right_block {
   width: 80%;
   margin-left: 334px;
+  .therapies_types{
+    width: 90%;
+  }
 }
 
 .what_we_treat {
@@ -132,6 +143,7 @@
   ul {
     margin-top: 20px;
     margin-left: 20px;
+
     li {
       font-size: 14px;
       line-height: 1.3;
@@ -153,29 +165,31 @@
     background-color: #fff;
     padding: 50px;
 
-    hr{
+    hr {
       width: 300px;
       margin-bottom: 25px;
     }
   }
+
   ul {
     margin-top: 20px;
     margin-left: 20px;
   }
 }
 
-.about_health{
+.about_health {
   h1 {
     font-weight: 400;
     text-transform: uppercase;
     margin: 90px 0 40px 0;
+
     span {
       font-size: xx-large;
       font-weight: 600;
     }
   }
-  
-  p{
+
+  p {
     margin-bottom: 40px;
   }
 }
