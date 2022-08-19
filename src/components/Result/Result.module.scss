@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   grid-gap: 2em;
-
+  
   .title {
     p {
       font-weight: 400;
@@ -21,6 +21,10 @@
   .btn__group {
     display: flex;
     grid-gap: 0.5em;
+    .btnActive {
+        background: #0097db;
+        color: white;
+      }
   }
 
   .result {
