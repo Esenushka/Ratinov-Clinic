@@ -1,9 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import './App.css';
-import "./styles/index.scss"
+import "./App.css";
+import "./styles/index.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import JointPage from "./pages/services/JointPage";
 import CommentPage from './pages/CommentPage';
 import DoctorsPage from './pages/DoctorsPage';
 import SpinePage from './pages/services/SpinePage';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/services/spine" element={<SpinePage />}></Route>
         <Route path="price" element={<Price />}></Route>
         <Route path="/services/massage" element={<MassagePage />}></Route>
+        <Route path="/services/joint" element={<JointPage />}></Route>
         <Route path="/services/physiotherapy" element={<PhysiotherapyPage />}></Route>
         <Route path="/services/stocks" element={<StocksPage />}></Route>
         <Route path="/services/botulinum" element={<BotulinumPage />}></Route>

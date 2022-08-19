@@ -14,14 +14,14 @@ export default React.memo(function DoctorsPage() {
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
   const location = useLocation();
-  const paramEntries = new URLSearchParams(location.search).entries()
-  const fromEntries = Object.fromEntries(paramEntries)
+  const paramEntries = new URLSearchParams(location.search).entries();
+  const fromEntries = Object.fromEntries(paramEntries);
   const paramArr = Object.keys(fromEntries);
   useEffect(() => {
     db.collection("doctors")
       .get()
       .then((snapshot) => {
-        const doctorsArr = []
+        const doctorsArr = [];
         snapshot.forEach((doc) => {
           doctorsArr.push({ ...doc.data(), id: doc.id });
         })
@@ -33,7 +33,11 @@ export default React.memo(function DoctorsPage() {
     <div>
       <Preloader loading={loading} loadingImage={loadingImage}/>
       <Header />
-      <TopBlock path={"Специалисты клиники"} text={"клиники"} bold={"Специалисты"} />
+      <TopBlock
+        path={"Специалисты клиники"}
+        text={"клиники"}
+        bold={"Специалисты"}
+      />
       <div className="container doctors-page_wrapper">
         <Select />
         <div className="doctors_wrapper">
