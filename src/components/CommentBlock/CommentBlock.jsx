@@ -1,8 +1,8 @@
 import css from "./Comment.module.scss"
-import { commentList } from "../../constants/commentList";
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -29,7 +29,7 @@ function SamplePrevArrow(props) {
 }
 
 
-const CommentBlock = () => {
+const CommentBlock = ({ comments }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -39,10 +39,14 @@ const CommentBlock = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
+
   return (
     <div className={css.comment_block}>
       <div className={css.bg_block}>
-        <img src="/images/comment-back.svg" alt="background_image" />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fvrachi-izuchajut-analizy%202.png?alt=media&token=83a0e367-513b-4bc4-8b31-6a88b7ecea5e"
+          alt="Врачи берут анализ"
+        />
         <div className={css.color_block}></div>
       </div>
       <div className={`${css.wrapper} container`}>
@@ -52,7 +56,7 @@ const CommentBlock = () => {
         </div>
         <Slider className={`${css.slider} comment_slider`} {...settings} >
           {
-            commentList.map((e) => (
+            comments.map((e) => (
               <CommentCard key={e.id} {...e} />
             ))
           }
@@ -62,4 +66,4 @@ const CommentBlock = () => {
   );
 }
 
-export default CommentBlock;
+export default memo(CommentBlock);

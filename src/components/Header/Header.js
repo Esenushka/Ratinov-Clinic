@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom';
-import styles from './Header.module.scss';
+import { memo } from "react";
+import { HashLink } from "react-router-hash-link";
+import LinkTop from "../../hooks/LinkTop";
+import styles from "./Header.module.scss";
 
 const Header = () => {
   return (
@@ -9,37 +11,41 @@ const Header = () => {
           <div>
             <div className={styles.headerTop}>
               <div className={styles.headerTopLeft}>
-                <Link to="/">О клинике</Link>
-                <Link to="/">Информация для пациентов</Link>
-                <Link to="/">Обучение</Link>
-                <Link to="/">Отзывы</Link>
+                <HashLink to="/#about">О клинике</HashLink>
+                <HashLink to="/#faq">Информация для пациентов</HashLink>
+                <LinkTop to="/">Обучение</LinkTop>
+                <LinkTop to="/comment">Отзывы</LinkTop>
               </div>
               <div className={styles.headerTopRight}>
                 <span>
-                  <img src="/images/HeaderCalendar.svg" alt="calendar" /> ПН - СБ: 8:00 -
-                  20:00
+                  <img src="/images/HeaderCalendar.svg" alt="Часы" /> ПН -
+                  СБ: 8:00 - 20:00
                 </span>
                 <a href="tel: + 996 (501) 420 420">
-                  <img src="/images/HeaderPhone.svg" alt="calendar" /> + 996 (501) 420 420
+                  <img src="/images/HeaderPhone.svg" alt="Телефон" /> + 996
+                  (501) 420 420
                 </a>
-                <a href="tel: + 996( 555) 142 020">
-                  <img src="/images/HeaderPhone.svg" alt="calendar" />+ 996( 555) 142 020
+                <a href="tel: + 996 (555) 142 020">
+                  <img src="/images/HeaderPhone.svg" alt="Телефон" />+ 996
+                  (555) 142 020
                 </a>
               </div>
             </div>
             <div className={styles.headerBottom}>
               <div className={styles.headerBottomLeft}>
-                <Link to="/">
-                  <img src="/images/LogoImg.svg" alt="logo" />
-                  <img src="/images/LogoText.svg" alt="logo" />
-                </Link>
-                <Link to="/services">Услуги</Link>
-                <Link to="/doctors">Специалисты</Link>
-                <Link to="/">Результаты</Link>
-                <Link to="/">Цены</Link>
-                <span>
-                  Ещё <img alt="select" src="/images/SelectArrow.svg" />
-                </span>
+                <LinkTop className={styles.logo} to="/">
+                  <img src="/images/Logo.svg" alt="Логотип" />
+                </LinkTop>
+                <div className={styles.nav}>
+                  <LinkTop to="/services">Услуги</LinkTop>
+                  <LinkTop to="/doctors">Специалисты</LinkTop>
+                  <LinkTop to="/">Результаты</LinkTop>
+                  <LinkTop to="/price">Цены</LinkTop>
+                  <span>
+                    Ещё <img alt="Стрелка" src="/images/slider-arrow.svg" />
+                  </span>
+                </div>
+
               </div>
               <div className={styles.headerBottomRight}>
                 <button className="btn btn-small">Онлайн консультация</button>
@@ -53,4 +59,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

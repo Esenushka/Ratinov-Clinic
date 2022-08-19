@@ -2,6 +2,7 @@ import scss from "./YouTubeSlider.module.scss"
 import Slider from "react-slick"
 import YouTubeSliderCard from "./YouTubeSliderCard";
 import { YouTubeSliderList } from "../../constants/YoutubeSliderList";
+import { memo } from "react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -27,11 +28,11 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function YouTubeSlider() {
+export default memo(function YouTubeSlider() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 5,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
@@ -49,4 +50,4 @@ export default function YouTubeSlider() {
       </Slider>
     </div>
   )
-}
+})

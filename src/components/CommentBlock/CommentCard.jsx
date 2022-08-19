@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import css from "./Comment.module.scss"
 
@@ -19,4 +20,4 @@ const CommentCard = ({ img, name, link, des }) => {
     );
 }
 
-export default CommentCard;
+export default memo(CommentCard);

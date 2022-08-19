@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { memo, useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom";
+import { db } from "../../config/firebase";
 
-export default function Select({ doctors }) {
+export default memo(function Select() {
   const [active, setActive] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
@@ -10,17 +11,30 @@ export default function Select({ doctors }) {
   const paramArr = Object.keys(fromEntries);
   const handleChange = (e, proffesion, type) => {
     type ? navigate("/doctors") : e.target.checked
-      ? navigate(`${location.pathname} ? ${proffesion} & ${(paramArr.map((param) => param + "&").join(""))}`)
-      : navigate(`${location.pathname} ? ${(paramArr.filter((param) => param !== proffesion).map((param) => param + "&").join(""))}`)
+      ? navigate(location.pathname + "?" + proffesion + "&" + (paramArr.map((param) => param + "&").join("")))
+      : navigate(location.pathname + "?" + (paramArr.filter((param) => param !== proffesion).map((param) => param + "&").join("")))
   }
+  const [proffesions, setProffesions] = useState([]);
+  useEffect(() => {
+    db.collection("proffesions")
+      .orderBy("pos", "asc")
+      .get()
+      .then((snapshot) => {
+        const proffesionsArr = [];
+        snapshot.forEach((doc) => {
+          proffesionsArr.push({ ...doc.data(), id: doc.id });
+        });
+        setProffesions(proffesionsArr);
+      });
+  }, []);
   return (
     <div className="select_wrapper">
       <span className={"select" + (active ? " active" : "")} onClick={() => setActive(!active)}>
         <p>Специализация</p>
-        <img src="/images/arrow.svg" alt="Стрелка" />
+        <img src="/images/slider-arrow.svg" alt="Стрелка" />
       </span>
       <div className={`checkboxs ${active ? "active" : ""}`}>
-        {doctors.map((el) =>
+        {proffesions.map((el) =>
           <span key={el.id} className="checkbox">
             <input onChange={(e) => handleChange(e, el.proffesion)}
               checked={paramArr.find((param) => param === el.proffesion) || false}
@@ -34,4 +48,4 @@ export default function Select({ doctors }) {
         </span>
       </div>
     </div>)
-}
+})

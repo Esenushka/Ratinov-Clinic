@@ -1,27 +1,16 @@
-import { useState, useEffect } from "react";
+import { memo } from "react";
 import { Link } from "react-router-dom";
-import { db } from "../../config/firebase";
 import scss from "./Spine.module.scss";
 
-export default function Spine() {
-  const [infoList, setInfoList] = useState([]);
-  useEffect(() => {
-    db.collection("spine")
-      .get()
-      .then((snapshot) => {
-        const infoArr = [];
-        snapshot.forEach((doc) => {
-          infoArr.push({ ...doc.data(), id: doc.id });
-        });
-        setInfoList(
-          infoArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
-        );
-      });
-  }, []);
+export default memo(function Spine({ infoList, setLoadingImage }) {
   return (
     <div className={scss.wrapper_bg}>
       <div className={scss.bg}>
-        <img src="/images/spine-bg.png" alt="Задний блок" />
+        <img
+          onLoad={() => setLoadingImage(false)}
+          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fspine-bg.png?alt=media&token=b2881cab-f1cf-4306-bf62-e832abe459be"
+          alt="Задний блок"
+        />
       </div>
       <div className={"container " + scss.wrapper}>
         <h1>
@@ -110,3 +99,4 @@ export default function Spine() {
     </div>
   );
 }
+)

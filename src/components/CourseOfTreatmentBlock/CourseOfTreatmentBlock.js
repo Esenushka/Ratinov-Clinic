@@ -1,8 +1,9 @@
 import scss from "./CourseOfTreatmentBlock.module.scss"
 import { Link } from "react-router-dom"
 import ProcedureBlock from "./ProcedureBlock"
+import { memo } from "react"
 
-export default function CourseOfTreatmentBlock() {
+export default memo(function CourseOfTreatmentBlock() {
   return (
     <div className={"container " + scss.wrapper}>
       <h1 className={scss.title}><span>Что входит</span> в курс лечения?</h1>
@@ -33,10 +34,10 @@ export default function CourseOfTreatmentBlock() {
           Мы создаем необходимые условия, чтобы запустить и  ускорить процесс резорбции, применяя комплексную физиотерапию:
         </h2>
         <ProcedureBlock col={false}/>
-        <Link className={scss.btn} to="/">
+        <Link className={scss.btn} to="/consultation">
           <button className="btn btn-big-bg">Записаться на приём</button>
         </Link>
       </div>
     </div>
   )
-}
+})

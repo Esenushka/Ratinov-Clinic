@@ -3,22 +3,22 @@
   height: 750px;
   margin-bottom: 70px;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   z-index: 1;
   background-size: contain;
-  
+
   .bg_block {
     z-index: -1;
     width: 1500px;
     height: 1080px;
     position: absolute;
-    left: -50px;
+    left: -270px;
     bottom: -570px;
     border-radius: 189px;
     transform: matrix(0.97, -0.23, 0.24, 0.97, 0, 0);
     overflow: hidden;
-    
-    img{
+
+    img {
       transform: rotate(13.6deg);
       position: absolute;
       top: -110px;
@@ -27,7 +27,7 @@
       z-index: -3;
     }
 
-    .color_block{
+    .color_block {
       width: 100%;
       height: 100%;
       background-color: #0096db98;
@@ -51,29 +51,30 @@
         color: #000000;
       }
     }
-    .slider {
+    
+    .comment {
       display: flex;
-
+      flex-wrap: wrap;
       .card {
         margin: 50px 6px 0 6px;
         background-color: #fff;
         border-radius: 10px;
         height: 350px;
-        width: 96%;
+        width: 360px;
         padding: 25px;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         grid-gap: 1em;
-
+  
         .top_block {
           display: flex;
           grid-gap: 1em;
-
+  
           img {
             border-radius: 10px;
           }
-
+  
           .name {
             display: flex;
             flex-direction: column;
@@ -86,22 +87,72 @@
             }
           }
         }
-
+  
         .des {
           display: flex;
           grid-gap: 0.5em;
           align-items: flex-start;
-
+  
           img {
             width: 33px;
           }
-
+  
           p {
             font-weight: 400;
             font-size: 12px;
             line-height: 15px;
             color: #000000;
           }
+        }
+      }
+    }
+    .card {
+      margin: 50px 6px 0 6px;
+      background-color: #fff;
+      border-radius: 10px;
+      height: 350px;
+      width: 360;
+      padding: 25px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      grid-gap: 1em;
+
+      .top_block {
+        display: flex;
+        grid-gap: 1em;
+
+        img {
+          border-radius: 10px;
+        }
+
+        .name {
+          display: flex;
+          flex-direction: column;
+          grid-gap: 0.6em;
+          h3 {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: #0097db;
+          }
+        }
+      }
+
+      .des {
+        display: flex;
+        grid-gap: 0.5em;
+        align-items: flex-start;
+
+        img {
+          width: 33px;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 15px;
+          color: #000000;
         }
       }
     }

@@ -1,25 +1,15 @@
-import { useEffect, useState } from "react"
+import { memo } from "react"
 import { Link } from "react-router-dom"
-import { db } from "../../config/firebase";
 import scss from "./Stocks.module.scss"
-export default function Stocks() {
-  const [stocks, setStocks] = useState([]);
-  useEffect(() => {
-    db.collection("stock")
-      .get()
-      .then((snapshot) => {
-        const stocksArr = [];
-        snapshot.forEach((doc) => {
-          stocksArr.push({ ...doc.data(), id: doc.id });
-        });
-        setStocks(stocksArr);
-      });
-  }, [])
+export default memo(function Stocks({ setLoadingImage, stocks }) {
 
   return (
     <div className={scss.main_wrapper}>
       <div className={scss.bg}>
-        <img src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F59150a0051643acc5d2e897713473bbb%201%20(1).png?alt=media&token=2560ba99-d570-4622-bd5b-195740b61c99" alt="Задний фон" />
+        <img
+          onLoad={() => setLoadingImage(false)}
+          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F59150a0051643acc5d2e897713473bbb%201%20(1).png?alt=media&token=2560ba99-d570-4622-bd5b-195740b61c99"
+          alt="Задний фон" />
       </div>
       <div className="container">
         <div className={scss.wrapper}>
@@ -43,7 +33,7 @@ export default function Stocks() {
                   <h4>{listInfo.title}</h4>
                   <div className={scss.list}>
                     {
-                      listInfo.procedure.map((procedure,indexProcedure) => <p key={indexProcedure}>{procedure}</p>)
+                      listInfo.procedure.map((procedure, indexProcedure) => <p key={indexProcedure}>{procedure}</p>)
                     }
                   </div>
                   <h5>Стоимость без скидки {listInfo.without} сомов</h5>
@@ -78,4 +68,4 @@ export default function Stocks() {
       </div>
     </div>
   )
-}
+})

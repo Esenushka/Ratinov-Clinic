@@ -1,8 +1,8 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
-import { clinicSpecialistsInfo } from '../../constants/ClinicSpecialistsInfo';
 import styles from './ClinicSpecialistsBlock.module.scss';
 
-export const ClinicSpecialistsBlock = () => {
+export default memo(function ClinicSpecialistsBlock ({specialists}) {  
   return (
     <div className={styles.clinicWrapper}>
       <div className="container">
@@ -10,13 +10,24 @@ export const ClinicSpecialistsBlock = () => {
           <p>
             <b>Специалисты </b>клиники
           </p>
-          <button className="btn btn-big-bg">Записаться на приём</button>
+          <Link to={"/consultation"}>
+            <button className="btn btn-big-bg">Записаться на приём</button>
+          </Link>
           <div className={styles.clinicBlockCard}>
-            {clinicSpecialistsInfo.map((clinic) => (
+            {specialists.map((clinic) => (
               <div key={clinic.id}>
-                <Link to="/">{clinic.text}</Link>
-                <p>{clinic.description}</p>
-                <button className="btn btn-small">Подробнее</button>
+                {
+                  clinic.notDoctor ? <Link to={"/"}>
+                    {clinic.text}
+                  </Link> : <Link to={"/doctors?" + clinic.path + "&"}>
+                    Врач
+                    <span>{clinic.text}</span>
+                  </Link>
+                }
+                <p>{clinic.des}</p>
+                <Link to={"/doctors?" + clinic.path + "&"}>
+                  <button className="btn btn-small">Подробнее</button>
+                </Link>
               </div>
             ))}
           </div>
@@ -24,4 +35,4 @@ export const ClinicSpecialistsBlock = () => {
       </div>
     </div>
   );
-};
+})

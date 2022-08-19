@@ -1,0 +1,115 @@
+.therap {
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+
+  .main_bg {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 80px;
+    grid-gap: 50px;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.5;
+      left: 0;
+      top: 0;
+    }
+
+    p {
+      width: 65%;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+
+      span {
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 3em;
+    margin-bottom: 80px;
+    position: relative;
+
+    .block {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 1.5em;
+
+      .title {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 49px;
+
+        span {
+          font-size: 40px;
+          line-height: 49px;
+        }
+      }
+
+      span {
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 1.5em;
+        width: 700px;
+
+        ul {
+          margin-left: 50px;
+          display: flex;
+          flex-direction: column;
+          grid-gap: 5px;
+
+          li {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+      }
+
+      button {
+        width: fit-content;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    background: #E4F6FF;
+    position: absolute;
+    width: 1000px;
+    height: 1300px;
+    z-index: -1;
+    opacity: 0.5;
+    border-radius: 200px;
+    right: -700px;
+    transform: matrix(-0.49, -0.87, -0.88, 0.49, 0, 0);
+    top: 500px;
+  }
+}

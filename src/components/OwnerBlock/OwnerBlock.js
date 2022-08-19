@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from './OwnerBlock.module.scss';
 
 const OwnerBlock = () => {
@@ -25,18 +26,17 @@ const OwnerBlock = () => {
           </div>
           <div className={styles.logoBtn}>
             <div>
-              <img src="/images/LogoImg.svg" alt="logoImg" />
-              <img src="/images/LogoText.svg" alt="logoText" />
+              <img src="/images/Logo.svg" alt="Логотип" />
             </div>
             <button className="btn btn-big-bg">Открыть профиль врача</button>
           </div>
         </div>
         <div className={styles.ownerBlockRight}>
-        <img src="/images/OwnerImg.png" alt="OwnerImg" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2FOwnerImg.png?alt=media&token=80b84c48-482b-4441-9b68-50bd2e5ddb02" alt="OwnerImg" />
         </div>
       </div>
     </div>
   );
 };
 
-export default OwnerBlock;
+export default memo(OwnerBlock);

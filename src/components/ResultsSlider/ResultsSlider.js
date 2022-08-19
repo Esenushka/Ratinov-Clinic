@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import scss from "./ResultsSlider.module.scss"
 import { Link } from "react-router-dom"
 import { result } from "../../constants/results";
-import { useState } from "react";
+import { memo, useState } from "react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -28,7 +28,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function ResultsSlider() {
+export default memo(function ResultsSlider() {
   const [activeSlide, setActiveSlide] = useState(0);
   const settings = {
     dots: true,
@@ -89,8 +89,11 @@ export default function ResultsSlider() {
         </div>
       </div>
       <span className={scss.bg}>
-        <img src="/images/result-bg.svg" alt="Результат задний фон" />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/results%2Fresult-bg.png?alt=media&token=71ce467f-ba29-48ff-bfe2-80ea74a56453"
+          alt="Результат задний фон"
+        />
       </span>
     </div>
   )
-}
+})
