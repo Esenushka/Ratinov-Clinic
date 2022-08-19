@@ -37,10 +37,10 @@ const Header = () => {
                   <img src="/images/Logo.svg" alt="Логотип" />
                 </LinkTop>
                 <div className={styles.nav}>
-                  <Link to="/services">Услуги</Link>
-                  <Link to="/doctors">Специалисты</Link>
-                  <Link to="/result">Результаты</Link>
-                  <Link to="/price">Цены</Link>
+                  <LinkTop to="/services">Услуги</LinkTop>
+                  <LinkTop to="/doctors">Специалисты</LinkTop>
+                  <LinkTop to="/result">Результаты</LinkTop>
+                  <LinkTop to="/price">Цены</LinkTop>
                   <span>
                     Ещё <img alt="select" src="/images/slider-arrow.svg" />
                   </span>
