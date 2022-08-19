@@ -1,7 +1,8 @@
 import scss from "./YouTubeSlider.module.scss"
 import { Link } from "react-router-dom"
+import { memo } from "react"
 
-export default function YouTubeSliderCard({ text }) {
+export default memo(function YouTubeSliderCard({ text }) {
   return (
     <div className={scss.card}>
       <span className={scss.camera}>
@@ -12,4 +13,4 @@ export default function YouTubeSliderCard({ text }) {
       </Link>
     </div>
   )
-}
+})

@@ -1,10 +1,16 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import scss from "./Therapeutic.module.scss";
 
-export default function Therapeutic() {
+export default memo(function Therapeutic({setLoadingImage}) {
   return (
     <div className={scss.therap}>
       <div className={scss.main_bg}>
+        <img
+          onLoad={()=> setLoadingImage(false)}
+          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F56890d3d9445bfaa9e863dc98daf01f0.svg?alt=media&token=a00c729f-c780-477c-9d0f-4b3af0a03488"
+          alt="Задний фон"
+        />
         <div className="container">
           <p>
             <span>Лечебная физкультура (ЛФК)</span> – специальные физические упражнения, которые назначаются в лечебных, профилактических и реабилитационных целях.
@@ -57,4 +63,4 @@ export default function Therapeutic() {
       </section>
     </div>
   )
-}
+})

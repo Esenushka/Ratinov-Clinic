@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react"
-import { db } from "../../config/firebase";
+import { memo } from "react"
 import scss from "./FAQ.module.scss"
 import FAQCard from "./FAQCard"
 
-export default function FAQ() {
-  const [faq, setFaq] = useState([]);
-  useEffect(() => {
-    db.collection("faq")
-      .orderBy("pos", "asc")
-      .get()
-      .then((snapshot) => {
-        const faqArr = [];
-        snapshot.forEach((doc) => {
-          faqArr.push({ ...doc.data(), id: doc.id });
-        });
-        setFaq(faqArr)
-      });
-  }, []);
+export default memo(function FAQ({faq}) {
   const leftList = faq.slice(0, (faq.length / 2) + 1)
   const rightList = faq.slice((faq.length / 2) + 1)
   return (
@@ -36,4 +22,4 @@ export default function FAQ() {
       </div>
     </div>
   )
-}
+})

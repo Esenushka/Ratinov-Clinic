@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from './OwnerBlock.module.scss';
 
 const OwnerBlock = () => {
@@ -38,4 +39,4 @@ const OwnerBlock = () => {
   );
 };
 
-export default OwnerBlock;
+export default memo(OwnerBlock);

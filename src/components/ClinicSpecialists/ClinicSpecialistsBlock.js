@@ -1,22 +1,8 @@
-import { useEffect, useState } from 'react';
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
-import { db } from '../../config/firebase';
 import styles from './ClinicSpecialistsBlock.module.scss';
 
-export const ClinicSpecialistsBlock = () => {
-  const [specialists, setSpecialists] = useState([]);
-  useEffect(() => {
-    db.collection("clinicSpecialists")
-      .orderBy("pos", "asc")
-      .get()
-      .then((snapshot) => {
-        const specialistsArr = [];
-        snapshot.forEach((doc) => {
-          specialistsArr.push({ ...doc.data(), id: doc.id });
-        });
-        setSpecialists(specialistsArr)
-      });
-  }, [])
+export default memo(function ClinicSpecialistsBlock ({specialists}) {  
   return (
     <div className={styles.clinicWrapper}>
       <div className="container">
@@ -49,4 +35,4 @@ export const ClinicSpecialistsBlock = () => {
       </div>
     </div>
   );
-};
+})

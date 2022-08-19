@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { memo, useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom";
 import { db } from "../../config/firebase";
 
-export default function Select({ doctors }) {
+export default memo(function Select() {
   const [active, setActive] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
@@ -48,4 +48,4 @@ export default function Select({ doctors }) {
         </span>
       </div>
     </div>)
-}
+})

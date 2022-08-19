@@ -1,9 +1,15 @@
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import scss from './Botulinum.module.scss'
-export default function Botulinum() {
+export default memo(function Botulinum({setLoadingImage}) {
   return (
     <>
       <div className={scss.main_img}>
+        <img 
+        onLoad={()=> setLoadingImage(false)}
+        src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F56890d3d9445bfaa9e863dc98daf01f0%20(1).png?alt=media&token=61e7e378-55eb-4180-bf43-0c76fee488af"
+        alt="Задний фон"
+        />
         <div className="container">
           <h1>ЛЕЧЕНИЕ БОТОКСОМ</h1>
           <p>
@@ -93,13 +99,4 @@ export default function Botulinum() {
       </div>
     </>
   )
-}
-
-
-
-
-
-
-
-
-
+})

@@ -2,8 +2,9 @@ import css from "./CallMe.module.scss"
 import 'react-phone-input-2/lib/style.css'
 import PhoneInput from "react-phone-input-2";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
-const CallMe = () => {
+export default memo(function CallMe () {
   return (
     <div className={css.callme_block}>
       <div className={css.opacity}>
@@ -65,6 +66,5 @@ const CallMe = () => {
       </div>
     </div>
   );
-}
+})
 
-export default CallMe;

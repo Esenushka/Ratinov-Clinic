@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import { db } from "../../config/firebase";
 import scss from "./CourseOfTreatmentBlock.module.scss"
 
-export default function ProcedureBlock({ col }) {
+export default memo(function ProcedureBlock({ col }) {
   const [procedure, setProcedure] = useState([]);
   useEffect(() => {
     db.collection("procedure")
@@ -27,4 +27,4 @@ export default function ProcedureBlock({ col }) {
       }
     </div>
   )
-}
+})
