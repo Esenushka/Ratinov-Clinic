@@ -18,16 +18,16 @@ const Header = () => {
               </div>
               <div className={styles.headerTopRight}>
                 <span>
-                  <img src="/images/HeaderCalendar.svg" alt="Часы" /> ПН -
-                  СБ: 8:00 - 20:00
+                  <img src="/images/HeaderCalendar.svg" alt="Часы" /> ПН - СБ:
+                  8:00 - 20:00
                 </span>
                 <a href="tel: + 996 (501) 420 420">
                   <img src="/images/HeaderPhone.svg" alt="Телефон" /> + 996
                   (501) 420 420
                 </a>
                 <a href="tel: + 996 (555) 142 020">
-                  <img src="/images/HeaderPhone.svg" alt="Телефон" />+ 996
-                  (555) 142 020
+                  <img src="/images/HeaderPhone.svg" alt="Телефон" />+ 996 (555)
+                  142 020
                 </a>
               </div>
             </div>
@@ -39,13 +39,12 @@ const Header = () => {
                 <div className={styles.nav}>
                   <LinkTop to="/services">Услуги</LinkTop>
                   <LinkTop to="/doctors">Специалисты</LinkTop>
-                  <LinkTop to="/">Результаты</LinkTop>
+                  <LinkTop to="/result">Результаты</LinkTop>
                   <LinkTop to="/price">Цены</LinkTop>
                   <span>
-                    Ещё <img alt="Стрелка" src="/images/slider-arrow.svg" />
+                    Ещё <img alt="select" src="/images/slider-arrow.svg" />
                   </span>
                 </div>
-
               </div>
               <div className={styles.headerBottomRight}>
                 <button className="btn btn-small">Онлайн консультация</button>
