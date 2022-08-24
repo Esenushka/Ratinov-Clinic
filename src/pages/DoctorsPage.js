@@ -44,10 +44,10 @@ export default React.memo(function DoctorsPage() {
           {
             doctors.map((doctor) =>
               paramArr.length === 0 ?
-                <DoctorsCard setLoadingImage={setLoadingImage} key={doctor.id} {...doctor} /> :
+                <DoctorsCard fullSize={false} setLoadingImage={setLoadingImage} key={doctor.id} {...doctor} /> :
                 paramArr.some((param) =>
                   doctor.post.includes(param)) ?
-                  <DoctorsCard setLoadingImage={setLoadingImage} key={doctor.id} {...doctor} /> : "")
+                  <DoctorsCard fullSize={false} setLoadingImage={setLoadingImage} key={doctor.id} {...doctor} /> : "")
           }
         </div>
       </div>
