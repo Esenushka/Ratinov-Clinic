@@ -48,7 +48,9 @@ const Header = () => {
 
               </div>
               <div className={styles.headerBottomRight}>
-                <button className="btn btn-small">Онлайн консультация</button>
+                <LinkTop to={"/consultation"}>
+                  <button className="btn btn-small">Онлайн консультация</button>
+                </LinkTop>
                 <button className="btn btn-small">Пройти тест</button>
               </div>
             </div>

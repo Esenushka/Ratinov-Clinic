@@ -20,8 +20,6 @@ import Preloader from "../components/Preloader/Preloader";
 export default React.memo(function HomePage() {
   const [about, setAbout] = useState([]);
   const [specialists, setSpecialists] = useState([]);
-  const [doctors, setDoctors] = useState([]);
-  const [comments, setComments] = useState([]);
   const [faq, setFaq] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
@@ -46,24 +44,8 @@ export default React.memo(function HomePage() {
         });
         setSpecialists(specialistsArr)
       });
-    db.collection("doctors")
-      .get()
-      .then((snapshot) => {
-        const doctorsArr = []
-        snapshot.forEach((doc) => {
-          doctorsArr.push({ ...doc.data(), id: doc.id });
-        })
-        setDoctors(doctorsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-      });
-    db.collection("comments")
-      .get()
-      .then((snapshot) => {
-        const commentsArr = []
-        snapshot.forEach((doc) => {
-          commentsArr.push({ ...doc.data(), id: doc.id });
-        })
-        setComments(commentsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-      });
+  
+    
     db.collection("faq")
       .orderBy("pos", "asc")
       .get()
@@ -89,8 +71,8 @@ export default React.memo(function HomePage() {
       <ResultsSlider />
       <CourseOfTreatmentBlock />
       <ClinicSpecialistsBlock specialists={specialists} />
-      <DoctorSlider doctors={doctors} />
-      <CommentBlock comments={comments} />
+      <DoctorSlider fullSize />
+      <CommentBlock />
       <FAQ faq={faq} />
       <CallMe />
       <Footer />

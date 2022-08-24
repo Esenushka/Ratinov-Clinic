@@ -2,13 +2,13 @@ import scss from "./Doctors.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { memo } from "react";
 
-export default memo(function DoctorsCard({ setLoadingImage, day_work, price, fullSizeImg, img, name, proffesions }) {
+export default memo(function DoctorsCard({fullSize, day_work, price, fullSizeImg, img, name, proffesions }) {
   const location = useLocation();
   return (
-    <div className={scss.card + " " + (location.pathname === "/" ? scss.main : "")}>
+    <div className={scss.card + " " + (fullSize ? scss.main : "")}>
       {
-        location.pathname === "/" ? <img src={fullSizeImg} alt="Фото врача" /> :
-          img ? <img src={img} onLoad={() => setLoadingImage(false)} alt="Фото врача" /> : <span></span>
+        fullSize ? <img src={fullSizeImg} alt="Фото врача" /> :
+          img ? <img src={img} alt="Фото врача" /> : <span></span>
       }
       <div className={scss.wrap_card}>
         <div className={scss.name}>

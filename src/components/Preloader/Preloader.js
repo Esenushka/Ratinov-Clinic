@@ -5,7 +5,7 @@ export default memo(function Preloader({ loading, loadingImage }) {
   if (loading && loadingImage) {
     body.style.overflowY = "hidden"
   }
-  else {
+  else if(!loading && !loadingImage) {
     body.style.overflowY = "visible"
   }
   return (
