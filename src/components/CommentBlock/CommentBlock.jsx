@@ -1,11 +1,11 @@
 import css from "./Comment.module.scss"
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
-import { Link } from "react-router-dom";
 import { memo } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { db } from "../../config/firebase";
+import LinkTop from "../../hooks/LinkTop";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -66,7 +66,7 @@ const CommentBlock = () => {
       <div className={`${css.wrapper} container`}>
         <div className={css.title}>
           <h1>Отзывы</h1>
-          <Link to="/"><button className="btn btn-small">Все отзывы</button></Link>
+          <LinkTop to="/"><button className="btn btn-small">Все отзывы</button></LinkTop>
         </div>
         <Slider className={`${css.slider} comment_slider`} {...settings} >
           {

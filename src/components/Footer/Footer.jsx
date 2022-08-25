@@ -39,7 +39,7 @@ const Footer = () => {
                 </div>
                 <div className={css.footerRight}>
                     <div className={css.btn}>
-                        <LinkTop to="/"><button className="btn btn-footer">Онлайн консультация</button></LinkTop>
+                        <LinkTop to="/consultation"><button className="btn btn-footer">Онлайн консультация</button></LinkTop>
                         <LinkTop to="/"><button className="btn btn-footer">Пройти тест</button></LinkTop>
                     </div>
                     <div className={css.img}>

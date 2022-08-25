@@ -1,10 +1,10 @@
 import css from './Doctor.module.scss';
 import Slider from "react-slick";
-import { Link } from 'react-router-dom';
 import DoctorsCard from '../DoctorsCard/DoctorsCard';
 import { memo, useState } from 'react';
 import { useEffect } from 'react';
 import { db } from '../../config/firebase';
+import LinkTop from '../../hooks/LinkTop';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -31,7 +31,7 @@ function SamplePrevArrow(props) {
 }
 
 
-const DoctorSlider = ({fillSize}) => {
+const DoctorSlider = () => {
   const settings = {
     dots: false,
     infinite: false,
@@ -61,12 +61,12 @@ const DoctorSlider = ({fillSize}) => {
           <DoctorsCard fullSize key={doctor.id} {...doctor} />
         ))}
       </Slider>
-      <Link to="/doctors">
+      <LinkTop to="/doctors">
         <div className={css.all_doc}>
           <img src="/images/slider-arrow.svg" alt="select-arrow" />
           Показать всех специалистов
         </div>
-      </Link>
+      </LinkTop>
     </div>
   );
 }

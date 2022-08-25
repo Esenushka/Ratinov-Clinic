@@ -1,14 +1,14 @@
 import { memo } from 'react'
-import { Link } from 'react-router-dom'
+import LinkTop from '../../hooks/LinkTop'
 import scss from './Botulinum.module.scss'
-export default memo(function Botulinum({setLoadingImage}) {
+export default memo(function Botulinum({ setLoadingImage }) {
   return (
     <>
       <div className={scss.main_img}>
-        <img 
-        onLoad={()=> setLoadingImage(false)}
-        src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F56890d3d9445bfaa9e863dc98daf01f0%20(1).png?alt=media&token=61e7e378-55eb-4180-bf43-0c76fee488af"
-        alt="Задний фон"
+        <img
+          onLoad={() => setLoadingImage(false)}
+          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F56890d3d9445bfaa9e863dc98daf01f0%20(1).png?alt=media&token=61e7e378-55eb-4180-bf43-0c76fee488af"
+          alt="Задний фон"
         />
         <div className="container">
           <h1>ЛЕЧЕНИЕ БОТОКСОМ</h1>
@@ -54,9 +54,9 @@ export default memo(function Botulinum({setLoadingImage}) {
             <h4>Стоимость 1 единицы 300 сомов.</h4>
             <p>Количество единиц назначается индивидуально после очного приёма врача.</p>
           </div>
-          <Link to={"#"}>
+          <LinkTop to={"/consultation"}>
             <button className="btn btn-big-bg">Записаться на приём</button>
-          </Link>
+          </LinkTop>
         </div>
         <div className={scss.block}>
           <h1>

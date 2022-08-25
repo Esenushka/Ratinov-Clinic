@@ -7,9 +7,12 @@ import { db } from "../config/firebase"
 import { useEffect, useState } from "react"
 import ResultCard from "../components/Result/ResultCard"
 import { useLocation, useNavigate } from "react-router-dom"
+import Preloader from "../components/Preloader/Preloader"
 
 export default function ResultPage() {
   const [result, setResult] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [loadingImage, setLoadingImage] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
   const paramEntries = new URLSearchParams(location.search).entries()
@@ -29,10 +32,12 @@ export default function ResultPage() {
           resultArr.push({ ...e.data(), id: e.id });
         })
         setResult(resultArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)));
+        setLoading(false)
       })
   }, []);
   return (
-    <div>
+    <>
+      <Preloader loading={loading} loadingImage={loadingImage}/>
       <Header />
       <TopBlock path={'Результаты'} bold={'Результаты'} />
       <div className={`container ${scss.result__wrapper}`} >
@@ -61,16 +66,16 @@ export default function ResultPage() {
           {
             result.map((e) => (
               paramArr.length === 0 ?
-                <ResultCard key={e.id} {...e} /> :
+                <ResultCard setLoadingImage={setLoadingImage}  key={e.id} {...e} /> :
                 paramArr.map((param) =>
                   e.type === param ?
-                    <ResultCard key={e.id} {...e} /> : "")
+                    <ResultCard setLoadingImage={setLoadingImage} key={e.id} {...e} /> : "")
             ))
           }
         </div>
       </div>
       <CallMe />
       <Footer />
-    </div>
+    </>
   )
 }

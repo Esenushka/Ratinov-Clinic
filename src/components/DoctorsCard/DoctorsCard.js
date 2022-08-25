@@ -1,6 +1,7 @@
 import scss from "./Doctors.module.scss";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { memo } from "react";
+import LinkTop from "../../hooks/LinkTop";
 
 export default memo(function DoctorsCard({ fullSize, setLoadingImage, day_work, price, fullSizeImg, img, name, proffesions }) {
   const location = useLocation();
@@ -12,7 +13,7 @@ export default memo(function DoctorsCard({ fullSize, setLoadingImage, day_work, 
       }
       <div className={scss.wrap_card}>
         <div className={scss.name}>
-          <Link to={`/doctors/${name}`}>{name}</Link>
+          <LinkTop to={`/doctors/${name}`}>{name}</LinkTop>
           <p>{proffesions}</p>
         </div>
         {
@@ -21,12 +22,12 @@ export default memo(function DoctorsCard({ fullSize, setLoadingImage, day_work, 
               <p>{day_work}</p>
               <h5>Стоимость приёма <br /> {price} сомов</h5>
             </div>
-            <Link to={`/doctors/${name}`}><button className={`btn-small btn`}>Подробнее</button></Link>
+            <LinkTop to={`/doctors/${name}`}><button className={`btn-small btn`}>Подробнее</button></LinkTop>
           </div> :
             <div className={scss.btn}>
-              <Link to={`/doctors/${name}`}>
+              <LinkTop to={`/doctors/${name}`}>
                 <button className="btn-small btn">Подробнее</button>
-              </Link>
+              </LinkTop>
             </div>
         }
       </div>

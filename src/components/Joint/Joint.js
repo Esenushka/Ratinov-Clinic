@@ -1,15 +1,13 @@
 import React from "react";
-import { therapiesList, therapiesList2 } from "../../constants/therapiesTypes";
-import { treatmentList, treatmentList2 } from "../../constants/treatmentList";
 import YouTubeSlider from "../YouTubeSlider/YouTubeSlider";
 import scss from "./Joint.module.scss";
 
-export default function Joint() {
+export default function Joint({ treatmentList, treatmentList2, therapiesList, therapiesList2, setLoadingImage }) {
   return (
     <div className={scss.wrapper_bg}>
       <div className={`container ${scss.wrapper}`}>
         <div className={scss.bg}>
-          <img src="/images/joint-left-bg.png" alt="Задний блок" />
+          <img onLoad={() => setLoadingImage(false)} src="/images/joint-left-bg.png" alt="Задний блок" />
         </div>
         <h1>
           Как проходит <span>лечение суставов</span>
@@ -97,7 +95,7 @@ export default function Joint() {
       </div>
       <div className={`container ${scss.about_health}`}>
         <h1>
-          Узнайте о <span>своем здоровье</span> больше 
+          Узнайте о <span>своем здоровье</span> больше
         </h1>
         <p>Youtube канал доктора Ратинова</p>
         <YouTubeSlider />

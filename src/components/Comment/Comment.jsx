@@ -8,15 +8,15 @@ export default memo(function Comment({ setLoadingImage, comments }) {
       <div className={css.bg}>
         <img
           onLoad={() => setLoadingImage(false)}
-          src="/images/comment-back.svg"
-          alt="Background for CommentPage"
+          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fvrachi-izuchajut-analizy%202.png?alt=media&token=83a0e367-513b-4bc4-8b31-6a88b7ecea5e"
+          alt="Задний фон"
         />
         <div className={css.color}></div>
       </div >
       <div className={`${css.comment} container`}>
         {
           comments.map((com) => (
-            <div className={css.card}>
+            <div key={com.id} className={css.card}>
               <div className={css.top_block}>
                 <img src={com.img} alt="person-img" />
                 <div className={css.name}>
@@ -25,7 +25,7 @@ export default memo(function Comment({ setLoadingImage, comments }) {
                 </div>
               </div>
               <div className={css.des}>
-                <img src="/images/InvertedCommas.svg" alt="" />
+                <img src="/images/InvertedCommas.svg" alt="Ковычки" />
                 <p>{com.des}</p>
               </div>
             </div>

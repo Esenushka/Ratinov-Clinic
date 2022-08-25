@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Link } from 'react-router-dom';
+import LinkTop from '../../hooks/LinkTop';
 import styles from './ClinicSpecialistsBlock.module.scss';
 
 export default memo(function ClinicSpecialistsBlock ({specialists}) {  
@@ -10,24 +10,24 @@ export default memo(function ClinicSpecialistsBlock ({specialists}) {
           <p>
             <b>Специалисты </b>клиники
           </p>
-          <Link to={"/consultation"}>
+          <LinkTop to={"/consultation"}>
             <button className="btn btn-big-bg">Записаться на приём</button>
-          </Link>
+          </LinkTop>
           <div className={styles.clinicBlockCard}>
             {specialists.map((clinic) => (
               <div key={clinic.id}>
                 {
-                  clinic.notDoctor ? <Link to={"/"}>
+                  clinic.notDoctor ? <LinkTop to={"/"}>
                     {clinic.text}
-                  </Link> : <Link to={"/doctors?" + clinic.path + "&"}>
+                  </LinkTop> : <LinkTop to={"/doctors?" + clinic.path + "&"}>
                     Врач
                     <span>{clinic.text}</span>
-                  </Link>
+                  </LinkTop>
                 }
                 <p>{clinic.des}</p>
-                <Link to={"/doctors?" + clinic.path + "&"}>
+                <LinkTop to={"/doctors?" + clinic.path + "&"}>
                   <button className="btn btn-small">Подробнее</button>
-                </Link>
+                </LinkTop>
               </div>
             ))}
           </div>

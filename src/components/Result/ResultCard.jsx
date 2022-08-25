@@ -1,7 +1,7 @@
 import { useState } from "react"
 import css from "./Result.module.scss"
 
-export default function ResultCard({ img, num, afterComplaints, afterDisease, appointment, beforeComplaints, beforeDisease, time, timeDes}) {
+export default function ResultCard({ setLoadingImage, img, num, afterComplaints, afterDisease, appointment, beforeComplaints, beforeDisease, time, timeDes }) {
   const [modalActive, setModalActive] = useState(false)
   return (
     <>
@@ -14,7 +14,7 @@ export default function ResultCard({ img, num, afterComplaints, afterDisease, ap
         }}>
           <div className={css.card}>
             <p>Снимок № {num}</p>
-            <img src={img} alt="result_photo" />
+            <img onLoad={() => setLoadingImage(false)} src={img} alt="result_photo" />
           </div>
           <div className={css.modalRight__block}>
             <div className={css.before}>

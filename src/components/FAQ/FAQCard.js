@@ -1,5 +1,6 @@
 import { memo, useState } from "react";
 import { Link } from "react-router-dom";
+import LinkTop from "../../hooks/LinkTop";
 import ProcedureBlock from "../CourseOfTreatmentBlock/ProcedureBlock";
 import scss from "./FAQ.module.scss";
 
@@ -95,9 +96,9 @@ export default memo(function FAQCard({ title, buttons, info, type }) {
             }
           >
             {buttons.map((el) => (
-              <Link key={el.id} to={"/doctors?" + el.path + "&"}>
+              <LinkTop key={el.id} to={"/doctors?" + el.path + "&"}>
                 <button className="btn btn-small">{el.btn}</button>
-              </Link>
+              </LinkTop>
             ))}
           </div>
         ) : (

@@ -16,8 +16,8 @@ export default memo(function PriceCard({ list, group }) {
             </span>
             <div className={css.price + "" + (active ? css.active : "")}>
               {
-                list.map((el) => (
-                  <div className={css.des} >
+                list.map((el,index) => (
+                  <div key={index} className={css.des} >
                     <span>{el.title}</span>
                     <span>{el.price} сомов</span>
                   </div>

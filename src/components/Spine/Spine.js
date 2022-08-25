@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Link } from "react-router-dom";
+import LinkTop from "../../hooks/LinkTop";
 import scss from "./Spine.module.scss";
 
 export default memo(function Spine({ infoList, setLoadingImage }) {
@@ -67,9 +67,9 @@ export default memo(function Spine({ infoList, setLoadingImage }) {
             После лечения пациенту назначается курс реабилитации в виде лечебной
             физкультуры
           </p>
-          <Link to={"/"}>
+          <LinkTop to={"/"}>
             <button className="btn btn-big-bg">Записаться к неврологу</button>
-          </Link>
+          </LinkTop>
         </div>
         <div className={scss.info_blocks_wrapper}>
           {infoList.map((info) =>
@@ -86,9 +86,9 @@ export default memo(function Spine({ infoList, setLoadingImage }) {
                     {info.to} процедур
                   </p>
                 </div>
-                <Link to={info.path}>
+                <LinkTop to={info.path}>
                   <button className="btn btn-small">Подробнее</button>
-                </Link>
+                </LinkTop>
               </div>
             ) : (
               ""

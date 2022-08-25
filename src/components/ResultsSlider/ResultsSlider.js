@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import scss from "./ResultsSlider.module.scss"
-import { Link } from "react-router-dom"
 import { result } from "../../constants/results";
 import { memo, useState } from "react";
+import LinkTop from "../../hooks/LinkTop";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -63,9 +63,9 @@ export default memo(function ResultsSlider() {
             </Slider>
           </div>
           <div className={scss.right}>
-            <Link to="/results">
+            <LinkTop to="/result">
               <button className="btn btn-small">Показать ещё</button>
-            </Link>
+            </LinkTop>
             <div className={scss.before_after_wrapper}>
               <div className={scss.before}>
                 <h4><span>+</span> Жалобы до лечения:</h4>

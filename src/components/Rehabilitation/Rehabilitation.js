@@ -1,6 +1,7 @@
 import scss from "./Rehabilitation.module.scss"
 import { Link } from "react-router-dom"
 import { memo } from "react"
+import LinkTop from "../../hooks/LinkTop"
 
 export default memo(function Rehabilitation({setLoadingImage}) {
   return (
@@ -83,9 +84,9 @@ export default memo(function Rehabilitation({setLoadingImage}) {
           </ul>
         </div>
         <h3>Длительность курса 20 дней</h3>
-        <Link to={"#"}>
+        <LinkTop to={"/price"}>
           <button className="btn btn-big-bg">Узнать стоимость</button>
-        </Link>
+        </LinkTop>
       </div>
     </>
   )

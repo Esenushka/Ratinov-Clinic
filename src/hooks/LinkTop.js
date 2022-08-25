@@ -8,9 +8,9 @@ export default function LinkTop({ to, children,className }) {
   }
   return (
     <Link className={"linkTop " + className} to={to}>
-      <p onClick={handleClick}>
+      <div onClick={handleClick}>
         {children}
-      </p>
+      </div>
     </Link>
   )
 }

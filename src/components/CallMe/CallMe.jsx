@@ -1,8 +1,8 @@
 import css from "./CallMe.module.scss"
 import 'react-phone-input-2/lib/style.css'
 import PhoneInput from "react-phone-input-2";
-import { Link } from "react-router-dom";
 import { memo } from "react";
+import LinkTop from "../../hooks/LinkTop";
 
 export default memo(function CallMe () {
   return (
@@ -59,9 +59,9 @@ export default memo(function CallMe () {
                 required
               />
             </div>
-            <Link to={"/consultation"}><button className="btn btn-big-bg">Записаться на приём</button></Link>
+            <LinkTop to={"/consultation"}><button className="btn btn-big-bg">Записаться на приём</button></LinkTop>
           </div>
-          <span className={css.bottom}>Нажимая на кнопку "Заказать звонок", я подтверждаю, что ознакомлен и согласен с условиями <Link to={"/"}>политики конфиденциальности</Link>  и <Link to={"/"}> правилами обработки персональных данных</Link></span>
+          <span className={css.bottom}>Нажимая на кнопку "Заказать звонок", я подтверждаю, что ознакомлен и согласен с условиями <LinkTop to={"/"}>политики конфиденциальности</LinkTop>  и <LinkTop to={"/"}> правилами обработки персональных данных</LinkTop></span>
         </div>
       </div>
     </div>
