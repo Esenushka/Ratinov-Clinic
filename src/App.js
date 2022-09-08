@@ -18,6 +18,7 @@ import RehabilitationPage from './pages/services/RehabilitationPage';
 import TherapeuticPage from './pages/services/TherapeuticPage';
 import ResultPage from './pages/ResultPage';
 import ConsultationPage from './pages/ConsultationPage';
+import DoctorPage from "./pages/DoctorPage";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/services/rehabilitation" element={<RehabilitationPage />}></Route>
         <Route path="/services/therapeutic" element={<TherapeuticPage />}></Route>
         <Route path="/consultation" element={<ConsultationPage />}></Route>
+        <Route path="/doctor/:id" element={<DoctorPage />}></Route>
       </Routes>
     </>
   );
