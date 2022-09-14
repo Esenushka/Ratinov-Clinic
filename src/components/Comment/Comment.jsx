@@ -1,5 +1,4 @@
 import css from "./Comment.module.scss"
-import { Link } from "react-router-dom";
 import { memo } from "react";
 
 export default memo(function Comment({ setLoadingImage, comments }) {
@@ -21,7 +20,7 @@ export default memo(function Comment({ setLoadingImage, comments }) {
                 <img src={com.img ? com.img : "/images/avatarImg.png"} alt="person-img" />
                 <div className={css.name}>
                   <h3>{com.name}</h3>
-                  <Link to={com.link}>Ссылка на соцсеть</Link>
+                  <a href={com.link}>Ссылка на соцсеть</a>
                 </div>
               </div>
               <div className={css.des}>
