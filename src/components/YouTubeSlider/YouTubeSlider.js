@@ -1,8 +1,9 @@
-import scss from "./YouTubeSlider.module.scss"
-import Slider from "react-slick"
+import scss from "./YouTubeSlider.module.scss";
+import Slider from "react-slick";
 import YouTubeSliderCard from "./YouTubeSliderCard";
-import { YouTubeSliderList } from "../../constants/YoutubeSliderList";
-import { memo } from "react";
+import { memo, useState, useEffect } from "react";
+import { db } from "../../config/firebase";
+
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -41,11 +42,27 @@ export default memo(function YouTubeSlider() {
       <span className={scss.dots}></span>
     )
   };
+  const [youtubeData, setYoutubeData] = useState([]);
+  useEffect(() => {
+    db.collection("youtubeContent")
+      .orderBy("id", "asc").get()
+      .then((querySnapshot) => {
+        const items = [];
+        querySnapshot.forEach((doc) => {
+          items.push({
+            ...doc.data(),
+            id: doc.id
+          });
+        });
+        setYoutubeData(items);
+      });
+  }, []);
+
   return (
     <div className={"container youtube_slider " + scss.wrapper}>
       <Slider {...settings}>
         {
-          YouTubeSliderList.map((el) => <YouTubeSliderCard key={el.id} {...el}/>)
+          youtubeData.map((el) => <YouTubeSliderCard key={el.id} {...el} />)
         }
       </Slider>
     </div>
