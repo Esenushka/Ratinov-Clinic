@@ -17,7 +17,7 @@ export default memo(function Comment({ setLoadingImage, comments }) {
           comments.map((com) => (
             <div key={com.id} className={css.card}>
               <div className={css.top_block}>
-                <img src={com.img ? com.img : "/images/avatarImg.png"} alt="person-img" />
+                {/* <img src={com.img ? com.img : "/images/avatarImg.png"} alt="person-img" /> */}
                 <div className={css.name}>
                   <h3>{com.name}</h3>
                   <a href={com.link}>Ссылка на соцсеть</a>

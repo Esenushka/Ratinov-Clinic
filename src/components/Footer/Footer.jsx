@@ -2,6 +2,7 @@ import css from "./Footer.module.scss"
 import { memo } from "react";
 import LinkTop from "../../hooks/LinkTop";
 import { HashLink } from "react-router-hash-link";
+import { socialLinks } from "../../constants/socialMedia";
 
 const Footer = () => {
     return (
@@ -40,7 +41,16 @@ const Footer = () => {
                 <div className={css.footerRight}>
                     <div className={css.btn}>
                         <LinkTop to="/consultation"><button className="btn btn-footer">Онлайн консультация</button></LinkTop>
-                        <LinkTop to="/"><button className="btn btn-footer">Пройти тест</button></LinkTop>
+                        <a href="https://t.me/ratinovclinic_bot" className="btn btn-footer">Пройти тест</a>
+                    </div>
+                    <div className={css.socialMedia}>
+                        {
+                            socialLinks.map((el) => 
+                                <div key={el.id} className={css.socialLinks}>
+                                    <a href={el.link}>{el.name}</a>
+                                </div>
+                            )
+                        }
                     </div>
                     <div className={css.img}>
                         <LinkTop to="/"><img src="/images/logo.svg" alt="Логотип" /></LinkTop>
