@@ -40,7 +40,7 @@ export default function Doctor({ photo, name, year, specialization, day_work, in
           </div>
         </div>
       </div>
-      <div className={scss.info_wrapper}>
+      <div className={scss.info_wrapper + " " + (info?.length >= 4 ? scss.active : "")}>
         <div>
           {
             leftList?.map((des) => <DoctorCard key={des.id} {...des} />)

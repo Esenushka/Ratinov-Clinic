@@ -5,7 +5,7 @@
   overflow: hidden;
   margin: 50px 0;
 
-  >span {
+  >span:nth-of-type(1) {
     background: #E8F3F8;
     width: 100%;
     height: 100px;
@@ -19,7 +19,7 @@
     }
   }
 
-  >a {
+  >a:nth-of-type(1) {
     text-decoration: none;
     background: white;
     width: 100%;
@@ -31,7 +31,7 @@
 
     &:hover {
       color: #0097DB;
-    transition: .3s;
+      transition: .3s;
     }
   }
 }
