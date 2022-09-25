@@ -3,11 +3,11 @@ import LinkTop from "../../hooks/LinkTop"
 import scss from "./Doctor.module.scss"
 import DoctorCard from "./DoctorCard"
 
-export default function Doctor({ photo, name, year, specialization, day_work, info, img, diplomas }) {
+export default function Doctor({ photo, name, year, specialization, day_work, info, img, diplomas, price }) {
   const leftList = info?.slice(0, 3)
   const rightList = info?.slice(3)
   const [active, setActive] = useState(false);
- 
+
   return (
     <div className="container">
       <div className={scss.top}>
@@ -26,10 +26,12 @@ export default function Doctor({ photo, name, year, specialization, day_work, in
           </ul>
           <span>{day_work}</span>
           <div>
-            <p>
-              Стоимость приёма
-              <span>1000 сомов</span>
-            </p>
+            {
+              price === 0 ? <p></p> : <p>
+                Стоимость приёма
+                <span>{price} сомов</span>
+              </p>
+            }
             <LinkTop to={"/consultation"}>
               <button className="btn btn-big-bg">
                 Записаться на приём

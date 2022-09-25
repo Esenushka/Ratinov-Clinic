@@ -10,7 +10,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
     >div {
       display: flex;
       flex-direction: column;
@@ -19,8 +18,8 @@
 
     .block {
       width: 90%;
-      margin-bottom: 30px;
-      transition: .3s;
+      margin: 15px 0;
+      transition: .3s;  
 
       >span>img {
         width: 10px;
@@ -34,9 +33,6 @@
         }
       }
 
-
-
-
       >span {
         cursor: pointer;
         padding: 30px 40px;
@@ -46,6 +42,7 @@
         display: flex;
         align-items: center;
         grid-gap: 5px;
+        height: 12vh;
       }
 
       .info_wrapper {

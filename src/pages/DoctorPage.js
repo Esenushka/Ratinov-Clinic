@@ -14,7 +14,7 @@ export default function DoctorPage() {
   const params = useParams();
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
-  console.log(doctor);
+
   useEffect(() => {
     db.collection("doctors")
       .get()
@@ -25,6 +25,7 @@ export default function DoctorPage() {
         setLoading(false)
       })
   }, [])
+
   return (
     <>
       <Preloader loading={loading} loadingImage={false} />

@@ -16,6 +16,7 @@ import About from "../components/Consultation/About";
 import React, { useEffect, useState } from "react";
 import { db } from "../config/firebase";
 import Preloader from "../components/Preloader/Preloader";
+import RoundButtons from "../components/RoundButtons/RoundButtons";
 
 export default React.memo(function HomePage() {
   const [about, setAbout] = useState([]);
@@ -44,8 +45,8 @@ export default React.memo(function HomePage() {
         });
         setSpecialists(specialistsArr)
       });
-  
-    
+
+
     db.collection("faq")
       .orderBy("pos", "asc")
       .get()
@@ -76,6 +77,9 @@ export default React.memo(function HomePage() {
       <FAQ faq={faq} />
       <CallMe />
       <Footer />
+      {
+        loading || loadingImage ? "" : <RoundButtons />
+      }
     </div>
   )
 }

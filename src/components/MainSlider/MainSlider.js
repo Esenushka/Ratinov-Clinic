@@ -55,7 +55,9 @@ export default memo(function MainSlider() {
           <Link to={"/comment"}>
             <button className="btn btn-big-bg">Отзывы</button>
           </Link>
-          <button className="btn btn-watch">Смотреть видео</button>
+          <a href="https://youtu.be/TSaxBAf_FZY" className="btn btn-watch">
+            Смотреть видео
+          </a>
         </div>
       </div>
       <Slider {...settings}>
