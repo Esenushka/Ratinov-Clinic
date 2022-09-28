@@ -4,6 +4,7 @@ import scss from "./Doctor.module.scss"
 import DoctorCard from "./DoctorCard"
 
 export default function Doctor({ photo, name, year, specialization, day_work, info, img, diplomas, price }) {
+
   const leftList = info?.slice(0, 3)
   const rightList = info?.slice(3)
   const [active, setActive] = useState(false);

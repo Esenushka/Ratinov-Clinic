@@ -2,41 +2,49 @@ import Slider from "react-slick";
 import MainSliderCard from "./MainSliderCard";
 import scss from "./MainSlider.module.scss"
 import { Link } from "react-router-dom"
-import { memo } from "react";
+import { memo, useState } from "react";
+import { sliderContent } from "../../constants/sliderContent";
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, style, onClick, num, setNum } = props;
   return (
     <img src="/images/slider-arrow.svg"
       alt="Стрелка"
       className={className}
       style={{ ...style }}
-      onClick={onClick}
+      onClick={() => {
+        setNum((prev) => prev < 3 ? prev + 1 : prev = 3);
+        num < 3 && onClick() 
+      }}
     />
   );
 }
-
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, style, onClick, num, setNum } = props;
   return (
     <img src="/images/slider-arrow.svg"
       alt="Стрелка"
       className={className}
       style={{ ...style }}
-      onClick={onClick}
+      onClick={() => {
+        setNum((prev) => prev > 1 ? prev - 1 : prev = 1);
+        num > 1 && onClick() 
+      }}
     />
   );
 }
 
 export default memo(function MainSlider() {
+  const [num, setNum] = useState(1);
+
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow num={num} setNum={setNum} />,
+    prevArrow: <SamplePrevArrow num={num} setNum={setNum} />,
     customPaging: () => (
       <span className={scss.dots}></span>
     )
@@ -55,16 +63,18 @@ export default memo(function MainSlider() {
           <Link to={"/comment"}>
             <button className="btn btn-big-bg">Отзывы</button>
           </Link>
-          <a href="https://youtu.be/TSaxBAf_FZY" className="btn btn-watch">
-            Смотреть видео
-          </a>
+          {
+            sliderContent.map((el) => el.id === num && <a rel="noreferrer" target="_blank" href={el.link} className="btn btn-watch">
+              Смотреть видео
+            </a>)
+          }
         </div>
       </div>
       <Slider {...settings}>
-        <MainSliderCard />
-        <MainSliderCard />
-        <MainSliderCard />
+        {
+          sliderContent.map((item) => <MainSliderCard src={item.src} />)
+        }
       </Slider>
-    </div>
+    </div >
   )
 })
