@@ -10,13 +10,14 @@ import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
 
 export default React.memo(function DoctorsPage() {
-  const [doctors, setDoctors] = useState([])
+  const [doctors, setDoctors] = useState([].reverse())
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
   const location = useLocation();
   const paramEntries = new URLSearchParams(location.search).entries();
   const fromEntries = Object.fromEntries(paramEntries);
   const paramArr = Object.keys(fromEntries);
+  console.log(doctors);
   useEffect(() => {
     db.collection("doctors")
       .get()
@@ -31,7 +32,7 @@ export default React.memo(function DoctorsPage() {
   }, []);
   return (
     <div>
-      <Preloader loading={loading} loadingImage={loadingImage}/>
+      <Preloader loading={loading} loadingImage={loadingImage} />
       <Header />
       <TopBlock
         path={"Специалисты клиники"}

@@ -5,7 +5,14 @@ export default memo(function MainSliderCard() {
     <div className={scss.card}>
       <div className={scss.right}>
         <span className={scss.camera}>
-          <img src="/images/camera.svg" alt="Камера" />
+          <iframe
+            width="560"
+            height="250"
+            src="https://www.youtube.com/embed/TSaxBAf_FZY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </span>
       </div>
     </div>

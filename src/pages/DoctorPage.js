@@ -10,10 +10,11 @@ import YouTubeSlider from "../components/YouTubeSlider/YouTubeSlider";
 import { db } from "../config/firebase";
 
 export default function DoctorPage() {
-  const [doctor, setDoctor] = useState({});
+  const [doctor, setDoctor] = useState({ diplomas: [] });
   const params = useParams();
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
+
   useEffect(() => {
     db.collection("doctors")
       .get()
@@ -24,12 +25,13 @@ export default function DoctorPage() {
         setLoading(false)
       })
   }, [])
+
   return (
     <>
       <Preloader loading={loading} loadingImage={false} />
       <Header />
       <TopBlock path="Специалисты клиники" secondPath={doctor.name} bold={doctor.name} />
-      <Doctor setLoadingImage={setLoadingImage} {...doctor} />
+      <Doctor  {...doctor} />
       <YouTubeSlider />
       <CallMe />
       <Footer />

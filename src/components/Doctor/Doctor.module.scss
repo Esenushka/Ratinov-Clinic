@@ -189,18 +189,31 @@
   >div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     grid-gap: 15px;
     box-shadow: none;
 
     >div {
       width: 24%;
-      height: 200px;
+      height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #E8F3F8;
+      background: none;
       border-radius: 10px;
+    }
+  }
+}
+.diplom{
+  width: 180px;
+  margin: 5px 0;
+  overflow: hidden;
+  img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    transition: .4s;
+    &:hover{
+      transform: scale(1.1);
     }
   }
 }
