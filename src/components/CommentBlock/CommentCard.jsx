@@ -5,9 +5,10 @@ const CommentCard = ({ name, link, des }) => {
     return (
         <div className={css.card}>
             <div className={css.top_block}>
+                <img src={img || "/images/avatarImg.png"} alt="person-img" />
                 <div className={css.name}>
                     <h3>{name}</h3>
-                    <a href={link}>Ссылка на соцсеть</a>
+                    <a rel="noreferrer" href={link} target={'_blank'} >Ссылка на соцсеть</a>
                 </div>
             </div>
             <div className={css.des}>

@@ -4,6 +4,7 @@ import scss from "./Doctor.module.scss"
 import DoctorCard from "./DoctorCard"
 
 export default function Doctor({ photo, name, year, specialization, day_work, info, img, diplomas, price }) {
+
   const leftList = info?.slice(0, 3)
   const rightList = info?.slice(3)
   const [active, setActive] = useState(false);
@@ -40,7 +41,7 @@ export default function Doctor({ photo, name, year, specialization, day_work, in
           </div>
         </div>
       </div>
-      <div className={scss.info_wrapper}>
+      <div className={scss.info_wrapper + " " + (info?.length >= 4 ? scss.active : "")}>
         <div>
           {
             leftList?.map((des) => <DoctorCard key={des.id} {...des} />)
