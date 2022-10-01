@@ -20,7 +20,7 @@ export default memo(function DoctorsCard({ fullSize, setLoadingImage, day_work, 
           location.pathname === "/" ? <div className={scss.other}>
             <div className={scss.other_text}>
               <p>{day_work}</p>
-              <h5>Стоимость приёма <br /> {price} сомов</h5>
+              <h5>Стоимость приёма <br /> {price > 0 ? price + " сомов" : "Бесплатно"}</h5>
             </div>
             <LinkTop to={`/doctor/${id}`}><button className={`btn-small btn`}>Подробнее</button></LinkTop>
           </div> :
