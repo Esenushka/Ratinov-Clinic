@@ -93,7 +93,7 @@
 .methods_right_block {
   width: 80%;
   margin-left: 334px;
-  .therapies_types{
+  .therapies_types {
     width: 90%;
   }
 }
@@ -116,7 +116,12 @@
       z-index: 10;
       font-weight: 400;
       text-transform: uppercase;
-      margin-right: 697px;
+      justify-content: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      margin-left: 200px;
 
       span {
         font-size: xx-large;
@@ -159,8 +164,8 @@
   margin-top: 40px;
 
   .treatment_right_block {
-    width: 416px;
-    height: auto;
+    width: 47%;
+    height: 270px;
     border-radius: 10px;
     background-color: #fff;
     padding: 50px;
@@ -174,6 +179,10 @@
   ul {
     margin-top: 20px;
     margin-left: 20px;
+
+    li {
+      font-size: 14px;
+    }
   }
 }
 
