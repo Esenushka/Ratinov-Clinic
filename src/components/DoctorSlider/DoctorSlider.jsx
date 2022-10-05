@@ -30,7 +30,6 @@ function SamplePrevArrow(props) {
   );
 }
 
-
 const DoctorSlider = () => {
   const settings = {
     dots: false,
