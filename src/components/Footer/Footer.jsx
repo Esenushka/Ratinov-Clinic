@@ -47,7 +47,7 @@ const Footer = () => {
                         {
                             socialLinks.map((el) => 
                                 <div key={el.id} className={css.socialLinks}>
-                                    <a href={el.link}>{el.name}</a>
+                                    <a target={'_blank'} href={el.link}>{el.name}</a>
                                 </div>
                             )
                         }
