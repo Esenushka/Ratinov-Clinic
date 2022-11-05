@@ -94,10 +94,6 @@ export default function Joint({ treatmentList, treatmentList2, therapiesList, th
         </div>
       </div>
       <div className={`container ${scss.about_health}`}>
-        <h1>
-          Узнайте о <span>своем здоровье</span> больше
-        </h1>
-        <p>Youtube канал доктора Ратинова</p>
         <YouTubeSlider />
       </div>
     </div>

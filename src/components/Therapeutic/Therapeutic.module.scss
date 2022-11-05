@@ -113,3 +113,45 @@
     top: 500px;
   }
 }
+
+.priceList{
+  display: flex;
+  align-items: flex-start;
+  gap: 15%;
+  div{
+    h1{
+      display: flex;
+      align-items: center;
+      h2{
+        font-size: 30px;
+      }
+    }
+  } 
+}
+.leftPriceList{
+  div{
+    margin: 50px 0 50px 0;
+    &:nth-child(3){
+      margin-top: 70px;
+    }
+    p{
+      display: flex;
+      margin-top: -20px;
+      h2{
+        font-size:small;
+      }
+    }
+  }
+}
+.rightPriceList{
+  div{
+    margin: 50px 0 50px 0;
+    p{
+      display: flex;
+      margin-top: -20px;
+      h2{
+        font-size:small;
+      }
+    }
+  }
+}

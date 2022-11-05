@@ -7,14 +7,15 @@ export default memo(function Physiotherapy({ setLoadingImage, physiotherapy }) {
       <div className={scss.blocks_wrapper}>
         {
           physiotherapy.map((info) => <div key={info.id} className={scss.block}>
-            <h1>{info.title}</h1>
+            <h1 style={info.color && {color:'#0097DB'}}>{info.title}</h1>
+            <hr className={scss.underline}/>
             <div className={scss.top}>
               {info.duration ? <p>Длительность процедуры: {info.duration} минут</p> : ""}
               {info.to || info.from ? <p>Курс лечения: {info.from ? "от " + info.from : ""} {info.to ? "до " + info.to : ""} процедур</p> : ""}
             </div>
             {
               info.top.map((top) => <div key={info.id} className={scss.info}>
-                <div className={scss.left}>
+                <div className={info.color ? scss.leftL:scss.left}>
                   <h4>{top.device}</h4>
                   <img
                     onLoad={() => setLoadingImage(false)}

@@ -11,7 +11,9 @@
     display: flex;
     align-items: center;
     grid-gap: 5px;
-
+    p{
+      margin-bottom: 0;
+    }
     img {
       width: 10px;
       height: 10px;
@@ -51,8 +53,8 @@
 
     &:nth-child(2n){
       background-color: #f9f9f9;
-      border-top: 1px solid gray ;
-      border-bottom: 1px solid gray ;
+      // border-top: 1px solid gray ;
+      // border-bottom: 1px solid gray ;
     }
     span {
       font-weight: 400;

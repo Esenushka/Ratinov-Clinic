@@ -11,8 +11,10 @@
   >h1 {
     font-weight: 400;
     text-transform: uppercase;
-
-    span {
+    gap:1px;
+    display: flex;
+    align-items: flex-start;
+    p {
       font-size: 32px;
       font-weight: 600;
     }
@@ -37,8 +39,8 @@
 }
 
 .wrapper {
-  height: 55vh;
-  margin-top: 80px !important;
+  height: 60vh;
+  margin-top: 70px !important;
 }
 
 .card {

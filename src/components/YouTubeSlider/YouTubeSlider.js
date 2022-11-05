@@ -60,6 +60,8 @@ export default memo(function YouTubeSlider() {
 
   return (
     <div className={"container youtube_slider " + scss.wrapper}>
+      <h1>УЗНАЙТЕ О <h2>СВОЕМ ЗДОРОВЬЕ</h2> БОЛЬШЕ</h1>
+      <p>Youtube канал доктора Ратинова</p>
       <Slider {...settings}>
         {
           youtubeData.map((el) => <YouTubeSliderCard key={el.id} {...el} />)

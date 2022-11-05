@@ -11,6 +11,7 @@ export default function Doctor({ photo, name, year, specialization, day_work, in
 
   return (
     <div className="container">
+       <img src='/images/backgroundDoctor.png' alt="imgBgDoctor" className={scss.bcgrDoctor}></img>
       <div className={scss.top}>
         <div className={scss.left}>
           <img src={photo || img} alt={name} />

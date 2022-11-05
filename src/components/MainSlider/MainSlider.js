@@ -14,7 +14,7 @@ function SampleNextArrow(props) {
       style={{ ...style }}
       onClick={() => {
         setNum((prev) => prev < 3 ? prev + 1 : prev = 3);
-        num < 3 && onClick() 
+        num < 3 && onClick()
       }}
     />
   );
@@ -28,7 +28,7 @@ function SamplePrevArrow(props) {
       style={{ ...style }}
       onClick={() => {
         setNum((prev) => prev > 1 ? prev - 1 : prev = 1);
-        num > 1 && onClick() 
+        num > 1 && onClick()
       }}
     />
   );
@@ -53,7 +53,7 @@ export default memo(function MainSlider() {
     <div className={"container main_slider " + scss.wrapper}>
       <div className={scss.left}>
         <h1>
-          <span>Истории и отзывы </span>
+          <p>Истории и отзывы </p>
           наших пациентов после лечения
         </h1>
         <p>Метод резорбции - уменьшение и заживление  грыжи,

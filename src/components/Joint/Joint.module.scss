@@ -116,13 +116,7 @@
       z-index: 10;
       font-weight: 400;
       text-transform: uppercase;
-      justify-content: flex-start;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      width: 100%;
-      margin-left: 200px;
-
+      margin-right:40% ;
       span {
         font-size: xx-large;
         font-weight: 600;
@@ -134,13 +128,14 @@
 .treatment_wrapper {
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 .treatment_left {
   margin-left: 102px;
   margin-top: 40px;
-  height: 563px;
-  width: 352px;
+  height:auto;
+  width: 25%;
   background-color: #fff;
   padding: 50px;
   border-radius: 10px;
@@ -164,8 +159,8 @@
   margin-top: 40px;
 
   .treatment_right_block {
-    width: 47%;
-    height: 270px;
+    width: 45%;
+    height: auto;
     border-radius: 10px;
     background-color: #fff;
     padding: 50px;
