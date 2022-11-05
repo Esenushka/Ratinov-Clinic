@@ -93,7 +93,7 @@
 .methods_right_block {
   width: 80%;
   margin-left: 334px;
-  .therapies_types{
+  .therapies_types {
     width: 90%;
   }
 }
@@ -174,6 +174,10 @@
   ul {
     margin-top: 20px;
     margin-left: 20px;
+
+    li {
+      font-size: 14px;
+    }
   }
 }
 
