@@ -9,7 +9,7 @@ export default memo(function Rehabilitation({setLoadingImage}) {
       <div className={scss.main_img}>
         <img
           onLoad={() => setLoadingImage(false)}
-          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F56890d3d9445bfaa9e863dc98daf01f0.png?alt=media&token=90526426-4fa8-4e66-9391-bfb16f5ddccd"
+          src="/images/dedushka.png"
           alt="Задний фон"
         />
         <div className="container">

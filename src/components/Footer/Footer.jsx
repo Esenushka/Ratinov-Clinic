@@ -36,21 +36,21 @@ const Footer = () => {
                         <a href="tel: + 996 (555) 142 020">
                             <img src="/images/HeaderPhone.svg" alt="Телефон" />+ 996 (555) 142 020
                         </a>
+                        <div className={css.socialMedia}>
+                            {
+                                socialLinks.map((el) =>
+                                    <div key={el.id} className={css.socialLinks}>
+                                        <a href={el.link}> <img src={el.name} alt="social" /></a>
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
                 </div>
                 <div className={css.footerRight}>
                     <div className={css.btn}>
                         <LinkTop to="/consultation"><button className="btn btn-footer">Онлайн консультация</button></LinkTop>
                         <a href="https://t.me/ratinovclinic_bot" className="btn btn-footer">Пройти тест</a>
-                    </div>
-                    <div className={css.socialMedia}>
-                        {
-                            socialLinks.map((el) => 
-                                <div key={el.id} className={css.socialLinks}>
-                                    <a href={el.link}>{el.name}</a>
-                                </div>
-                            )
-                        }
                     </div>
                     <div className={css.img}>
                         <LinkTop to="/"><img src="/images/logo.svg" alt="Логотип" /></LinkTop>

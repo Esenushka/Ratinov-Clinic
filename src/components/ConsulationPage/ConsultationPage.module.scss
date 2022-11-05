@@ -209,6 +209,7 @@
     margin-top: 3px;
     margin-right: 10px;
     outline: none;
+
   }
 
   div {
@@ -217,6 +218,10 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    p{
+      margin-bottom: 0px;
+      padding: 15px;
+    }
   }
 }
 
