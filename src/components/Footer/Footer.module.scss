@@ -9,12 +9,13 @@
   .white_block {
     position: absolute;
     width: 1251px;
-    height: 702px;
+    height: 732px;
     border-radius: 250px;
+    border-top-left-radius: 0px;
+    background-color: #fff;
     bottom: -575px;
     right: -185px;
     z-index: -2;
-    background-color: #fff;
     transform: matrix(0.92, -0.3, 0.42, 0.95, 0, 0);
   }
 

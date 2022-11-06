@@ -37,20 +37,20 @@ const Header = () => {
                   <img src="/images/Logo.svg" alt="Логотип" />
                 </LinkTop>
                 <div className={styles.nav}>
-                  <LinkTop to="/services">Услуги</LinkTop>
+                  <span style={{alignItems:'center'}}>
+                    <LinkTop to="/services">Услуги</LinkTop>
+                    <img alt="select" src="/images/slider-arrow.svg" />
+                  </span>
                   <LinkTop to="/doctors">Специалисты</LinkTop>
                   <LinkTop to="/result">Результаты</LinkTop>
                   <LinkTop to="/price">Цены</LinkTop>
-                  <span>
-                    Ещё <img alt="select" src="/images/slider-arrow.svg" />
-                  </span>
                 </div>
               </div>
               <div className={styles.headerBottomRight}>
                 <LinkTop to={"/consultation"}>
                   <button className="btn btn-small">Онлайн консультация</button>
                 </LinkTop>
-                  <a href="https://t.me/ratinovclinic_bot" className="btn btn-small">Пройти тест</a>
+                <a href="https://t.me/ratinovclinic_bot" className="btn btn-small">Пройти тест</a>
               </div>
             </div>
           </div>

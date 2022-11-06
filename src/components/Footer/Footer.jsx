@@ -53,7 +53,7 @@ const Footer = () => {
                         <a href="https://t.me/ratinovclinic_bot" className="btn btn-footer">Пройти тест</a>
                     </div>
                     <div className={css.img}>
-                        <LinkTop to="/"><img src="/images/logo.svg" alt="Логотип" /></LinkTop>
+                        <LinkTop to="/"><img src="/images/log.png" alt="Логотип" /></LinkTop>
                     </div>
                 </div>
             </div>
