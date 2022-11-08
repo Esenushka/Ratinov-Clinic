@@ -50,7 +50,7 @@ const Header = () => {
                 <LinkTop to={"/consultation"}>
                   <button className="btn btn-small">Онлайн консультация</button>
                 </LinkTop>
-                <a href="https://t.me/ratinovclinic_bot" className="btn btn-small">Пройти тест</a>
+                <a href="http://test.ratinovclinic.kg/" className="btn btn-small">Пройти тест</a>
               </div>
             </div>
           </div>
