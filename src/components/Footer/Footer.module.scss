@@ -17,6 +17,24 @@
     right: -185px;
     z-index: -2;
     transform: matrix(0.92, -0.3, 0.42, 0.95, 0, 0);
+
+    @media (max-width:1200px) {
+      background-color: white;
+    }
+
+    @media (min-width:1800px) {
+      background-color: white;
+      bottom: -575px;
+      right: -55px;
+      width: 1351px;
+    }
+
+    @media (min-width:2100px) {
+      background-color: white;
+      bottom: -575px;
+      right: -55px;
+      width: 1951px;
+    }
   }
 
   .wrapper {
@@ -60,12 +78,15 @@
           display: flex;
           align-items: center;
           gap: 10px;
+
           .socialLinks {
             cursor: pointer;
-            a{
+
+            a {
               padding: 0;
             }
-            img{
+
+            img {
               filter: none;
               width: 20px;
               height: 20px;
