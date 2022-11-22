@@ -50,7 +50,7 @@ const Footer = () => {
                 <div className={css.footerRight}>
                     <div className={css.btn}>
                         <LinkTop to="/consultation"><button className="btn btn-footer">Онлайн консультация</button></LinkTop>
-                        <a href="https://t.me/ratinovclinic_bot" className="btn btn-footer">Пройти тест</a>
+                        <a href="http://test.ratinovclinic.kg/" className="btn btn-footer">Пройти тест</a>
                     </div>
                     <div className={css.img}>
                         <LinkTop to="/"><img src="/images/log.png" alt="Логотип" /></LinkTop>
