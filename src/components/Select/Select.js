@@ -35,14 +35,14 @@ export default memo(function Select() {
       </span>
       <div className={`checkboxs ${active ? "active" : ""}`}>
         {proffesions.map((el) =>
-          <span key={el.id} className="checkbox">
+          <span key={el.id} className="checkbox" style={{alignItems:'flex-start'}}>
             <input onChange={(e) => handleChange(e, el.proffesion)}
               checked={paramArr.find((param) => param === el.proffesion) || false}
               type="checkbox" />
             <p>{el.proffesion}</p>
           </span>
         )}
-        <span className="checkbox">
+        <span className="checkbox" style={{alignItems:'flex-start'}}>
           <input onChange={(e) => handleChange(e, null, true)} checked={paramArr.length === 0 ? true : false} type="checkbox" />
           <p>Все</p>
         </span>

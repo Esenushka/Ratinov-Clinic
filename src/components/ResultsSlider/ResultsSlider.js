@@ -37,13 +37,14 @@ export default memo(function ResultsSlider() {
     slidesToShow: 2,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    prevArrow: <SamplePrevArrow  />,
     afterChange: current => setActiveSlide(current),
     customPaging: () => (
       <span className={scss.dots}></span>
     )
   };
   return (
+
     <div className={scss.main_wrapper}>
       <div className="container result_slider">
         <div className={scss.wrapper}>
@@ -73,16 +74,16 @@ export default memo(function ResultsSlider() {
                   result[activeSlide].before.map((before) => <p key={before.id}>{before.text}</p>)
                 }
               </div>
-              <p>{result[activeSlide].centerText}</p>
               <div className={scss.after}>
                 <h4><span>-</span>После лечения:</h4>
                 {
                   result[activeSlide].after.map((after) => <p key={after.id}>{after.text}</p>)
                 }
               </div>
+              <p>{result[activeSlide].centerText}</p>
               <p>
-                <span>Результат за 4 месяца</span>
-                (с учётом перерывов между курсами, в течение от 1 до 3 месяцев)
+                {result[activeSlide].resTop}
+                {result[activeSlide].resBot}
               </p>
             </div>
           </div>

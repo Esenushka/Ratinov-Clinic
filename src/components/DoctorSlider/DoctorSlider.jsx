@@ -30,7 +30,6 @@ function SamplePrevArrow(props) {
   );
 }
 
-
 const DoctorSlider = () => {
   const settings = {
     dots: false,
@@ -50,7 +49,7 @@ const DoctorSlider = () => {
         snapshot.forEach((doc) => {
           doctorsArr.push({ ...doc.data(), id: doc.id });
         })
-        setDoctors(doctorsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
+        setDoctors(doctorsArr.sort((a, b) => parseFloat(a.imgPos) - parseFloat(b.imgPos)))
       });
   }, [])
   return (

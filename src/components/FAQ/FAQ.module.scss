@@ -1,5 +1,6 @@
 .wrapper {
   transition: .3s;
+
   >h1 {
     font-weight: 600;
     margin-bottom: 70px;
@@ -10,6 +11,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     >div {
       display: flex;
       flex-direction: column;
@@ -19,7 +21,15 @@
     .block {
       width: 90%;
       margin: 15px 0;
-      transition: .3s;  
+      transition: .3s;
+
+      span {
+        display: flex;
+        align-items: center;
+        p{
+          margin-bottom: 0px;
+        }
+      }
 
       >span>img {
         width: 10px;
@@ -63,7 +73,6 @@
 
           p {
             font-size: 14px;
-            margin-bottom: 15px;
 
             span {
               font-weight: 600;

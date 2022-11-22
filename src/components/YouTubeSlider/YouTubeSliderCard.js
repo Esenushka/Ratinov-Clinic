@@ -10,7 +10,7 @@ export default memo(function YouTubeSliderCard({ ...props }) {
             ?
             <iframe
               width="100%"
-              height="190"
+              height="220"
               src={props.img}
               title="YouTube video player"
               frameborder="0"
