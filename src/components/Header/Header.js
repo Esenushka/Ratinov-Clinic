@@ -2,7 +2,6 @@ import { memo } from "react";
 import { HashLink } from "react-router-hash-link";
 import LinkTop from "../../hooks/LinkTop";
 import styles from "./Header.module.scss";
-
 const Header = () => {
   return (
     <div>
