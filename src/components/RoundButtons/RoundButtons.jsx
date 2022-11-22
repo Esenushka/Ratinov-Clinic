@@ -8,7 +8,7 @@ export default function RoundButtons() {
         </a>
       </div>
       <div className={css.right}>
-        <a target={'_blank'} href="https://wa.me/996555142020" className={css.img}>
+        <a target={'_blank'} rel="noreferrer" href="https://wa.me/996555142020" className={css.img}>
         </a>
       </div>
     </div>

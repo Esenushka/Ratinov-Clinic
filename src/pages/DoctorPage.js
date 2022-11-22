@@ -12,9 +12,9 @@ import { db } from "../config/firebase";
 export default function DoctorPage() {
   const [doctor, setDoctor] = useState({ diplomas: [] });
   const params = useParams();
+  console.log(params.id);
   const [loading, setLoading] = useState(true);
-  const [loadingImage, setLoadingImage] = useState(true);
-
+  
   useEffect(() => {
     db.collection("doctors")
       .get()
@@ -24,7 +24,7 @@ export default function DoctorPage() {
         })
         setLoading(false)
       })
-  }, [])
+  }, [params])
 
   return (
     <>
