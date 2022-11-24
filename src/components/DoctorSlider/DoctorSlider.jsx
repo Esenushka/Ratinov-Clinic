@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import DoctorsCard from '../DoctorsCard/DoctorsCard';
 import { memo, useState } from 'react';
 import { useEffect } from 'react';
-import { db } from '../../config/firebase';
 import LinkTop from '../../hooks/LinkTop';
+import { db } from '../../config/firebase';
+
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
