@@ -14,11 +14,6 @@ export default memo(function CourseOfTreatmentBlock() {
           Процесс осуществляется за счет врожденного иммунитета,
           но не всегда наступает самостоятельно и требует много времени.
         </div>
-        <div className={scss.block}>
-          <span>Стоимость лечения 36 400 сомов,</span>
-          при единоразовой оплате стоимость уменьшается
-          до 22 400 сомов.
-        </div>
       </div>
       <div className={scss.info}>
         <span>

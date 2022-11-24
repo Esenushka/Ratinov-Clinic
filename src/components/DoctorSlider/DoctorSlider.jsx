@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import DoctorsCard from '../DoctorsCard/DoctorsCard';
 import { memo, useState } from 'react';
 import { useEffect } from 'react';
-import { db } from '../../config/firebase';
 import LinkTop from '../../hooks/LinkTop';
+import { db } from '../../config/firebase';
+
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -33,10 +34,12 @@ function SamplePrevArrow(props) {
 const DoctorSlider = () => {
   const settings = {
     dots: false,
-    infinite: false,
-    speed: 500,
+    infinite: true,
+    speed: 2000,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3500,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
   };
