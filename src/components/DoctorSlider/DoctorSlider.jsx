@@ -33,10 +33,12 @@ function SamplePrevArrow(props) {
 const DoctorSlider = () => {
   const settings = {
     dots: false,
-    infinite: false,
-    speed: 500,
+    infinite: true,
+    speed: 2000,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3500,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
   };

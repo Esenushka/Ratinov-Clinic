@@ -33,11 +33,13 @@ export default memo(function ResultsSlider() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 700,
+    speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed:5000,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow  />,
+    prevArrow: <SamplePrevArrow />,
     afterChange: current => setActiveSlide(current),
     customPaging: () => (
       <span className={scss.dots}></span>
