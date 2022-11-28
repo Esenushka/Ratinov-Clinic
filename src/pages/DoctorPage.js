@@ -34,6 +34,6 @@ export default function DoctorPage() {
       <YouTubeSlider />
       <CallMe />
       <Footer />
-    </>
+    </>   
   )
 }
