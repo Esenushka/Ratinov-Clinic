@@ -1,9 +1,11 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import LinkTop from "../../hooks/LinkTop";
 import styles from "./Header.module.scss";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [isSelect, setSelect] = useState(false);
   return (
     <div>
       <header>
@@ -37,10 +39,25 @@ const Header = () => {
                   <img src="/images/Logo.svg" alt="Логотип" />
                 </LinkTop>
                 <div className={styles.nav}>
-                  <span style={{alignItems:'center'}}>
-                    <LinkTop to="/services">Услуги</LinkTop>
-                    <img alt="select" src="/images/slider-arrow.svg" />
-                  </span>
+                  <div className={styles.select}>
+                    <span onMouseOver={() => setSelect(!isSelect)} style={{ alignItems: 'center' }}>
+                      <a>Услуги</a>
+                      <img alt="select" src="/images/slider-arrow.svg" />
+                    </span>
+                    {
+                      isSelect &&
+                      <div onMouseLeave={() => setSelect(!isSelect)}>
+                        <Link to="/services" >Все Услуги</Link>
+                        <Link to="/services/spine" >Позвоночник</Link>
+                        <Link to="/services/joint" >Суставы</Link>
+                        <Link to="/services/therapeutic" >ЛФК</Link>
+                        <Link to="/services/physiotherapy" >Физиолечение</Link>
+                        <Link to="/services/massage" >Массаж</Link>
+                        <Link to="/services/rehabilitation" >Реабилитация Covid-19</Link>
+                        <Link to="/services/botulinum" >Ботолинотерапия</Link>
+                      </div>
+                    }
+                  </div>
                   <LinkTop to="/doctors">Специалисты</LinkTop>
                   <LinkTop to="/result">Результаты</LinkTop>
                   <LinkTop to="/price">Цены</LinkTop>
@@ -54,9 +71,9 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div>
-      </header>
-    </div>
+        </div >
+      </header >
+    </div >
   );
 };
 
