@@ -1,16 +1,16 @@
-import css from './Doctor.module.scss';
+import css from "./Doctor.module.scss";
 import Slider from "react-slick";
-import DoctorsCard from '../DoctorsCard/DoctorsCard';
-import { memo, useState } from 'react';
-import { useEffect } from 'react';
-import LinkTop from '../../hooks/LinkTop';
-import { db } from '../../config/firebase';
-
+import DoctorsCard from "../DoctorsCard/DoctorsCard";
+import { memo, useState } from "react";
+import { useEffect } from "react";
+import LinkTop from "../../hooks/LinkTop";
+import { db } from "../../config/firebase";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <img src="/images/slider-arrow.svg"
+    <img
+      src="/images/slider-arrow.svg"
       alt="Стрелка"
       className={className}
       style={{ ...style }}
@@ -22,7 +22,8 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <img src="/images/slider-arrow.svg"
+    <img
+      src="/images/slider-arrow.svg"
       alt="Стрелка"
       className={className}
       style={{ ...style }}
@@ -41,23 +42,27 @@ const DoctorSlider = () => {
     autoplay: true,
     autoplaySpeed: 3500,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
   };
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     db.collection("doctors")
       .get()
       .then((snapshot) => {
-        const doctorsArr = []
+        const doctorsArr = [];
         snapshot.forEach((doc) => {
           doctorsArr.push({ ...doc.data(), id: doc.id });
-        })
-        setDoctors(doctorsArr.sort((a, b) => parseFloat(a.imgPos) - parseFloat(b.imgPos)))
+        });
+        setDoctors(
+          doctorsArr.sort((a, b) => parseFloat(a.imgPos) - parseFloat(b.imgPos))
+        );
       });
-  }, [])
+  }, []);
   return (
     <div className={`${css.wrapper} container`}>
-      <h1>Наши <b>Врачи</b></h1>
+      <h1>
+        Наши <b>Врачи</b>
+      </h1>
       <Slider className={`${css.slider} doctor_slider`} {...settings}>
         {doctors.map((doctor) => (
           <DoctorsCard fullSize key={doctor.id} {...doctor} />
@@ -71,6 +76,6 @@ const DoctorSlider = () => {
       </LinkTop>
     </div>
   );
-}
+};
 
 export default memo(DoctorSlider);

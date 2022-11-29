@@ -1,5 +1,5 @@
-import { memo } from "react"
-import scss from "./MainSlider.module.scss"
+import { memo } from "react";
+import scss from "./MainSlider.module.scss";
 export default memo(function MainSliderCard({ src }) {
   return (
     <div className={scss.card}>
@@ -12,9 +12,10 @@ export default memo(function MainSliderCard({ src }) {
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+            allowfullscreen
+          ></iframe>
         </span>
       </div>
     </div>
-  )
-})
+  );
+});

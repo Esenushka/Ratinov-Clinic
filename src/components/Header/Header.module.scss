@@ -25,6 +25,31 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 90px;
+
+  .select {
+    cursor: pointer;
+    div {
+      position: absolute;
+      background: #ffffff;
+      padding: 20px 40px;
+      margin-left: -20px;
+      margin-top: 5px;
+      z-index: 999;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+
+      a {
+        padding: 5px;
+        transition: ease-in-out .4s;
+      }
+
+      :hover {
+        color: #0097DB;
+      }
+    }
+  }
 }
 
 .headerTopLeft a,
@@ -38,6 +63,7 @@ span {
 .headerTopLeft {
   display: flex;
   align-items: center;
+
   a {
     color: #636363;
     margin: 0 20px 0 0;
@@ -126,7 +152,8 @@ span {
       padding: 7px 43px;
       margin-left: 10px;
       width: 100%;
-      .test{
+
+      .test {
         color: #ffffff;
       }
     }

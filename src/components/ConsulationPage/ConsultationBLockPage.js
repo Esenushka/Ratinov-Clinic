@@ -1,7 +1,7 @@
-import { useState } from "react"
-import PhoneInput from "react-phone-input-2"
-import LinkTop from "../../hooks/LinkTop"
-import scss from "./ConsultationPage.module.scss"
+import { useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import LinkTop from "../../hooks/LinkTop";
+import scss from "./ConsultationPage.module.scss";
 import emailjs from "@emailjs/browser";
 import { storageRef } from "../../config/firebase";
 export default function ConsultationBlockPage({ setLoadingImage }) {
@@ -14,13 +14,14 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
   const [blockade, setBlocade] = useState("Да");
   const [fileData, setFileData] = useState("");
 
-  const getUrl = async (name) => await storageRef
-    .ref()
-    .child("mrt/" + name)
-    .getDownloadURL()
-    .then((url) => {
-      return url
-    })
+  const getUrl = async (name) =>
+    await storageRef
+      .ref()
+      .child("mrt/" + name)
+      .getDownloadURL()
+      .then((url) => {
+        return url;
+      });
   const submit = (e) => {
     e.preventDefault();
     const data = {
@@ -30,35 +31,45 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
       range: range,
       describe: describe,
       continue: continues,
-      blockade: blockade
-    }
+      blockade: blockade,
+    };
     if (fileData) {
-      storageRef.ref("mrt/" + fileData.name).put(fileData).then(() => {
-        getUrl(fileData.name).then((url) => {
-          emailjs.send('gmail', 'template_spy3tbn', { ...data, file: url }, 'eZrLIJSVzeGuJDlNo')
-            .then(() => {
-              setName("");
-              setPhone("");
-              setDate("");
-              setRange(1);
-              setDescribe("");
-              setFileData("");
-              e.target.reset();
-            }, (error) => {
-              console.log(error.text);
-            });
-        })
-      }
-      )
+      storageRef
+        .ref("mrt/" + fileData.name)
+        .put(fileData)
+        .then(() => {
+          getUrl(fileData.name).then((url) => {
+            emailjs
+              .send(
+                "gmail",
+                "template_spy3tbn",
+                { ...data, file: url },
+                "eZrLIJSVzeGuJDlNo"
+              )
+              .then(
+                () => {
+                  setName("");
+                  setPhone("");
+                  setDate("");
+                  setRange(1);
+                  setDescribe("");
+                  setFileData("");
+                  e.target.reset();
+                },
+                (error) => {
+                  console.log(error.text);
+                }
+              );
+          });
+        });
     }
-  }
+  };
   const handleChange = (target) => {
     if (target.files.length) {
       const reader = new FileReader();
       setFileData(target.files[0]);
       reader.readAsDataURL(target.files[0]);
     }
-
   };
   return (
     <div className={scss.main_wrapper}>
@@ -70,13 +81,9 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
         />
         <div className="container">
           <h2>
-            <span>
-              Предварительная дистанционная консультация
-            </span>
-            {" "}
-            по МРТ позвоночника в нашей клинике предоставляется
-            иностранным/иногородним пациентам, которым далеко и
-            трудно добраться до нашей клиники.
+            <span>Предварительная дистанционная консультация</span> по МРТ
+            позвоночника в нашей клинике предоставляется иностранным/иногородним
+            пациентам, которым далеко и трудно добраться до нашей клиники.
           </h2>
         </div>
       </div>
@@ -91,28 +98,29 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
 
       <div className={"container " + scss.wrapper}>
         <p>
-          На онлайн консультации Вы получите заключение о возможности
-          «Резорбции Вашей Грыжи», о состоянии вашего позвоночника и
-          потенциальной эффективности нашего лечения.
+          На онлайн консультации Вы получите заключение о возможности «Резорбции
+          Вашей Грыжи», о состоянии вашего позвоночника и потенциальной
+          эффективности нашего лечения.
         </p>
-        <p>
-          Онлайн консультация проводится главврачом клиники
-          {" "}
-        </p>
+        <p>Онлайн консультация проводится главврачом клиники </p>
         <LinkTop className={scss.to_doctor} to={"/doctors"}>
           <span>Ратиновым Андреем Сергеевичем. </span>
         </LinkTop>
-        <LinkTop className={scss.take_consultation} to={"/"}>Стоимость консультации 1000 сомов</LinkTop>
+        <LinkTop className={scss.take_consultation} to={"/"}>
+          Стоимость консультации 1000 сомов
+        </LinkTop>
         <div>
-          <h1><span>Требования к</span> МРТ</h1>
+          <h1>
+            <span>Требования к</span> МРТ
+          </h1>
           <ul>
             <li>
-              МРТ исследование должно быть не старше 3-х месяцев,
-              чтобы мы смогли объективно оценить изменения на сегодняшний день.
+              МРТ исследование должно быть не старше 3-х месяцев, чтобы мы
+              смогли объективно оценить изменения на сегодняшний день.
             </li>
             <li>
-              МРТ обязательно в электронном формате.
-              Не подойдут: фотографии снимков, скриншоты с компьютера или телефона.
+              МРТ обязательно в электронном формате. Не подойдут: фотографии
+              снимков, скриншоты с компьютера или телефона.
             </li>
           </ul>
         </div>
@@ -122,17 +130,13 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             нет МРТ в электронной версии?
           </h1>
           <p>
-            Обратитесь в тот диагностический центр,
-            в котором проходили исследование,
-            и запросите у них запись МРТ в электронном
-            виде на диске или флеш-карте.
+            Обратитесь в тот диагностический центр, в котором проходили
+            исследование, и запросите у них запись МРТ в электронном виде на
+            диске или флеш-карте.
           </p>
         </div>
         <form onSubmit={submit} className={scss.form}>
-          <h1>
-            Чтобы получить консультацию
-            заполните форму ниже:
-          </h1>
+          <h1>Чтобы получить консультацию заполните форму ниже:</h1>
           <label>
             <p>Имя*</p>
             <input
@@ -140,7 +144,8 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
               onChange={({ target }) => setName(target.value)}
               name="name"
               type={"text"}
-              placeholder={"Иванов Иван"} required
+              placeholder={"Иванов Иван"}
+              required
             />
           </label>
           <label>
@@ -151,7 +156,6 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
               name="date"
               type={"date"}
               placeholder={"10.05.2022"}
-
             />
           </label>
           <label>
@@ -167,7 +171,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
                 name: "phone",
                 country: "us",
                 required: true,
-                autoFocus: false
+                autoFocus: false,
               }}
               containerStyle={{
                 marginTop: "10px",
@@ -183,16 +187,16 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
                 fontSize: "14px",
                 display: "flex",
                 alignItems: "center",
-                borderRadius: "10px"
+                borderRadius: "10px",
               }}
               buttonStyle={{
                 background: "#fff",
                 border: "none",
                 borderRadius: "10px",
-                fontSize: "10px"
+                fontSize: "10px",
               }}
               dropdownStyle={{
-                fontSize: "10px"
+                fontSize: "10px",
               }}
               placeholder="(999) 999-999"
               required
@@ -203,83 +207,92 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             <input
               value={range}
               onChange={(e) => setRange(Number(e.target.value))}
-              className={scss.range} type={"range"}
-              step={"true"} min={"1"} max={"10"}
+              className={scss.range}
+              type={"range"}
+              step={"true"}
+              min={"1"}
+              max={"10"}
               name="range"
             />
             <div className={scss.dots}>
-              {
-                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) =>
-                  num === range ? <span key={num} className={scss.active}>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) =>
+                num === range ? (
+                  <span key={num} className={scss.active}>
                     <p>{range}</p>
-                  </span> :
-                    num < range ? <span key={num} className={scss.marked}></span> : <span key={num}></span>
+                  </span>
+                ) : num < range ? (
+                  <span key={num} className={scss.marked}></span>
+                ) : (
+                  <span key={num}></span>
                 )
-              }
+              )}
             </div>
           </label>
           <label>
             <p>Опишите свои жалобы</p>
             <textarea
-
               value={describe}
               onChange={({ target }) => setDescribe(target.value)}
               name="describe"
               placeholder="Онемение руки, боль в плече, приступы головной боли..."
-              cols={"60"} rows={"15"}
+              cols={"60"}
+              rows={"15"}
             />
           </label>
           <label>
             <p>Опишите свои жалобы</p>
             <div className={scss.block}>
-              <span>
-                Когда возобновились или начались боли?
-              </span>
+              <span>Когда возобновились или начались боли?</span>
               <div>
                 <input
                   onChange={() => setContinues("в течение месяца")}
                   defaultChecked
-                  name="continues" type={"radio"}
+                  name="continues"
+                  type={"radio"}
                 />
                 <p>в течение месяца</p>
               </div>
               <div>
                 <input
                   onChange={() => setContinues("в течение 3х месяцев")}
-                  name="continues" type={"radio"}
+                  name="continues"
+                  type={"radio"}
                 />
                 <p>в течение 3х месяцев</p>
               </div>
               <div>
                 <input
                   onChange={() => setContinues("полгода")}
-                  name="continues" type={"radio"}
+                  name="continues"
+                  type={"radio"}
                 />
                 <p>полгода</p>
               </div>
               <div>
                 <input
                   onChange={() => setContinues("год")}
-                  name="continues" type={"radio"}
+                  name="continues"
+                  type={"radio"}
                 />
                 <p>год</p>
               </div>
               <div>
                 <input
                   onChange={() => setContinues("больше года")}
-                  name="continues" type={"radio"}
+                  name="continues"
+                  type={"radio"}
                 />
                 <p>больше года</p>
               </div>
             </div>
             <div className={scss.block}>
-              <span>
-                Делали ли вы блокады?
-              </span>
+              <span>Делали ли вы блокады?</span>
               <div>
                 <input
                   onChange={({ target }) => setBlocade(target.value)}
-                  defaultChecked name="blockade" type={"radio"}
+                  defaultChecked
+                  name="blockade"
+                  type={"radio"}
                   value="Да"
                 />
                 <p>Да</p>
@@ -288,7 +301,8 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
                 <input
                   onChange={({ target }) => setBlocade(target.value)}
                   value="Нет"
-                  name="blockade" type={"radio"}
+                  name="blockade"
+                  type={"radio"}
                 />
                 <p>Нет</p>
               </div>
@@ -298,7 +312,9 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             <b>Прикрепить снимки МРТ в архиве ZIP, следуя инструкции ниже:</b>
             <ul>
               <li>Вставьте CD-диск с исследованием в дисковод</li>
-              <li>У вас на экране монитора автоматически откроется его содержимое</li>
+              <li>
+                У вас на экране монитора автоматически откроется его содержимое
+              </li>
               <li>
                 Нажмите правой кнопкой на папку "DICOM" и выберете «копировать»
                 вставляем папку на рабочий стол нажимаем
@@ -317,9 +333,12 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             </div>
           </label>
           <div>
-            <p>Прикрепите архив вашего МРТ-исследования (непосредственно запись на диске)</p>
+            <p>
+              Прикрепите архив вашего МРТ-исследования (непосредственно запись
+              на диске)
+            </p>
             <div className={scss.file}>
-              <label >
+              <label>
                 <input
                   onChange={(e) => handleChange(e.target)}
                   type={"file"}
@@ -343,5 +362,5 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

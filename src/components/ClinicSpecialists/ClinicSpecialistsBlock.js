@@ -1,8 +1,8 @@
-import { memo } from 'react';
-import LinkTop from '../../hooks/LinkTop';
-import styles from './ClinicSpecialistsBlock.module.scss';
+import { memo } from "react";
+import LinkTop from "../../hooks/LinkTop";
+import styles from "./ClinicSpecialistsBlock.module.scss";
 
-export default memo(function ClinicSpecialistsBlock ({specialists}) {  
+export default memo(function ClinicSpecialistsBlock({ specialists }) {
   return (
     <div className={styles.clinicWrapper}>
       <div className="container">
@@ -16,14 +16,14 @@ export default memo(function ClinicSpecialistsBlock ({specialists}) {
           <div className={styles.clinicBlockCard}>
             {specialists.map((clinic) => (
               <div key={clinic.id}>
-                {
-                  clinic.notDoctor ? <LinkTop to={"/"}>
-                    {clinic.text}
-                  </LinkTop> : <LinkTop to={"/doctors?" + clinic.path + "&"}>
+                {clinic.notDoctor ? (
+                  <LinkTop to={"/"}>{clinic.text}</LinkTop>
+                ) : (
+                  <LinkTop to={"/doctors?" + clinic.path + "&"}>
                     Врач
                     <span>{clinic.text}</span>
                   </LinkTop>
-                }
+                )}
                 <p>{clinic.des}</p>
                 <LinkTop to={"/doctors?" + clinic.path + "&"}>
                   <button className="btn btn-small">Подробнее</button>
@@ -35,4 +35,4 @@ export default memo(function ClinicSpecialistsBlock ({specialists}) {
       </div>
     </div>
   );
-})
+});
