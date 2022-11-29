@@ -107,4 +107,4 @@ export default memo(function FAQCard({ title, buttons, info, type }) {
       </div>
     </div>
   );
-})
+});

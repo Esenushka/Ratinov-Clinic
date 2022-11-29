@@ -40,23 +40,37 @@ const Header = () => {
                 </LinkTop>
                 <div className={styles.nav}>
                   <div className={styles.select}>
-                    <span onMouseOver={() => setSelect(!isSelect)} style={{ alignItems: 'center' }}>
-                      <a>Услуги</a>
+                    <span
+                      onMouseOver={() => setSelect(!isSelect)}
+                      style={{ alignItems: "center" }}
+                    >
+                      <p
+                        style={{
+                          color: "#636363",
+                          margin: "0 -5px 0 0",
+                          lineHeight: "20px",
+                          fontSize: "16px",
+                          fontWeight: "500",
+                        }}
+                      >
+                        Услуги
+                      </p>
                       <img alt="select" src="/images/slider-arrow.svg" />
                     </span>
-                    {
-                      isSelect &&
+                    {isSelect && (
                       <div onMouseLeave={() => setSelect(!isSelect)}>
-                        <Link to="/services" >Все Услуги</Link>
-                        <Link to="/services/spine" >Позвоночник</Link>
-                        <Link to="/services/joint" >Суставы</Link>
-                        <Link to="/services/therapeutic" >ЛФК</Link>
-                        <Link to="/services/physiotherapy" >Физиолечение</Link>
-                        <Link to="/services/massage" >Массаж</Link>
-                        <Link to="/services/rehabilitation" >Реабилитация Covid-19</Link>
-                        <Link to="/services/botulinum" >Ботолинотерапия</Link>
+                        <Link to="/services">Все Услуги</Link>
+                        <Link to="/services/spine">Позвоночник</Link>
+                        <Link to="/services/joint">Суставы</Link>
+                        <Link to="/services/therapeutic">ЛФК</Link>
+                        <Link to="/services/physiotherapy">Физиолечение</Link>
+                        <Link to="/services/massage">Массаж</Link>
+                        <Link to="/services/rehabilitation">
+                          Реабилитация Covid-19
+                        </Link>
+                        <Link to="/services/botulinum">Ботолинотерапия</Link>
                       </div>
-                    }
+                    )}
                   </div>
                   <LinkTop to="/doctors">Специалисты</LinkTop>
                   <LinkTop to="/result">Результаты</LinkTop>
@@ -67,13 +81,20 @@ const Header = () => {
                 <LinkTop to={"/consultation"}>
                   <button className="btn btn-small">Онлайн консультация</button>
                 </LinkTop>
-                <a href="http://test.ratinovclinic.kg/" className="btn btn-small">Пройти тест</a>
+                <a
+                  href="http://test.ratinovclinic.kg/"
+                  target="_blanck"
+                  rel="noreferrer"
+                  className="btn btn-small"
+                >
+                  Пройти тест
+                </a>
               </div>
             </div>
           </div>
-        </div >
-      </header >
-    </div >
+        </div>
+      </header>
+    </div>
   );
 };
 

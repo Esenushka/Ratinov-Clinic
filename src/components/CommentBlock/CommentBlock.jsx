@@ -1,4 +1,4 @@
-import css from "./Comment.module.scss"
+import css from "./Comment.module.scss";
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
 import { memo } from "react";
@@ -10,7 +10,8 @@ import LinkTop from "../../hooks/LinkTop";
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <img src="/images/slider-arrow.svg"
+    <img
+      src="/images/slider-arrow.svg"
       alt="Стрелка"
       className={className}
       style={{ ...style }}
@@ -22,7 +23,8 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <img src="/images/slider-arrow.svg"
+    <img
+      src="/images/slider-arrow.svg"
       alt="Стрелка"
       className={className}
       style={{ ...style }}
@@ -30,7 +32,6 @@ function SamplePrevArrow(props) {
     />
   );
 }
-
 
 const CommentBlock = () => {
   const settings = {
@@ -47,13 +48,15 @@ const CommentBlock = () => {
     db.collection("comments")
       .get()
       .then((snapshot) => {
-        const commentsArr = []
+        const commentsArr = [];
         snapshot.forEach((doc) => {
           commentsArr.push({ ...doc.data(), id: doc.id });
-        })
-        setComments(commentsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
+        });
+        setComments(
+          commentsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
+        );
       });
-  }, [])
+  }, []);
   return (
     <div className={css.comment_block}>
       <div className={css.bg_block}>
@@ -66,18 +69,18 @@ const CommentBlock = () => {
       <div className={`${css.wrapper} container`}>
         <div className={css.title}>
           <h1>Отзывы</h1>
-          <LinkTop to="/"><button className="btn btn-small">Все отзывы</button></LinkTop>
+          <LinkTop to="/">
+            <button className="btn btn-small">Все отзывы</button>
+          </LinkTop>
         </div>
-        <Slider className={`${css.slider} comment_slider`} {...settings} >
-          {
-            comments.map((e) => (
-              <CommentCard key={e.id} {...e} />
-            ))
-          }
+        <Slider className={`${css.slider} comment_slider`} {...settings}>
+          {comments.map((e) => (
+            <CommentCard key={e.id} {...e} />
+          ))}
         </Slider>
       </div>
     </div>
   );
-}
+};
 
 export default memo(CommentBlock);

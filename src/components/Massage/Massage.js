@@ -1,8 +1,7 @@
-import { memo } from "react"
-import scss from "./Massage.module.scss"
+import { memo } from "react";
+import scss from "./Massage.module.scss";
 
 export default memo(function Massage({ setLoadingImage, massage }) {
-
   return (
     <div className={scss.wrapper}>
       <div className={scss.bg}>
@@ -13,18 +12,18 @@ export default memo(function Massage({ setLoadingImage, massage }) {
         />
       </div>
       <div className="container">
-        {
-          massage.map((info) => <div key={info.id} className={scss.blocks_wrapper}>
+        {massage.map((info) => (
+          <div key={info.id} className={scss.blocks_wrapper}>
             <h1>{info.name}</h1>
-            {
-              info.list.map((text, index) => <div key={index} className={scss.block}>
+            {info.list.map((text, index) => (
+              <div key={index} className={scss.block}>
                 <p>{text.title}</p>
                 <p>{text.text}</p>
-              </div>)
-            }
-          </div>)
-        }
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
-  )
-})
+  );
+});
