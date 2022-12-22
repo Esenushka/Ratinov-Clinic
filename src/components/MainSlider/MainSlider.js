@@ -53,8 +53,9 @@ export default memo(function MainSlider() {
     <div className={"container main_slider " + scss.wrapper}>
       <div className={scss.left}>
         <h1>
-          <p>Истории и отзывы </p>
-          наших пациентов после лечения
+          <font >
+          Истории и отзывы </font>  
+        наших пациентов после лечения
         </h1>
         <p>
           Метод резорбции - уменьшение и заживление грыжи, вплоть до полного ее

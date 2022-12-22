@@ -23,6 +23,7 @@ const Footer = () => {
               <HashLink to={"/#faq"}>Информация для пациентов</HashLink>
               <LinkTop to="/reception">Время приема</LinkTop>
               <LinkTop to="/comment">Отзывы</LinkTop>
+              <a href="https://2gis.kg/bishkek/firm/70000001046561968?m=74.619256%2C42.824923%2F19.42" target="_blank" rel="noreferrer">Как добраться</a>
             </div>
           </div>
           <div className={css.footerBottom}>
@@ -66,7 +67,7 @@ const Footer = () => {
           </div>
           <div className={css.img}>
             <LinkTop to="/">
-              <img src="/images/log.png" alt="Логотип" />
+              <img src="/images/loggo.svg" alt="Логотип" />
             </LinkTop>
           </div>
         </div>

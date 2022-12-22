@@ -10,10 +10,8 @@
   >h1 {
     font-weight: 400;
     text-transform: uppercase;
-    gap:1px;
-    display: flex;
-    align-items: flex-start;
-    p {
+    display: block;
+    font {
       font-size: 32px;
       font-weight: 600;
     }
