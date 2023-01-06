@@ -17,7 +17,6 @@ export default React.memo(function DoctorsPage() {
   const paramEntries = new URLSearchParams(location.search).entries();
   const fromEntries = Object.fromEntries(paramEntries);
   const paramArr = Object.keys(fromEntries);
-  console.log(doctors);
   useEffect(() => {
     db.collection("doctors")
       .get()
