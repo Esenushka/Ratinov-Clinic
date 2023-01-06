@@ -24,7 +24,7 @@ export default React.memo(function HomePage() {
   const [faq, setFaq] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
-
+ 
   useEffect(() => {
     db.collection("about")
       .get()

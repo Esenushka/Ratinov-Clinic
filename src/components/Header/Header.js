@@ -4,11 +4,11 @@ import LinkTop from "../../hooks/LinkTop";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({isResult}) => {
   const [isSelect, setSelect] = useState(false);
+  
   return (
-    <div>
-      <header>
+      <header className={isResult ? styles.headerResult : ''}>
         <div className="container">
           <div>
             <div className={styles.headerTop}>
@@ -46,8 +46,8 @@ const Header = () => {
                     >
                       <p
                         style={{
-                          color: "#636363",
-                          margin: "0 -5px 0 0",
+                          color: "black",
+                          margin: "0 -7px 0 0",
                           lineHeight: "20px",
                           fontSize: "16px",
                           fontWeight: "500",
@@ -94,7 +94,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-    </div>
+    
   );
 };
 
