@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 
 * {
   padding: 0;
@@ -8,11 +8,11 @@
 }
 
 html,
-body{
+body {
   scroll-behavior: smooth;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
@@ -22,14 +22,21 @@ a{
   width: 100%;
   margin: 0 auto;
 }
+.adaptiveBlockForMB {
+  display: none;
+}
 
 @media (max-width: 1200px) {
   .container {
     max-width: 996px;
   }
+  .adaptiveBlockForMB {
+    display: none;
+  }
+  .normalAdaptive {
+    display: block;
+  }
 }
-
-
 
 @media (max-width: 900px) {
   .container {
@@ -41,9 +48,22 @@ a{
   .container {
     max-width: 90%;
   }
+  .adaptiveBlockForMB {
+    height: 50vh;
+    display: block;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .normalAdaptive {
+    display: none;
+  }
 }
 
-@media(max-width: 512px) {
+@media (max-width: 512px) {
   .container {
     max-width: 100%;
     padding: 0 15px;
