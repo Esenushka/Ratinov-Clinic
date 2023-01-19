@@ -4,6 +4,8 @@ import LinkTop from "../../hooks/LinkTop";
 import scss from "./ConsultationPage.module.scss";
 import emailjs from "@emailjs/browser";
 import { storageRef } from "../../config/firebase";
+import { useNavigate } from "react-router-dom";
+
 export default function ConsultationBlockPage({ setLoadingImage }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -13,6 +15,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
   const [continues, setContinues] = useState("в течение месяца");
   const [blockade, setBlocade] = useState("Да");
   const [fileData, setFileData] = useState("");
+  const navigate = useNavigate();
 
   const getUrl = async (name) =>
     await storageRef
@@ -22,7 +25,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
       .then((url) => {
         return url;
       });
-  const submit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     const data = {
       name: name,
@@ -41,10 +44,10 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
           getUrl(fileData.name).then((url) => {
             emailjs
               .send(
-                "gmail",
-                "template_spy3tbn",
+                "service_v7uicjf",
+                "template_mp5ryv4",
                 { ...data, file: url },
-                "eZrLIJSVzeGuJDlNo"
+                "9u7Ks_f1ZeJAn8ivx"
               )
               .then(
                 () => {
@@ -64,6 +67,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
         });
     }
   };
+
   const handleChange = (target) => {
     if (target.files.length) {
       const reader = new FileReader();
@@ -71,6 +75,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
       reader.readAsDataURL(target.files[0]);
     }
   };
+
   return (
     <div className={scss.main_wrapper}>
       <div className={scss.top}>
@@ -135,7 +140,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             диске или флеш-карте.
           </p>
         </div>
-        <form onSubmit={submit} className={scss.form}>
+        <form onSubmit={sendEmail} className={scss.form}>
           <h1>Чтобы получить консультацию заполните форму ниже:</h1>
           <label>
             <p>Имя*</p>

@@ -38,7 +38,7 @@ export default function ResultPage() {
   return (
     <>
       <Preloader loading={loading} loadingImage={loadingImage}/>
-      <Header />
+      <Header isResult={true} />
       <TopBlock path={'Результаты'} bold={'Результаты'} />
       <div className={`container ${scss.result__wrapper}`} >
         <div className={scss.title}>

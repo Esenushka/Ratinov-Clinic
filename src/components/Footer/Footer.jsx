@@ -63,6 +63,7 @@ const Footer = () => {
               className="btn btn-footer"
             >
               Пройти тест
+              
             </a>
           </div>
           <div className={css.img}>
