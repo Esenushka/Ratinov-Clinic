@@ -15,7 +15,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
   const [continues, setContinues] = useState("в течение месяца");
   const [blockade, setBlocade] = useState("Да");
   const [fileData, setFileData] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const getUrl = async (name) =>
     await storageRef
@@ -67,7 +67,6 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
         });
     }
   };
-
 
   const handleChange = (target) => {
     if (target.files.length) {
