@@ -1,5 +1,4 @@
 import { memo, useState } from "react";
-import { HashLink } from "react-router-hash-link";
 import LinkTop from "../../hooks/LinkTop";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
@@ -75,7 +74,7 @@ const Header = ({ isResult }) => {
               rel="noreferrer"
               className={styles.link}
             >
-              Пройти тест
+              Тест на здоровье позвоночника
             </a>
           </div>
         </div>

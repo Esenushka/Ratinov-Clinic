@@ -42,23 +42,27 @@
 
   .btns {
     display: flex;
-    grid-gap: 30px;
+    grid-gap: 20px;
     align-items: center;
     width: 75%;
+    margin-top: 3px;
+    justify-content: space-between;
     .btn {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
       background: #ffffff;
       border: 1px solid #0097db;
       border-radius: 7px;
-      padding: 19px 35px;
+      padding: 19px 33px;
       cursor: pointer !important;
       transition: 0.3s ease-in-out;
       color: #0097db;
+
       &:hover {
         background-color: #0097db;
         color: white;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
         .play {
           border-color: transparent transparent transparent #ffffff;
         }
@@ -81,8 +85,8 @@
 }
 
 .wrapper {
-  margin-top: 70px !important;
-  margin-bottom: 100px !important;
+  margin-top: 62px !important;
+  margin-bottom: 83px !important;
 }
 
 .card {
@@ -92,7 +96,6 @@
   margin-bottom: 50px;
   margin-left: auto;
   height: 260px;
-  
 }
 
 .dots {
@@ -105,7 +108,7 @@
   transition: 0.15s;
   position: absolute;
   right: -1530%;
-  top: -290%;
+  bottom: 45px;
   &:hover {
     background: #333333;
     border-color: #333333;

@@ -23,9 +23,6 @@
     }
   }
 
-  .slider {
-    height: 500px;
-  }
   a {
     width: 100%;
   }
@@ -39,6 +36,9 @@
   left: -2%;
   top: 45%;
   cursor: pointer;
+  &:hover{
+    filter: brightness(1%); 
+  }
 }
 
 .arrowR {
@@ -50,4 +50,7 @@
   top: 45%;
   transform: rotate(180deg);
   cursor: pointer;
+  &:hover{
+    filter: brightness(1%); 
+  }
 }

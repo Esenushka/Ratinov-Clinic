@@ -1,6 +1,6 @@
 .wrapper {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 .consultation {
@@ -76,10 +76,19 @@
       grid-gap: 1.5em;
       width: 30%;
       text-align: center;
+      img {
+        width: fit-content;
+        height: 40px;
+      }
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      color: #636363;
       .line {
         width: 80%;
         height: 1px;
-        background: #636363;
+        background: #D0D0D0;
         margin: 10px auto;
       }
       h1 {
@@ -93,10 +102,6 @@
         align-items: center;
         justify-content: center;
       }
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 22px;
-      color: #636363;
     }
     img {
       width: 70px;

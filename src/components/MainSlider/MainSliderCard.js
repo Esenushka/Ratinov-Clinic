@@ -4,8 +4,8 @@ export default memo(function MainSliderCard({ src }) {
   return (
     <div className={scss.card}>
       <iframe
-        width="490"
-        height="250"
+        width="590"
+        height="289"
         src={src}
         title="YouTube video player"
         frameborder="0"

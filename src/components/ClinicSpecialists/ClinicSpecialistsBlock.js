@@ -16,16 +16,17 @@ export default memo(function ClinicSpecialistsBlock({ specialists }) {
                       {clinic.text}
                       <br />
                       <h5 className={styles.hide}>hehe</h5>
+                      <div className={styles.line}></div>
                     </LinkTop>
-                    <div className={styles.line}></div>
                   </>
                 ) : (
                   <>
                     <LinkTop to={"/doctors?" + clinic.path + "&"}>
-                      Врач <br />
+                      Врач
+                      <br />
                       <span>{clinic.text}</span>
+                      <div className={styles.line}></div>
                     </LinkTop>
-                    <div className={styles.line}></div>
                   </>
                 )}
                 <p>{clinic.des}</p>

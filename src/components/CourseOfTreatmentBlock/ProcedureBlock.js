@@ -31,7 +31,6 @@ export default memo(function ProcedureBlock({ col }) {
           <div className={scss.procedure_block} key={info.id}>
             <h3>{info.title}</h3>
             <p>{info.info}</p>
-            <span>{info.procedures}</span>
           </div>
         ))}
       </div>

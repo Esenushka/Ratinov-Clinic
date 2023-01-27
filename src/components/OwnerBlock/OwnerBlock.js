@@ -15,6 +15,7 @@ const OwnerBlock = () => {
           </h5>
           <Link to={"/doctor/0Yr4o1rQiuJLO6FX84Yx"}>
             Перейти к странице врача
+            <img style={{marginLeft:"10px"}} src="/images/arrow1.png" alt="arrow"></img>
           </Link>
           <div className={scss.line}></div>
           <p>
@@ -33,6 +34,7 @@ const OwnerBlock = () => {
           ></img>
         </div>
       </div>
+      <div className={scss.lineBt}></div>
     </div>
   );
 };

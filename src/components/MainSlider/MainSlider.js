@@ -35,7 +35,7 @@ export default memo(function MainSlider() {
           Метод резорбции - уменьшение и заживление грыжи, вплоть до полного ее
           исчезновения или рубцевания.
         </p>
-        <span>Подробнее </span>
+        <span>Подробнее <img src="/images/arrow1.png" alt="aroow"></img></span>
         <div className={scss.line}></div>
         <div className={scss.btns}>
           <Link to={"/comment"}>

@@ -10,7 +10,10 @@ export default memo(function FAQCard({ title, buttons, info, type, index   }) {
     <div className={scss.block}>
       <span onClick={() => setActive(!active)}>
         <p>{index + 1}. {title}</p>
-        <h1>{active ? "-" : "+  "}</h1>
+        <div
+            className={active ? scss.plusAc : scss.plus}
+            onClick={() => setActive(!active)}
+          ></div>
       </span>
       <div className={scss.info_wrapper + " " + (active ? scss.active : "")}>
         {type === 1 ? (

@@ -6,17 +6,27 @@ const CommentCard = ({ name, link, des }) => {
   return (
     <div className={css.card}>
       <div className={css.top_block}>
-        <img className={css.user} src="/images/avatarImg.png" alt="" />
         <div className={css.name}>
           <h3>{name}</h3>
           <a href={link}>Instagram</a>
         </div>
       </div>
       <div className={css.des}>
-        {isActive ? <p>{des}</p> : <p className={css.nonAc}>{des}</p>}
-        <h5 onClick={() => setActive(!isActive)}>
-          {isActive ? "Читать полностью" : "Скрыть"}
-        </h5>
+        {isActive ? (
+          <p>
+            {des.substr(0, 80)}...
+            <span onClick={() => setActive(!isActive)}>
+              {isActive ? "Читать полностью" : ""}
+            </span>
+          </p>
+        ) : (
+          <p className={css.nonAc}>
+            {des}
+            <div onClick={() => setActive(!isActive)}>
+              {isActive ? "" : "Скрыть"}
+            </div>
+          </p>
+        )}
       </div>
     </div>
   );

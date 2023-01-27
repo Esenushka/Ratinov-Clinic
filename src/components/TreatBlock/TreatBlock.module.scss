@@ -8,10 +8,11 @@
     width: 60%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     .card {
       width: 34%;
       color: white;
-      margin: 25px 50px 25px 0;
+      margin: 55px 80px 55px 0;
       h1 {
         margin: 0;
         font-weight: 700;
@@ -24,6 +25,7 @@
         font-size: 16px;
         line-height: 23px;
         color: #ffffff;
+        width: 120%;
       }
     }
   }
