@@ -1,81 +1,52 @@
-@mixin fonts {
-  font-style: normal;
-  font-weight: 400;
-}
-@mixin d-flex-center {
+.ownerBlock {
+  padding: 40px 0;
   display: flex;
   align-items: center;
-}
-.ownerBlock {
-  @include d-flex-center;
   justify-content: space-between;
-  padding: 60px 0;
-
-  .ownerBlockLeft {
-    width: 47%;
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: baseline;
-    }
-    > div img {
-      margin-right: 15px;
+  .leftSide {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    h3 {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: uppercase;
+      color: #333333;
     }
     h1 {
-      display: flex;
-      flex-direction: column;
-      @include fonts;
-      font-size: 32px;
-      line-height: 49px;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 37px;
       text-transform: uppercase;
-      color: #000000;
+      color: #333333;
+      margin: 0;
     }
-    > p {
-      @include fonts;
-      font-size: 18px;
-      line-height: 22px;
-      color: #000000;
-    }
-    div p {
-      @include fonts;
-      font-size: 16px;
-      line-height: 20px;
-      color: #000000;
-    }
-    span {
-      font-style: italic;
-      font-weight: 300;
+    h5 {
+      font-weight: 400;
       font-size: 14px;
-      line-height: 20px;
-      color: #000000;
+      line-height: 18px;
+      color: #6f6f6f;
     }
-    h1,
-    p,
-    span {
-      padding-bottom: 18px;
-      padding-top: 36px;
+    a {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #0097db;
     }
-    .logoBtn {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 20px;
-      div {
-        @include d-flex-center;
-        justify-content: center;
-      }
-      button {
-        @include fonts;
-        font-size: 18px;
-        line-height: 22px;
-        color: #ffffff;
-      }
-    }
-  }
-  .ownerBlockRight {
-    width: 48%;
-    img {
+    .line {
       width: 100%;
+      height: 1px;
+      background: #DADADA;
+    }
+    p {
+      margin: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: #333333;
     }
   }
 }

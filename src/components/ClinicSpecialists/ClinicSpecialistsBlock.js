@@ -5,27 +5,34 @@ import styles from "./ClinicSpecialistsBlock.module.scss";
 export default memo(function ClinicSpecialistsBlock({ specialists }) {
   return (
     <div className={styles.clinicWrapper}>
-      <div className="container">
-        <div>
-          <p>
-            <b>Специалисты </b>клиники
-          </p>
-          <LinkTop to={"/consultation"}>
-            <button className="btn btn-big-bg">Записаться на приём</button>
-          </LinkTop>
+      <div className={styles.backCard}>
+        <div className="container">
           <div className={styles.clinicBlockCard}>
             {specialists.map((clinic) => (
               <div key={clinic.id}>
                 {clinic.notDoctor ? (
-                  <LinkTop to={"/"}>{clinic.text}</LinkTop>
+                  <>
+                    <LinkTop to={"/"}>
+                      {clinic.text}
+                      <br />
+                      <h5 className={styles.hide}>hehe</h5>
+                    </LinkTop>
+                    <div className={styles.line}></div>
+                  </>
                 ) : (
-                  <LinkTop to={"/doctors?" + clinic.path + "&"}>
-                    Врач
-                    <span>{clinic.text}</span>
-                  </LinkTop>
+                  <>
+                    <LinkTop to={"/doctors?" + clinic.path + "&"}>
+                      Врач <br />
+                      <span>{clinic.text}</span>
+                    </LinkTop>
+                    <div className={styles.line}></div>
+                  </>
                 )}
                 <p>{clinic.des}</p>
-                <LinkTop to={"/doctors?" + clinic.path + "&"}>
+                <LinkTop
+                  className={styles.btn}
+                  to={"/doctors?" + clinic.path + "&"}
+                >
                   <button className="btn btn-small">Подробнее</button>
                 </LinkTop>
               </div>

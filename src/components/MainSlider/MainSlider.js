@@ -2,42 +2,19 @@ import Slider from "react-slick";
 import MainSliderCard from "./MainSliderCard";
 import scss from "./MainSlider.module.scss";
 import { Link } from "react-router-dom";
-import { memo, useState } from "react";
+import { memo } from "react";
 import { sliderContent } from "../../constants/sliderContent";
+import React from "react";
 
 function SampleNextArrow(props) {
-  const { className, style, onClick, num, setNum } = props;
-  return (
-    <img
-      src="/images/slider-arrow.svg"
-      alt="Стрелка"
-      className={className}
-      style={{ ...style }}
-      onClick={() => {
-        setNum((prev) => (prev < 3 ? prev + 1 : (prev = 3)));
-        num < 3 && onClick();
-      }}
-    />
-  );
+  return "";
 }
 function SamplePrevArrow(props) {
-  const { className, style, onClick, num, setNum } = props;
-  return (
-    <img
-      src="/images/slider-arrow.svg"
-      alt="Стрелка"
-      className={className}
-      style={{ ...style }}
-      onClick={() => {
-        setNum((prev) => (prev > 1 ? prev - 1 : (prev = 1)));
-        num > 1 && onClick();
-      }}
-    />
-  );
+  return "";
 }
 
 export default memo(function MainSlider() {
-  const [num, setNum] = useState(1);
+  const [num, setNum] = React.useState(1);
 
   const settings = {
     dots: true,
@@ -52,16 +29,14 @@ export default memo(function MainSlider() {
   return (
     <div className={"container main_slider " + scss.wrapper}>
       <div className={scss.left}>
-        <h1>
-          <font >
-          Истории и отзывы </font>  
-        наших пациентов после лечения
-        </h1>
+        <h1>Истории Наших пациентов после лечения</h1>
+        <div className={scss.line}></div>
         <p>
           Метод резорбции - уменьшение и заживление грыжи, вплоть до полного ее
           исчезновения или рубцевания.
         </p>
-        <span>Подробнее</span>
+        <span>Подробнее </span>
+        <div className={scss.line}></div>
         <div className={scss.btns}>
           <Link to={"/comment"}>
             <button className="btn btn-big-bg">Отзывы</button>
@@ -73,9 +48,10 @@ export default memo(function MainSlider() {
                   rel="noreferrer"
                   target="_blank"
                   href={el.link}
-                  className="btn btn-watch"
+                  className={scss.btn}
                 >
-                  Смотреть видео
+                  <div className={scss.play}></div>
+                  <p>Смотреть видео</p>
                 </a>
               )
           )}

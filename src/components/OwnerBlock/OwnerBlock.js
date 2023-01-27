@@ -1,45 +1,36 @@
 import { memo } from "react";
-import styles from "./OwnerBlock.module.scss";
+import { Link } from "react-router-dom";
+import scss from "./OwnerBlock.module.scss";
 
 const OwnerBlock = () => {
   return (
     <div className="container">
-      <div className={styles.ownerBlock}>
-        <div className={styles.ownerBlockLeft}>
-          <h1>
-            Основатель клиники <b>РАТИНОВ АНДРЕЙ СЕРГЕЕВИЧ</b>
-          </h1>
-          <p>
-            невролог-вертебролог, мануальный терапевт, радиолог,
+      <div className={scss.ownerBlock}>
+        <div className={scss.leftSide}>
+          <h3>Основатель клиники</h3>
+          <h1>РАТИНОВ АНДРЕЙ СЕРГЕЕВИЧ</h1>
+          <h5>
+            Невролог-вертебролог, мануальный терапевт, радиолог,
             иглорефлексотерапевт
+          </h5>
+          <Link to={"/doctor/0Yr4o1rQiuJLO6FX84Yx"}>
+            Перейти к странице врача
+          </Link>
+          <div className={scss.line}></div>
+          <p>
+            Сильная боль во время грыжи является у многих людей веской причиной
+            оперироваться, но боль редко является показанием к операции (1 из
+            1000 случаев). 95% пациентам мы помогаем избавиться от боли и
+            уменьшить размеры грыжи в несколько раз.
           </p>
-          <div>
-            <img src="/images/InvertedCommas.svg" alt="InvertedCommas" />
-            <span>
-              Сильная боль во время грыжи является у многих людей веской
-              причиной оперироваться, но боль редко является показанием к
-              операции (1 из 1000 случаев). 95% пациентам мы помогаем избавиться
-              от боли и уменьшить размеры грыжи в несколько раз.
-            </span>
-          </div>
-          <div>
-            <p>
-              С 2018 года является представителем безоперационного лечения грыж
-              по методу <b>“моделируемая резорбция”</b>
-            </p>
-          </div>
-          <div className={styles.logoBtn}>
-            <div>
-              <img src="/images/Logo.svg" alt="Логотип" />
-            </div>
-            <button className="btn btn-big-bg">Открыть профиль врача</button>
-          </div>
+          <div className={scss.line}></div>
+          <img src="/images/logo.svg" alt="logo" />
         </div>
-        <div className={styles.ownerBlockRight}>
+        <div className={scss.rightSide}>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2FOwnerImg.png?alt=media&token=80b84c48-482b-4441-9b68-50bd2e5ddb02"
-            alt="OwnerImg"
-          />
+            src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fratin.png?alt=media&token=2ce7ea3d-f3c6-4999-84a7-4e54cb5e43b2"
+            alt="ratin"
+          ></img>
         </div>
       </div>
     </div>

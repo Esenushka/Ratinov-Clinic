@@ -3,16 +3,16 @@ import Slider from "react-slick";
 import DoctorsCard from "../DoctorsCard/DoctorsCard";
 import { memo, useState } from "react";
 import { useEffect } from "react";
-import LinkTop from "../../hooks/LinkTop";
 import { db } from "../../config/firebase";
+import LinkTop from "../../hooks/LinkTop";
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { style, onClick } = props;
   return (
     <img
-      src="/images/slider-arrow.svg"
+      src="/images/Arrow.svg"
       alt="Стрелка"
-      className={className}
+      className={css.arrowR}
       style={{ ...style }}
       onClick={onClick}
     />
@@ -20,12 +20,12 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { style, onClick } = props;
   return (
     <img
-      src="/images/slider-arrow.svg"
+      src="/images/Arrow.svg"
       alt="Стрелка"
-      className={className}
+      className={css.arrowL}
       style={{ ...style }}
       onClick={onClick}
     />
@@ -36,10 +36,10 @@ const DoctorSlider = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 2000,
-    slidesToShow: 4,
+    speed: 500,
+    slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3500,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -61,19 +61,18 @@ const DoctorSlider = () => {
   return (
     <div className={`${css.wrapper} container`}>
       <h1>
-        Наши <b>Врачи</b>
+        Наши Врачи
+        <p>
+          <LinkTop to="/doctors">
+            Посмотреть всех <img alt="arrow" src="/images/Arrow2.png"></img>
+          </LinkTop>
+        </p>
       </h1>
       <Slider className={`${css.slider} doctor_slider`} {...settings}>
         {doctors.map((doctor) => (
           <DoctorsCard fullSize key={doctor.id} {...doctor} />
         ))}
       </Slider>
-      <LinkTop to="/doctors">
-        <div className={css.all_doc}>
-          <img src="/images/slider-arrow.svg" alt="select-arrow" />
-          Показать всех специалистов
-        </div>
-      </LinkTop>
     </div>
   );
 };

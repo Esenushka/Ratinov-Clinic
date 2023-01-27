@@ -1,50 +1,38 @@
 .callme_block {
-  height: 580px;
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fcallme-back.svg?alt=media&token=386c3842-cffe-4015-acf7-bd0deb3b08e8");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 100%;
+  // height: 580px;
+
   .opacity {
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding-top: 110px;
-
     .wrapper {
       display: flex;
-      flex-direction: column;
       grid-gap: 3em;
       width: 100%;
-
-      .title {
-        font-size: 40px;
-        font-weight: 400;
-        line-height: 49px;
-        text-transform: uppercase;
-        color: #000000;
-
-        .b {
-          font-weight: 700;
-          font-size: 40px;
-          line-height: 49px;
-          text-transform: uppercase;
-          color: #000000;
-        }
+      display: flex;
+      img {
+        width: 55%;
+        object-fit: cover;
       }
-
-      .des {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        color: #000000;
-        width: 600px;
-      }
-
       .input_block {
-        width: 100%;
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        padding: 30px 0;
+        width: 45%;
+        .title {
+          font-weight: 600;
+          font-size: 30px;
+          line-height: 37px;
+          color: #333333;
+        }
+        a {
+          width: 75%;
+          div {
+            button {
+              width: 100%;
+            }
+          }
+        }
         grid-gap: 2em;
-
+        flex-direction: column;
         .input {
           display: flex;
           flex-direction: column;
@@ -52,20 +40,23 @@
           font-weight: 400;
 
           p {
-            font-size: 16px;
-            line-height: 20px;
-            color: #000000;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            color: #6f6f6f;
           }
 
           input {
             font-size: 14px;
             line-height: 17px;
-            width: 300px;
+            width: 75%;
             height: 60px;
             border: none;
             border-radius: 10px;
             padding-left: 20px;
             color: #0097db;
+            border: 1px solid #e2e2e2;
+            border-radius: 7px;
           }
         }
 
@@ -74,11 +65,12 @@
           flex-direction: column;
           grid-gap: 1em;
           font-weight: 400;
-
+          width: 100%;
           p {
-            font-size: 16px;
-            line-height: 20px;
-            color: #000000;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            color: #6f6f6f;
           }
 
           input {
@@ -86,6 +78,9 @@
             line-height: 17px;
             border: none;
             color: #0097db;
+            width: 100%;
+            border: 1px solid #e2e2e2;
+            border-radius: 7px;
           }
         }
 
@@ -96,20 +91,9 @@
           font-weight: 400;
           font-size: 18px;
           line-height: 22px;
-          width: 300px;
           height: 60px;
           border-radius: 10px;
-        }
-      }
-      .bottom {
-        width: 680px;
-        font-size: 12px;
-        line-height: 15px;
-        color: #000000;
-        text-transform: none;
-
-        a {
-          color: #0097db;
+          width: 100%;
         }
       }
     }

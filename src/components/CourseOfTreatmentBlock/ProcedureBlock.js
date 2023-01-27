@@ -17,16 +17,24 @@ export default memo(function ProcedureBlock({ col }) {
       });
   }, []);
   return (
-    <div
-      className={scss.procedure_blocks_wrapper + " " + (col ? scss.col : "")}
-    >
-      {procedure.map((info) => (
-        <div className={scss.procedure_block} key={info.id}>
-          <h3>{info.title}</h3>
-          <p>{info.info}</p>
-          <span>{info.procedures}</span>
-        </div>
-      ))}
+    <div className={scss.lastOne}>
+      <ul>
+        <li>
+          Мы создаем необходимые условия, чтобы запустить и ускорить процесс
+          резорбции, применяя комплексную физиотерапию:
+        </li>
+      </ul>
+      <div
+        className={scss.procedure_blocks_wrapper + " " + (col ? scss.col : "")}
+      >
+        {procedure.map((info) => (
+          <div className={scss.procedure_block} key={info.id}>
+            <h3>{info.title}</h3>
+            <p>{info.info}</p>
+            <span>{info.procedures}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 });

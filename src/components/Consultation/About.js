@@ -13,15 +13,9 @@ export default memo(function About({ about, setLoadingImage }) {
               src={info.img}
               alt={"Картинка о клиники"}
             />
-            {info.reverse ? (
-              <div>
-                <span>{info.text}</span> <b>{info.bold}</b>
-              </div>
-            ) : (
-              <div>
-                <b>{info.bold}</b> <span>{info.text}</span>
-              </div>
-            )}
+              <h1>{info.bold}</h1>
+              <div className={css.line}></div>
+              {info.text}
           </div>
         ))}
       </div>

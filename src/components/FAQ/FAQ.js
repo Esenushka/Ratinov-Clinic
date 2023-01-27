@@ -3,20 +3,14 @@ import scss from "./FAQ.module.scss";
 import FAQCard from "./FAQCard";
 
 export default memo(function FAQ({ faq }) {
-  const leftList = faq.slice(0, faq.length / 2 + 1);
-  const rightList = faq.slice(faq.length / 2 + 1);
+  console.log(faq);
   return (
-    <div id="faq" className={scss.wrapper + " container"}>
-      <h1>ВОПРОСЫ</h1>
-      <div className={scss.blocks_wrapper}>
-        <div>
-          {leftList.map((el) => (
-            <FAQCard key={el.id} {...el} />
-          ))}
-        </div>
-        <div>
-          {rightList.map((el) => (
-            <FAQCard key={el.id} {...el} />
+    <div className={scss.mainOne}>
+      <div id="faq" className={scss.wrapper + " container"}>
+        <h1>Часто задаваемые вопросы</h1>
+        <div className={scss.blocks_wrapper}>
+          {faq.map((el, index) => (
+            <FAQCard key={el.id} {...el}  index={index}/>
           ))}
         </div>
       </div>

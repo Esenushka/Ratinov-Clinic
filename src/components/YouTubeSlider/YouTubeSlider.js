@@ -4,26 +4,25 @@ import YouTubeSliderCard from "./YouTubeSliderCard";
 import { memo, useState, useEffect } from "react";
 import { db } from "../../config/firebase";
 
-
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const {   onClick } = props;
   return (
-    <img src="/images/slider-arrow.svg"
+    <img
+      src="/images/Arrow.svg"
       alt="Стрелка"
-      className={className}
-      style={{ ...style }}
+      className={scss.arrowR}
       onClick={onClick}
     />
   );
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const {  onClick } = props;
   return (
-    <img src="/images/slider-arrow.svg"
+    <img
+      src="/images/Arrow.svg"
       alt="Стрелка"
-      className={className}
-      style={{ ...style }}
+      className={scss.arrowL}
       onClick={onClick}
     />
   );
@@ -32,26 +31,25 @@ function SamplePrevArrow(props) {
 export default memo(function YouTubeSlider() {
   const settings = {
     dots: true,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 5,
-    slidesToScroll: 1,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    customPaging: () => (
-      <span className={scss.dots}></span>
-    )
+    customPaging: () => <span className={scss.dots}></span>,
   };
   const [youtubeData, setYoutubeData] = useState([]);
   useEffect(() => {
     db.collection("youtubeContent")
-      .orderBy("id", "asc").get()
+      .orderBy("id", "asc")
+      .get()
       .then((querySnapshot) => {
         const items = [];
         querySnapshot.forEach((doc) => {
           items.push({
             ...doc.data(),
-            id: doc.id
+            id: doc.id,
           });
         });
         setYoutubeData(items);
@@ -60,13 +58,15 @@ export default memo(function YouTubeSlider() {
 
   return (
     <div className={"container youtube_slider " + scss.wrapper}>
-      <h1>УЗНАЙТЕ О <h2>СВОЕМ ЗДОРОВЬЕ</h2> БОЛЬШЕ</h1>
-      <p>Youtube канал доктора Ратинова</p>
+      <h1>
+        УЗНАЙТЕ О СВОЕМ ЗДОРОВЬЕ БОЛЬШЕ <a href="https://www.youtube.com/watch?v=sJH0L6xaxCA" rel="noreferrer" target="_blank">Youtube канал <img src="/images/Arrow2.png" alt="arrow"/></a>
+      </h1>
+
       <Slider {...settings}>
-        {
-          youtubeData.map((el) => <YouTubeSliderCard key={el.id} {...el} />)
-        }
+        {youtubeData.map((el) => (
+          <YouTubeSliderCard key={el.id} {...el} />
+        ))}
       </Slider>
     </div>
-  )
-})
+  );
+});

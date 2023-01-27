@@ -8,16 +8,14 @@ const Consultaition = () => {
       <div className={css.consultation}>
         <div className={`${css.wrap} container`}>
           <div className={css.consul_des}>
-            <span>
-              <span className={css.b}>Получить</span> онлайн-консультацию
-            </span>
+            <span className={css.b}>Получить онлайн консультацию</span>
             <p>
               Предварительная дистанционная консультация из которой вы узнаете о
               прогнозах вашего лечения в нашей клинике
             </p>
           </div>
           <LinkTop to={"/consultation"}>
-            <button className="btn-big-bg btn">Получить консультацию</button>
+            <button className={css.btn}>Получить консультацию</button>
           </LinkTop>
         </div>
       </div>

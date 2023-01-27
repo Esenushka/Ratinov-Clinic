@@ -8,12 +8,12 @@ import { db } from "../../config/firebase";
 import LinkTop from "../../hooks/LinkTop";
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { style, onClick } = props;
   return (
     <img
-      src="/images/slider-arrow.svg"
+      src="/images/Arrow.svg"
       alt="Стрелка"
-      className={className}
+      className={css.arrowR}
       style={{ ...style }}
       onClick={onClick}
     />
@@ -21,12 +21,12 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const {style, onClick } = props;
   return (
     <img
-      src="/images/slider-arrow.svg"
+      src="/images/Arrow.svg"
       alt="Стрелка"
-      className={className}
+      className={css.arrowL}
       style={{ ...style }}
       onClick={onClick}
     />
@@ -59,19 +59,13 @@ const CommentBlock = () => {
   }, []);
   return (
     <div className={css.comment_block}>
-      <div className={css.bg_block}>
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fvrachi-izuchajut-analizy%202.png?alt=media&token=83a0e367-513b-4bc4-8b31-6a88b7ecea5e"
-          alt="Врачи берут анализ"
-        />
-        <div className={css.color_block}></div>
-      </div>
       <div className={`${css.wrapper} container`}>
         <div className={css.title}>
-          <h1>Отзывы</h1>
-          <LinkTop to="/">
-            <button className="btn btn-small">Все отзывы</button>
-          </LinkTop>
+          <h1>
+            Отзывы <p>
+              <LinkTop to="/comment">Все отзывы <img alt="Roow" src="/images/Arrow2.png"></img></LinkTop>
+            </p>
+          </h1>
         </div>
         <Slider className={`${css.slider} comment_slider`} {...settings}>
           {comments.map((e) => (

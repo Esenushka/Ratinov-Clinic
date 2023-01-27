@@ -6,74 +6,76 @@ import { socialLinks } from "../../constants/socialMedia";
 
 const Footer = () => {
   return (
-    <div className={css.footer}>
-      <div className={css.white_block}></div>
-      <div className={`${css.wrapper} container`}>
-        <div className={css.other}>
-          <div className={css.link_block}>
-            <div className={css.link}>
-              <LinkTop to="/services">Услуги</LinkTop>
-              <LinkTop to="/doctors">Специалисты</LinkTop>
-              <LinkTop to="/result">Результаты</LinkTop>
-              <LinkTop to="/price">Цены</LinkTop>
-              <LinkTop to="/more">Ещё</LinkTop>
-            </div>
-            <div className={css.link}>
-              <HashLink to={"/#about"}>О клинике</HashLink>
-              <HashLink to={"/#faq"}>Информация для пациентов</HashLink>
-              <LinkTop to="/reception">Время приема</LinkTop>
-              <LinkTop to="/comment">Отзывы</LinkTop>
-              <a href="https://2gis.kg/bishkek/firm/70000001046561968?m=74.619256%2C42.824923%2F19.42" target="_blank" rel="noreferrer">Как добраться</a>
-            </div>
+    <>
+      <footer className={`${css.footer} + container`}>
+        <div className={css.left}>
+          <img src="/images/loggo.svg" alt="" />
+          <div className={css.blueBg}></div>
+        </div>
+        <div className={css.right}>
+          <div className={css.first}>
+            <h1>Tekst</h1>
+            <div className={css.line}></div>
+            <LinkTop to="/services">Услуги</LinkTop>
+            <LinkTop to="/doctors">Специалисты</LinkTop>
+            <LinkTop to="/result">Результаты</LinkTop>
+            <LinkTop to="/price">Цены</LinkTop>
+            <div className={css.line}></div>
+            <h5>Бишкек, 7мкр, Сухэ-Батора, 49/6</h5>
+            <p>Пн - Сб: 08:00 - 20:00</p>
           </div>
-          <div className={css.footerBottom}>
-            <span>
-              <img src="/images/HeaderCalendar.svg" alt="Часы" /> ПН - СБ: 8:00
-              - 20:00
-            </span>
-            <a href="tel: + 996 (501) 420 420">
-              <img src="/images/HeaderPhone.svg" alt="Телефон" /> + 996 (501)
-              420 420
+          <div className={css.second}>
+            <h1>Tekst</h1>
+            <div className={css.line}></div>
+            <HashLink to={"/#about"}>О клинике</HashLink>
+            <HashLink to={"/#faq"}>Информация для пациентов</HashLink>
+            <LinkTop to="/comment">Отзывы</LinkTop>
+            <LinkTop to="/reception">Время приема</LinkTop>
+            <div className={css.line}></div>
+            <a
+              rel="noreferrer"
+              href="tel: + 996 (501) 420 420"
+              className={css.phone}
+            >
+              +996 (501) 420 - 420
             </a>
-            <a href="tel: + 996 (555) 142 020">
-              <img src="/images/HeaderPhone.svg" alt="Телефон" />+ 996 (555) 142
-              020
+            <a
+              rel="noreferrer"
+              href="tel: + 996 (501) 420 420"
+              className={css.phone}
+            >
+              +996 (501) 420 - 420
             </a>
-            <div className={css.socialMedia}>
-              {socialLinks.map((el) => (
-                <div key={el.id} className={css.socialLinks}>
-                  <a href={el.link} target="_blanck" rel="noreferrer">
-                    {" "}
-                    <img src={el.name} alt="social" />
-                  </a>
-                </div>
+          </div>
+          <div className={css.thirth}>
+            <h1>Социальные сети</h1>
+            <div className={css.line}></div>
+            <div className={css.social}>
+              {socialLinks.map((item) => (
+                <a key={item.id} href={item.link}>
+                  <img src={item.name} alt="" />
+                </a>
               ))}
             </div>
-          </div>
-        </div>
-        <div className={css.footerRight}>
-          <div className={css.btn}>
+            <div className={css.line}></div>
             <LinkTop to="/consultation">
-              <button className="btn btn-footer">Онлайн консультация</button>
+              <button className={css.phone}>Онлайн консультация</button>
             </LinkTop>
             <a
-              href="http://test.ratinovclinic.kg/"
-              target="_blanck"
               rel="noreferrer"
-              className="btn btn-footer"
+              target="_blank"
+              href="http://test.ratinovclinic.kg/"
+              className={css.phone}
             >
               Пройти тест
-              
             </a>
           </div>
-          <div className={css.img}>
-            <LinkTop to="/">
-              <img src="/images/loggo.svg" alt="Логотип" />
-            </LinkTop>
-          </div>
         </div>
+      </footer>
+      <div className={`${css.bottomHeader} + container`}>
+        <p>@2023 Dr. Ratinov's Clinic / все права защищены</p>
       </div>
-    </div>
+    </>
   );
 };
 
