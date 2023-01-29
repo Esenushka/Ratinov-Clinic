@@ -12,7 +12,7 @@ export default memo(function MainSliderCard({ src }) {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         style={{
-          borderRadius: "32px",
+          borderRadius: "7px",
           boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
         }}
       ></iframe>

@@ -10,7 +10,7 @@ import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
 
 export default React.memo(function DoctorsPage() {
-  const [doctors, setDoctors] = useState([].reverse())
+  const [doctors, setDoctors] = useState([].reverse());
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
   const location = useLocation();
@@ -24,10 +24,12 @@ export default React.memo(function DoctorsPage() {
         const doctorsArr = [];
         snapshot.forEach((doc) => {
           doctorsArr.push({ ...doc.data(), id: doc.id });
-        })
-        setDoctors(doctorsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-        setLoading(false)
-      })
+        });
+        setDoctors(
+          doctorsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
+        );
+        setLoading(false);
+      });
   }, []);
   return (
     <div>
@@ -41,18 +43,29 @@ export default React.memo(function DoctorsPage() {
       <div className="container doctors-page_wrapper">
         <Select />
         <div className="doctors_wrapper">
-          {
-            doctors.map((doctor) =>
-              paramArr.length === 0 ?
-                <DoctorsCard fullSize={false} setLoadingImage={setLoadingImage} key={doctor.id} {...doctor} /> :
-                paramArr.some((param) =>
-                  doctor.post.includes(param)) ?
-                  <DoctorsCard fullSize={false} setLoadingImage={setLoadingImage} key={doctor.id} {...doctor} /> : "")
-          }
+          {doctors.map((doctor) =>
+            paramArr.length === 0 ? (
+              <DoctorsCard
+                fullSize={false}
+                setLoadingImage={setLoadingImage}
+                key={doctor.id}
+                {...doctor}
+              />
+            ) : paramArr.some((param) => doctor.post.includes(param)) ? (
+              <DoctorsCard
+                fullSize={false}
+                setLoadingImage={setLoadingImage}
+                key={doctor.id}
+                {...doctor}
+              />
+            ) : (
+              ""
+            )
+          )}
         </div>
       </div>
       <CallMe />
       <Footer />
     </div>
-  )
-})
+  );
+});

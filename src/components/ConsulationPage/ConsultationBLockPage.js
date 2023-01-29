@@ -4,7 +4,6 @@ import LinkTop from "../../hooks/LinkTop";
 import scss from "./ConsultationPage.module.scss";
 import emailjs from "@emailjs/browser";
 import { storageRef } from "../../config/firebase";
-import { useNavigate } from "react-router-dom";
 
 export default function ConsultationBlockPage({ setLoadingImage }) {
   const [name, setName] = useState("");
@@ -15,7 +14,6 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
   const [continues, setContinues] = useState("в течение месяца");
   const [blockade, setBlocade] = useState("Да");
   const [fileData, setFileData] = useState("");
-  const navigate = useNavigate();
 
   const getUrl = async (name) =>
     await storageRef

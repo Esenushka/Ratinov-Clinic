@@ -30,7 +30,6 @@ export default memo(function DoctorsCard({
           <LinkTop to={`/doctor/${id}`}>{name}</LinkTop>
           <p>{proffesions}</p>
         </div>
-
         {location.pathname === "/" ? (
           <>
             <div className={scss.other}>
@@ -49,7 +48,7 @@ export default memo(function DoctorsCard({
         ) : (
           <div className={scss.btn}>
             <LinkTop to={`/doctor/${id}`}>
-              <button style={{ color: "#0097db" }} className="btn-small btn">
+              <button className="btn-small btn">
                 Подробнее
               </button>
             </LinkTop>

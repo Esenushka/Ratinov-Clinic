@@ -1,8 +1,7 @@
 import { memo, useState } from "react";
 import css from "./Comment.module.scss";
 
-const CommentCard = ({ name, link, des }) => {
-  const [isActive, setActive] = useState(true);
+const CommentCard = ({ name, link, des, id, handleClick, active }) => {
   return (
     <div className={css.card}>
       <div className={css.top_block}>
@@ -12,19 +11,19 @@ const CommentCard = ({ name, link, des }) => {
         </div>
       </div>
       <div className={css.des}>
-        {isActive ? (
-          <p>
-            {des.substr(0, 80)}...
-            <span onClick={() => setActive(!isActive)}>
-              {isActive ? "Читать полностью" : ""}
-            </span>
-          </p>
-        ) : (
+        {active ? (
           <p className={css.nonAc}>
             {des}
-            <div onClick={() => setActive(!isActive)}>
-              {isActive ? "" : "Скрыть"}
+            <div onClick={() => handleClick(id, "toNonActive")}>
+              {active ? "Скрыть" : ""}
             </div>
+          </p>
+        ) : (
+          <p>
+            {des.substr(0, 80)}...
+            <span onClick={() => handleClick(id, "toActive")}>
+              {active ? "" : "Читать полностью"}
+            </span>
           </p>
         )}
       </div>

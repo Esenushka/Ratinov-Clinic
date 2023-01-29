@@ -16,6 +16,7 @@ export default memo(function ProcedureBlock({ col }) {
         setProcedure(procedureArr);
       });
   }, []);
+
   return (
     <div className={scss.lastOne}>
       <ul>

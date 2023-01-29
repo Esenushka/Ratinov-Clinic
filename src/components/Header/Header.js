@@ -25,11 +25,12 @@ const Header = ({ isResult }) => {
               <img src="/images/Logo.svg" alt="Логотип" />
             </LinkTop>
             <div className={styles.nav}>
-              <div className={styles.select}>
-                <span
-                  onMouseOver={() => setSelect(!isSelect)}
-                  style={{ alignItems: "center" }}
-                >
+              <div
+                className={styles.select}
+                onMouseOver={() => setSelect(true)}
+                onMouseOut={() => setSelect(false)}
+              >
+                <span style={{ alignItems: "center" }}>
                   <p
                     style={{
                       color: "#333333",

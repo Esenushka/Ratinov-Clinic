@@ -21,7 +21,7 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const {style, onClick } = props;
+  const { style, onClick } = props;
   return (
     <img
       src="/images/Arrow.svg"
@@ -50,26 +50,52 @@ const CommentBlock = () => {
       .then((snapshot) => {
         const commentsArr = [];
         snapshot.forEach((doc) => {
-          commentsArr.push({ ...doc.data(), id: doc.id });
+          commentsArr.push({ ...doc.data(), id: doc.id, active: false });
         });
         setComments(
           commentsArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
         );
       });
   }, []);
+
+  const handleClick = (id, state) => {
+    const filtered = [...comments].find((comment) => comment.id === id);
+    if (state === "toActive") {
+      const arr = comments.map((el) => {
+        if (el.id === filtered.id) {
+          return { ...filtered, active: true };
+        }
+        return { ...el, active: false };
+      });
+      setComments(arr);
+    } else {
+      const arr = comments.map((el) => {
+        if (el.id === filtered.id) {
+          return { ...filtered, active: false };
+        }
+        return { ...el, active: false };
+      });
+      setComments(arr);
+    }
+  };
+
+  console.log(comments);
   return (
     <div className={css.comment_block}>
       <div className={`${css.wrapper} container`}>
         <div className={css.title}>
           <h1>
-            Отзывы <p>
-              <LinkTop to="/comment">Все отзывы <img alt="Roow" src="/images/Arrow2.png"></img></LinkTop>
+            Отзывы{" "}
+            <p>
+              <LinkTop to="/comment">
+                Все отзывы <img alt="Roow" src="/images/Arrow2.png"></img>
+              </LinkTop>
             </p>
           </h1>
         </div>
         <Slider className={`${css.slider} comment_slider`} {...settings}>
           {comments.map((e) => (
-            <CommentCard key={e.id} {...e} />
+            <CommentCard key={e.id} {...e} handleClick={handleClick} />
           ))}
         </Slider>
       </div>

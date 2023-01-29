@@ -74,7 +74,7 @@
     .card {
       text-align: center;
       grid-gap: 1.5em;
-      width: 30%;
+      width: 31%;
       text-align: center;
       img {
         width: fit-content;
@@ -85,22 +85,25 @@
       line-height: 22px;
       text-align: center;
       color: #636363;
+      
       .line {
         width: 80%;
         height: 1px;
-        background: #D0D0D0;
+        background: #d0d0d0;
         margin: 10px auto;
       }
       h1 {
-        font-weight: 700;
-        font-size: 14px;
+        font-weight: 600;
+        font-size: 18px;
         line-height: 22px;
+        text-align: center;
         color: #0097db;
         margin: 0;
         padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 17px;
       }
     }
     img {
