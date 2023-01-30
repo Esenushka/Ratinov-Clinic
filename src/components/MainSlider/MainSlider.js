@@ -35,11 +35,20 @@ export default memo(function MainSlider() {
           Метод резорбции - уменьшение и заживление грыжи, вплоть до полного ее
           исчезновения или рубцевания.
         </p>
-        <span>Подробнее <img style={{marginLeft:"10px"}} src="/images/arrow1.png" alt="aroow"></img></span>
+        <span style={{ transition: "ease-in-out .4s" }}>
+          <p>Подробнее</p>
+          <img
+            style={{ marginLeft: "10px" }}
+            src={"/images/nonActiveArrow.svg"}
+            alt="aroow"
+          ></img>
+        </span>
         <div className={scss.line}></div>
         <div className={scss.btns}>
           <Link to={"/comment"}>
-            <button className="btn btn-big-bg">Отзывы</button>
+            <button style={{ fontWeight: "500" }} className="btn btn-big-bg">
+              Отзывы
+            </button>
           </Link>
           {sliderContent.map(
             (el) =>

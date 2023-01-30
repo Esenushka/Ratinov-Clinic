@@ -13,10 +13,17 @@ const OwnerBlock = () => {
             Невролог-вертебролог, мануальный терапевт, радиолог,
             иглорефлексотерапевт
           </h5>
-          <Link to={"/doctor/0Yr4o1rQiuJLO6FX84Yx"}>
-            Перейти к странице врача
-            <img style={{marginLeft:"10px"}} src="/images/arrow1.png" alt="arrow"></img>
-          </Link>
+          <div>
+            <Link to={"/doctor/0Yr4o1rQiuJLO6FX84Yx"}>
+              Перейти к странице врача
+            </Link>
+
+            <img
+              style={{ marginLeft: "10px" }}
+              src="/images/nonActiveArrow.svg"
+              alt="arrow"
+            ></img>
+          </div>
           <div className={scss.line}></div>
           <p>
             Сильная боль во время грыжи является у многих людей веской причиной
@@ -25,7 +32,7 @@ const OwnerBlock = () => {
             уменьшить размеры грыжи в несколько раз.
           </p>
           <div className={scss.line}></div>
-          <img src="/images/logo.svg" alt="logo" />
+          <img src="/images/Logo.svg" alt="logo" />
         </div>
         <div className={scss.rightSide}>
           <img

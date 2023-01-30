@@ -1,5 +1,5 @@
 .comment_block {
-  padding: 70px 0 0 0;
+  padding: 40px 0 0 0;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -61,6 +61,18 @@
               display: flex;
               align-items: center;
               gap: 10px;
+              position: relative;
+              margin-right: 60px;
+              img {
+                position: absolute;
+                right: -60px;
+                transition: ease-in-out 0.3s;
+              }
+              &:hover {
+                img {
+                  right: -70px;
+                }
+              }
             }
           }
         }

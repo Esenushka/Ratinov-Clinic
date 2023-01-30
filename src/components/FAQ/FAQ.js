@@ -3,7 +3,7 @@ import scss from "./FAQ.module.scss";
 import FAQCard from "./FAQCard";
 
 export default memo(function FAQ({ faq }) {
-  console.log(faq);
+
   return (
     <div className={scss.mainOne}>
       <div id="faq" className={scss.wrapper + " container"}>

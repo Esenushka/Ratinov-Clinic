@@ -5,7 +5,7 @@ import { memo, useState, useEffect } from "react";
 import { db } from "../../config/firebase";
 
 function SampleNextArrow(props) {
-  const {   onClick } = props;
+  const { onClick } = props;
   return (
     <img
       src="/images/Arrow.svg"
@@ -17,7 +17,7 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const {  onClick } = props;
+  const { onClick } = props;
   return (
     <img
       src="/images/Arrow.svg"
@@ -31,10 +31,10 @@ function SamplePrevArrow(props) {
 export default memo(function YouTubeSlider() {
   const settings = {
     dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     customPaging: () => <span className={scss.dots}></span>,
@@ -59,7 +59,14 @@ export default memo(function YouTubeSlider() {
   return (
     <div className={"container youtube_slider " + scss.wrapper}>
       <h1>
-        УЗНАЙТЕ О СВОЕМ ЗДОРОВЬЕ БОЛЬШЕ <a href="https://www.youtube.com/watch?v=sJH0L6xaxCA" rel="noreferrer" target="_blank">Youtube канал <img src="/images/Arrow2.png" alt="arrow"/></a>
+        УЗНАЙТЕ О СВОЕМ ЗДОРОВЬЕ БОЛЬШЕ{" "}
+        <a
+          href="https://www.youtube.com/watch?v=sJH0L6xaxCA"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Youtube канал <img src="/images/Arrow2.png" alt="arrow" />
+        </a>
       </h1>
 
       <Slider {...settings}>

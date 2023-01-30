@@ -78,8 +78,6 @@ const CommentBlock = () => {
       setComments(arr);
     }
   };
-
-  console.log(comments);
   return (
     <div className={css.comment_block}>
       <div className={`${css.wrapper} container`}>

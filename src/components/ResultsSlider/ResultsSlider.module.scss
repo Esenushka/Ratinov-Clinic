@@ -24,6 +24,18 @@
         display: flex;
         gap: 10px;
         align-items: center;
+        position: relative;
+        margin-right: 60px;
+        img {
+          position: absolute;
+          right: -60px;
+          transition: ease-in-out 0.3s;
+        }
+        &:hover {
+          img {
+            right: -70px;
+          }
+        }
       }
     }
   }
@@ -56,8 +68,8 @@
   left: -2%;
   top: 45%;
   cursor: pointer;
-  &:hover{
-    filter: brightness(1%); 
+  &:hover {
+    filter: brightness(1%);
   }
 }
 
@@ -70,7 +82,7 @@
   top: 45%;
   transform: rotate(180deg);
   cursor: pointer;
-  &:hover{
-    filter: brightness(1%); 
+  &:hover {
+    filter: brightness(1%);
   }
 }

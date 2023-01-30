@@ -25,12 +25,11 @@ const Header = ({ isResult }) => {
               <img src="/images/Logo.svg" alt="Логотип" />
             </LinkTop>
             <div className={styles.nav}>
-              <div
-                className={styles.select}
-                onMouseOver={() => setSelect(true)}
-                onMouseOut={() => setSelect(false)}
-              >
-                <span style={{ alignItems: "center" }}>
+              <div className={styles.select}>
+                <span
+                  style={{ alignItems: "center" }}
+                  onMouseOver={() => setSelect(true)}
+                >
                   <p
                     style={{
                       color: "#333333",
@@ -45,7 +44,7 @@ const Header = ({ isResult }) => {
                   <img alt="select" src="/images/slider-arrow.svg" />
                 </span>
                 {isSelect && (
-                  <div onMouseLeave={() => setSelect(!isSelect)}>
+                  <div onMouseLeave={() => setSelect(false)}>
                     <Link to="/services">Все Услуги</Link>
                     <Link to="/services/spine">Позвоночник</Link>
                     <Link to="/services/joint">Суставы</Link>

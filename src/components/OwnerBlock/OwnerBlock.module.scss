@@ -35,6 +35,10 @@
       font-size: 14px;
       line-height: 17px;
       color: #0097db;
+      transition: ease-in-out .3s;
+      &:hover{
+        margin-right: 5px;
+      }
     }
     .line {
       width: 100%;

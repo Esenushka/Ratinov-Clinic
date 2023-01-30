@@ -19,12 +19,18 @@
     text-transform: uppercase;
     color: #333333;
     margin: 0;
-    font {
-      font-size: 32px;
-      font-weight: 600;
+  }
+  span {
+    transition: .4s ease-in-out !important;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    p:hover{
+      transition: .3s ease-in-out !important;
+      margin-right: 5px;
     }
   }
-
   > p {
     font-weight: 400;
     font-size: 14px;
@@ -44,13 +50,14 @@
     display: flex;
     grid-gap: 20px;
     align-items: center;
-    width: 60%;
+    width: 75%;
     margin-top: 3px;
     justify-content: space-between;
     .btn {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
       background: #ffffff;
       border: 1px solid #0097db;
       border-radius: 7px;
@@ -58,7 +65,7 @@
       cursor: pointer !important;
       transition: 0.3s ease-in-out;
       color: #0097db;
-
+      width: 75%;
       &:hover {
         background-color: #0097db;
         color: white;
@@ -72,8 +79,9 @@
         height: 0;
         border-style: solid;
         border-width: 8.5px 0 8.5px 14px;
-        border-color: transparent transparent transparent #007bff;
+        border-color: transparent transparent transparent #0097db;
         transition: 0.3s ease-in-out;
+        margin-left: 5px;
       }
       p {
         margin: 0;
