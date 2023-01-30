@@ -8,8 +8,11 @@ const CommentCard = ({ name, link, des, id, handleClick, active }) => {
         <div className={css.name}>
           <h3>{name}</h3>
           <a href={link}>Instagram</a>
+          
         </div>
+        
       </div>
+      <div className={css.line}></div>
       <div className={css.des}>
         {active ? (
           <p className={css.nonAc}>

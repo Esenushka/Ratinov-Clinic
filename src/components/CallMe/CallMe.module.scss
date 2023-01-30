@@ -1,6 +1,7 @@
 .callme_block {
   // height: 580px;
-
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 10 !important;
   .opacity {
     height: 100%;
     .wrapper {

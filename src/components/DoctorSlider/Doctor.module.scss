@@ -19,11 +19,12 @@
           align-items: center;
           gap: 10px;
           position: relative;
-          margin-right: 72px;
+          margin-right: 80px;
           img {
             position: absolute;
             right: -60px;
             transition: ease-in-out 0.3s;
+            width: 40px;
           }
           &:hover {
             img {

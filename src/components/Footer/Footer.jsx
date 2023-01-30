@@ -7,12 +7,10 @@ import { socialLinks } from "../../constants/socialMedia";
 const Footer = () => {
   return (
     <>
-      <footer className={`${css.footer} + container`}>
-        <div className={css.left}>
-          <img src="/images/loggo.svg" alt="" />
-          <div className={css.blueBg}></div>
-        </div>
-        <div className={css.right}>
+      <footer className={`${css.footer}`}>
+          <img className={css.imggg} src="/images/Vector.svg" alt="" />
+          <div className={css.roundBlue}></div>
+        <div className={`${css.right} + container`}>
           <div className={css.first}>
             <h1>Tekst</h1>
             <div className={css.line}></div>

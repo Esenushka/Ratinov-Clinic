@@ -30,6 +30,13 @@
       line-height: 18px;
       color: #6f6f6f;
     }
+    div{
+
+      img:hover{
+        transition: ease-in-out .4s !important;
+        margin-left: 15px !important;
+      }
+    }
     a {
       font-weight: 400;
       font-size: 14px;

@@ -30,6 +30,10 @@
       transition: .3s ease-in-out !important;
       margin-right: 5px;
     }
+    img:hover{
+      transition: .3s ease-in-out !important;
+      margin-left: 15px !important;
+    }
   }
   > p {
     font-weight: 400;
@@ -65,13 +69,14 @@
       cursor: pointer !important;
       transition: 0.3s ease-in-out;
       color: #0097db;
-      width: 75%;
+      width: 50%;
       &:hover {
         background-color: #0097db;
         color: white;
         box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
         .play {
           border-color: transparent transparent transparent #ffffff;
+          
         }
       }
       .play {
@@ -81,7 +86,7 @@
         border-width: 8.5px 0 8.5px 14px;
         border-color: transparent transparent transparent #0097db;
         transition: 0.3s ease-in-out;
-        margin-left: 5px;
+        margin-left: 12px;
       }
       p {
         margin: 0;

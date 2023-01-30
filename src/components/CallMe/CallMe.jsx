@@ -15,7 +15,7 @@ export default memo(function CallMe() {
             </span>
             <div className={css.input}>
               <p>Введите ваше имя</p>
-              <input type="text" placeholder="Иван Иванович" />
+              <input style={{outline:"none"}} type="text" placeholder="Иван Иванович" />
             </div>
             <div className={`${css.input1}`}>
               <p>Номер телефона*</p>
@@ -27,8 +27,8 @@ export default memo(function CallMe() {
                 inputProps={{
                   name: "phone",
                   country: "us",
-                  required: true,
-                  autoFocus: true,
+                  required: false,
+                  autoFocus: false,
                 }}
                 // Set your inline styles here
 
