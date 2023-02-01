@@ -14,95 +14,71 @@ export default function Doctor({
   diplomas,
   price,
 }) {
-  const leftList = info?.slice(0, 3);
-  const rightList = info?.slice(3);
   const [active, setActive] = useState(false);
 
   return (
-    <div className="container">
-      <img
-        src="/images/backgroundDoctor.png"
-        alt="imgBgDoctor"
-        className={scss.bcgrDoctor}
-      ></img>
-      <div className={scss.top}>
-        <div className={scss.left}>
-          <img src={photo || img} alt={name} />
-        </div>
-        <div className={scss.right}>
-          <h1>{name}</h1>
-          <strong>
-            невролог-вертебролог, мануальный терапевт, радиолог,
-            иглорефлексотерапевт
-          </strong>
-          <span>
-            C {year} года является представителем безоперационного лечения грыж
-            по методу “моделируемая резорбция”
-          </span>
-          <p>{specialization}</p>
-          <ul>
-            <li>
-              Врач занимается лечением межпозвонковых грыж без операции методом
-              резорбции.
-            </li>
-            <li>
-              В лечении применяются передовые физиотерапевтические технологии.
-            </li>
-            <li>
-              95 % пациентов уходят от нас здоровыми и довольными результатом.
-            </li>
-          </ul>
-          <span>{day_work}</span>
-          <div>
-            {price === 0 ? (
-              <p></p>
-            ) : (
-              <p>
-                Стоимость приёма
-                <span>{price} сомов</span>
-              </p>
-            )}
-            <LinkTop to={"/consultation"}>
-              <button className="btn btn-big-bg">Записаться на приём</button>
-            </LinkTop>
+    <>
+      <div className="container">
+        <div className={scss.top}>
+          <div className={scss.left}>
+            <img src={photo || img} alt={name} />
+          </div>
+          <div className={scss.right}>
+            <h1>{name}</h1>
+            <h5>
+              Невролог-Вертебролог, Иглорефлексотерапевт, Радиолог, <br />{" "}
+              Мануальный терапевт
+            </h5>
+            <div className={scss.textLine}></div>
+            <p>{specialization}</p>
+            <div className={scss.textLine}></div>
+            <ul>
+              <li>
+                Врач занимается лечением межпозвонковых грыж без операции
+                методом резорбции.
+              </li>
+              <li>
+                В лечении применяются передовые физиотерапевтические технологии.
+              </li>
+              <li>
+                95 % пациентов уходят от нас здоровыми и довольными результатом.
+              </li>
+            </ul>
+            <div className={scss.textLine}></div>
+            <span>
+              <p>Дни Приема: </p> {day_work}
+            </span>
+            <div className={scss.textLine}></div>
+            <div className={scss.PrTn}>
+              {price === 0 ? <p></p> : <p>Стоимость приёма {price} сомов</p>}
+              <LinkTop to={"/consultation"}>Записаться на приём</LinkTop>
+            </div>
           </div>
         </div>
       </div>
-      <div
-        className={
-          scss.info_wrapper + " " + (info?.length >= 4 ? scss.active : "")
-        }
-      >
-        <div>
-          {leftList?.map((des) => (
-            <DoctorCard key={des.id} {...des} />
-          ))}
-        </div>
-        <div>
-          {rightList?.map((des) => (
-            <DoctorCard key={des.id} {...des} />
-          ))}
-        </div>
+      <div className={scss.mainLine}></div>
+      <div className={scss.doctor_card_wrapper}>
+        {info?.map((des) => (
+          <DoctorCard key={des.id} {...des} />
+        ))}
       </div>
       {diplomas.length > 1 && (
-        <div className={scss.diploms}>
-          <span onClick={() => setActive(!active)}>
-            <img
-              className={active ? scss.active : ""}
-              src="/images/slider-arrow.svg"
-              alt="Стрелка"
-            />
-            <p>Дипломы и сертификаты</p>
-          </span>
-          <div className={active ? scss.active : ""}>
-            {diplomas.map((el) => (
-              <div className={scss.diplom} key={el}>
-                <img src={el} alt="Диплом" />
-              </div>
-            ))}
-          </div>
+        <div className={scss.diplooo} onClick={() => setActive(!active)}>
+          <h1 className="container">
+            Дипломы и сертификаты{" "}
+            <div className={active ? scss.plusAc : scss.plus}></div>
+          </h1>
+          {active && (
+            <div className="container" id={scss.diploItem}>
+              {diplomas.map((el) => (
+                <div className={scss.diplom} key={el}>
+                  <img src={el} alt="Диплом" />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
-    </div>
+    </>
   );
 }

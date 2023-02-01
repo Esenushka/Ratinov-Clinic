@@ -6,7 +6,6 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Preloader from "../components/Preloader/Preloader";
 import TopBlock from "../components/TopBlock/TopBlock";
-import YouTubeSlider from "../components/YouTubeSlider/YouTubeSlider";
 import { db } from "../config/firebase";
 
 export default function DoctorPage() {
@@ -29,9 +28,8 @@ export default function DoctorPage() {
     <>
       <Preloader loading={loading} loadingImage={false} />
       <Header />
-      <TopBlock path="Специалисты клиники" secondPath={doctor.name} bold={doctor.name} />
+      <TopBlock path="" secondPath="" bold={`Специалисты клиники / ${doctor.name}`} />
       <Doctor  {...doctor} />
-      <YouTubeSlider />
       <CallMe />
       <Footer />
     </>   

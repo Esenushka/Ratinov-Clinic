@@ -21,7 +21,7 @@ export default memo(function TopBlock({
       </div>
       <div className="container">
         <p className={scss.path}>
-          Главная /{" " + path + " "}
+         {" " + path + " "}
           {secondPath ? " / " + secondPath : ""}
         </p>
       </div>

@@ -231,7 +231,7 @@
 
 .select_wrapper {
   width: 240px;
-
+  
   .select {
     width: 100%;
     display: flex;
@@ -395,12 +395,12 @@
 .doctors-page_wrapper {
   display: flex;
   justify-content: space-between;
-
+  gap: 40px;
   .doctors_wrapper {
     display: flex;
     width: 75%;
     flex-wrap: wrap;
-    grid-gap: 40px;
+    grid-gap: 32px;
   }
 }
 

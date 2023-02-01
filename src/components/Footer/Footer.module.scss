@@ -1,4 +1,6 @@
 //Adilxa
+@import "../../styles/globalVariables";
+
 .footer {
   background: #fff;
   display: flex;
@@ -14,9 +16,12 @@
     top: -20px;
     margin-left: 40px;
     width: 200px;
+    @include breackpoint(xxl) {
+      display: none;
+    }
   }
 
-  .roundBlue{
+  .roundBlue {
     top: 120px;
     left: -120px;
     width: 352px;
@@ -24,16 +29,19 @@
     border-radius: 50%;
     background-color: #0097db;
     position: absolute;
+    @include breackpoint(xxl) {
+      display: none;
+    }
   }
 
   .right {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     width: 90%;
     gap: 78px;
     padding-bottom: 23px;
-    z-index: 1000 !important;
-
+    
     .first,
     .second {
       width: 55%;
@@ -75,7 +83,6 @@
       }
     }
     .thirth {
-      width: 40%;
       flex-direction: column;
       gap: 10px;
       display: flex;
@@ -95,7 +102,7 @@
       .social {
         display: flex;
         flex-wrap: wrap;
-        gap: 12px 51px;
+        gap: 11px 50px;
         padding-left: 20px;
       }
       .phone {
@@ -119,7 +126,7 @@
   border-bottom: 1px solid #a1a1a1;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   p {
     font-weight: 500;

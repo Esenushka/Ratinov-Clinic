@@ -72,6 +72,7 @@ const Footer = () => {
       </footer>
       <div className={`${css.bottomHeader} + container`}>
         <p>@2023 Dr. Ratinov's Clinic / все права защищены</p>
+        <p>Created by Solid Devs</p>
       </div>
     </>
   );

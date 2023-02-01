@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import CallMe from "../components/CallMe/CallMe";
-import DoctorsCard from "../components/DoctorsCard/DoctorsCard";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Preloader from "../components/Preloader/Preloader";
 import Select from "../components/Select/Select";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
+import CardDoctor from "../components/DoctorCardForPage/CardDoctor";
 
 export default React.memo(function DoctorsPage() {
   const [doctors, setDoctors] = useState([].reverse());
@@ -36,23 +36,23 @@ export default React.memo(function DoctorsPage() {
       <Preloader loading={loading} loadingImage={loadingImage} />
       <Header />
       <TopBlock
-        path={"Специалисты клиники"}
         text={"клиники"}
         bold={"Специалисты"}
+        path={""}
       />
       <div className="container doctors-page_wrapper">
         <Select />
         <div className="doctors_wrapper">
           {doctors.map((doctor) =>
             paramArr.length === 0 ? (
-              <DoctorsCard
+              <CardDoctor
                 fullSize={false}
                 setLoadingImage={setLoadingImage}
                 key={doctor.id}
                 {...doctor}
               />
             ) : paramArr.some((param) => doctor.post.includes(param)) ? (
-              <DoctorsCard
+              <CardDoctor
                 fullSize={false}
                 setLoadingImage={setLoadingImage}
                 key={doctor.id}
