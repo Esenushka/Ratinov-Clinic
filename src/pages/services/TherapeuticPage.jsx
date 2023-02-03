@@ -19,10 +19,9 @@ export default React.memo(function TherapeuticPage() {
       <Preloader loading={loading} loadingImage={loadingImage} />
       <Header />
       <TopBlock
-        bold={'лечебной физкультуры'}
-        text={'курс'}
-        reverse path={'Услуги'}
-        secondPath={'Курс лечебной физкультуры'}
+        bold={'Услуги / Курс лечебной физкультуры'}
+        text={''}
+        reverse path={''}
       />
       <Therapeutic setLoadingImage={setLoadingImage} />
       <CallMe />

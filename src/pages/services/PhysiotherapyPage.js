@@ -27,7 +27,7 @@ export default React.memo(function PhysiotherapyPage() {
     <div>
       <Preloader loadingImage={loadingImage} loading={loading} />
       <Header />
-      <TopBlock bold={"Физиолечение"} path={"Услуги"} secondPath={"Физиолечение"} />
+      <TopBlock bold={"Услуги / Физиолечение"} />
       <Physiotherapy setLoadingImage={setLoadingImage} physiotherapy={physiotherapy} />
       <CallMe />
       <Footer />

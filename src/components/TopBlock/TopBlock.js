@@ -5,8 +5,6 @@ export default memo(function TopBlock({
   text,
   bold,
   reverse,
-  path,
-  secondPath,
 }) {
   return (
     <>
@@ -14,16 +12,9 @@ export default memo(function TopBlock({
         <div className="container">
           <h1 className={reverse ? scss.reverse : ""}>
             {bold}
-            {" "}
             {text}
           </h1>
         </div>
-      </div>
-      <div className="container">
-        <p className={scss.path}>
-         {" " + path + " "}
-          {secondPath ? " / " + secondPath : ""}
-        </p>
       </div>
     </>
   );

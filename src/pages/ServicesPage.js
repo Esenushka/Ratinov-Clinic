@@ -27,7 +27,7 @@ export default React.memo( function ServicesPage() {
     <>
       <Preloader loadingImage={loadingImage} loading={loading}/>
       <Header />
-      <TopBlock bold={"Услуги"} path={"Услуги"} />
+      <TopBlock bold={"Услуги / Все услуги"} path={""} />
       <div className="container services_wrapper">
         {
           services.map((info) => <ServiceBlock setLaodingImage={setLoadingImage} key={info.id} {...info} />)

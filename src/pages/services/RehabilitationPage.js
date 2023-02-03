@@ -8,7 +8,7 @@ import TopBlock from "../../components/TopBlock/TopBlock";
 
 export default React.memo(function RehabilitationPage() {
   const [loading, setLoading] = useState(true);
-  const [loadingImage, setLoadingImage] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
@@ -16,10 +16,10 @@ export default React.memo(function RehabilitationPage() {
   }, []);
   return (
     <div>
-      <Preloader loading={loading} loadingImage={loadingImage} />
+      <Preloader loading={loading}  />
       <Header />
-      <TopBlock bold={"Реабилитация"} text={"После COVID-19"} path="Услуги" secondPath={"Реабилитация после COVID-19"} />
-      <Rehabilitation setLoadingImage={setLoadingImage} />
+      <TopBlock bold={"Услуги / Реабилитация после COVID-19"}  />
+      <Rehabilitation />
       <CallMe />
       <Footer />
     </div>

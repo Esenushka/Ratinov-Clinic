@@ -10,7 +10,7 @@ import { db } from "../../config/firebase";
 export default React.memo(function MassagePage() {
   const [massage, setMassage] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [loadingImage, setLoadingImage] = useState(true);
+
   useEffect(() => {
     db.collection("massage")
       .get()
@@ -25,10 +25,10 @@ export default React.memo(function MassagePage() {
   }, [])
   return (
     <div>
-      <Preloader loadingImage={loadingImage} loading={loading} />
+      <Preloader loading={loading} />
       <Header />
-      <TopBlock bold="Массаж" path={"Услуги"} secondPath={"Массаж"} />
-      <Massage setLoadingImage={setLoadingImage} massage={massage}/>
+      <TopBlock bold="Услуги / Массаж"  />
+      <Massage massage={massage}/>
       <Consultaition />
       <Footer />
     </div>

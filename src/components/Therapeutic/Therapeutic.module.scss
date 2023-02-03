@@ -1,156 +1,96 @@
 .therap {
-  position: relative;
-  overflow: hidden;
-
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: -50px;
   .main_bg {
-    height: 50vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    margin-bottom: 80px;
-    grid-gap: 50px;
-
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    gap: 32px;
     img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      z-index: -1;
-      opacity: 0.5;
-      left: 0;
-      top: 0;
+      width: 50%;
+      height: 257px;
+      object-fit: cover;
     }
-
-    p {
-      width: 65%;
-      font-size: 20px;
-      line-height: 24px;
-      font-weight: 400;
-      text-transform: uppercase;
-      margin-bottom: 40px;
-
-      span {
-        font-weight: 700;
-        font-size: 20px;
-      }
-    }
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    grid-gap: 3em;
-    margin-bottom: 80px;
-    position: relative;
-
-    .block {
+    .mainRight {
       display: flex;
       flex-direction: column;
-      grid-gap: 1.5em;
-
-      .title {
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: 40px;
-        line-height: 49px;
-
-        span {
-          font-size: 40px;
-          line-height: 49px;
-        }
-      }
-
-      span {
-        font-weight: 700;
-        font-size: 16px;
-      }
-
-      p {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-      }
-
-      .list {
-        display: flex;
-        flex-direction: column;
-        grid-gap: 1.5em;
-        width: 700px;
-
-        ul {
-          margin-left: 50px;
-          display: flex;
-          flex-direction: column;
-          grid-gap: 5px;
-
-          li {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 20px;
-          }
-        }
-      }
-
-      button {
-        width: fit-content;
-      }
-    }
-  }
-
-  &::before {
-    content: "";
-    background: #E4F6FF;
-    position: absolute;
-    width: 1000px;
-    height: 1300px;
-    z-index: -1;
-    opacity: 0.5;
-    border-radius: 200px;
-    right: -700px;
-    transform: matrix(-0.49, -0.87, -0.88, 0.49, 0, 0);
-    top: 500px;
-  }
-}
-
-.priceList{
-  display: flex;
-  align-items: flex-start;
-  gap: 15%;
-  div{
-    h1{
-      display: flex;
-      align-items: center;
-      h2{
+      width: 50%;
+      h1 {
+        font-weight: 600;
         font-size: 30px;
+        line-height: 37px;
+        color: #333333;
+        margin-top: 28px;
       }
-    }
-  } 
-}
-.leftPriceList{
-  div{
-    margin: 50px 0 50px 0;
-    &:nth-child(3){
-      margin-top: 70px;
-    }
-    p{
-      display: flex;
-      margin-top: -20px;
-      h2{
-        font-size:small;
+      p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #6f6f6f;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      a {
+        width: fit-content;
+        border-radius: 7px;
+        padding: 14px 27px;
+        border: 1px solid #0097db;
+        color: #0097db;
+        transition: ease-in-out 0.3s;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #0097db;
+        &:hover {
+          color: white;
+          background-color: #0097db;
+        }
       }
     }
   }
 }
-.rightPriceList{
-  div{
-    margin: 50px 0 50px 0;
-    p{
-      display: flex;
-      margin-top: -20px;
-      h2{
-        font-size:small;
+
+.main {
+  padding: 0px 0 30px 0;
+  div {
+    a {
+      width: 100%;
+      border-radius: 7px;
+      padding: 14px 27px;
+      border: 1px solid #0097db;
+      color: #0097db;
+      transition: ease-in-out 0.3s;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #0097db;
+      text-align: center;
+      margin: 30px 0;
+      &:hover {
+        color: white;
+        background-color: #0097db;
       }
     }
+  }
+}
+
+.renderItem {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 20px 0;
+  border-top: 1px solid #dadada;
+  border-bottom: 1px solid #dadada;
+  h1 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #333333;
+    margin: 0px 0 15px 0;
+  }
+  ul {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    color: #333333;
   }
 }

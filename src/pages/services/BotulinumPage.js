@@ -8,7 +8,6 @@ import TopBlock from '../../components/TopBlock/TopBlock'
 
 export default React.memo(function BotulinumPage() {
   const [loading, setLoading] = useState(true);
-  const [loadingImage, setLoadingImage] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
@@ -16,10 +15,10 @@ export default React.memo(function BotulinumPage() {
   }, []);
   return (
     <div>
-      <Preloader loading={loading} loadingImage={loadingImage} />
+      <Preloader loading={loading}/>
       <Header />
-      <TopBlock bold={"Ботулинотерапия"} path={"Услуги"} secondPath={"Ботулинотерапия"} />
-      <Botulinum setLoadingImage={setLoadingImage} />
+      <TopBlock bold={"Услуги / Ботулинотерапия"} />
+      <Botulinum  />
       <CallMe />
       <Footer />
     </div>
