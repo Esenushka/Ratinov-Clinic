@@ -95,7 +95,7 @@ export default memo(function Therapeutic({ setLoadingImage }) {
         </div>
       </div>
       <div className={scss.main}>
-        {renderList}
+        {renderList()}
         <div className="container">
           <LinkTop to={"/consultation"}>Записаться на курс</LinkTop>
         </div>

@@ -36,8 +36,8 @@ export default React.memo(function DoctorsPage() {
       <Preloader loading={loading} loadingImage={loadingImage} />
       <Header />
       <TopBlock
-        text={"клиники"}
-        bold={"Специалисты"}
+        text={""}
+        bold={"Специалисты клиники"}
         path={""}
       />
       <div className="container doctors-page_wrapper">
