@@ -13,7 +13,6 @@
   .imggg {
     position: absolute;
     z-index: 10;
-    top: -20px;
     margin-left: 40px;
     width: 200px;
     @include breackpoint(xxl) {
@@ -22,7 +21,7 @@
   }
 
   .roundBlue {
-    top: 120px;
+    top: 150px;
     left: -120px;
     width: 352px;
     height: 352px;
@@ -39,12 +38,12 @@
     align-items: flex-start;
     justify-content: space-between;
     width: 90%;
-    gap: 78px;
+    gap: 30px;
     padding-bottom: 23px;
     
     .first,
     .second {
-      width: 55%;
+      width: 40%;
       flex-direction: column;
       gap: 10px;
       display: flex;
@@ -83,6 +82,7 @@
       }
     }
     .thirth {
+      display: none !important;
       flex-direction: column;
       gap: 10px;
       display: flex;
@@ -102,7 +102,7 @@
       .social {
         display: flex;
         flex-wrap: wrap;
-        gap: 11px 50px;
+        gap: 10px 41px;
         padding-left: 20px;
       }
       .phone {
@@ -134,4 +134,10 @@
     letter-spacing: 1px;
     color: #636363;
   }
+}
+
+.map{
+  width: 50%;
+  height: 100%;
+  border: 0px;
 }

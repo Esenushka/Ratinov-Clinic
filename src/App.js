@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
-import HomePage from "./pages/HomePage";
+// import HomePage from "./pages/HomePage";
 import "./App.css";
 import "./styles/index.scss";
 import "slick-carousel/slick/slick.css";
@@ -17,10 +17,12 @@ import StocksPage from "./pages/StocksPage";
 import BotulinumPage from "./pages/services/BotulinumPage";
 import RehabilitationPage from "./pages/services/RehabilitationPage";
 import TherapeuticPage from "./pages/services/TherapeuticPage";
-import ResultPage from "./pages/ResultPage";
+// import ResultPage from "./pages/ResultPage";
 import ConsultationPage from "./pages/ConsultationPage";
 import DoctorPage from "./pages/DoctorPage";
-const DoctorsPage = lazy(() => import("./pages/DoctorsPage"))
+const DoctorsPage = lazy(() => import("./pages/DoctorsPage"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ResultPage = lazy(() => import("./pages/ResultPage"));
 
 function App() {
   return (

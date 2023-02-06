@@ -1,6 +1,6 @@
 @mixin breackpoint($point) {
   @if $point==xxl {
-    @media (max-width: 1500px) {
+    @media (max-width: 1600px) {
       @content;
     }
   } @else if $point==lg {

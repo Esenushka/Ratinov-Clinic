@@ -33,7 +33,7 @@ const OwnerBlock = () => {
               от боли и уменьшить размеры грыжи в несколько раз.
             </p>
             <div className={scss.line}></div>
-            <img style={{marginLeft:"-18px"}} src="/images/Logo.svg" alt="logo" />
+            {/* <img style={{marginLeft:"-18px"}} src="/images/Logo.svg" alt="logo" /> */}
           </div>
           <div className={scss.rightSide}>
             <img

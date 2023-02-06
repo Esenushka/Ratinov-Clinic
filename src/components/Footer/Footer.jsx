@@ -8,8 +8,8 @@ const Footer = () => {
   return (
     <>
       <footer className={`${css.footer}`}>
-          <img className={css.imggg} src="/images/Vector.svg" alt="" />
-          <div className={css.roundBlue}></div>
+        <img className={css.imggg} src="/images/Vector.svg" alt="" />
+        <div className={css.roundBlue}></div>
         <div className={`${css.right} + container`}>
           <div className={css.first}>
             <h1>Tekst</h1>
@@ -18,18 +18,17 @@ const Footer = () => {
             <LinkTop to="/doctors">Специалисты</LinkTop>
             <LinkTop to="/result">Результаты</LinkTop>
             <LinkTop to="/price">Цены</LinkTop>
-            <div className={css.line}></div>
-            <h5>Бишкек, 7мкр, Сухэ-Батора, 49/6</h5>
-            <p>Пн - Сб: 08:00 - 20:00</p>
-          </div>
-          <div className={css.second}>
-            <h1>Tekst</h1>
-            <div className={css.line}></div>
             <HashLink to={"/#about"}>О клинике</HashLink>
             <HashLink to={"/#faq"}>Информация для пациентов</HashLink>
             <LinkTop to="/comment">Отзывы</LinkTop>
             <LinkTop to="/reception">Время приема</LinkTop>
             <div className={css.line}></div>
+          </div>
+          <div className={css.second}>
+            <h1>Tekst</h1>
+            <div className={css.line}></div>
+            <h5>Бишкек, 7мкр, Сухэ-Батора, 49/6</h5>
+            <p>Пн - Сб: 08:00 - 20:00</p>
             <a
               rel="noreferrer"
               href="tel: + 996 (501) 420 420"
@@ -44,6 +43,15 @@ const Footer = () => {
             >
               +996 (501) 420 - 420
             </a>
+            <a
+              href="https://2gis.kg/bishkek/firm/70000001046561968?m=74.61899%2C42.825056%2F16"
+              rel="noreferrer"
+              alt="2gis"
+              className={css.phone}
+            >
+              2Гис
+            </a>
+            <div className={css.line}></div>
           </div>
           <div className={css.thirth}>
             <h1>Социальные сети</h1>
@@ -68,6 +76,14 @@ const Footer = () => {
               Пройти тест
             </a>
           </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.297272874011!2d74.61727121579307!3d42.82433397915845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb74f343358db%3A0x4bebb2ce7b1bf427!2z0JrQu9C40L3QuNC60LAg0JTQvtC60YLQvtGA0LAg0KDQsNGC0LjQvdC-0LLQsA!5e0!3m2!1sru!2skg!4v1675686882603!5m2!1sru!2skg"
+            className={css.map}
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="myFrame"
+          ></iframe>
         </div>
       </footer>
       <div className={`${css.bottomHeader} + container`}>

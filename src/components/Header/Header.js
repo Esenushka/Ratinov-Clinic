@@ -2,6 +2,7 @@ import { memo, useState } from "react";
 import LinkTop from "../../hooks/LinkTop";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
+import { headerLinks } from "../../constants/socialMedia";
 
 const Header = ({ isResult }) => {
   const [isSelect, setSelect] = useState(false);
@@ -10,11 +11,17 @@ const Header = ({ isResult }) => {
     <header className={isResult ? styles.headerResult : ""}>
       <div className="container">
         <div className={styles.headerTop}>
-          <span>Пн - Сб: 08:00 - 20:00</span>
           <div className={styles.headerTopRight}>
             <a href="tel: + 996 (501) 420 420">+ 996 (501) 420 420</a>
             <a href="tel: + 996 (555) 142 020">+ 996 (555) 142 020</a>
           </div>
+          <span className={styles.social}>
+            {headerLinks.map((item) => (
+              <a key={item.id} href={item.link} target="_blank" rel="noreferrer">
+                <img src={item.name} alt="logo"></img>
+              </a>
+            ))}
+          </span>
         </div>
       </div>
       <div className={styles.line}></div>
