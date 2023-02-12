@@ -4,11 +4,11 @@
       @content;
     }
   } @else if $point==lg {
-    @media (max-width: 992px) {
+    @media (max-width: 997px) {
       @content;
     }
   } @else if $point==md {
-    @media (max-width: 768px) {
+    @media (max-width: 778px) {
       @content;
     }
   } @else if $point==sm {

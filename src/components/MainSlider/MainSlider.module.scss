@@ -1,3 +1,7 @@
+// .slider{
+//   display: none;
+// }
+@import "../../styles/globalVariables";
 .left {
   position: absolute;
   width: 600px;
@@ -99,6 +103,9 @@
 .wrapper {
   margin-top: 69px !important;
   margin-bottom: 53px !important;
+  //////////////
+  // display: none;
+  //////////////
 }
 
 .card {

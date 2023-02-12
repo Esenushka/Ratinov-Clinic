@@ -66,7 +66,7 @@ export default memo(function MainSlider() {
           )}
         </div>
       </div>
-      <Slider {...settings}>
+      <Slider className={scss.slider} {...settings}>
         {sliderContent.map((item) => (
           <MainSliderCard src={item.src} />
         ))}
