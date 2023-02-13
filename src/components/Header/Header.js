@@ -90,7 +90,7 @@ const Header = ({ isResult  }) => {
       </header>
       <div className={styles.headerAdaptive}>
         <div className={styles.adaptiveTop}>
-          <img src="/images/Loggo.svg" alt="Логотип" />
+          <img src="/images/Logo.svg" alt="Логотип" />
           <div
             onClick={() => setAdapt(!isAdap)}
             className={isAdap ? styles.close : styles.burger}
