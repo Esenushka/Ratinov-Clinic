@@ -1,3 +1,57 @@
+@media (max-width: 776px) {
+  .clinicWrapper {
+    display: none !important;
+  }
+  .title{
+    display: none !important;
+  }
+  .adapt {
+    display: block !important;
+  }
+}
+@media (min-width: 776px) {
+  .adapt {
+    display: none;
+  }
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  color: #333333;
+  margin-bottom: 40px;
+  margin: 0;
+  margin-top: 70px;
+  a {
+      margin: 0;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: #939393;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      position: relative;
+      margin-right: 70px;
+      img {
+        position: absolute;
+        right: -60px;
+        transition: ease-in-out 0.3s;
+        width: 40px;
+      }
+      &:hover {
+        img {
+          right: -70px;
+        }
+      }
+  }
+}
+
 .clinicWrapper {
   width: 100%;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F3adf859a4afeb4324f4469df256d7dca%201.png?alt=media&token=1839a30e-f9d8-4bef-ac17-d69f15d4fd8f");
@@ -85,4 +139,97 @@
   color: white;
   margin: 0;
   height: 21px;
+}
+
+//Adaptive
+
+.adapt {
+  h1 {
+    width: 100%;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+    padding: 0 24px;
+    margin-top: 30px;
+    a {
+      color: #939393 !important;
+      display: flex;
+      align-items: center;
+      color: red;
+      transition: ease-in-out 0.3s;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: #939393;
+      margin-top: 10px;
+      img {
+        width: 30px;
+      }
+    }
+  }
+  .slider {
+    overflow-x: scroll;
+    display: flex;
+    gap: 30px;
+    margin-left: 24px;
+    padding: 1px;
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 20px 16px;
+      background: #ffffff;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      min-height: fit-content;
+      position: relative;
+      a {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #333333;
+        width: 260px;
+      }
+      span {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 22px;
+        color: #333333;
+      }
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #333333;
+        margin: 8px 0;
+      }
+      p {
+        height: 150px;
+        line-height: 19px;
+        color: #6f6f6f;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #6f6f6f;
+      }
+      .btn {
+        width: 100%;
+        button {
+          width: 100%;
+          height: 36px;
+          color: #0097db;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }

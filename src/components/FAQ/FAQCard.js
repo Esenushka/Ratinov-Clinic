@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 import LinkTop from "../../hooks/LinkTop";
 import scss from "./FAQ.module.scss";
 
-export default memo(function FAQCard({ title, buttons, info, type, index   }) {
+export default memo(function FAQCard({ title, buttons, info, type, index }) {
   const [active, setActive] = useState(false);
 
   return (
     <div className={scss.block}>
       <span onClick={() => setActive(!active)}>
-        <p>{index + 1}. {title}</p>
+        <p>
+          {index + 1}. {title}
+        </p>
         <div
-            className={active ? scss.plusAc : scss.plus}
-            onClick={() => setActive(!active)}
-          ></div>
+          className={active ? scss.plusAc : scss.plus}
+          onClick={() => setActive(!active)}
+        ></div>
       </span>
       <div className={scss.info_wrapper + " " + (active ? scss.active : "")}>
         {type === 1 ? (

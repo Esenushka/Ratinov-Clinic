@@ -7,6 +7,9 @@ import { socialLinks } from "../../constants/socialMedia";
 const Footer = () => {
   return (
     <>
+    <div className={css.logo}>
+      <img src="/images/logOnBlue.svg" alt="" />
+    </div>
       <footer className={`${css.footer}`}>
         <img className={css.imggg} src="/images/Vector.svg" alt="" />
         <div className={css.roundBlue}></div>
@@ -86,9 +89,37 @@ const Footer = () => {
           ></iframe>
         </div>
       </footer>
+      <div className={css.adapt}>
+        <div className={css.links}>
+          <LinkTop to="/services">Услуги</LinkTop>
+          <LinkTop to="/doctors">Специалисты</LinkTop>
+          <LinkTop to="/result">Результаты</LinkTop>
+          <LinkTop to="/price">Цены</LinkTop>
+          <HashLink to={"/#about"}>О клинике</HashLink>
+          <HashLink to={"/#faq"}>Для пациентов</HashLink>
+          <LinkTop to="/comment">Отзывы</LinkTop>
+          <LinkTop to="/reception">Время приема</LinkTop>
+        </div>
+        <div className={css.line}></div>
+
+        <div className={css.addres}>
+          <h5>Адресc:</h5>
+          <p>Бишкек, 7мкр, Сухэ-Батора, 49/6</p>
+        </div>
+        <div className={css.line}></div>
+
+        <div className={css.workTime}>
+          <h5>График работы:</h5>
+          <p>Пн - Сб: 08:00 - 20:00</p>
+        </div>
+        <div className={css.line}></div>
+      </div>
       <div className={`${css.bottomHeader} + container`}>
         <p>@2023 Dr. Ratinov's Clinic / все права защищены</p>
         <p>Created by Solid Devs</p>
+      </div>
+      <div className={css.buttomAd}>
+        <p>@2023 Dr. Ratinov's Clinic / все права защищены</p>
       </div>
     </>
   );

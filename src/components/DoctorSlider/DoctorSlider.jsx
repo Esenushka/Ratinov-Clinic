@@ -1,6 +1,7 @@
 import css from "./Doctor.module.scss";
 import Slider from "react-slick";
 import DoctorsCard from "../DoctorsCard/DoctorsCard";
+import DoctorAdaptive from "../DoctorsCard/DoctorAdaptive";
 import { memo, useState } from "react";
 import { useEffect } from "react";
 import { db } from "../../config/firebase";
@@ -59,21 +60,39 @@ const DoctorSlider = () => {
       });
   }, []);
   return (
-    <div className={`${css.wrapper} container`}>
-      <h1>
-        Наши Врачи
-        <p>
-          <LinkTop to="/doctors">
-            Посмотреть всех <img alt="arrow" src="/images/Arrow2.png"></img>
-          </LinkTop>
-        </p>
-      </h1>
-      <Slider className={`${css.slider} doctor_slider`} {...settings}>
-        {doctors.map((doctor) => (
-          <DoctorsCard fullSize key={doctor.id} {...doctor} />
-        ))}
-      </Slider>
-    </div>
+    <>
+      <div className={`${css.wrapper} container`}>
+        <h1>
+          Наши Врачи
+          <p>
+            <LinkTop to="/doctors">
+              Посмотреть всех <img alt="arrow" src="/images/Arrow2.png"></img>
+            </LinkTop>
+          </p>
+        </h1>
+        <Slider className={`${css.slider} doctor_slider`} {...settings}>
+          {doctors.map((doctor) => (
+            <DoctorsCard fullSize key={doctor.id} {...doctor} />
+          ))}
+        </Slider>
+      </div>
+
+      <div className={css.adapt}>
+        <h1 className={css.title}>
+          Наши Врачи
+          <p>
+            <LinkTop to="/doctors">
+              Посмотреть всех <img alt="arrow" src="/images/Arrow2.png"></img>
+            </LinkTop>
+          </p>
+        </h1>
+        <div className={css.slider}>
+          {/* {doctors.map((doctor) => (
+            <DoctorAdaptive fullSize key={doctor.id} {...doctor} />
+          ))} */}
+        </div>
+      </div>
+    </>
   );
 };
 

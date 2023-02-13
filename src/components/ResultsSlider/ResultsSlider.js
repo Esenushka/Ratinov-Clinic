@@ -42,23 +42,41 @@ export default memo(function ResultsSlider() {
     customPaging: () => <span className={scss.dots}></span>,
   };
   return (
-    <div className="container result_slider">
-      <div className={scss.wrapper}>
+    <>
+      <div className="container result_slider">
+        <div className={scss.wrapper}>
+          <h1>
+            Наши результаты
+            <LinkTop to="/result">
+              Показать еще <img alt="arrow" src="/images/Arrow2.png" />
+            </LinkTop>
+          </h1>
+          <Slider {...settings}>
+            {result.map((el) => (
+              <div className={scss.card} key={el.id} {...el}>
+                <img src={el.img} alt="img"></img>
+                <p>Снимок №{el.number}</p>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+      <div className={scss.adapt}>
         <h1>
           Наши результаты
           <LinkTop to="/result">
             Показать еще <img alt="arrow" src="/images/Arrow2.png" />
           </LinkTop>
         </h1>
-        <Slider {...settings}>
+        <div className={scss.adSlider}>
           {result.map((el) => (
             <div className={scss.card} key={el.id} {...el}>
               <img src={el.img} alt="img"></img>
               <p>Снимок №{el.number}</p>
             </div>
           ))}
-        </Slider>
+        </div>
       </div>
-    </div>
+    </>
   );
 });

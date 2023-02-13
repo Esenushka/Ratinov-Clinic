@@ -1,3 +1,26 @@
+@media (max-width: 776px) {
+  .wrapper {
+    display: none !important;
+  }
+  .adaptive {
+    display: flex;
+  }
+  .about {
+    display: none !important;
+  }
+}
+@media (min-width: 776px) {
+  .wrapper {
+    display: block;
+  }
+  .adaptive {
+    display: none !important;
+  }
+  .aboutAd {
+    display: none !important;
+  }
+}
+
 .wrapper {
   margin-bottom: 70px;
 }
@@ -84,7 +107,7 @@
       line-height: 22px;
       text-align: center;
       color: #636363;
-      
+
       .line {
         width: 80%;
         height: 1px;
@@ -109,5 +132,85 @@
       width: 70px;
       height: 70px;
     }
+  }
+}
+.aboutAd {
+  padding: 24px;
+  h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+  }
+  .about_card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    .card {
+      margin-top: 30px;
+      h1 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #0097db;
+        margin-top: 15px;
+      }
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #dadada;
+        margin: 10px 0;
+      }
+      p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 21px;
+        text-align: center;
+        color: #636363;
+      }
+    }
+  }
+}
+//adaptive
+.adaptive {
+  width: 100%;
+  height: fit-content;
+  padding: 15px 24px;
+  background-color: #0097db;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+  .line {
+    width: 30%;
+    height: 1px;
+    background-color: white;
+    margin: 5px 0;
+  }
+  a {
+    width: 100%;
+    background-color: white;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 32px;
+    color: #333333;
+    margin-top: 15px;
   }
 }

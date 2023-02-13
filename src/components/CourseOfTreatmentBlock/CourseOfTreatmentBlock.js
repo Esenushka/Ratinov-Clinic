@@ -3,7 +3,6 @@ import ProcedureBlock from "./ProcedureBlock";
 import { memo } from "react";
 import LinkTop from "../../hooks/LinkTop";
 
-
 export default memo(function CourseOfTreatmentBlock() {
   const resorbcee = [
     {
@@ -35,22 +34,48 @@ export default memo(function CourseOfTreatmentBlock() {
   ];
 
   return (
-    <div className={"container " + scss.wrapper}>
-      <h1 className={scss.title}>
-        ЛЕЧЕНИЕ ПО МЕТОДУ РЕЗОРБЦИИ <LinkTop to="/consultation">Записаться на прием <img src="/images/Arrow2.png" alt="arrow"></img></LinkTop>
-      </h1>
-      <div className={scss.info}>
-        {resorbcee.map((el) => (
-          <ul key={el.id} className={scss.list}>
-            {el.titles.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        ))}
+    <>
+      <div className={"container " + scss.wrapper}>
+        <h1 className={scss.title}>
+          ЛЕЧЕНИЕ ПО МЕТОДУ РЕЗОРБЦИИ{" "}
+          <LinkTop to="/consultation">
+            Записаться на прием <img src="/images/Arrow2.png" alt="arrow"></img>
+          </LinkTop>
+        </h1>
+        <div className={scss.info}>
+          {resorbcee.map((el) => (
+            <ul key={el.id} className={scss.list}>
+              {el.titles.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          ))}
+        </div>
+        <div className={scss.procedure}>
+          <ProcedureBlock col={false} />
+        </div>
       </div>
-      <div className={scss.procedure}>
-        <ProcedureBlock col={false} />
+
+      <div className={scss.adapt}>
+        <h1 className={scss.title}>
+          ЛЕЧЕНИЕ ПО МЕТОДУ РЕЗОРБЦИИ{" "}
+          <LinkTop to="/consultation">
+            Записаться на прием <img src="/images/Arrow2.png" alt="arrow"></img>
+          </LinkTop>
+        </h1>
+        <div className={scss.info}>
+          {resorbcee.map((el) => (
+            <ul key={el.id} className={scss.list}>
+              {el.titles.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          ))}
+        </div>
+        <div className={scss.procedure}>
+          <ProcedureBlock col={false} block={true}/>
+        </div>
       </div>
-    </div>
+    </>
   );
 });

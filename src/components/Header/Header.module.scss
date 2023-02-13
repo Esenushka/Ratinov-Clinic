@@ -11,7 +11,7 @@ $white: #ffffff;
   text-decoration: none;
 }
 .isHead {
-  @media (max-width: 576px) {
+  @media (max-width: 776px) {
     header {
       display: none !important;
     }
@@ -221,7 +221,7 @@ span {
   width: 100%;
   flex-direction: column;
   position: relative;
-
+  height: fit-content;
   .adaptiveTop {
     width: 100%;
     display: flex;
@@ -314,6 +314,7 @@ span {
       flex-direction: column;
       gap: 15px;
       padding: 18px 24px;
+    text-align: center;
     }
     a {
       padding: 20px 24px;

@@ -57,23 +57,42 @@ export default memo(function YouTubeSlider() {
   }, []);
 
   return (
-    <div className={"container youtube_slider " + scss.wrapper}>
-      <h1>
-        УЗНАЙТЕ О СВОЕМ ЗДОРОВЬЕ БОЛЬШЕ{" "}
-        <a
-          href="https://www.youtube.com/watch?v=sJH0L6xaxCA"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Youtube канал <img src="/images/Arrow2.png" alt="arrow" />
-        </a>
-      </h1>
+    <>
+      <div className={"container youtube_slider " + scss.wrapper}>
+        <h1>
+          УЗНАЙТЕ О СВОЕМ ЗДОРОВЬЕ БОЛЬШЕ{" "}
+          <a
+            href="https://www.youtube.com/watch?v=sJH0L6xaxCA"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Youtube канал <img src="/images/Arrow2.png" alt="arrow" />
+          </a>
+        </h1>
+        <Slider {...settings}>
+          {youtubeData.map((el) => (
+            <YouTubeSliderCard key={el.id} {...el} />
+          ))}
+        </Slider>
+      </div>
 
-      <Slider {...settings}>
-        {youtubeData.map((el) => (
-          <YouTubeSliderCard key={el.id} {...el} />
-        ))}
-      </Slider>
-    </div>
+      <div className={scss.adapt}>
+        <h1>
+          УЗНАЙТЕ О СВОЕМ ЗДОРОВЬЕ БОЛЬШЕ{" "}
+          <a
+            href="https://www.youtube.com/watch?v=sJH0L6xaxCA"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Youtube канал <img src="/images/Arrow2.png" alt="arrow" />
+          </a>
+        </h1>
+        <div className={scss.adSlider}>
+          {youtubeData.map((el) => (
+            <YouTubeSliderCard key={el.id} {...el} width={true} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 });

@@ -1,3 +1,23 @@
+@media (max-width: 776px) {
+  .wrapper {
+    display: none !important;
+  }
+  .lineBt {
+    display: none !important;
+  }
+  .adapt {
+    display: block !important;
+  }
+}
+@media (min-width: 776px) {
+  .ownerBlock {
+    display: block;
+  }
+  .adapt {
+    display: none;
+  }
+}
+
 //
 .wrapper {
   margin-bottom: 100px !important;
@@ -114,5 +134,41 @@
   &:hover {
     background: #333333;
     border-color: #333333;
+  }
+}
+
+//adaptive
+
+.adapt {
+  h1 {
+    width: 100%;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+    margin-bottom: 40px;
+    padding: 0 24px;
+    a {
+      color: #939393 !important;
+      display: flex;
+      align-items: center;
+      color: red;
+      transition: ease-in-out 0.3s;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: #939393;
+      margin-top: 10px;
+      img {
+        width: 30px;
+      }
+    }
+  }
+  .adSlider {
+    display: flex;
+    overflow-x: scroll;
+    gap: 50px;
   }
 }

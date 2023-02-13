@@ -4,10 +4,9 @@ import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import { headerLinks } from "../../constants/socialMedia";
 
-const Header = ({ isResult }) => {
+const Header = ({ isResult  }) => {
   const [isSelect, setSelect] = useState(false);
   const [isAdap, setAdapt] = useState(false);
-
 
   return (
     <div className={styles.isHead}>
@@ -121,6 +120,18 @@ const Header = ({ isResult }) => {
               Тест на здоровье позвоночника
             </a>
           </div>
+          <p
+            style={{
+              color: "#7d7d7d",
+              fontSize: 12,
+              background:'white',
+              textAlign:'center',
+              borderTop: "1px solid #DADADA",
+              padding:'10px'
+            }}
+          >
+            Пн - Сб: 08:00 - 20:00
+          </p>
         </div>
       </div>
     </div>

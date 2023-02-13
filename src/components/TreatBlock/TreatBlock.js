@@ -26,17 +26,27 @@ export default memo(function TreatBlock() {
   ];
 
   return (
-    <div className={scss.wrapper}>
-      <div className="container">
-        <div className={scss.cards}>
-          {Arr.map((item) => (
-            <div key={item.id} className={scss.card}>
-              <h1>{item.title}</h1>
-              <p>{item.desc}</p>
-            </div>
-          ))}
+    <>
+      <div className={scss.wrapper}>
+        <div className="container">
+          <div className={scss.cards}>
+            {Arr.map((item) => (
+              <div key={item.id} className={scss.card}>
+                <h1>{item.title}</h1>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <div className={scss.adapt}>
+        {Arr.map((item) => (
+          <div key={item.id} className={scss.card}>
+            <h1>{item.title}</h1>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 });

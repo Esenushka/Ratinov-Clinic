@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { db } from "../config/firebase";
 import Preloader from "../components/Preloader/Preloader";
 import RoundButtons from "../components/RoundButtons/RoundButtons";
@@ -76,6 +76,7 @@ export default React.memo(function HomePage() {
         setLoading(false);
       });
   }, []);
+
   return (
     <Suspense
       fallback={<Preloader loadingImage={loadingImage} loading={loading} />}
@@ -91,11 +92,11 @@ export default React.memo(function HomePage() {
       <CourseOfTreatmentBlock />
       <ClinicSpecialistsBlock specialists={specialists} />
       <DoctorSlider fullSize />
-      <CommentBlock />
+      {/* <CommentBlock /> */}
       <FAQ faq={faq} />
       <CallMe />
       <Footer />
-      {loading || loadingImage ? "" : <RoundButtons />}
+      {/* {loading || loadingImage ? "" : <RoundButtons />} */}
     </Suspense>
   );
 });

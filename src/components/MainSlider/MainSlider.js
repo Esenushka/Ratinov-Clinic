@@ -71,6 +71,39 @@ export default memo(function MainSlider() {
           <MainSliderCard src={item.src} />
         ))}
       </Slider>
+      <div className={scss.adaptive}>
+        <h1>Истории Наших пациентов после лечения</h1>
+        <div className={scss.line}></div>
+        <p>
+          Метод резорбции - уменьшение <br /> и заживление грыжи, вплоть до{" "}
+          <br /> полного ее исчезновения <br /> или рубцевания.
+        </p>
+        <span
+          style={{ transition: "ease-in-out .4s", cursor: "pointer" }}
+          className={scss.more}
+        >
+          <p style={{ color: "#0097db" }}>Подробнее</p>
+          <img
+            style={{ marginLeft: "10px" }}
+            src={"/images/nonActiveArrow.svg"}
+            alt="aroow"
+          ></img>
+        </span>
+        <div className={scss.line}></div>
+
+        <div className={scss.linka}>
+          <Link to={"/comment"}>Отзывы</Link>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href={"https://www.youtube.com/@doctor_ratinov"}
+            className={scss.btn}
+          >
+            <div className={scss.play}></div>
+            Смотреть видео
+          </a>
+        </div>
+      </div>
     </div>
   );
 });
