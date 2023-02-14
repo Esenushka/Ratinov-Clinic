@@ -4,9 +4,8 @@ import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import { headerLinks } from "../../constants/socialMedia";
 
-const Header = ({ isResult  }) => {
+const Header = ({ isResult, setHeader, isHeader }) => {
   const [isSelect, setSelect] = useState(false);
-  const [isAdap, setAdapt] = useState(false);
 
   return (
     <div className={styles.isHead}>
@@ -92,15 +91,15 @@ const Header = ({ isResult  }) => {
         <div className={styles.adaptiveTop}>
           <img src="/images/Logo.svg" alt="Логотип" />
           <div
-            onClick={() => setAdapt(!isAdap)}
-            className={isAdap ? styles.close : styles.burger}
+            onClick={() => setHeader(!isHeader)}
+            className={isHeader ? styles.burger :  styles.close}
           >
             <div className={styles.line}></div>
           </div>
         </div>
         <div
-          onClick={() => setAdapt(false)}
-          className={isAdap ? styles.adaptiveBottom : styles.non}
+          onClick={() => setHeader(true)}
+          className={isHeader ? styles.non :  styles.adaptiveBottom}
         >
           <Link to="/services">Все Услуги</Link>
           <LinkTop to="/doctors">Специалисты</LinkTop>
@@ -124,10 +123,10 @@ const Header = ({ isResult  }) => {
             style={{
               color: "#7d7d7d",
               fontSize: 12,
-              background:'white',
-              textAlign:'center',
+              background: "white",
+              textAlign: "center",
               borderTop: "1px solid #DADADA",
-              padding:'10px'
+              padding: "10px",
             }}
           >
             Пн - Сб: 08:00 - 20:00

@@ -59,7 +59,7 @@ const DoctorSlider = () => {
         );
       });
   }, []);
-  console.log(doctors);
+  
   return (
     <>
       <div className={`${css.wrapper} container`}>

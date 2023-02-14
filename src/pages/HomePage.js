@@ -74,28 +74,35 @@ export default React.memo(function HomePage() {
         });
         setFaq(faqArr);
         setLoading(false);
+        setHeader(true);
       });
   }, []);
+
+  const [isHeader, setHeader] = useState(true);
 
   return (
     <Suspense
       fallback={<Preloader loadingImage={loadingImage} loading={loading} />}
     >
-      <Header />
-      <MainSlider />
-      <Consultaition />
-      <About setLoadingImage={setLoadingImage} about={about} />
-      <TreatBlock />
-      <OwnerBlock />
-      <YouTubeSlider />
-      <ResultsSlider />
-      <CourseOfTreatmentBlock />
-      <ClinicSpecialistsBlock specialists={specialists} />
-      <DoctorSlider fullSize />
-      {/* <CommentBlock /> */}
-      <FAQ faq={faq} />
-      <CallMe />
-      <Footer />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <MainSlider />
+          <Consultaition />
+          <About setLoadingImage={setLoadingImage} about={about} />
+          <TreatBlock />
+          <OwnerBlock />
+          <YouTubeSlider />
+          <ResultsSlider />
+          <CourseOfTreatmentBlock />
+          <ClinicSpecialistsBlock specialists={specialists} />
+          <DoctorSlider fullSize />
+          <CommentBlock />
+          <FAQ faq={faq} />
+          <CallMe />
+          <Footer />
+        </>
+      )}
       {/* {loading || loadingImage ? "" : <RoundButtons />} */}
     </Suspense>
   );
