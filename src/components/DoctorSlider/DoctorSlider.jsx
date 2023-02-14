@@ -59,6 +59,7 @@ const DoctorSlider = () => {
         );
       });
   }, []);
+  console.log(doctors);
   return (
     <>
       <div className={`${css.wrapper} container`}>
@@ -78,7 +79,7 @@ const DoctorSlider = () => {
       </div>
 
       <div className={css.adapt}>
-        <h1 className={css.title}>
+        <h1 className={css.title} style={{marginBottom:"30px"}}>
           Наши Врачи
           <p>
             <LinkTop to="/doctors">
@@ -87,9 +88,9 @@ const DoctorSlider = () => {
           </p>
         </h1>
         <div className={css.slider}>
-          {/* {doctors.map((doctor) => (
+          {doctors.map((doctor) => (
             <DoctorAdaptive fullSize key={doctor.id} {...doctor} />
-          ))} */}
+          ))}
         </div>
       </div>
     </>

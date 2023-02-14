@@ -14,46 +14,19 @@ export default memo(function DoctorsCard({
   proffesions,
   id,
 }) {
-  const location = useLocation();
-
   return (
-    <div className={scss.card + " " + (fullSize ? scss.main : "")}>
-      {fullSize ? (
-        <img src={fullSizeImg} alt="Фото врача" />
-      ) : img ? (
-        <img onLoad={() => setLoadingImage(false)} src={img} alt="Фото врача" />
-      ) : (
-        <span></span>
-      )}
-      <div className={scss.wrap_card}>
-        <div className={scss.name}>
-          <LinkTop to={`/doctor/${id}`}>{name}</LinkTop>
-          <p>{proffesions}</p>
-        </div>
-        {location.pathname === "/" ? (
-          <>
-            <div className={scss.other}>
-              <p>{day_work}</p>
-              <div className={scss.other_text}>
-                <h5>
-                  Стоимость приёма <br />{" "}
-                  {price > 0 ? price + " сомов" : "Бесплатно"}
-                </h5>
-                <LinkTop to={`/doctor/${id}`}>
-                  <button className={`btn-small btn`}>Подробнее</button>
-                </LinkTop>
-              </div>
-            </div>
-          </>
-        ) : (
-          <div className={scss.btn}>
-            <LinkTop to={`/doctor/${id}`}>
-              <button className="btn-small btn">
-                Подробнее
-              </button>
-            </LinkTop>
-          </div>
-        )}
+    <div className={scss.adCard}>
+      <img src={fullSizeImg} alt={name} />
+      <div className={scss.price}>
+        <p>Стоимость приема {price !== 0 ? price + " coм" : "бесплатно"}</p>
+      </div>
+      <div className={scss.bottomSide}>
+        <h1>{name}</h1>
+        <p>{proffesions}</p>
+        <div className={scss.line}></div>
+        <h5>{day_work}</h5>
+        <div className={scss.line}></div>
+        <LinkTop to={`/doctor/${id}`}>Подробнее</LinkTop>
       </div>
     </div>
   );
