@@ -1,11 +1,18 @@
+@import "../../styles/globalVariables";
+
 .wrapper {
   margin-top: 40px;
-  h1 {
+  .title {
     font-weight: 600;
     font-size: 30px;
     line-height: 37px;
     color: #333333;
-
+    @include breackpoint(md) {
+      margin-left: 24px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+    }
     span {
       font-size: xx-large;
       font-weight: 600;
@@ -17,11 +24,24 @@
   width: 100%;
   margin-bottom: 80px;
   margin: 0 auto;
-  b {
+  @include breackpoint(md) {
+    padding: 0 24px;
+  }
+  h1 {
     font-weight: 600;
     font-size: 24px;
     line-height: 29px;
     color: #333333;
+    @include breackpoint(md) {
+      width: 100%;
+      background-color: #0097db;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #ffffff;
+      padding: 10px 23px;
+      border-radius: 7px;
+    }
   }
   ul {
     font-weight: 400;
@@ -29,6 +49,15 @@
     line-height: 27px;
     color: #333333;
     margin: 15px 0 20px 20px;
+    @include breackpoint(md) {
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 7px;
+      margin: 0 auto;
+      margin-top: 10px;
+      li {
+        margin-left: 40px;
+      }
+    }
   }
   p {
     margin-bottom: 30px;
@@ -38,13 +67,13 @@
 
 .info_blocks_wrapper {
   margin-bottom: 5px;
-
   h1 {
     font-weight: 600;
     font-size: 30px;
     line-height: 37px;
     color: #333333;
   }
+
   .info_block {
     width: 24%;
     text-align: center;
@@ -57,8 +86,12 @@
     flex-direction: column;
     align-items: center;
     height: fit-content !important;
+    @include breackpoint(md) {
+      width: 280px;
+      margin: 1px;
+    }
     .title {
-      width: 100%;
+      width: 280px;
     }
     h5 {
       font-weight: 600;
@@ -68,6 +101,10 @@
       border-bottom: 1px solid #e2e2e2;
       width: 100% !important;
       padding-bottom: 10px;
+      @include breackpoint(md){
+        border-bottom: 0px;
+        width: 260px !important;
+      }
     }
 
     a {
@@ -87,6 +124,7 @@
     & p:nth-child(2) {
       border-bottom: 1px solid #e2e2e2;
       padding-bottom: 5px;
+
     }
     p {
       font-weight: 400;
@@ -109,6 +147,13 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    @include breackpoint(md){
+      display: flex;
+      overflow-x: scroll;
+      flex-wrap: nowrap;
+      gap: 24px;
+      padding-left: 24px;
+    }
   }
 }
 
@@ -160,6 +205,16 @@
       line-height: 29px;
       color: #333333;
       margin-top: 20px;
+      @include breackpoint(md) {
+        width: 100%;
+        background-color: #0097db;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #ffffff;
+        padding: 10px 23px;
+        border-radius: 7px;
+      }
     }
     p {
       margin-top: 15px;
@@ -168,6 +223,14 @@
       font-size: 16px;
       line-height: 27px;
       color: #333333;
+      @include breackpoint(md) {
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 7px;
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 100%;
+        padding: 3px 20px;
+      }
     }
   }
 }

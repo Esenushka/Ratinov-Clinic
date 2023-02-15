@@ -1,14 +1,17 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import LinkTop from "../../hooks/LinkTop";
 import scss from "./Spine.module.scss";
 
 export default memo(function Spine({ infoList }) {
+  const [isActive, setActive] = useState(true);
+  const [isActive2, setActive2] = useState(true);
+
   return (
     <div className={scss.wrapper_bg}>
       <div className={scss.bg}></div>
       <div className={scss.wrapper}>
         <div className="container ">
-          <h1>Как проходит лечение грыж без операции</h1>
+          <h1 className={scss.title}>Как проходит лечение грыж без операции</h1>
           <div className="page-blocks_wrapper">
             <div className="page-block">
               <h4>Диагностика</h4>
@@ -36,30 +39,42 @@ export default memo(function Spine({ infoList }) {
         <div className={scss.shadowLine}></div>
         <div className={scss.des}>
           <div className="container">
-            <b>В лечение грыжи позвоночника входит *</b>
-            <ul>
-              {infoList.map((info) => (
-                <li key={info.id}>
-                  {info.title} {info.duration}
-                </li>
-              ))}
-            </ul>
+            <h1 onClick={() => setActive(!isActive)}>
+              В лечение грыжи позвоночника входит *
+            </h1>
+            {isActive ? (
+              <ul>
+                {infoList.map((info) => (
+                  <li key={info.id}>
+                    {info.title} {info.duration}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              ""
+            )}
           </div>
-          <div className={scss.line}></div>
+          <div className={isActive ? scss.line : ""}></div>
           <div className={scss.procedure}>
             <div className="container">
-              <h1>Возможные дополнительные процедуры</h1>
-              <p>
-                Ударно-волновая терапия и массаж, которые могут назначаться
-                лечащими врачом после осмотра, анамнеза заболевания, доп.
-                анализов (МРТ, анализ крови). <br /> Больше информации вы
-                сможете получить на очном приеме у врача. <br /> После лечения
-                пациенту назначается курс реабилитации в виде лечебной
-                физкультуры
-              </p>
+              <h1 onClick={() => setActive2(!isActive2)}>
+                Возможные дополнительные процедуры
+              </h1>
+              {isActive2 ? (
+                <p>
+                  Ударно-волновая терапия и массаж, которые могут назначаться
+                  лечащими врачом после осмотра, анамнеза заболевания, доп.
+                  анализов (МРТ, анализ крови). <br /> Больше информации вы
+                  сможете получить на очном приеме у врача. <br /> После лечения
+                  пациенту назначается курс реабилитации в виде лечебной
+                  физкультуры
+                </p>
+              ) : (
+                ""
+              )}
             </div>
           </div>
-          <div className={scss.line}></div>
+          <div className={isActive ? scss.line : ""}></div>
           <div className="container">
             <div className={scss.btnn}>
               <LinkTop to={"/"}>Записаться к неврологу</LinkTop>
@@ -68,7 +83,11 @@ export default memo(function Spine({ infoList }) {
           <div className={scss.shadowLine}></div>
         </div>
         <div className={"container " + scss.info_blocks_wrapper}>
-          <h1>Терапия</h1>
+          {isActive ? (
+            <h1 style={{ marginLeft: "24px" , fontSize:"20px"}}>Терапии</h1>
+          ) : (
+            <h1>Терапия</h1>
+          )}
           <div className={scss.block_wrapper}>
             {infoList.map((info) =>
               info.duration ? (

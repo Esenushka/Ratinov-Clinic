@@ -16,6 +16,14 @@ export default memo(function TopBlock({
           </h1>
         </div>
       </div>
+      <div className={scss.adapt}>
+        <div className="container">
+          <h1 className={reverse ? scss.reverse : ""}>
+            {bold}
+            {text}
+          </h1>
+        </div>
+      </div>
     </>
   );
 });

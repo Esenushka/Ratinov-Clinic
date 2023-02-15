@@ -1,17 +1,25 @@
+@import "../../styles/globalVariables";
+
+
 .card {
   width: 23%;
   height: 392px;
-  border-radius: 10px;
   border: 1px solid #8a8a8a;
   border-radius: 7px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include breackpoint(md){
+    width: 48%;
+  }
   img {
     width: 100%;
     height: 70%;
     object-fit: cover;
     border-radius: 7px 7px 0px 0px;
+    @include breackpoint(md){
+      height: 250px;
+    }
   }
   span {
     font-weight: 600;
@@ -19,6 +27,10 @@
     line-height: 22px;
     text-transform: uppercase;
     color: #333333;
+    @include breackpoint(md){
+      font-size: 12px;
+      line-height: 20px;
+    }
   }
   a {
     width: 100%;
@@ -32,6 +44,9 @@
     &:hover{
       background: #0097DB;
       color: white;
+    }
+    @include breackpoint(md){
+      color: #0097DB;
     }
   }
   .text {

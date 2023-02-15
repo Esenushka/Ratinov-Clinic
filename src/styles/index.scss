@@ -1,3 +1,4 @@
+@import "_globalVariables.scss";
 .btn {
   outline: none;
   border: none;
@@ -191,6 +192,13 @@
   align-items: center;
   grid-gap: 14px;
   transition: 0.3s;
+  @include breackpoint(md) {
+    margin: 10px 0 0 0 !important;
+    p {
+      font-size: 18px !important;
+      margin-top: 10px;
+    }
+  }
 
   input {
     width: 16px;
@@ -199,7 +207,11 @@
     position: relative;
     transition: 0.3s;
     z-index: 2;
-
+    @include breackpoint(md) {
+      outline: none;
+      width: 35px;
+      height: 35px;
+    }
     &:hover {
       &::before {
         content: "";
@@ -236,7 +248,56 @@
 
 .select_wrapper {
   width: 240px;
+  .active h1 {
+    color: #333333;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    border-bottom: 1px solid #dadada;
+    padding-bottom: 20px;
+  }
+  @include breackpoint(md) {
+    width: 100%;
+    .active h1 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      background-color: #0097db;
+      padding: 17px 0 13px 0;
+      color: white !important;
+      margin: 0 24px;
+      border-radius: 7px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .checked {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 15px 24px;
+      gap: 10px;
+      margin-top: 10px;
+      border-top: 1px solid #dadada;
+      border-bottom: 1px solid #dadada;
+      margin: 15px 0;
 
+      .card {
+        width: fit-content;
+        padding: 10px 12px;
+        border: 1px solid #0097db;
+        border-radius: 7px;
+        p {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 15px;
+          color: #0097db;
+        }
+      }
+    }
+  }
   .select {
     width: 100%;
     display: flex;
@@ -265,7 +326,6 @@
       }
     }
   }
-
   .checkboxs {
     transition: 0.3s;
     height: 0px;
@@ -278,6 +338,12 @@
     &.active {
       height: 100%;
       opacity: 1;
+
+      @include breackpoint(md) {
+        margin: 0 24px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
     }
   }
 }
@@ -403,11 +469,17 @@
   gap: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
+  @include breackpoint(md) {
+    display: block;
+  }
   .doctors_wrapper {
     display: flex;
     width: 75%;
     flex-wrap: wrap;
     grid-gap: 32px;
+    @include breackpoint(md) {
+      width: 100%;
+    }
   }
 }
 
@@ -417,6 +489,11 @@
   grid-gap: 30px;
   margin-bottom: 40px;
   margin-top: 40px;
+  @include breackpoint(md){
+    gap: 12px;
+    padding: 0 1px;
+    margin-top: 10px;
+  }
 }
 
 .page-blocks_wrapper {
@@ -424,6 +501,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 50px 0;
+  @include breackpoint(md){
+    display: block;
+    padding: 0 24px;
+  }
 
   > div:nth-of-type(1)::before {
     content: "1";
@@ -445,6 +526,10 @@
     border-radius: 10px;
     padding: 20px 15px 20px 50px;
 
+    @include breackpoint(md){
+      width: 100%;
+      margin-bottom: 30px;
+    }
     &::before {
       width: 50px;
       height: 50px;

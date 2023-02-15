@@ -24,6 +24,8 @@ export default React.memo(function CommentPage() {
         setLoading(false);
       });
   }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <div>
       <Preloader loading={loading} />

@@ -7,7 +7,8 @@ export default memo(function Select() {
   const navigate = useNavigate();
   const paramEntries = new URLSearchParams(location.search).entries();
   const fromEntries = Object.fromEntries(paramEntries);
-  const paramArr = Object.keys(fromEntries);
+  let paramArr = Object.keys(fromEntries);
+
   const handleChange = (e, proffesion, type) => {
     type
       ? navigate("/doctors")
@@ -28,7 +29,9 @@ export default memo(function Select() {
               .join("")
         );
   };
+
   const [proffesions, setProffesions] = useState([]);
+
   useEffect(() => {
     db.collection("proffesions")
       .orderBy("pos", "asc")
@@ -41,23 +44,17 @@ export default memo(function Select() {
         setProffesions(proffesionsArr);
       });
   }, []);
+  const [isClick, setClick] = useState(true);
+
   return (
     <div className="select_wrapper">
       <span className={`active`}>
-        <h1
-          style={{
-            fontWeight: 600,
-            fontSize: "20px",
-            lineHeight: "24px",
-            color: "#333333",
-            borderBottom: "1px solid  #DADADA",
-            paddingBottom: "20px",
-          }}
-        >
+        <h1 onClick={() => setClick(!isClick)}>
+          <img src="/images/Filter.svg" alt="filter" />
           Специализация
         </h1>
       </span>
-      <div className={`checkboxs  active`}>
+      <div className={isClick ? `checkboxs  active` : `checkboxs`}>
         {proffesions.map((el) => (
           <span
             key={el.id}
@@ -85,7 +82,7 @@ export default memo(function Select() {
         ))}
         <span
           className="checkbox"
-          style={{ alignItems: "flex-start", marginTop: "10px" }}
+          style={{ alignItems: "flex-start", marginTop: "15px" }}
         >
           <input
             onChange={(e) => handleChange(e, null, true)}
@@ -95,6 +92,15 @@ export default memo(function Select() {
           <p>Все</p>
         </span>
       </div>
+      {paramArr.length > 0 && (
+        <div className="checked">
+          {paramArr.map((el) => (
+            <div className="card">
+              <p>{el}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 });

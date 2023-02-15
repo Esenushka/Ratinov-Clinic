@@ -7,7 +7,7 @@ import ServiceBlock from "../components/ServiceBlock/ServiceBlock";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
 
-export default React.memo( function ServicesPage() {
+export default React.memo(function ServicesPage() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
@@ -17,24 +17,36 @@ export default React.memo( function ServicesPage() {
       .then((snapshot) => {
         const servicesArr = [];
         snapshot.forEach((doc) => {
-          servicesArr.push({ ...doc.data(), id: doc.id })
+          servicesArr.push({ ...doc.data(), id: doc.id });
         });
-        setServices(servicesArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-        setLoading(false)
+        setServices(
+          servicesArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
+        );
+        setLoading(false);
       });
   }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <>
-      <Preloader loadingImage={loadingImage} loading={loading}/>
-      <Header />
-      <TopBlock bold={"Услуги / Все услуги"} path={""} />
-      <div className="container services_wrapper">
-        {
-          services.map((info) => <ServiceBlock setLaodingImage={setLoadingImage} key={info.id} {...info} />)
-        }
-      </div>
-      <CallMe />
-      <Footer />
+      <Preloader loadingImage={loadingImage} loading={loading} />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <TopBlock bold={"Услуги / Все услуги"} path={""} />
+          <div className="container services_wrapper">
+            {services.map((info) => (
+              <ServiceBlock
+                setLaodingImage={setLoadingImage}
+                key={info.id}
+                {...info}
+              />
+            ))}
+          </div>
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </>
-  )
-})
+  );
+});

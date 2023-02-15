@@ -31,41 +31,43 @@ export default React.memo(function DoctorsPage() {
         setLoading(false);
       });
   }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <div>
       <Preloader loading={loading} loadingImage={loadingImage} />
-      <Header />
-      <TopBlock
-        text={""}
-        bold={"Специалисты клиники"}
-        path={""}
-      />
-      <div className="container doctors-page_wrapper">
-        <Select />
-        <div className="doctors_wrapper">
-          {doctors.map((doctor) =>
-            paramArr.length === 0 ? (
-              <CardDoctor
-                fullSize={false}
-                setLoadingImage={setLoadingImage}
-                key={doctor.id}
-                {...doctor}
-              />
-            ) : paramArr.some((param) => doctor.post.includes(param)) ? (
-              <CardDoctor
-                fullSize={false}
-                setLoadingImage={setLoadingImage}
-                key={doctor.id}
-                {...doctor}
-              />
-            ) : (
-              ""
-            )
-          )}
-        </div>
-      </div>
-      <CallMe />
-      <Footer />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <TopBlock text={""} bold={"Специалисты клиники"} path={""} />
+          <div className="container doctors-page_wrapper">
+            <Select />
+            <div className="doctors_wrapper">
+              {doctors.map((doctor) =>
+                paramArr.length === 0 ? (
+                  <CardDoctor
+                    fullSize={false}
+                    setLoadingImage={setLoadingImage}
+                    key={doctor.id}
+                    {...doctor}
+                  />
+                ) : paramArr.some((param) => doctor.post.includes(param)) ? (
+                  <CardDoctor
+                    fullSize={false}
+                    setLoadingImage={setLoadingImage}
+                    key={doctor.id}
+                    {...doctor}
+                  />
+                ) : (
+                  ""
+                )
+              )}
+            </div>
+          </div>
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </div>
   );
 });

@@ -26,16 +26,21 @@ export default React.memo(function SpinePage() {
         setLoading(false);
       });
   }, []);
+  const [isHeader, setHeader] = useState(true);
 
   return (
     <>
       <Preloader loading={loading} />
-      <Header />
-      <TopBlock text={"Услуги / Лечение Позвоночника"} path={""} />
-      <Spine infoList={infoList} />
-      <ResultsSlider />
-      <CallMe />
-      <Footer />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <TopBlock text={"Услуги / Лечение Позвоночника"} path={""} />
+          <Spine infoList={infoList} />
+          <ResultsSlider />
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </>
   );
 });
