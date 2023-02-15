@@ -109,9 +109,9 @@ const Header = ({ isResult, setHeader, isHeader }) => {
           <LinkTop to="/price">Цены</LinkTop>
           <LinkTop to="/comment">Отзывы</LinkTop>
           <div className={styles.bgAd}>
-            <LinkTop className={styles.link} to={"/consultation"}>
+            {/* <LinkTop className={styles.link} to={"/consultation"}>
               Онлайн консультация
-            </LinkTop>
+            </LinkTop> */}
             <a
               href="http://test.ratinovclinic.kg/"
               target="_blanck"

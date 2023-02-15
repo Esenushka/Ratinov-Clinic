@@ -143,6 +143,7 @@
   margin-top: 30px;
   padding-left: 24px;
   margin-bottom: 30px;
+  overflow-x: hidden;
   h1 {
     width: 100%;
     align-items: center;
@@ -172,6 +173,6 @@
   .adSlider {
     display: flex;
     overflow-x: scroll;
-    gap: 50px;
+    gap: 24px;
   }
 }

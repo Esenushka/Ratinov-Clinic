@@ -105,6 +105,7 @@
 .adapt {
   padding-left: 25px;
   margin-bottom: 30px;
+  overflow-x: hidden;
   h1 {
     width: 100%;
     align-items: center;
@@ -133,6 +134,6 @@
   .adSlider {
     display: flex;
     overflow-x: scroll;
-    gap: 10px;
+    gap: 24px;
   }
 } 
