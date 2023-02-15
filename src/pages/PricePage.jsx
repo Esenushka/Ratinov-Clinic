@@ -8,32 +8,38 @@ import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
 
 export default React.memo(function Price() {
-  const [price, setComments] = useState([])
+  const [price, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     db.collection("price")
       .get()
       .then((snapshot) => {
-        const priceArr = []
+        const priceArr = [];
         snapshot.forEach((doc) => {
           priceArr.push({ ...doc.data(), id: doc.id });
-        })
-        setComments(priceArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-        setLoading(false)
-      })
+        });
+        setComments(
+          priceArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
+        );
+        setLoading(false);
+      });
   }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <div>
-      <Preloader loadingImage={false} loading={loading}/>
-      <Header />
-      <TopBlock bold={"Цены"} path={"Цены"} />
-      {
-        price.map((e) => (
-          <PriceCard key={e.id} {...e} />
-        ))
-      }
-      <CallMe />
-      <Footer />
+      <Preloader loadingImage={false} loading={loading} />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <TopBlock bold={"Цены"} path={"Цены"} />
+          {price.map((e) => (
+            <PriceCard key={e.id} {...e}  isHeader={isHeader}/>
+          ))}
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </div>
-  )
-})
+  );
+});

@@ -60,19 +60,26 @@ export default function JointPage() {
         setLoadingImage(false);
       });
   }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <>
       <Preloader loadingImage={loadingImage} />
-      <Header />
-      <TopBlock bold={"Услуги / Лечение суставов"} text={""} />
-      <Joint
-        therapiesList={therapiesList}
-        therapiesList2={therapiesList2}
-        treatmentList={treatmentList}
-        treatmentList2={treatmentList2}
-      />
-      <CallMe />
-      <Footer />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          {" "}
+          <TopBlock bold={"Услуги / Лечение суставов"} text={""} />
+          <Joint
+            therapiesList={therapiesList}
+            therapiesList2={therapiesList2}
+            treatmentList={treatmentList}
+            treatmentList2={treatmentList2}
+          />
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

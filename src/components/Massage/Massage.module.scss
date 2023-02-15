@@ -1,3 +1,12 @@
+@import "../../styles/globalVariables";
+
+h1 {
+  font-weight: 700 ;
+  font-size: 20px ;
+  line-height: 24px ;
+  color: #333333;
+}
+
 .block {
   width: 100%;
   margin-bottom: 20px;
@@ -5,26 +14,59 @@
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   padding: 15px 0 15px 20px;
-  li {
-    width: 70%;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 27px;
-    margin-left: 20px;
-    color: #333333;
+  @include breackpoint(md) {
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
   }
-  > p:nth-of-type(1) {
-    width: 100%;
-    margin-bottom: 10px;
+  p {
+    font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
-    color: #333333;
+    @include breackpoint(md) {
+      font-weight: 600 !important;
+      font-size: 16px !important;
+      line-height: 20px !important;
+      color: #ffffff !important;
+      background-color: #0097db;
+      padding: 15px 0 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 7px;
+    }
+  }
+  ul {
+    @include breackpoint(md) {
+      border: 1px solid #e2e2e2;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 7px;
+      padding: 15px 0;
+    }
+    li {
+      width: 70%;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 27px;
+      margin-left: 20px;
+      color: #333333;
+      margin-left: 30px;
+      @include breackpoint(md) {
+        width: 90%;
+      }
+    }
+    > p:nth-of-type(1) {
+      width: 100%;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      color: #333333;
+    }
   }
 }
 .blocks_wrapper {
   margin-top: 30px;
-  h1{
+  h1 {
     margin-bottom: 20px;
     margin-left: 5px;
   }
@@ -32,6 +74,9 @@
 .wrapper {
   overflow-x: hidden;
   position: relative;
+  @include breackpoint(md) {
+    padding: 0 24px;
+  }
   h1 {
     font-weight: 600;
     font-size: 30px;

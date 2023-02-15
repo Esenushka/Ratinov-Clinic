@@ -179,9 +179,14 @@
   height: fit-content;
   padding: 15px 24px;
   background-color: #0097db;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2FBack.png?alt=media&token=f727dca3-3678-4cf5-b563-5e5cee93ac17);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #ffffff;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
   h1 {
     font-weight: 700;
     font-size: 20px;

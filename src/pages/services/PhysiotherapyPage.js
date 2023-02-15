@@ -15,22 +15,36 @@ export default React.memo(function PhysiotherapyPage() {
     db.collection("physiotherapy")
       .get()
       .then((snapshot) => {
-        const physiotherapyArr = []
+        const physiotherapyArr = [];
         snapshot.forEach((doc) => {
-          physiotherapyArr.push({ ...doc.data(), id: doc.id })
-        })
-        setPhysiotherapy(physiotherapyArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)));
-        setLoading(false)
+          physiotherapyArr.push({ ...doc.data(), id: doc.id });
+        });
+        setPhysiotherapy(
+          physiotherapyArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
+        );
+        setLoading(false);
       });
   }, []);
+
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <div>
       <Preloader loadingImage={loadingImage} loading={loading} />
-      <Header />
-      <TopBlock bold={"Услуги / Физиолечение"} />
-      <Physiotherapy setLoadingImage={setLoadingImage} physiotherapy={physiotherapy} />
-      <CallMe />
-      <Footer />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+
+      {isHeader && (
+        <>
+          {" "}
+          <TopBlock bold={"Услуги / Физиолечение"} />
+          <Physiotherapy
+            setLoadingImage={setLoadingImage}
+            physiotherapy={physiotherapy}
+          />
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </div>
-  )
-})
+  );
+});

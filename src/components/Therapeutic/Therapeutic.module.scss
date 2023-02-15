@@ -6,21 +6,41 @@
     display: flex;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     gap: 32px;
+    @include breackpoint(md) {
+      display: block;
+      width: 100%;
+      padding: 24px;
+    }
     img {
       width: 50%;
       height: 257px;
       object-fit: cover;
+      @include breackpoint(md) {
+        display: block;
+        width: 100%;
+        border-radius: 7px;
+      }
     }
     .mainRight {
       display: flex;
       flex-direction: column;
       width: 50%;
+      @include breackpoint(md) {
+        display: block;
+        width: 100%;
+      }
       h1 {
         font-weight: 600;
         font-size: 30px;
         line-height: 37px;
         color: #333333;
         margin-top: 28px;
+        @include breackpoint(md) {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 24px;
+          color: #333333;
+        }
       }
       p {
         font-weight: 500;
@@ -30,6 +50,12 @@
         width: 100%;
         margin-top: 10px;
         margin-bottom: 20px;
+        @include breackpoint(md) {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          color: #6f6f6f;
+        }
       }
       a {
         width: fit-content;
@@ -42,6 +68,12 @@
         font-size: 14px;
         line-height: 17px;
         color: #0097db;
+        @include breackpoint(md) {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
         &:hover {
           color: white;
           background-color: #0097db;
@@ -81,12 +113,27 @@
   padding: 20px 0 20px 0;
   border-top: 1px solid #dadada;
   border-bottom: 1px solid #dadada;
+  @include breackpoint(md) {
+    padding: 0 24px;
+    border: none;
+    margin-top: 40px;
+  }
   h1 {
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
     color: #333333;
     margin: 0px 0 15px 0;
+    @include breackpoint(md) {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #ffffff;
+      background-color: #0097db;
+      width: 100%;
+      border-radius: 7px;
+      padding: 14px 20px;
+    }
   }
   ul {
     font-weight: 400;
@@ -94,5 +141,13 @@
     line-height: 27px;
     color: #333333;
     margin-left: 20px;
+    @include breackpoint(md) {
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 7px;
+      padding-left: 30px;
+      padding: 20px;
+      width: 100%;
+      margin-left: 0px;
+    }
   }
 }

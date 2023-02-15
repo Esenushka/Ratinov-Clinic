@@ -1,7 +1,9 @@
-import { memo } from "react";
+import React, { memo, useState } from "react";
 import scss from "./Massage.module.scss";
 
 export default memo(function Massage({ massage }) {
+  const [isActive, setActive] = useState(true);
+  console.log(isActive);
   return (
     <div className={scss.wrapper}>
       <div className="container">
@@ -11,10 +13,12 @@ export default memo(function Massage({ massage }) {
             <h1>{info.name}</h1>
             {info.list.map((text, index) => (
               <div key={index} className={scss.block}>
-                <p>{text.title}</p>
-                <ul>
-                  <li>{text.text}</li>
-                </ul>
+                <p onClick={() => setActive(!isActive)}>{text.title}</p>
+                {isActive && (
+                  <ul>
+                    <li>{text.text}</li>
+                  </ul>
+                )}
               </div>
             ))}
           </div>

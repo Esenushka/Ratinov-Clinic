@@ -92,7 +92,9 @@ export default memo(function Rehabilitation() {
         </div>
         <div className={scss.underLine}></div>
         <div className="container">
-          <LinkTop className={scss.lnk} to={"/price"}>Узнать стоимость</LinkTop>
+          <LinkTop className={scss.lnk} to={"/price"}>
+            Узнать стоимость
+          </LinkTop>
         </div>
         <div className={scss.shadowline}></div>
       </div>

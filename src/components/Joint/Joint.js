@@ -9,6 +9,8 @@ export default function Joint({
   therapiesList,
   therapiesList2,
 }) {
+  const [isActive, setActive] = React.useState(true);
+  const [isActive2, setAvtive2] = React.useState(true);
   return (
     <div className={scss.wrapper_bg}>
       <div className={`container ${scss.wrapper}`}>
@@ -16,50 +18,72 @@ export default function Joint({
         <h1>Этапы лечения суставов</h1>
         <div className={scss.wrapperItems}>
           <div className={scss.page_block}>
-            <h4>Диагностика</h4>
-            <p>
-              Во время приема врач ортопед-травматолог проводит опрос о
-              симптоматической картины заболевания пациента, выполняет
-              ортопедическое тестирование для установления причины дискомфорта.
-              При необходимости, врач выполняет УЗИ суставов или же назначает
-              дополнительные методы исследования (МРТ, КТ, рентген, анализы)
-            </p>
+            <h5 onClick={() => setActive(!isActive)}>Диагностика</h5>
+            {isActive && (
+              <p>
+                Во время приема врач ортопед-травматолог проводит опрос о
+                симптоматической картины заболевания пациента, выполняет
+                ортопедическое тестирование для установления причины
+                дискомфорта. При необходимости, врач выполняет УЗИ суставов или
+                же назначает дополнительные методы исследования (МРТ, КТ,
+                рентген, анализы)
+              </p>
+            )}
           </div>
           <div className={scss.page_block}>
-            <h4>Диагноз и назначение</h4>
-            <p>
-              На основании полученной информации, в ходе осмотра пациента, врач
-              устанавливает диагноз, определяет методы, объем, прогноз лечения,
-              о чём информирует пациента.
-            </p>
+            <h5 onClick={() => setActive(!isActive)}>Диагноз и назначение</h5>
+            {isActive && (
+              <p>
+                На основании полученной информации, в ходе осмотра пациента,
+                врач устанавливает диагноз, определяет методы, объем, прогноз
+                лечения, о чём информирует пациента.
+              </p>
+            )}
           </div>
           <div className={scss.page_block}>
-            <h4>Лечение</h4>
-            <p>
-              Назначается индивидуально с учётом всех индивидуальных
-              особенностей заболевания пациента. В арсенале врача имеются
-              следующие процедуры:
-            </p>
+            <h5 onClick={() => setActive(!isActive)}>Лечение</h5>
+            {isActive && (
+              <p>
+                Назначается индивидуально с учётом всех индивидуальных
+                особенностей заболевания пациента. В арсенале врача имеются
+                следующие процедуры:
+              </p>
+            )}
           </div>
         </div>
       </div>
       <div className={scss.shadowLine}></div>
       <div className="container">
+        <h1>Лечение по методу резорбции</h1>
         {therapiesList.map((type) => (
           <div className={scss.therapies_types} key={type.id}>
-            <h4 className={scss.therapy_type}>{type.therapy}</h4>
-            <ul>
-              <li>{type.desc}</li>
-            </ul>
+            <h4
+              onClick={() => setAvtive2(!isActive2)}
+              className={scss.therapy_type}
+            >
+              {type.therapy}
+            </h4>
+            {isActive2 && (
+              <ul>
+                <li>{type.desc}</li>
+              </ul>
+            )}
           </div>
         ))}
 
         {therapiesList2.map((type) => (
           <div className={scss.therapies_types} key={type.id}>
-            <h4 className={scss.therapy_type}>{type.therapy}</h4>
-            <ul>
-              <li>{type.desc}</li>
-            </ul>
+            <h4
+              onClick={() => setAvtive2(!isActive2)}
+              className={scss.therapy_type}
+            >
+              {type.therapy}
+            </h4>
+            {isActive2 && (
+              <ul>
+                <li>{type.desc}</li>
+              </ul>
+            )}
           </div>
         ))}
         <LinkTop className={scss.linkk} to={"/consultation"}>

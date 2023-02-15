@@ -38,10 +38,12 @@ export default function ResultPage() {
         setLoading(false);
       });
   }, []);
+  const [isHeader, setHeader] = useState(true);
+  
   return (
     <>
       <Preloader loading={loading} loadingImage={loadingImage} />
-      <Header isResult={true} />
+      <Header isResult={true} isHeader={isHeader} setHeader={setHeader}/>
       <TopBlock path={"Результаты"} bold={"Результаты"} />
       <div className={`container ${scss.result__wrapper}`}>
         <div className={scss.title}>

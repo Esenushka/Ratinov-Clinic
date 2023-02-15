@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CallMe from "../../components/CallMe/CallMe";
 import Consultaition from "../../components/Consultation/Consultation";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -17,20 +18,30 @@ export default React.memo(function MassagePage() {
       .then((snapshot) => {
         const massageArr = [];
         snapshot.forEach((doc) => {
-          massageArr.push({ ...doc.data(), id: doc.id })
-        })
-        setMassage(massageArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-        setLoading(false)
-      })
-  }, [])
+          massageArr.push({ ...doc.data(), id: doc.id });
+        });
+        setMassage(
+          massageArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
+        );
+        setLoading(false);
+      });
+  }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <div>
       <Preloader loading={loading} />
-      <Header />
-      <TopBlock bold="Услуги / Массаж"  />
-      <Massage massage={massage}/>
-      <Consultaition />
-      <Footer />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <TopBlock bold="Услуги / Массаж" />
+          <Massage massage={massage} />
+
+          <Consultaition />
+          <CallMe/>
+          <Footer />
+        </>
+      )}
     </div>
-  )
-})
+  );
+});

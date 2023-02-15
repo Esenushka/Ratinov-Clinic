@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import LinkTop from "../../hooks/LinkTop";
 import scss from "./Therapeutic.module.scss";
 import React from "react";
@@ -7,7 +7,8 @@ export default memo(function Therapeutic({ setLoadingImage }) {
   let arr = [
     {
       id: 1,
-      title:
+      title: "Комплекс упражнений",
+      secondTitle:
         "Правильно подобранный комплекс физических упражнений способен оказывать лечебное воздействие *",
       items: [
         "Стимулировать защитные механизмы.",
@@ -18,7 +19,8 @@ export default memo(function Therapeutic({ setLoadingImage }) {
     },
     {
       id: 2,
-      title:
+      title: "ЛФК поможет",
+      secondTitle:
         "ЛФК поможет восстановить функции опорно-двигательного аппарата, нормализовать дыхание или стабилизировать сердечную деятельность, а также:",
       items: [
         "уменьшить болезненные ощущения",
@@ -60,17 +62,23 @@ export default memo(function Therapeutic({ setLoadingImage }) {
       ],
     },
   ];
-
+  const [isActive, setActive] = useState(true);
   const renderList = () =>
     arr.map((item) => (
       <div key={item.id} className={scss.renderItem}>
         <div className="container">
-          <h1>{item.title}</h1>
-          <ul>
-            {item.items.map((el, index) => (
-              <li key={index}>{el}</li>
-            ))}
-          </ul>
+          <h1 onClick={() => setActive(!isActive)}>{item.title}</h1>
+          {isActive && (
+            <>
+              <ul>
+                {item.items.map((el, index) => (
+                  <>
+                    <li key={index}>{el}</li>
+                  </>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </div>
     ));

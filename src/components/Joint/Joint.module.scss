@@ -1,19 +1,29 @@
+@import "../../styles/globalVariables";
+
+h1 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  margin-top: 70px;
+  color: #333333;
+  margin-bottom: 20px;
+  @include breackpoint(md) {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #333333;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+  }
+  span {
+    font-size: xx-large;
+    font-weight: 600;
+  }
+}
 .wrapper {
   p {
     font-size: 14px;
-  }
-
-  h1 {
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 37px;
-    margin-top: 70px;
-    color: #333333;
-    margin-bottom: 20pxs;
-    span {
-      font-size: xx-large;
-      font-weight: 600;
-    }
   }
 }
 
@@ -79,6 +89,11 @@
     color: #0097db;
     transition: ease-in-out 0.3s;
     margin-top: 40px;
+    @include breackpoint(md){
+      margin-left: 22px;
+      margin-right: 24px;
+      width: 88%;
+    }
     &:hover {
       color: white;
       background: #0097db;
@@ -92,6 +107,21 @@
   border-radius: 12px;
   padding: 15px 0 15px 20px;
   margin: 20px 0;
+  @include breackpoint(md) {
+    box-shadow: none;
+  }
+  h4 {
+    @include breackpoint(md) {
+      font-weight: 600;
+      font-size: 16px !important;
+      line-height: 20px !important;
+      color: #ffffff !important;
+      background-color: #0097db;
+      padding: 15px 20px;
+      border-radius: 7px;
+      margin-right: 24px;
+    }
+  }
 
   .therapy_type {
     font-weight: 600;
@@ -105,8 +135,15 @@
     font-size: 16px;
     line-height: 27px;
     color: #333333;
-    margin-left: 20px;
+    padding-left: 20px;
     margin-top: 10px;
+    @include breackpoint(md) {
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 7px;
+      margin-right: 20px;
+      padding: 10px;
+      padding-left: 25px;
+    }
   }
 }
 
@@ -124,6 +161,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  @include breackpoint(md) {
+    display: none;
+  }
   .treat_center {
     background-color: rgba(255, 255, 255, 0.7);
     width: 100%;
@@ -206,6 +246,9 @@
 }
 
 .about_health {
+  @include breackpoint(md){
+    display: none;
+  }
   h1 {
     font-weight: 400;
     text-transform: uppercase;
@@ -236,6 +279,10 @@
   justify-content: space-between;
   margin: 50px 0;
   flex-direction: column;
+  @include breackpoint(md) {
+    display: block;
+    margin: 0 24px;
+  }
 
   > div:nth-of-type(1)::before {
     content: "1";
@@ -257,7 +304,10 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     padding: 20px 15px 20px 50px;
-
+    @include breackpoint(md) {
+      width: 88%;
+      margin-bottom: 40px;
+    }
     &::before {
       width: 50px;
       height: 50px;
@@ -276,18 +326,22 @@
       font-size: 18px;
       line-height: 22px;
     }
-    h4 {
+    h5{
       font-weight: 600;
       font-size: 18px;
       line-height: 22px;
       color: #333333;
       margin-bottom: 10px;
+      @include breackpoint(md) {
+        margin-top: 10px;
+      }
     }
     p {
       font-weight: 400;
       font-size: 16px;
       line-height: 27px;
       color: #333333;
+      @include breackpoint(md){}
     }
   }
 }

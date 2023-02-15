@@ -29,11 +29,15 @@ export default React.memo(function CommentPage() {
   return (
     <div>
       <Preloader loading={loading} />
-      <Header />
-      <Topblock bold={"Отзывы"} />
-      <Comment comments={comments} />
-      <CallMe />
-      <Footer />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <Topblock bold={"Отзывы"} />
+          <Comment comments={comments} />
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </div>
   );
 });

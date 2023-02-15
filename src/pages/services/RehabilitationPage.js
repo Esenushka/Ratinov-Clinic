@@ -11,17 +11,23 @@ export default React.memo(function RehabilitationPage() {
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false)
-    }, 500)
+      setLoading(false);
+    }, 500);
   }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <div>
-      <Preloader loading={loading}  />
-      <Header />
-      <TopBlock bold={"Услуги / Реабилитация после COVID-19"}  />
-      <Rehabilitation />
-      <CallMe />
-      <Footer />
+      <Preloader loading={loading} />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <TopBlock bold={"Услуги / Реабилитация после COVID-19"} />
+          <Rehabilitation />
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </div>
-  )
-})
+  );
+});
