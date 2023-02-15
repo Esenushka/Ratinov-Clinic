@@ -89,17 +89,19 @@ const Header = ({ isResult, setHeader, isHeader }) => {
       </header>
       <div className={styles.headerAdaptive}>
         <div className={styles.adaptiveTop}>
-          <img src="/images/Logo.svg" alt="Логотип" />
+          <Link to="/">
+            <img src="/images/Logo.svg" alt="Логотип" />
+          </Link>
           <div
             onClick={() => setHeader(!isHeader)}
-            className={isHeader ? styles.burger :  styles.close}
+            className={isHeader ? styles.burger : styles.close}
           >
             <div className={styles.line}></div>
           </div>
         </div>
         <div
           onClick={() => setHeader(true)}
-          className={isHeader ? styles.non :  styles.adaptiveBottom}
+          className={isHeader ? styles.non : styles.adaptiveBottom}
         >
           <Link to="/services">Все Услуги</Link>
           <LinkTop to="/doctors">Специалисты</LinkTop>
