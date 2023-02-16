@@ -489,7 +489,7 @@
   grid-gap: 30px;
   margin-bottom: 40px;
   margin-top: 40px;
-  @include breackpoint(md){
+  @include breackpoint(md) {
     gap: 12px;
     padding: 0 1px;
     margin-top: 10px;
@@ -501,7 +501,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 50px 0;
-  @include breackpoint(md){
+  @include breackpoint(md) {
     display: block;
     padding: 0 24px;
   }
@@ -526,7 +526,7 @@
     border-radius: 10px;
     padding: 20px 15px 20px 50px;
 
-    @include breackpoint(md){
+    @include breackpoint(md) {
       width: 100%;
       margin-bottom: 30px;
     }
@@ -570,4 +570,18 @@
 .linkTop {
   width: fit-content;
   display: inline-block;
+}
+
+.react-tel-input {
+  @include breackpoint(md) {
+    width: 100% !important;
+    padding: 0;
+  }
+  .form-control {
+    @include breackpoint(md) {
+      width: 100% !important;
+      background-color: rgb(255, 255, 255) !important;
+      box-shadow: none;
+    }
+  }
 }

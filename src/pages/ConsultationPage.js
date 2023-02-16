@@ -14,16 +14,22 @@ export default memo(function ConsultationPage() {
   useEffect(() => {
     setTimeout(() => setLoading(false), 1500);
   }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <>
       <Preloader loading={loading} loadingImage={loadingImage} />
-      <Header />
-      <TopBlock bold={"Онлайн консультация"} />
-      <ConsultationBlockPage setLoadingImage={setLoadingImage} />
-      <DoctorSlider fullSize />
-      <CommentBlock />
-      <CallMe />
-      <Footer />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <TopBlock bold={"Онлайн консультация"} />
+          <ConsultationBlockPage setLoadingImage={setLoadingImage} />
+          <DoctorSlider fullSize />
+          <CommentBlock />
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </>
   );
 });

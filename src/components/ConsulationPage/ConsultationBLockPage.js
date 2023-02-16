@@ -283,7 +283,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             </label>
             <div className={scss.line}></div>
             <label className="container">
-              <p>Укажите уровень боли</p>
+              <p className={scss.bol}>Укажите уровень боли</p>
               <input
                 value={range}
                 onChange={(e) => setRange(Number(e.target.value))}

@@ -37,8 +37,8 @@
       color: #333333;
     }
     h1 {
-      font-weight: 500;
-      font-size: 30px;
+      font-weight: 600;
+      font-size: 32px;
       line-height: 37px;
       text-transform: uppercase;
       color: #333333;
@@ -91,10 +91,17 @@
 ///Adaptive
 
 .adapt {
-  img{
-    overflow: hidden;
+  width: 100%;
+  .ratin{
+    width: 100% !important;
     border-bottom: 1px solid #DADADA;
   }
+  img{
+    // width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
   .leftSide {
     display: flex;
     align-items: flex-start;

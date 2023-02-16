@@ -46,6 +46,7 @@ const OwnerBlock = () => {
       <div className={scss.lineBt}></div>
       <div className={scss.adapt}>
         <img
+          className={scss.ratin}
           src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fratin.png?alt=media&token=2ce7ea3d-f3c6-4999-84a7-4e54cb5e43b2"
           alt="ratin"
         ></img>
@@ -53,7 +54,7 @@ const OwnerBlock = () => {
           <h3>Основатель клиники</h3>
           <h1>РАТИНОВ АНДРЕЙ СЕРГЕЕВИЧ</h1>
           <h5>
-            Невролог-вертебролог, <br/> мануальный терапевт, радиолог,
+            Невролог-вертебролог, <br /> мануальный терапевт, радиолог,
             иглорефлексотерапевт
           </h5>
           <div>

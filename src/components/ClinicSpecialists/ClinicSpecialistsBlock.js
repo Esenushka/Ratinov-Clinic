@@ -29,16 +29,15 @@ export default memo(function ClinicSpecialistsBlock({ specialists }) {
                       <LinkTop to={"/"}>
                         {clinic.text}
                         <br />
-                        <h5 className={styles.hide}>hehe</h5>
                         <div className={styles.line}></div>
                       </LinkTop>
                     </>
                   ) : (
                     <>
                       <LinkTop to={"/doctors?" + clinic.path + "&"}>
-                        Врач
                         <br />
                         <span>{clinic.text}</span>
+                        <h5 className={styles.hide}>hehe</h5>
                         <div className={styles.line}></div>
                       </LinkTop>
                     </>
@@ -83,8 +82,6 @@ export default memo(function ClinicSpecialistsBlock({ specialists }) {
                 ) : (
                   <>
                     <LinkTop to={"/doctors?" + clinic.path + "&"}>
-                      Врач
-                      <br />
                       <span>{clinic.text}</span>
                       <div className={styles.line}></div>
                     </LinkTop>

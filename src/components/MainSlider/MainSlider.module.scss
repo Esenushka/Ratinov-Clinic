@@ -30,7 +30,7 @@
   flex-direction: column;
   background: white;
   top: 220px;
-  z-index: 100;
+  z-index: -100;
   .line {
     width: 75%;
     height: 1px;
@@ -39,7 +39,7 @@
   }
   > h1 {
     font-weight: 600;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 49px;
     text-transform: uppercase;
     color: #333333;

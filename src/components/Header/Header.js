@@ -1,8 +1,9 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useState } from "react";
 import LinkTop from "../../hooks/LinkTop";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import { headerLinks } from "../../constants/socialMedia";
+import { socialLinks } from "../../constants/socialMedia";
 
 const Header = ({ isResult, setHeader, isHeader }) => {
   const [isSelect, setSelect] = useState(false);
@@ -109,9 +110,9 @@ const Header = ({ isResult, setHeader, isHeader }) => {
           <LinkTop to="/price">Цены</LinkTop>
           <LinkTop to="/comment">Отзывы</LinkTop>
           <div className={styles.bgAd}>
-            {/* <LinkTop className={styles.link} to={"/consultation"}>
+            <LinkTop className={styles.link} to={"/consultation"}>
               Онлайн консультация
-            </LinkTop> */}
+            </LinkTop>
             <a
               href="http://test.ratinovclinic.kg/"
               target="_blanck"
@@ -120,6 +121,15 @@ const Header = ({ isResult, setHeader, isHeader }) => {
             >
               Тест на здоровье позвоночника
             </a>
+          </div>
+          <div className={styles.socalAd}>
+            <div className={styles.innerAd}>
+              {socialLinks.map((el) => (
+                <a target="_blank" rel="noreferrer" key={el.id} href={el.link}>
+                  <img src={el.name} alt={el.link}/>
+                </a>
+              ))}
+            </div>
           </div>
           <p
             style={{

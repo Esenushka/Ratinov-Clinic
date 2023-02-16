@@ -18,7 +18,7 @@ export default memo(function DoctorsCard({
     <div className={scss.adCard}>
       <img src={fullSizeImg} alt={name} />
       <div className={scss.price}>
-        <p>Стоимость приема {price !== 0 ? price + " coм" : "бесплатно"}</p>
+        {price !== 0 && <p>Стоимость приема {price !== 0 && price + " coм"}</p>}
       </div>
       <div className={scss.bottomSide}>
         <h1>{name}</h1>

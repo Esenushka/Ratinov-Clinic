@@ -7,15 +7,14 @@ import { socialLinks } from "../../constants/socialMedia";
 const Footer = () => {
   return (
     <>
-    <div className={css.logo}>
-      <img src="/images/logOnBlue.svg" alt="" />
-    </div>
+      <div className={css.logo}>
+        <img src="/images/logOnBlue.svg" alt="" />
+      </div>
       <footer className={`${css.footer}`}>
         <img className={css.imggg} src="/images/Vector.svg" alt="" />
         <div className={css.roundBlue}></div>
         <div className={`${css.right} + container`}>
           <div className={css.first}>
-            <h1>Tekst</h1>
             <div className={css.line}></div>
             <LinkTop to="/services">Услуги</LinkTop>
             <LinkTop to="/doctors">Специалисты</LinkTop>
@@ -28,7 +27,6 @@ const Footer = () => {
             <div className={css.line}></div>
           </div>
           <div className={css.second}>
-            <h1>Tekst</h1>
             <div className={css.line}></div>
             <h5>Бишкек, 7мкр, Сухэ-Батора, 49/6</h5>
             <p>Пн - Сб: 08:00 - 20:00</p>
@@ -53,6 +51,14 @@ const Footer = () => {
               className={css.phone}
             >
               2Гис
+            </a>
+            <a
+              style={{ color: "#0097db" }}
+              href="https://www.instagram.com/ratinovclinic.kg/?igshid=NDc0ODY0MjQ%3D"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
             </a>
             <div className={css.line}></div>
           </div>
@@ -105,6 +111,23 @@ const Footer = () => {
         <div className={css.addres}>
           <h5>Адресc:</h5>
           <p>Бишкек, 7мкр, Сухэ-Батора, 49/6</p>
+          <a
+            style={{ color: "#0097db" }}
+            href="https://2gis.kg/bishkek/firm/70000001046561968?m=74.619256%2C42.824923%2F19.42"
+            target="_blank"
+            rel="noreferrer"
+          >
+            2Gis
+          </a>
+          <br />
+          <a
+            style={{ color: "#0097db" }}
+            href="https://www.instagram.com/ratinovclinic.kg/?igshid=NDc0ODY0MjQ%3D"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Instagram
+          </a>
         </div>
         <div className={css.line}></div>
 
