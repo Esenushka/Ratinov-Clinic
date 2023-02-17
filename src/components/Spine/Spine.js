@@ -77,7 +77,7 @@ export default memo(function Spine({ infoList }) {
           <div className={isActive ? scss.line : ""}></div>
           <div className="container">
             <div className={scss.btnn}>
-              <LinkTop to={"/"}>Записаться к неврологу</LinkTop>
+              <LinkTop to={"/consultation"}>Записаться к неврологу</LinkTop>
             </div>
           </div>
           <div className={scss.shadowLine}></div>
