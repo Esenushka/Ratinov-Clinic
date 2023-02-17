@@ -15,18 +15,20 @@ const Footer = () => {
         <div className={css.roundBlue}></div>
         <div className={`${css.right} + container`}>
           <div className={css.first}>
+            <h5>Для пациентов</h5>
             <div className={css.line}></div>
-            <LinkTop to="/services">Услуги</LinkTop>
-            <LinkTop to="/doctors">Специалисты</LinkTop>
-            <LinkTop to="/result">Результаты</LinkTop>
-            <LinkTop to="/price">Цены</LinkTop>
             <HashLink to={"/#about"}>О клинике</HashLink>
-            <HashLink to={"/#faq"}>Информация для пациентов</HashLink>
+            <LinkTop to="/doctors">Специалисты</LinkTop>
+            <LinkTop to="/services">Услуги</LinkTop>
+            <LinkTop to="/price">Цены</LinkTop>
+            <LinkTop to="/result">Результаты</LinkTop>
             <LinkTop to="/comment">Отзывы</LinkTop>
-            <LinkTop to="/reception">Время приема</LinkTop>
+            <HashLink to={"/#faq"}>Информация для пациентов</HashLink>
+            <LinkTop to="/blog">Блог</LinkTop>
             <div className={css.line}></div>
           </div>
           <div className={css.second}>
+            <h5>Адрес и контакты</h5>
             <div className={css.line}></div>
             <h5>Бишкек, 7мкр, Сухэ-Батора, 49/6</h5>
             <p>Пн - Сб: 08:00 - 20:00</p>
@@ -104,7 +106,7 @@ const Footer = () => {
           <HashLink to={"/#about"}>О клинике</HashLink>
           <HashLink to={"/#faq"}>Для пациентов</HashLink>
           <LinkTop to="/comment">Отзывы</LinkTop>
-          <LinkTop to="/reception">Время приема</LinkTop>
+          <LinkTop to="/blog">Блог</LinkTop>
         </div>
         <div className={css.line}></div>
 
@@ -132,6 +134,24 @@ const Footer = () => {
         <div className={css.line}></div>
 
         <div className={css.workTime}>
+          <h5>Контакты:</h5>
+          <a
+            style={{ color: "#0097db" }}
+            rel="noreferrer"
+            href="tel: + 996 (501) 420 420"
+            className={css.phone}
+          >
+            +996 (501) 420 - 420
+          </a>
+          <br />
+          <a
+            style={{ color: "#0097db" }}
+            rel="noreferrer"
+            href="tel: + 996 (501) 420 420"
+            className={css.phone}
+          >
+            +996 (501) 420 - 420
+          </a>
           <h5>График работы:</h5>
           <p>Пн - Сб: 08:00 - 20:00</p>
         </div>

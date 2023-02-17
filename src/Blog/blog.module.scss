@@ -1,0 +1,32 @@
+@import "../styles/globalVariables";
+
+.oneBlog {
+  display: flex;
+  gap: 2%;
+  height: fit-content;
+  border-bottom: 1px solid #dadada;
+  border-top: 1px solid #dadada;
+  padding: 20px;
+    @include breackpoint(md){
+        display: block;
+    }
+  img {
+    width: 50%;
+    object-fit: cover;
+    @include breackpoint(md){
+        width: 100%;
+    }
+  }
+  div {
+    padding: 10px;
+    h1 {
+      margin: 0;
+    }
+    div {
+      p {
+        font-size: 14px;
+        margin-top: 20px;
+      }
+    }
+  }
+}

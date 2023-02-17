@@ -11,6 +11,9 @@ $white: #ffffff;
   text-decoration: none;
 }
 .isHead {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   @media (max-width: 776px) {
     header {
       display: none !important;
@@ -21,10 +24,10 @@ $white: #ffffff;
   }
 }
 
+
 header {
   box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.25);
-  position: sticky;
-  top: 0;
+
   background-color: #ffffff;
 }
 .headerResult {
@@ -51,19 +54,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   .select {
     span {
       img {
         padding: 0px 0px 3px 2px;
       }
     }
-    div {
+    .links {
       position: absolute;
       background: #ffffff;
       padding: 20px 40px;
       margin-left: -20px;
       margin-top: 5px;
-      z-index: 300 !important;
+      z-index: 900 !important;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       border-radius: 32px;
       display: flex;

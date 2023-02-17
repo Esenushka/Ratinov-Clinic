@@ -1,9 +1,8 @@
 import { Suspense, lazy } from "react";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { db } from "../config/firebase";
-import Preloader from "../components/Preloader/Preloader";
-import RoundButtons from "../components/RoundButtons/RoundButtons";
 
+const Preloader = lazy(() => import("../components/Preloader/Preloader"));
 const Header = lazy(() => import("../components/Header/Header"));
 const MainSlider = lazy(() => import("../components/MainSlider/MainSlider"));
 const YouTubeSlider = lazy(() =>
@@ -84,8 +83,8 @@ export default React.memo(function HomePage() {
     <Suspense
       fallback={<Preloader loadingImage={loadingImage} loading={loading} />}
     >
+      <Preloader loading={loading} />
       <Header isHeader={isHeader} setHeader={setHeader} />
-      {isHeader && (
         <>
           <MainSlider />
           <Consultaition />
@@ -102,8 +101,6 @@ export default React.memo(function HomePage() {
           <CallMe />
           <Footer />
         </>
-      )}
-      {/* {loading || loadingImage ? "" : <RoundButtons />} */}
     </Suspense>
   );
 });

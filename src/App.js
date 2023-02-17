@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
-// import HomePage from "./pages/HomePage";
 import "./App.css";
 import "./styles/index.scss";
 import "slick-carousel/slick/slick.css";
@@ -18,6 +17,7 @@ import RehabilitationPage from "./pages/services/RehabilitationPage";
 import TherapeuticPage from "./pages/services/TherapeuticPage";
 import ConsultationPage from "./pages/ConsultationPage";
 import DoctorPage from "./pages/DoctorPage";
+import Blog from "../src/Blog/BLog";
 const DoctorsPage = lazy(() => import("./pages/DoctorsPage"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ResultPage = lazy(() => import("./pages/ResultPage"));
@@ -51,6 +51,7 @@ function App() {
         ></Route>
         <Route path="/consultation" element={<ConsultationPage />}></Route>
         <Route path="/doctor/:id" element={<DoctorPage />}></Route>
+        <Route path="/blog" element={<Blog />}></Route>
       </Routes>
     </Suspense>
   );

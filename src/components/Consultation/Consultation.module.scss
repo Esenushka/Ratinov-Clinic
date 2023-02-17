@@ -81,12 +81,18 @@
   display: flex;
   flex-direction: column;
   grid-gap: 3em;
+  margin-bottom: 15px;
   h1 {
     font-weight: 600;
     font-size: 32px;
-    line-height: 37px;
+    // line-height: 37px;
     color: #333333;
     margin-bottom: -10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   .about_card {
@@ -137,11 +143,19 @@
 }
 .aboutAd {
   padding: 24px;
+  margin-bottom: 15px;
+
   h1 {
     font-weight: 700;
     font-size: 20px;
-    line-height: 24px;
+    // line-height: 24px;
     color: #333333;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
   }
   .about_card {
     display: flex;

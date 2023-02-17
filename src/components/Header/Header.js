@@ -46,13 +46,16 @@ const Header = ({ isResult, setHeader, isHeader }) => {
                 <div className={styles.select}>
                   <span
                     style={{ alignItems: "center" }}
-                    onMouseOver={() => setSelect(true)}
+                    onMouseEnter={() => setSelect(true)}
                   >
                     <p>Услуги</p>
                     <img alt="select" src="/images/slider-arrow.svg" />
                   </span>
                   {isSelect && (
-                    <div onMouseLeave={() => setSelect(false)}>
+                    <div
+                      className={styles.links}
+                      onMouseLeave={() => setSelect(false)}
+                    >
                       <Link to="/services">Все Услуги</Link>
                       <Link to="/services/spine">Позвоночник</Link>
                       <Link to="/services/joint">Суставы</Link>
@@ -70,6 +73,7 @@ const Header = ({ isResult, setHeader, isHeader }) => {
                 <LinkTop to="/result">Результаты</LinkTop>
                 <LinkTop to="/price">Цены</LinkTop>
                 <LinkTop to="/comment">Отзывы</LinkTop>
+                <LinkTop to="/blog">Блоги</LinkTop>
               </div>
             </div>
             <div className={styles.headerBottomRight}>
@@ -109,6 +113,8 @@ const Header = ({ isResult, setHeader, isHeader }) => {
           <LinkTop to="/result">Результаты</LinkTop>
           <LinkTop to="/price">Цены</LinkTop>
           <LinkTop to="/comment">Отзывы</LinkTop>
+          <LinkTop to="/blog">Блоги</LinkTop>
+
           <div className={styles.bgAd}>
             <LinkTop className={styles.link} to={"/consultation"}>
               Онлайн консультация
@@ -126,7 +132,7 @@ const Header = ({ isResult, setHeader, isHeader }) => {
             <div className={styles.innerAd}>
               {socialLinks.map((el) => (
                 <a target="_blank" rel="noreferrer" key={el.id} href={el.link}>
-                  <img src={el.name} alt={el.link}/>
+                  <img src={el.name} alt={el.link} />
                 </a>
               ))}
             </div>

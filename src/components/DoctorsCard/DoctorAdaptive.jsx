@@ -1,5 +1,4 @@
 import scss from "./Doctors.module.scss";
-import { useLocation } from "react-router-dom";
 import { memo } from "react";
 import LinkTop from "../../hooks/LinkTop";
 

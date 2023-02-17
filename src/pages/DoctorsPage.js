@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { lazy } from "react";
 import { useLocation } from "react-router-dom";
 import CallMe from "../components/CallMe/CallMe";
 import Footer from "../components/Footer/Footer";
@@ -7,7 +8,9 @@ import Preloader from "../components/Preloader/Preloader";
 import Select from "../components/Select/Select";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
-import CardDoctor from "../components/DoctorCardForPage/CardDoctor";
+const CardDoctor = lazy(() =>
+  import("../components/DoctorCardForPage/CardDoctor")
+);
 
 export default React.memo(function DoctorsPage() {
   const [doctors, setDoctors] = useState([].reverse());
