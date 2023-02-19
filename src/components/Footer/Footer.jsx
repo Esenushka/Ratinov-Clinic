@@ -52,7 +52,7 @@ const Footer = () => {
               alt="2gis"
               className={css.phone}
             >
-              2Гис
+              Открыть адрес в 2Gis
             </a>
             <a
               style={{ color: "#0097db" }}
@@ -60,7 +60,7 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Instagram
+              Подписаться на Инстаграм
             </a>
             <div className={css.line}></div>
           </div>
@@ -119,7 +119,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            2Gis
+            Открыть адрес в 2Gis
           </a>
           <br />
           <a
@@ -128,7 +128,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Instagram
+            Подписаться на Инстаграм
           </a>
         </div>
         <div className={css.line}></div>

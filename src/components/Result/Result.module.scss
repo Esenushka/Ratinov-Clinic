@@ -181,10 +181,11 @@
           color: #333333;
           margin-bottom: 10px;
           padding: 0;
+
           @include breackpoint(md) {
             font-weight: 600;
             font-size: 12px;
-            line-height: 0px;
+            line-height: 10px;
             color: #333333;
           }
         }
@@ -192,8 +193,8 @@
           padding: 0;
           margin-bottom: 20px;
           font-weight: 400;
-          font-size: 16px;
-          line-height: 0px;
+          font-size: 13px;
+          line-height: 20px;
           color: #333333;
           margin-left: 25px;
           li {
@@ -201,6 +202,7 @@
               font-weight: 400;
               font-size: 12px;
               line-height: 27px;
+
             }
           }
         }

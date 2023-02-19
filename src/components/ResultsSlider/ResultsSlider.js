@@ -48,7 +48,7 @@ export default memo(function ResultsSlider() {
           <h1>
             Наши результаты
             <LinkTop to="/result">
-              Показать еще <img alt="arrow" src="/images/Arrow2.png" />
+              Показать еще <img alt="arrow" src="/images/nonActiveArrow.svg" />
             </LinkTop>
           </h1>
           <Slider {...settings}>
@@ -65,7 +65,7 @@ export default memo(function ResultsSlider() {
         <h1>
           Наши результаты
           <LinkTop to="/result">
-            Показать еще <img alt="arrow" src="/images/Arrow2.png" />
+            Показать еще <img alt="arrow" src="/images/nonActiveArrow.svg" />
           </LinkTop>
         </h1>
         <div className={scss.adSlider}>

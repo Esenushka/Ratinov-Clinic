@@ -39,7 +39,7 @@ export default memo(function CourseOfTreatmentBlock() {
         <h1 className={scss.title}>
           ЛЕЧЕНИЕ ПО МЕТОДУ РЕЗОРБЦИИ{" "}
           <LinkTop to="/consultation">
-            Записаться на прием <img src="/images/Arrow2.png" alt="arrow"></img>
+            Записаться на прием <img src="/images/nonActiveArrow.svg" alt="arrow"></img>
           </LinkTop>
         </h1>
         <div className={scss.info}>
@@ -60,7 +60,7 @@ export default memo(function CourseOfTreatmentBlock() {
         <h1 className={scss.title}>
           ЛЕЧЕНИЕ ПО МЕТОДУ РЕЗОРБЦИИ{" "}
           <LinkTop to="/consultation">
-            Записаться на прием <img src="/images/Arrow2.png" alt="arrow"></img>
+            Записаться на прием <img src="/images/nonActiveArrow.svg" alt="arrow"></img>
           </LinkTop>
         </h1>
         <div className={scss.info}>

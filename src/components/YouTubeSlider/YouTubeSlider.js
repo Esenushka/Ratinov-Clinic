@@ -66,7 +66,7 @@ export default memo(function YouTubeSlider() {
             rel="noreferrer"
             target="_blank"
           >
-            Youtube канал <img src="/images/Arrow2.png" alt="arrow" />
+            Youtube канал <img src="/images/nonActiveArrow.svg" alt="arrow" />
           </a>
         </h1>
         <Slider {...settings}>
@@ -84,7 +84,7 @@ export default memo(function YouTubeSlider() {
             rel="noreferrer"
             target="_blank"
           >
-            Youtube канал <img src="/images/Arrow2.png" alt="arrow" />
+            Youtube канал <img src="/images/nonActiveArrow.svg" alt="arrow" />
           </a>
         </h1>
         <div className={scss.adSlider}>

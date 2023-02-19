@@ -84,7 +84,7 @@ export default memo(function Spine({ infoList }) {
         </div>
         <div className={"container " + scss.info_blocks_wrapper}>
           {isActive ? (
-            <h1 style={{ marginLeft: "24px" , fontSize:"20px"}}>Терапии</h1>
+            <h1 style={{ marginLeft: "24px" , fontSize:"20px"}}>Процедуры</h1>
           ) : (
             <h1>Терапия</h1>
           )}

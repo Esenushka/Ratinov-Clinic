@@ -12,7 +12,9 @@ export default memo(function Comment({ comments }) {
             <div className={css.top_block}>
               <div className={comment ? css.name : css.nameAc}>
                 <h3 onClick={() => setComment(!comment)}>{com.name}</h3>
-                <a href={com.link}>Instagram</a>
+                <p target="_blank" rel="noreferrer" href={com.link}>
+                  @{com.link}
+                </p>
               </div>
             </div>
             {comment && (

@@ -40,7 +40,7 @@ const Blog = () => {
     <>
       <Preloader loading={loading} />
       <Header isHeader={isHeader} setHeader={setHeader} />
-      <TopBlock text={""} bold={"Блоги"} path={""} />
+      <TopBlock text={""} bold={"Блог"} path={""} />
       <div className={"container " + scss.wrapper}>{renderCard}</div>
       <Footer />;
     </>

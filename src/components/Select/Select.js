@@ -49,7 +49,7 @@ export default memo(function Select() {
   return (
     <div className="select_wrapper">
       <span className={`active`}>
-        <h1 onClick={() => setClick(!isClick)}>
+        <h1 style={{marginTop:"0px"}} onClick={() => setClick(!isClick)}>
           <img src="/images/Filter.svg" alt="filter" />
           Специализация
         </h1>

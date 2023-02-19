@@ -67,7 +67,7 @@ const DoctorSlider = () => {
           Наши Врачи
           <p>
             <LinkTop to="/doctors">
-              Посмотреть всех <img alt="arrow" src="/images/Arrow2.png"></img>
+              Посмотреть всех <img alt="arrow" src="/images/nonActiveArrow.svg"></img>
             </LinkTop>
           </p>
         </h1>
@@ -83,7 +83,7 @@ const DoctorSlider = () => {
           Наши Врачи
           <p>
             <LinkTop to="/doctors">
-              Посмотреть всех <img alt="arrow" src="/images/Arrow2.png"></img>
+              Посмотреть всех <img alt="arrow" src="/images/nonActiveArrow.svg"></img>
             </LinkTop>
           </p>
         </h1>

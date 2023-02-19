@@ -12,7 +12,7 @@ export default memo(function Botulinum() {
           alt="Задний фон"
         />
         <div className={scss.mainRight}>
-          <h1>Лечение ботексом</h1>
+          <h1>Лечение ботоксом</h1>
           <ul>
             <li>
               Ботулотоксин - это лекарственный препарат, который блокирует

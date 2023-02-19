@@ -18,9 +18,11 @@ import TherapeuticPage from "./pages/services/TherapeuticPage";
 import ConsultationPage from "./pages/ConsultationPage";
 import DoctorPage from "./pages/DoctorPage";
 import Blog from "../src/Blog/BLog";
+import BlogMore from "./Blog/BlogMore";
 const DoctorsPage = lazy(() => import("./pages/DoctorsPage"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ResultPage = lazy(() => import("./pages/ResultPage"));
+
 
 function App() {
   return (
@@ -52,6 +54,7 @@ function App() {
         <Route path="/consultation" element={<ConsultationPage />}></Route>
         <Route path="/doctor/:id" element={<DoctorPage />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
+        <Route path="/blog/:id" element={<BlogMore />}></Route>
       </Routes>
     </Suspense>
   );

@@ -11,10 +11,8 @@ export default memo(function ClinicSpecialistsBlock({ specialists }) {
         className={"container " + styles.title}
       >
         Специалисты клиники
-        <Link
-          to="/doctors"
-        >
-          Посмотреть всех <img src="/images/Arrow2.png" alt="arrow" />
+        <Link to="/doctors">
+          Посмотреть всех <img src="/images/nonActiveArrow.svg" alt="arrow" />
         </Link>
       </h1>
       <div className={styles.clinicWrapper}>
@@ -56,13 +54,13 @@ export default memo(function ClinicSpecialistsBlock({ specialists }) {
       </div>
       <div className={styles.adapt}>
         <h1>
-          Специалисты <br /> клиники
+          Специалисты клиники
           <a
             href="https://www.youtube.com/watch?v=sJH0L6xaxCA"
             rel="noreferrer"
             target="_blank"
           >
-            Посмотреть всех <img src="/images/Arrow2.png" alt="arrow" />
+            Посмотреть всех <img src="/images/nonActiveArrow.svg" alt="arrow" />
           </a>
         </h1>
         <div className={styles.slider}>

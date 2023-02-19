@@ -28,5 +28,43 @@
         margin-top: 20px;
       }
     }
+    a{
+      color: #0097db;
+    }
+  }
+}
+
+.moreBlog {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px ;
+  @include breackpoint(md){
+    margin-bottom: 30px;
+  }
+  img{
+    margin-top: 30px;
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+    border-radius: 10px;
+  }
+  h1{
+    font-size: 32px;
+    margin-bottom: 30px;
+    line-height: 50px;
+    @include breackpoint(md){
+      font-size: 25px;
+      margin-bottom: 30px;
+      line-height: 35px;
+    }
+  }
+  .ulList{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 10px;
+    li{
+      font-size: 20px;
+    }
   }
 }

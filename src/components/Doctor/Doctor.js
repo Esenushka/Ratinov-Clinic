@@ -13,6 +13,7 @@ export default function Doctor({
   img,
   diplomas,
   price,
+  proffesions,
 }) {
   const [active, setActive] = useState(false);
 
@@ -25,23 +26,14 @@ export default function Doctor({
           </div>
           <div className={scss.right}>
             <h1>{name}</h1>
-            <h5>
-              Невролог-Вертебролог, Иглорефлексотерапевт, Радиолог, <br />{" "}
-              Мануальный терапевт
-            </h5>
+            <h5>{proffesions}</h5>
             <div className={scss.textLine}></div>
-            <p>{specialization}</p>
-            <div className={scss.textLine}></div>
+            <p></p>
             <ul>
               <li>
-                Врач занимается лечением межпозвонковых грыж без операции
-                методом резорбции.
-              </li>
-              <li>
-                В лечении применяются передовые физиотерапевтические технологии.
-              </li>
-              <li>
-                95 % пациентов уходят от нас здоровыми и довольными результатом.
+                {specialization
+                  ? specialization
+                  : "    95 % пациентов уходят от нас здоровыми и довольными результатом."}
               </li>
             </ul>
             <div className={scss.textLine}></div>

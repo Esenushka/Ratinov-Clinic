@@ -73,7 +73,7 @@ const Header = ({ isResult, setHeader, isHeader }) => {
                 <LinkTop to="/result">Результаты</LinkTop>
                 <LinkTop to="/price">Цены</LinkTop>
                 <LinkTop to="/comment">Отзывы</LinkTop>
-                <LinkTop to="/blog">Блоги</LinkTop>
+                <LinkTop to="/blog">Блог</LinkTop>
               </div>
             </div>
             <div className={styles.headerBottomRight}>
@@ -113,7 +113,7 @@ const Header = ({ isResult, setHeader, isHeader }) => {
           <LinkTop to="/result">Результаты</LinkTop>
           <LinkTop to="/price">Цены</LinkTop>
           <LinkTop to="/comment">Отзывы</LinkTop>
-          <LinkTop to="/blog">Блоги</LinkTop>
+          <LinkTop to="/blog">Блог</LinkTop>
 
           <div className={styles.bgAd}>
             <LinkTop className={styles.link} to={"/consultation"}>

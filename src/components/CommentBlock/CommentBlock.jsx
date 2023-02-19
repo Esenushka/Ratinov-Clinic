@@ -86,7 +86,7 @@ const CommentBlock = () => {
             Отзывы{" "}
             <p>
               <LinkTop to="/comment">
-                Все отзывы <img alt="Roow" src="/images/Arrow2.png"></img>
+                Все отзывы <img alt="Roow" src="/images/nonActiveArrow.svg"></img>
               </LinkTop>
             </p>
           </h1>

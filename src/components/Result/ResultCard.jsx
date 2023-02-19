@@ -44,28 +44,28 @@ export default function ResultCard({
             <div className={css.verticalLine}></div>
             <h4>Жалобы до лечения:</h4>
             <ul>
-              <li>{beforeComplaints}</li>
+              <li>{beforeComplaints && beforeComplaints}</li>
             </ul>
-            <h4>Диагноз</h4>
+            <h4>Назначили</h4>
             <ul>
-              <li>{beforeComplaints}</li>
+              <li>{appointment && appointment}</li>
             </ul>
             <h4>После лечения:</h4>
             <ul>
-              <li>{afterDisease}</li>
-              <li>{afterComplaints}</li>
+              <li>{afterDisease && afterDisease}</li>
+              <li>{afterComplaints && afterComplaints}</li>
             </ul>
-            <h4>Назаначили</h4>
+            <h4>Результат</h4>
             <ul>
-              <li>{time}</li>
-              <li>{timeDes}</li>
+              <li>{time && time}</li>
+              <li>{timeDes && timeDes}</li>
             </ul>
           </div>
         </div>
       </div>
       <div className={css.card} onClick={() => setModalActive(true)}>
         <img src={img} alt="result_photo" />
-        <p>Снимок № {num}</p>
+        {num === 1 ? <p>{beforeDisease}</p> : <p>Снимок № {num}</p>}
       </div>
     </>
   );

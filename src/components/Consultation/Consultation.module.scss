@@ -155,7 +155,8 @@
     width: 100%;
     margin-bottom: 20px;
     margin-top: 20px;
-
+    margin-right: 20px;
+    margin-left: 0;
   }
   .about_card {
     display: flex;
@@ -204,9 +205,10 @@
   margin-bottom: 20px;
   h1 {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 24px;
     color: #ffffff;
+    margin: 0;
   }
   p {
     font-weight: 500;
