@@ -1,43 +1,87 @@
+@import "../../styles/globalVariables";
+
+h1 {
+  font-weight: 700 ;
+  font-size: 20px ;
+  line-height: 24px ;
+  color: #333333;
+}
+
 .block {
-  width: 50%;
-  margin-bottom: 60px;
-  p{
-    font-size: 14px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  padding: 15px 0 15px 20px;
+  @include breackpoint(md) {
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
   }
-  > p:nth-of-type(1) {
-    width: 50%;
-    border-bottom: 1px solid #C4C4C4;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+  p {
+    font-style: normal;
     font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    @include breackpoint(md) {
+      font-weight: 600 !important;
+      font-size: 16px !important;
+      line-height: 20px !important;
+      color: #ffffff !important;
+      background-color: #0097db;
+      padding: 15px 0 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 7px;
+    }
+  }
+  ul {
+    @include breackpoint(md) {
+      border: 1px solid #e2e2e2;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 7px;
+      padding: 15px 0;
+    }
+    li {
+      width: 70%;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 27px;
+      margin-left: 20px;
+      color: #333333;
+      margin-left: 30px;
+      @include breackpoint(md) {
+        width: 90%;
+      }
+    }
+    > p:nth-of-type(1) {
+      width: 100%;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      color: #333333;
+    }
   }
 }
-.blocks_wrapper{
+.blocks_wrapper {
   margin-top: 30px;
-  margin-bottom: 100px;
-  > h1{
-    margin-bottom: 35px;
+  h1 {
+    margin-bottom: 20px;
+    margin-left: 5px;
   }
 }
-.bg{
-  transform: rotate(-15deg);
-  position: absolute;
-  right: -40%;
-  z-index: -1;
-  width: 950px;
-  height: 750px;
-  overflow: hidden;
-  border-radius: 100px;
-  opacity: 0.5;
-  img{
-    top: -100px;
-    width: 60%;
-    left: -18%;
-    position: absolute;
-    transform: rotate(15deg);
-  }
-}
-.wrapper{
+.wrapper {
   overflow-x: hidden;
   position: relative;
+  @include breackpoint(md) {
+    padding: 0 24px;
+  }
+  h1 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: #333333;
+    margin-top: 40px;
+  }
 }

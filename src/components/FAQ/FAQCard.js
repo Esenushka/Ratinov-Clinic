@@ -1,57 +1,57 @@
 import { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import LinkTop from "../../hooks/LinkTop";
-import ProcedureBlock from "../CourseOfTreatmentBlock/ProcedureBlock";
 import scss from "./FAQ.module.scss";
 
-export default memo(function FAQCard({ title, buttons, info, type }) {
+export default memo(function FAQCard({ title, buttons, info, type, index }) {
   const [active, setActive] = useState(false);
 
   return (
     <div className={scss.block}>
       <span onClick={() => setActive(!active)}>
-        <img
-          className={active ? scss.active : ""}
-          src="/images/slider-arrow.svg"
-          alt="Стрелка"
-        />
-        <p>{title}</p>
+        <p>
+          {index + 1}. {title}
+        </p>
+        <div
+          className={active ? scss.plusAc : scss.plus}
+          onClick={() => setActive(!active)}
+        ></div>
       </span>
       <div className={scss.info_wrapper + " " + (active ? scss.active : "")}>
         {type === 1 ? (
-          <div className={scss.info + " " + scss.bold}>
+          <ul className={scss.info + " " + scss.bold}>
             {info.map((el) => (
-              <p key={el.id}>{el.text}</p>
+              <li key={el.id}>{el.text}</li>
             ))}
-          </div>
+          </ul>
         ) : type === 1.1 ? (
-          <div className={scss.info + " " + scss.bold_reverse}>
+          <ul className={scss.info + " " + scss.bold_reverse}>
             {info.map((el) => (
-              <p key={el.id}>{el.text}</p>
+              <li key={el.id}>{el.text}</li>
             ))}
-          </div>
+          </ul>
         ) : type === 2 ? (
-          <div className={scss.info}>
+          <ul className={scss.info}>
             {info.map((el) => (
-              <p key={el.id}>
+              <li key={el.id}>
                 <span>{el.bold}</span> -{el.text}
-              </p>
+              </li>
             ))}
-          </div>
+          </ul>
         ) : type === 3 ? (
-          <div className={scss.info + " " + scss.with_link}>
+          <ul className={scss.info + " " + scss.with_link}>
             {info.map((el) =>
               el.reverse ? (
-                <p key={el.id}>
+                <li key={el.id}>
                   {el.text} <Link to={el.path}>{el.link}</Link>
-                </p>
+                </li>
               ) : (
-                <p key={el.id}>
+                <li key={el.id}>
                   <Link to={el.path}>{el.link}</Link> {el.text}
-                </p>
+                </li>
               )
             )}
-          </div>
+          </ul>
         ) : type === "phone" ? (
           <div className={scss.info + " " + scss.phone}>
             {info.map((el) => (
@@ -63,32 +63,30 @@ export default memo(function FAQCard({ title, buttons, info, type }) {
             ))}
           </div>
         ) : type === 4 ? (
-          <div className={scss.info}>
+          <ul className={scss.info}>
             {info.map((el) => (
-              <p key={el.id}>{el.text}</p>
+              <li key={el.id}>{el.text}</li>
             ))}
-          </div>
+          </ul>
         ) : type === 5 ? (
-          <div className={scss.info}>
+          <ul className={scss.info}>
             {info.map((el) => (
-              <p key={el.id}>
+              <li key={el.id}>
                 {el.text}
                 <span> {el.bold}</span>
-              </p>
+              </li>
             ))}
-          </div>
+          </ul>
         ) : type === 6 ? (
-          <div className={scss.info + " " + scss.procedure_bold}>
+          <ul className={scss.info + " " + scss.procedure_bold}>
             {info.map((el) => (
-              <p key={el.id}>{el.text}</p>
+              <li key={el.id}>{el.text}</li>
             ))}
-            <p>В эту стоимотсь входит:</p>
-            <ProcedureBlock col={true} />
-          </div>
+            <li>В эту стоимотсь входит:</li>
+          </ul>
         ) : (
           ""
         )}
-
         {buttons.length > 0 ? (
           <div
             className={

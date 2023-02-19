@@ -1,22 +1,37 @@
-import Header from "../components/Header/Header";
-import MainSlider from "../components/MainSlider/MainSlider";
-import YouTubeSlider from "../components/YouTubeSlider/YouTubeSlider";
-import OwnerBlock from "../components/OwnerBlock/OwnerBlock";
-import TreatBlock from "../components/TreatBlock/TreatBlock";
-import Consultaition from "../components/Consultation/Consultation";
-import CourseOfTreatmentBlock from "../components/CourseOfTreatmentBlock/CourseOfTreatmentBlock";
-import FAQ from "../components/FAQ/FAQ";
-import DoctorSlider from "../components/DoctorSlider/DoctorSlider";
-import CommentBlock from "../components/CommentBlock/CommentBlock";
-import CallMe from "../components/CallMe/CallMe";
-import Footer from "../components/Footer/Footer";
-import ResultsSlider from "../components/ResultsSlider/ResultsSlider";
-import ClinicSpecialistsBlock from "../components/ClinicSpecialists/ClinicSpecialistsBlock";
-import About from "../components/Consultation/About";
+import { Suspense, lazy } from "react";
 import React, { useEffect, useState } from "react";
 import { db } from "../config/firebase";
-import Preloader from "../components/Preloader/Preloader";
-import RoundButtons from "../components/RoundButtons/RoundButtons";
+
+const Preloader = lazy(() => import("../components/Preloader/Preloader"));
+const Header = lazy(() => import("../components/Header/Header"));
+const MainSlider = lazy(() => import("../components/MainSlider/MainSlider"));
+const YouTubeSlider = lazy(() =>
+  import("../components/YouTubeSlider/YouTubeSlider")
+);
+const OwnerBlock = lazy(() => import("../components/OwnerBlock/OwnerBlock"));
+const TreatBlock = lazy(() => import("../components/TreatBlock/TreatBlock"));
+const Consultaition = lazy(() =>
+  import("../components/Consultation/Consultation")
+);
+const CourseOfTreatmentBlock = lazy(() =>
+  import("../components/CourseOfTreatmentBlock/CourseOfTreatmentBlock")
+);
+const FAQ = lazy(() => import("../components/FAQ/FAQ"));
+const DoctorSlider = lazy(() =>
+  import("../components/DoctorSlider/DoctorSlider")
+);
+const CommentBlock = lazy(() =>
+  import("../components/CommentBlock/CommentBlock")
+);
+const CallMe = lazy(() => import("../components/CallMe/CallMe"));
+const Footer = lazy(() => import("../components/Footer/Footer"));
+const ResultsSlider = lazy(() =>
+  import("../components/ResultsSlider/ResultsSlider")
+);
+const ClinicSpecialistsBlock = lazy(() =>
+  import("../components/ClinicSpecialists/ClinicSpecialistsBlock")
+);
+const About = lazy(() => import("../components/Consultation/About"));
 
 export default React.memo(function HomePage() {
   const [about, setAbout] = useState([]);
@@ -24,7 +39,7 @@ export default React.memo(function HomePage() {
   const [faq, setFaq] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
- 
+
   useEffect(() => {
     db.collection("about")
       .get()
@@ -32,8 +47,10 @@ export default React.memo(function HomePage() {
         const aboutArr = [];
         snapshot.forEach((doc) => {
           aboutArr.push({ ...doc.data(), id: doc.id });
-        })
-        setAbout(aboutArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
+        });
+        setAbout(
+          aboutArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
+        );
       });
     db.collection("clinicSpecialists")
       .orderBy("pos", "asc")
@@ -43,9 +60,8 @@ export default React.memo(function HomePage() {
         snapshot.forEach((doc) => {
           specialistsArr.push({ ...doc.data(), id: doc.id });
         });
-        setSpecialists(specialistsArr)
+        setSpecialists(specialistsArr);
       });
-
 
     db.collection("faq")
       .orderBy("pos", "asc")
@@ -56,31 +72,35 @@ export default React.memo(function HomePage() {
           faqArr.push({ ...doc.data(), id: doc.id });
         });
         setFaq(faqArr);
-        setLoading(false)
+        setLoading(false);
+        setHeader(true);
       });
   }, []);
+
+  const [isHeader, setHeader] = useState(true);
+
   return (
-    <div>
-      <Preloader loadingImage={loadingImage} loading={loading} />
-      <Header />
-      <MainSlider />
-      <Consultaition />
-      <About setLoadingImage={setLoadingImage} about={about} />
-      <TreatBlock />
-      <OwnerBlock />
-      <YouTubeSlider />
-      <ResultsSlider />
-      <CourseOfTreatmentBlock />
-      <ClinicSpecialistsBlock specialists={specialists} />
-      <DoctorSlider fullSize />
-      <CommentBlock />
-      <FAQ faq={faq} />
-      <CallMe />
-      <Footer />
-      {
-        loading || loadingImage ? "" : <RoundButtons />
-      }
-    </div>
-  )
-}
-)
+    <Suspense
+      fallback={<Preloader loadingImage={loadingImage} loading={loading} />}
+    >
+      <Preloader loading={loading} />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+        <>
+          <MainSlider />
+          <Consultaition />
+          <About setLoadingImage={setLoadingImage} about={about} />
+          <TreatBlock />
+          <OwnerBlock />
+          <YouTubeSlider />
+          <ResultsSlider />
+          <CourseOfTreatmentBlock />
+          <ClinicSpecialistsBlock specialists={specialists} />
+          <DoctorSlider fullSize />
+          <CommentBlock />
+          <FAQ faq={faq} />
+          <CallMe />
+          <Footer />
+        </>
+    </Suspense>
+  );
+});

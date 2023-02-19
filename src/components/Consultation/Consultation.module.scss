@@ -1,83 +1,238 @@
+@media (max-width: 776px) {
+  .wrapper {
+    display: none !important;
+  }
+  .adaptive {
+    display: flex;
+  }
+  .about {
+    display: none !important;
+  }
+}
+@media (min-width: 776px) {
+  .wrapper {
+    display: block;
+  }
+  .adaptive {
+    display: none !important;
+  }
+  .aboutAd {
+    display: none !important;
+  }
+}
+
 .wrapper {
-  margin-top: 50px;
+  margin-bottom: 70px;
 }
 
 .consultation {
   position: relative;
-  height: 45vh;
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fconsultation.svg?alt=media&token=f90529de-2f00-4f42-8dbd-513758882a63");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Fbg1.png?alt=media&token=9bc52d61-a252-4395-a8b4-51d250eda9a8");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
 
 .wrap {
   position: relative;
-  width: 75%;
-  height: 50%;
-  background-color: #ffffff;
-  border-radius: 10px;
-  top: 25%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 45px 70px;
-  margin: 0 10% !important;
-
-
+  padding: 40px 0;
 }
 
 .b {
-  font-weight: 500 !important;
+  font-weight: 700 !important;
+  font-size: 32px;
+  line-height: 37px;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .consul_des {
-  margin-right: 15px;
-
-  span {
-    font-size: 28px;
-    line-height: 34px;
-    text-transform: uppercase;
-    font-weight: 400;
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #ffffff;
+    width: 40%;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
-
-
+}
+.btn {
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+  padding: 17px 110px;
+  background: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background: white;
+    color: #0097db;
+  }
 }
 
-
-
+// about
 
 .about {
   display: flex;
   flex-direction: column;
   grid-gap: 3em;
-  height: 50vh;
+  margin-bottom: 15px;
   h1 {
-    margin-top: 40px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 32px;
-    line-height: 49px;
-    text-transform: uppercase;
+    // line-height: 37px;
+    color: #333333;
+    margin-bottom: -10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   .about_card {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 
     .card {
-      width: 30%;
-      display: flex;
+      text-align: center;
       grid-gap: 1.5em;
-      flex-direction: column;
+      width: 31%;
+      text-align: center;
       img {
-        width: 70px;
-        height: 70px;
+        width: fit-content;
+        height: 40px;
       }
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      color: #636363;
 
-      b {
-        font-weight: 700;
+      .line {
+        width: 80%;
+        height: 1px;
+        background: #d0d0d0;
+        margin: 10px auto;
+      }
+      h1 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #0097db;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 17px;
       }
     }
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+.aboutAd {
+  padding: 24px;
+  margin-bottom: 15px;
+
+  h1 {
+    font-weight: 700;
+    font-size: 20px;
+    // line-height: 24px;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 0;
+  }
+  .about_card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    .card {
+      margin-top: 30px;
+      h1 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #0097db;
+        margin-top: 15px;
+      }
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #dadada;
+        margin: 10px 0;
+      }
+      p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 21px;
+        text-align: center;
+        color: #636363;
+      }
+    }
+  }
+}
+//adaptive
+.adaptive {
+  width: 100%;
+  height: fit-content;
+  padding: 15px 24px;
+  background-color: #0097db;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2FBack.png?alt=media&token=f727dca3-3678-4cf5-b563-5e5cee93ac17);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  h1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: #ffffff;
+    margin: 0;
+  }
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+  .line {
+    width: 30%;
+    height: 1px;
+    background-color: white;
+    margin: 5px 0;
+  }
+  a {
+    width: 100%;
+    background-color: white;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 32px;
+    color: #333333;
+    margin-top: 15px;
   }
 }

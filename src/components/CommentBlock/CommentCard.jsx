@@ -1,18 +1,34 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import css from "./Comment.module.scss";
 
-const CommentCard = ({ name, link, des }) => {
+const CommentCard = ({ name, link, des, id, handleClick, active }) => {
   return (
     <div className={css.card}>
       <div className={css.top_block}>
         <div className={css.name}>
           <h3>{name}</h3>
-          <a href={link}>Ссылка на соцсеть</a>
+          <a href={link}>Instagram</a>
+          
         </div>
+        
       </div>
+      <div className={css.line}></div>
       <div className={css.des}>
-        <img src="/images/InvertedCommas.svg" alt="" />
-        <p>{des}</p>
+        {active ? (
+          <p className={css.nonAc}>
+            {des}
+            <div onClick={() => handleClick(id, "toNonActive")}>
+              {active ? "Скрыть" : ""}
+            </div>
+          </p>
+        ) : (
+          <p>
+            {des.substr(0, 80)}...
+            <span onClick={() => handleClick(id, "toActive")}>
+              {active ? "" : "Читать полностью"}
+            </span>
+          </p>
+        )}
       </div>
     </div>
   );

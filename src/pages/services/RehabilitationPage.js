@@ -8,20 +8,26 @@ import TopBlock from "../../components/TopBlock/TopBlock";
 
 export default React.memo(function RehabilitationPage() {
   const [loading, setLoading] = useState(true);
-  const [loadingImage, setLoadingImage] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false)
-    }, 500)
+      setLoading(false);
+    }, 500);
   }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <div>
-      <Preloader loading={loading} loadingImage={loadingImage} />
-      <Header />
-      <TopBlock bold={"Реабилитация"} text={"После COVID-19"} path="Услуги" secondPath={"Реабилитация после COVID-19"} />
-      <Rehabilitation setLoadingImage={setLoadingImage} />
-      <CallMe />
-      <Footer />
+      <Preloader loading={loading} />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <TopBlock bold={"Услуги / Реабилитация после COVID-19"} />
+          <Rehabilitation />
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </div>
-  )
-})
+  );
+});

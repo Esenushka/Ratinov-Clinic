@@ -1,86 +1,78 @@
+@media (max-width: 776px) {
+  .wrapper {
+    display: none !important;
+  }
+  .adapt {
+    display: block !important;
+  }
+}
+@media (min-width: 776px) {
+  .wrapper {
+    display: block;
+  }
+  .adapt {
+    display: none;
+  }
+}
+
 .wrapper {
-  margin-top: 50px;
-  height: 600px;
-  position: relative;
-  overflow: hidden;
-  padding: 100px 0;
-
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2Ftravma%201.png?alt=media&token=ab7d5ba8-6ef2-47f2-9cbd-177281c53a0a");
-    background-repeat: no-repeat;
-    background-size: cover;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    opacity: 0.35;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 1060px;
-    height: 810px;
-    background: rgba(0, 151, 219, 0.6);
-    border-radius: 189px;
-    transform: matrix(0.95, -0.31, 0.3, 0.95, 0, 0);
-    z-index: 10;
-    top: -100%;
-    right: -250px;
-    opacity: 1;
-    z-index: -1;
-  }
-
-  h1 {
-    z-index: 11;
-    text-transform: uppercase;
-    font-size: 40px;
-    font-weight: 400;
-
-    span {
-      font-size: 40px;
-      font-weight: 600;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2FBackground.png?alt=media&token=1b4aa1d6-7d22-4708-8e19-63c694456770);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 70px;
+  .cards {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .card {
+      width: 34%;
+      color: white;
+      margin: 45px 100px 45px 0;
+      h1 {
+        margin: 0;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        color: #ffffff;
+      }
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 23px;
+        color: #ffffff;
+        width: 120%;
+      }
     }
   }
 }
 
-.blocks {
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-  .block {
+//adaptive
 
-    background: #FFFFFF;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 48%;
-
-    .lower_block {
-      padding: 30px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      grid-gap: 25px;
-
-      span {
-        cursor: pointer;
-        font-size: 12px;
-        color: #939393;
-
-        img {
-          transform: rotate(90deg);
-          width: 22px;
-          height: 10px;
-        }
-      }
+.adapt {
+  background-color: #0097db;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: white !important;
+  padding: 15px 55px 30px 55px;
+  .card {
+    h1 {
+      margin-top: 15px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 39px;
+      color: #ffffff;
+      // margin: 0;
+      margin-left: 0;
     }
-
-    >img {
-      width: 100%;
+    p {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      text-align: center;
+      color: #ffffff;
     }
   }
 }

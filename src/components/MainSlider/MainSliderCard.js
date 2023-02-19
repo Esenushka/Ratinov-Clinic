@@ -3,19 +3,19 @@ import scss from "./MainSlider.module.scss";
 export default memo(function MainSliderCard({ src }) {
   return (
     <div className={scss.card}>
-      <div className={scss.right}>
-        <span className={scss.camera}>
-          <iframe
-            width="560"
-            height="250"
-            src={src}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </span>
-      </div>
+      <iframe
+        width="590"
+        height="289"
+        src={src}
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style={{
+          borderRadius: "7px",
+          boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
+        }}
+      ></iframe>
     </div>
   );
 });

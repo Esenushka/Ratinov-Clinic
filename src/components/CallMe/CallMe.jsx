@@ -6,76 +6,132 @@ import LinkTop from "../../hooks/LinkTop";
 
 export default memo(function CallMe() {
   return (
-    <div className={css.callme_block}>
-      <div className={css.opacity}>
-        <div className={`${css.wrapper} container`}>
-          <span className={css.title}>
-            Хотите, <span className={css.b}>мы вам перезвоним?</span>
-          </span>
-          <p className={css.des}>
-            Как уменьшить грыжу без операции и избавиться от боли в спине?
-            Расскажем о лечении и запишем на консультацию к специалисту
-          </p>
-          <div className={css.input_block}>
-            <div className={css.input}>
-              <p>Имя</p>
-              <input type="text" placeholder="Иван Иванович" />
-            </div>
-            <div className={`${css.input1}`}>
-              <p>Намер вашего телефона*</p>
-              <PhoneInput
-                name="phoneNumber"
-                type="text"
-                country={"kg"}
-                enableAreaCodes={true}
-                inputProps={{
-                  name: "phone",
-                  country: "us",
-                  required: true,
-                  autoFocus: false,
-                }}
-                // Set your inline styles here
+    <>
+      <div className={css.callme_block}>
+        <div className={css.opacity}>
+          <div className={`${css.wrapper} container`}>
+            <div className={css.input_block}>
+              <span className={css.title}>
+                Оставьте свои контакты и мы вам перезвоним
+              </span>
+              <div className={css.input}>
+                <p>Введите ваше имя</p>
+                <input
+                  style={{ outline: "none" }}
+                  type="text"
+                  placeholder="Иван Иванович"
+                />
+              </div>
+              <div className={`${css.input1}`}>
+                <p>Номер телефона*</p>
+                <PhoneInput
+                  name="phoneNumber"
+                  type="text"
+                  country={"kg"}
+                  enableAreaCodes={true}
+                  inputProps={{
+                    name: "phone",
+                    country: "us",
+                    required: false,
+                    autoFocus: false,
+                  }}
+                  // Set your inline styles here
 
-                containerStyle={{
-                  width: "308px",
-                  height: "60px",
-                  background: "#FFFFFF",
-                  borderRadius: "10px",
-                }}
-                inputStyle={{
-                  height: "100%",
-                  background: "#fff",
-                  border: "none",
-                  fontSize: "14px",
-                  display: "flex",
-                  alignItems: "center",
-                  borderRadius: "10px",
-                }}
-                buttonStyle={{
-                  background: "#fff",
-                  border: "none",
-                  borderRadius: "10px",
-                  fontSize: "10px",
-                }}
-                dropdownStyle={{
-                  fontSize: "10px",
-                }}
-                placeholder="(999) 999-999"
-                required
-              />
+                  containerStyle={{
+                    width: "75%",
+                    height: "60px",
+                    background: "#FFFFFF",
+                    borderRadius: "10px",
+                    border: "1px solid #e2e2e2",
+                  }}
+                  inputStyle={{
+                    height: "100%",
+                    background: "#fff",
+                    border: "none",
+                    fontSize: "14px",
+                    display: "flex",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                  }}
+                  buttonStyle={{
+                    background: "#fff",
+                    border: "none",
+                    borderRadius: "10px",
+                    fontSize: "10px",
+                  }}
+                  dropdownStyle={{
+                    fontSize: "10px",
+                  }}
+                  placeholder="+996 (555) 55-55-55"
+                  required
+                />
+              </div>
+              <LinkTop to={"/consultation"}>
+                <button className="btn btn-big-bg">Заказать звонок</button>
+              </LinkTop>
             </div>
-            <LinkTop to={"/consultation"}>
-              <button className="btn btn-big-bg">Записаться на приём</button>
-            </LinkTop>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F1%20618332334.png?alt=media&token=2921df2c-d18c-409c-bfd5-bea471bbc03a"
+              alt=""
+            />
           </div>
-          <span className={css.bottom}>
-            Нажимая на кнопку "Заказать звонок", я подтверждаю, что ознакомлен и
-            согласен с условиями{" "}
-            <LinkTop to={"/"}>политики конфиденциальности</LinkTop> и{" "}
-            <LinkTop to={"/"}> правилами обработки персональных данных</LinkTop>
-          </span>
         </div>
       </div>
-    </div>
+
+      <div className={css.adapt}>
+        <span className={css.title}>
+          Оставьте свои контакты <br /> и мы вам перезвоним
+        </span>
+        <p>Введите ваше имя</p>
+        <input
+          style={{ outline: "none" }}
+          type="text"
+          placeholder="Иван Иванович"
+        />
+        <p>Номер телефона*</p>
+        <PhoneInput
+          name="phoneNumber"
+          type="text"
+          country={"kg"}
+          enableAreaCodes={true}
+          inputProps={{
+            name: "phone",
+            country: "us",
+            required: false,
+            autoFocus: false,
+          }}
+          // Set your inline styles here
+
+          containerStyle={{
+            width: "100%",
+            height: "60px",
+            background: "#FFFFFF",
+            borderRadius: "10px",
+            border: "1px solid #e2e2e2",
+          }}
+          inputStyle={{
+            height: "100%",
+            background: "#fff",
+            border: "none",
+            fontSize: "14px",
+            display: "flex",
+            alignItems: "center",
+            borderRadius: "10px",
+          }}
+          buttonStyle={{
+            background: "#fff",
+            border: "none",
+            borderRadius: "10px",
+            fontSize: "10px",
+          }}
+          dropdownStyle={{
+            fontSize: "10px",
+          }}
+          placeholder="+996 (555) 55-55-55"
+          required
+        />
+        <LinkTop to={"/consultation"}>Заказать звонок</LinkTop>
+      </div>
+    </>
   );
 });

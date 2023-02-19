@@ -1,80 +1,114 @@
+@import "../../styles/globalVariables";
+
+@media (max-width: 778px) {
+  .bol {
+    display: none;
+  }
+}
 .top {
   position: relative;
-  height: 50vh;
   display: flex;
-  align-items: center;
   margin-bottom: 50px;
-
+  height: fit-content;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  @include breackpoint(md) {
+    display: block;
+  }
   img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 361px;
     object-fit: cover;
-    z-index: -1;
-    opacity: 0.4;
-    left: 0;
-    top: 0;
+    opacity: 1.5;
+    transform: scale(1);
+    @include breackpoint(md) {
+      width: 100%;
+      height: 300px;
+    }
   }
 
-  h2 {
-    text-transform: uppercase;
-    font-weight: 400;
-
-    span {
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: x-large;
+  h1 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: #333333;
+    padding: 28px 100px 60px 32px;
+    width: 50%;
+    @include breackpoint(md) {
+      font-size: 20px;
+      line-height: 25px;
+      width: 100%;
+      padding: 0 40px 20px 10px;
+    }
+    ul {
+      margin-top: 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #333333;
+      margin-left: 20px;
+      @include breackpoint(md) {
+        width: 100%;
+        margin-bottom: 5px;
+      }
     }
   }
 }
-.main_wrapper{
+.main_wrapper {
   position: relative;
   overflow-x: hidden;
 }
 .wrapper {
   button {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
-  >p {
+  > p {
     margin-bottom: 60px;
   }
 
-  >p:nth-of-type(2) {
+  > p:nth-of-type(2) {
     margin: 0;
     display: inline;
     width: fit-content;
   }
 
   .take_consultation {
-    color: #0097DB;
+    color: #0097db;
     text-decoration: underline;
     margin-bottom: 100px;
     display: block;
   }
 
   h1 {
-    text-transform: uppercase;
-    margin-bottom: 30px;
-
-    span {
-      font-size: xx-large;
-      font-weight: 400;
-      text-transform: uppercase;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #333333;
+    margin-bottom: 15px;
+    @include breackpoint(md) {
+      font-size: 20px;
+      line-height: 25px;
+      width: 100%;
+      padding-left: 10px;
     }
   }
 
   ul {
     padding-left: 25px;
-
+    @include breackpoint(md) {
+      width: 95%;
+      padding-left: 40px;
+    }
     li {
       margin-bottom: 15px;
       font-size: 14px;
     }
   }
 
-  >div {
-    width: 70%;
+  > div {
+    width: 100%;
     margin-bottom: 40px;
   }
 
@@ -84,37 +118,64 @@
 }
 
 .form {
-  width: 85%;
-  background: #E4F6FF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  width: 100%;
   border-radius: 10px;
-  padding: 100px;
-
+  padding-top: 50px;
+  padding-bottom: 40px;
+  @include breackpoint(md) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  h1 {
+    @include breackpoint(md) {
+      font-size: 21px !important;
+      padding-right: 9px !important;
+      margin-left: -10px !important;
+      margin-bottom: 40px;
+    }
+  }
   input {
     margin-top: 10px;
-    width: 60%;
+    width: 363px;
     padding: 15px 20px;
     border: none;
     outline: none;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    @include breackpoint(md) {
+      width: 100%;
+    }
   }
 
   textarea {
     margin-top: 10px;
     padding: 15px 20px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    outline: none;
     resize: none;
+    width: 48%;
+    height: 153px;
+    border-radius: 7px;
+    outline: #0097db;
+    &:focus {
+      border: #0097db 1px solid;
+    }
+    @include breackpoint(md) {
+      width: 100%;
+    }
   }
 
   label {
     display: block;
     margin-bottom: 40px;
     position: relative;
-
+    p {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: #333333;
+    }
     ul {
       margin-top: 15px;
       width: 80%;
@@ -127,80 +188,98 @@
   }
 
   h1 {
-    color: #0097DB;
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #333333;
   }
 }
 
 .range.range {
-  width: 50%;
+  width: 49%;
   padding: 0;
   box-shadow: none;
-  margin-top: 35px;
+  margin-top: 31px;
   appearance: none;
   -webkit-appearance: none;
   background: none;
   z-index: 10;
   position: relative;
   height: 5px;
+  z-index: 10 !important;
+  @include breackpoint(md) {
+    display: none;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #333333;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10 !important;
+  }
 }
 
 .dots {
   height: fit-content;
-  width: 48.4%;
+  width: 47.8%;
   display: flex;
   justify-content: space-between;
   margin: 0 5px;
   height: 2px;
-  background: #C4C4C4;
+  background: #c4c4c4;
   align-items: center;
   position: absolute;
-  top: 55px;
-  z-index: 1;
-
+  top: 54px;
+  @include breackpoint(md) {
+    display: none;
+  }
   span {
     width: 6px;
     height: 6px;
-    background: #C4C4C4;
+    background: #c4c4c4;
     border-radius: 50%;
-    z-index: 1;
-
     &.active {
       p {
         position: absolute;
         display: inline-block;
-        top: -30px;
+        top: -9px;
+        margin-left: -11px !important;
         font-size: 14px;
-        color: #0097DB;
+        color: #ffffff;
+        z-index: 100 !important;
+        cursor: move;
       }
     }
 
     &.marked {
-      background: #0097DB;
-
+      background: #333333;
+      z-index: 0 !important;
+      margin-left: 2px;
       &::before {
         content: "";
         position: absolute;
         z-index: 2;
         top: 0px;
-        background: #0097DB;
-        width: 40px;
+        background: #333333;
+        width: 63px;
         height: 2px;
+        z-index: 0 !important;
       }
     }
   }
 }
 
 .block {
-  padding: 10px 15px;
-
-  span {
-    color: #0097DB;
-    font-size: 14px;
-    margin-bottom: 15px;
-    display: inline-block;
+  padding: 10px 0px;
+  h1 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
   }
-
   input {
     width: fit-content;
     height: fit-content;
@@ -209,7 +288,6 @@
     margin-top: 3px;
     margin-right: 10px;
     outline: none;
-
   }
 
   div {
@@ -218,9 +296,22 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    p{
-      margin-bottom: 0px;
-      padding: 15px;
+    input {
+      @include breackpoint(md) {
+        margin-top: 12px;
+      }
+    }
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      display: flex;
+      align-items: center;
+      color: #333333;
+      @include breackpoint(md) {
+        font-size: 18px;
+        margin-top: 12px;
+      }
     }
   }
 }
@@ -242,51 +333,70 @@
 }
 
 .file {
-  background: #FFFFFF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 7px;
   margin-top: 15px;
-  width: 65%;
+  width: 48%;
   position: relative;
   padding: 15px;
   margin-bottom: 40px;
   display: flex;
   grid-gap: 25px;
   align-items: center;
-
+  margin-bottom: 140px;
+  @include breackpoint(md) {
+    width: 100%;
+  }
   input {
     top: 0;
     left: 0;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     box-shadow: none;
     position: absolute;
-    height: 100%;
     width: 100%;
     opacity: 0;
     cursor: pointer;
+    @include breackpoint(md) {
+      width: 100%;
+    }
   }
 
   label {
-    color: #939393;
-    position: relative;
-    z-index: 2;
-    background: #FFFFFF;
+    color: white;
+    position: absolute;
+    background: #0097db;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    padding: 25px 20px;
-    display: inline-block;
+    height: 50px !important;
+    width: 263px !important;
     width: fit-content;
     height: fit-content;
-    transition: .2s ease;
-    margin: 0;
-
+    transition: 0.2s ease;
+    bottom: -120px;
+    left: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breackpoint(md){
+      width: 100% !important;
+    }
+    .x {
+      position: absolute;
+      right: -102%;
+      top: -128%;
+      font-size: 15px;
+      width: 30px;
+      height: 30px;
+      cursor: alias;
+    }
     &:hover {
-      color: #0097DB;
+      color: white;
       cursor: pointer;
     }
   }
 }
+
 
 .to_doctor {
   span {
@@ -294,32 +404,7 @@
     text-decoration: underline;
   }
 }
-.bg {
-  width: 500px;
-  height: 700px;
-  border-radius: 150px;
-  transform: rotate(55deg);
-  position: absolute;
-  z-index: -1;
-  right: -250px;
-  top: 250px;
-  overflow: hidden;
 
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    transform: rotate(-55deg);
-    position: absolute;
-    left: -30px;
-    top: 130px;
-    filter: opacity(0.5);
-  }
-}
-
-.wrapper_bg {
-  position: relative;
-}
 .bg2 {
   width: 500px;
   height: 600px;
@@ -345,4 +430,14 @@
 
 .wrapper_bg2 {
   position: relative;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: #dadada;
+}
+
+.hide {
+  display: none;
 }

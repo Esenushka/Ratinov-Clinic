@@ -15,6 +15,7 @@ export default memo(function DoctorsCard({
   id,
 }) {
   const location = useLocation();
+
   return (
     <div className={scss.card + " " + (fullSize ? scss.main : "")}>
       {fullSize ? (
@@ -30,22 +31,26 @@ export default memo(function DoctorsCard({
           <p>{proffesions}</p>
         </div>
         {location.pathname === "/" ? (
-          <div className={scss.other}>
-            <div className={scss.other_text}>
+          <>
+            <div className={scss.other}>
               <p>{day_work}</p>
-              <h5>
-                Стоимость приёма <br />{" "}
-                {price > 0 ? price + " сомов" : "Бесплатно"}
-              </h5>
+              <div className={scss.other_text}>
+                <h5>
+                  Стоимость приёма <br />{" "}
+                  {price > 0 ? price + " сомов" : "Бесплатно"}
+                </h5>
+                <LinkTop to={`/doctor/${id}`}>
+                  <button className={`btn-small btn`}>Подробнее</button>
+                </LinkTop>
+              </div>
             </div>
-            <LinkTop to={`/doctor/${id}`}>
-              <button className={`btn-small btn`}>Подробнее</button>
-            </LinkTop>
-          </div>
+          </>
         ) : (
           <div className={scss.btn}>
             <LinkTop to={`/doctor/${id}`}>
-              <button className="btn-small btn">Подробнее</button>
+              <button className="btn-small btn">
+                Подробнее
+              </button>
             </LinkTop>
           </div>
         )}
