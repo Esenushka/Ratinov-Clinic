@@ -29,7 +29,9 @@ export default memo(function MainSlider() {
   return (
     <div className={"container main_slider " + scss.wrapper}>
       <div className={scss.left}>
-        <h1>Истории Наших <br/> пациентов после <br/> лечения</h1>
+        <h1>
+          Истории Наших <br /> пациентов после <br /> лечения
+        </h1>
         <div className={scss.line}></div>
         <p>
           Метод резорбции - уменьшение и заживление грыжи, вплоть до полного ее
@@ -90,18 +92,28 @@ export default memo(function MainSlider() {
           ></img>
         </span>
         <div className={scss.line}></div>
+        <iframe
+          className={scss.video}
+          src="https://www.youtube.com/embed/Pt6f68qRRWQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <div className={scss.line}></div>
 
         <div className={scss.linka}>
           <Link to={"/comment"}>Отзывы</Link>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href={"https://www.youtube.com/@doctor_ratinov"}
+          <Link
+            to={"/result"}
+            // rel="noreferrer"
+            // target="_blank"
+            // href={"https://www.youtube.com/@doctor_ratinov"}
             className={scss.btn}
           >
             <div className={scss.play}></div>
-            Смотреть видео
-          </a>
+            Результаты
+          </Link>
         </div>
       </div>
     </div>
