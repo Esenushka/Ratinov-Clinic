@@ -14,6 +14,14 @@ export default function ResultCard({
   timeDes,
 }) {
   const [modalActive, setModalActive] = useState(false);
+
+  const cutword = (str) => {
+    if (str.length > 25) {
+      return str.slice(0, 22) + "..." + " " + "смотреть еще";
+    } else {
+      return str;
+    }
+  };
   return (
     <>
       <div
@@ -65,7 +73,8 @@ export default function ResultCard({
       </div>
       <div className={css.card} onClick={() => setModalActive(true)}>
         <img src={img} alt="result_photo" />
-        {num === 1 ? <p>{beforeDisease}</p> : <p>Снимок № {num}</p>}
+        {/* {num === 1 ? <p>{beforeDisease}</p> : <p>Снимок № {num}</p>} */}
+        <p>{cutword(beforeComplaints)}</p>
       </div>
     </>
   );

@@ -41,6 +41,7 @@ export default memo(function ResultsSlider() {
     prevArrow: <SamplePrevArrow />,
     customPaging: () => <span className={scss.dots}></span>,
   };
+
   return (
     <>
       <div className="container result_slider">
@@ -64,7 +65,7 @@ export default memo(function ResultsSlider() {
       <div className={scss.adapt}>
         <h1>
           Наши результаты
-          <LinkTop to="/result">
+          <LinkTop  to="/result">
             Показать еще <img alt="arrow" src="/images/nonActiveArrow.svg" />
           </LinkTop>
         </h1>
@@ -72,7 +73,7 @@ export default memo(function ResultsSlider() {
           {result.map((el) => (
             <div className={scss.card} key={el.id} {...el}>
               <img src={el.img} alt="img"></img>
-              <p>Снимок №{el.number}</p>
+              <p>{el.resTop}</p>
             </div>
           ))}
         </div>
