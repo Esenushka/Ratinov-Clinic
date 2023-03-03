@@ -7,9 +7,8 @@ const CommentCard = ({ name, link, des, id, handleClick, active }) => {
       <div className={css.top_block}>
         <div className={css.name}>
           <h3>{name}</h3>
-          <a href={link}>Instagram</a>
-          
-        </div>
+          <p>{link}</p>
+        </div>  
         
       </div>
       <div className={css.line}></div>

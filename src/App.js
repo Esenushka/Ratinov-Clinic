@@ -19,10 +19,15 @@ import ConsultationPage from "./pages/ConsultationPage";
 import DoctorPage from "./pages/DoctorPage";
 import Blog from "../src/Blog/BLog";
 import BlogMore from "./Blog/BlogMore";
+import ReactGa from "react-ga"
 const DoctorsPage = lazy(() => import("./pages/DoctorsPage"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ResultPage = lazy(() => import("./pages/ResultPage"));
 
+
+const TRACING_ID = "UA-217458288-1";
+
+ReactGa.initialize(TRACING_ID);
 
 function App() {
   return (

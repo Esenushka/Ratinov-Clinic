@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import React, { useEffect, useState } from "react";
 import { db } from "../config/firebase";
+import ReactGa from "react-ga";
 
 const Preloader = lazy(() => import("../components/Preloader/Preloader"));
 const Header = lazy(() => import("../components/Header/Header"));
@@ -39,6 +40,10 @@ export default React.memo(function HomePage() {
   const [faq, setFaq] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
+
+  useEffect(() => {
+    ReactGa.pageview(window.location.pathname);
+  }, []);
 
   useEffect(() => {
     db.collection("about")
@@ -85,22 +90,22 @@ export default React.memo(function HomePage() {
     >
       <Preloader loading={loading} />
       <Header isHeader={isHeader} setHeader={setHeader} />
-        <>
-          <MainSlider />
-          <Consultaition />
-          <About setLoadingImage={setLoadingImage} about={about} />
-          <TreatBlock />
-          <OwnerBlock />
-          <YouTubeSlider />
-          <ResultsSlider />
-          <CourseOfTreatmentBlock />
-          <ClinicSpecialistsBlock specialists={specialists} />
-          <DoctorSlider fullSize />
-          <CommentBlock />
-          <FAQ faq={faq} />
-          <CallMe />
-          <Footer />
-        </>
+      <>
+        <MainSlider />
+        <Consultaition />
+        <About setLoadingImage={setLoadingImage} about={about} />
+        <TreatBlock />
+        <OwnerBlock />
+        <YouTubeSlider />
+        <ResultsSlider />
+        <CourseOfTreatmentBlock />
+        <ClinicSpecialistsBlock specialists={specialists} />
+        <DoctorSlider fullSize />
+        <CommentBlock />
+        <FAQ faq={faq} />
+        <CallMe />
+        <Footer />
+      </>
     </Suspense>
   );
 });
