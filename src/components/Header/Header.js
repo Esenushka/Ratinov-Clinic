@@ -65,7 +65,7 @@ const Header = ({ isResult, setHeader, isHeader }) => {
                       <Link to="/services/rehabilitation">
                         Реабилитация Covid-19
                       </Link>
-                      <Link to="/services/botulinum">Ботолинотерапия</Link>
+                      <Link to="/services/botulinum">Ботулинотерапия</Link>
                     </div>
                   )}
                 </div>
