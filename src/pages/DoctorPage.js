@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CallMe from "../components/CallMe/CallMe";
 import Doctor from "../components/Doctor/Doctor";
@@ -8,7 +8,7 @@ import Preloader from "../components/Preloader/Preloader";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
 
-export default function DoctorPage() {
+export default memo(function DoctorPage() {
   const [doctor, setDoctor] = useState({ diplomas: [] });
   const params = useParams();
   const [loading, setLoading] = useState(true);
@@ -43,4 +43,4 @@ export default function DoctorPage() {
       )}
     </>
   );
-}
+});

@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import LinkTop from "../../hooks/LinkTop";
 import scss from "./Doctor.module.scss";
 import DoctorCard from "./DoctorCard";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import 'react-photo-view/dist/react-photo-view.css';
+import "react-photo-view/dist/react-photo-view.css";
 
-export default function Doctor({
+export default memo(function Doctor({
   photo,
   name,
   year,
@@ -57,7 +57,7 @@ export default function Doctor({
         ))}
       </div>
       {diplomas.length > 1 && (
-        <div className={scss.diplooo} >
+        <div className={scss.diplooo}>
           <h1 onClick={() => setActive(!active)} className="container">
             Дипломы и сертификаты{" "}
             <div className={active ? scss.plusAc : scss.plus}></div>
@@ -79,4 +79,4 @@ export default function Doctor({
       )}
     </>
   );
-}
+})

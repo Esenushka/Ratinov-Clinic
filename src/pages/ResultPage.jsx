@@ -4,12 +4,12 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import TopBlock from "../components/TopBlock/TopBlock";
 import { db } from "../config/firebase";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import ResultCard from "../components/Result/ResultCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import Preloader from "../components/Preloader/Preloader";
 
-export default function ResultPage() {
+export default memo(function ResultPage() {
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
@@ -105,4 +105,4 @@ export default function ResultPage() {
       <Footer />
     </>
   );
-}
+});

@@ -16,10 +16,12 @@ export default React.memo(function DoctorsPage() {
   const [doctors, setDoctors] = useState([].reverse());
   const [loading, setLoading] = useState(true);
   const [loadingImage, setLoadingImage] = useState(true);
+  
   const location = useLocation();
   const paramEntries = new URLSearchParams(location.search).entries();
   const fromEntries = Object.fromEntries(paramEntries);
   const paramArr = Object.keys(fromEntries);
+
   useEffect(() => {
     db.collection("doctors")
       .get()
