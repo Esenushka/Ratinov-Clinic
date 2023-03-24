@@ -2,6 +2,8 @@ import { useState } from "react";
 import LinkTop from "../../hooks/LinkTop";
 import scss from "./Doctor.module.scss";
 import DoctorCard from "./DoctorCard";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import 'react-photo-view/dist/react-photo-view.css';
 
 export default function Doctor({
   photo,
@@ -55,18 +57,22 @@ export default function Doctor({
         ))}
       </div>
       {diplomas.length > 1 && (
-        <div className={scss.diplooo} onClick={() => setActive(!active)}>
-          <h1 className="container">
+        <div className={scss.diplooo} >
+          <h1 onClick={() => setActive(!active)} className="container">
             Дипломы и сертификаты{" "}
             <div className={active ? scss.plusAc : scss.plus}></div>
           </h1>
           {active && (
             <div className="container" id={scss.diploItem}>
-              {diplomas.map((el) => (
-                <div className={scss.diplom} key={el}>
-                  <img src={el} alt="Диплом" />
-                </div>
-              ))}
+              <PhotoProvider>
+                {diplomas.map((el) => (
+                  <div className={scss.diplom} key={el}>
+                    <PhotoView src={el}>
+                      <img src={el} alt="Диплом" />
+                    </PhotoView>
+                  </div>
+                ))}
+              </PhotoProvider>
             </div>
           )}
         </div>
