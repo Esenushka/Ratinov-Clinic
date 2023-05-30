@@ -3,6 +3,7 @@ import LinkTop from "../../hooks/LinkTop";
 import scss from "./Spine.module.scss";
 
 export default memo(function Spine({ infoList }) {
+  console.log(infoList);
   const [isActive, setActive] = useState(true);
   const [isActive2, setActive2] = useState(true);
 
@@ -23,7 +24,7 @@ export default memo(function Spine({ infoList }) {
             <div className="page-block">
               <h4>Диагноз и назначение</h4>
               <p>
-                Специалисты оценивают ваши снимки, ставит диагноз и назначает
+                Специалисты оценивают ваши снимки, ставят диагноз и назначают
                 индивидуальное лечение.
               </p>
             </div>
@@ -45,9 +46,7 @@ export default memo(function Spine({ infoList }) {
             {isActive ? (
               <ul>
                 {infoList.map((info) => (
-                  <li key={info.id}>
-                    {info.title} {info.duration}
-                  </li>
+                  <li key={info.id}>{info.title}</li>
                 ))}
               </ul>
             ) : (
@@ -76,15 +75,15 @@ export default memo(function Spine({ infoList }) {
           </div>
           <div className={isActive ? scss.line : ""}></div>
           <div className="container">
-            <div className={scss.btnn}>
-              <LinkTop to={"/consultation"}>Записаться к неврологу</LinkTop>
-            </div>
+              <a className={scss.btnn} href="https://api.whatsapp.com/send/?phone=996555142020&text&type=phone_number&app_absent=0">
+                Записаться к неврологу
+              </a>
           </div>
           <div className={scss.shadowLine}></div>
         </div>
         <div className={"container " + scss.info_blocks_wrapper}>
           {isActive ? (
-            <h1 style={{ marginLeft: "24px" , fontSize:"20px"}}>Процедуры</h1>
+            <h1 style={{ marginLeft: "24px", fontSize: "20px" }}>Процедуры</h1>
           ) : (
             <h1>Терапия</h1>
           )}
