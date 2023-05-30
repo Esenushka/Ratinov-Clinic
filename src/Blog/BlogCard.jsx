@@ -5,7 +5,7 @@ import LinkTop from "../hooks/LinkTop";
 
 const BlogCard = ({ des, img, title, id }) => {
   const renderP = useMemo(
-    () => des.map((el, index) => <p key={index}>{el}</p>),
+    () => des.map((el, index) => <p key={`${index}_${el}`}>{el}</p>),
     [des]
   );
   return (

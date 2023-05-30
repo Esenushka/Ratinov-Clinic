@@ -62,21 +62,19 @@ export default memo(function Doctor({
             Дипломы и сертификаты{" "}
             <div className={active ? scss.plusAc : scss.plus}></div>
           </h1>
-          {active && (
-            <div className="container" id={scss.diploItem}>
-              <PhotoProvider>
-                {diplomas.map((el) => (
-                  <div className={scss.diplom} key={el}>
-                    <PhotoView src={el}>
-                      <img src={el} alt="Диплом" />
-                    </PhotoView>
-                  </div>
-                ))}
-              </PhotoProvider>
-            </div>
-          )}
+          <div className="container" id={active ? scss.diploItem : scss.hide}>
+            <PhotoProvider>
+              {diplomas.map((el) => (
+                <div className={scss.diplom} key={el}>
+                  <PhotoView src={el}>
+                    <img src={el} loading="loaing" alt="Диплом" />
+                  </PhotoView>
+                </div>
+              ))}
+            </PhotoProvider>
+          </div>
         </div>
       )}
     </>
   );
-})
+});

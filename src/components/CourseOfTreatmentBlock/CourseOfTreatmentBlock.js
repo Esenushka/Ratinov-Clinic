@@ -39,14 +39,15 @@ export default memo(function CourseOfTreatmentBlock() {
         <h1 className={scss.title}>
           ЛЕЧЕНИЕ ПО МЕТОДУ РЕЗОРБЦИИ{" "}
           <LinkTop to="/consultation">
-            Записаться на прием <img src="/images/nonActiveArrow.svg" alt="arrow"></img>
+            Записаться на прием{" "}
+            <img src="/images/nonActiveArrow.svg" alt="arrow"></img>
           </LinkTop>
         </h1>
         <div className={scss.info}>
           {resorbcee.map((el) => (
             <ul key={el.id} className={scss.list}>
               {el.titles.map((item) => (
-                <li>{item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           ))}
@@ -60,20 +61,21 @@ export default memo(function CourseOfTreatmentBlock() {
         <h1 className={scss.title}>
           ЛЕЧЕНИЕ ПО МЕТОДУ РЕЗОРБЦИИ{" "}
           <LinkTop to="/consultation">
-            Записаться на прием <img src="/images/nonActiveArrow.svg" alt="arrow"></img>
+            Записаться на прием{" "}
+            <img src="/images/nonActiveArrow.svg" alt="arrow"></img>
           </LinkTop>
         </h1>
         <div className={scss.info}>
           {resorbcee.map((el) => (
             <ul key={el.id} className={scss.list}>
               {el.titles.map((item) => (
-                <li>{item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           ))}
         </div>
         <div className={scss.procedure}>
-          <ProcedureBlock col={false} block={true}/>
+          <ProcedureBlock col={false} block={true} />
         </div>
       </div>
     </>

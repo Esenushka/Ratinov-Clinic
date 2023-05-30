@@ -34,12 +34,12 @@ const BlogMore = () => {
             <img src={blog.img} alt={blog.title} />
             <h1>{blog.title}</h1>
             <ul className={scss.ulList}>
-              {blog.des.map((el) => (
-                <li>{el}</li>
+              {blog.des.map((el, i) => (
+                <li key={`${i}_${el}`}>{el}</li>
               ))}
             </ul>
           </div>
-          <Footer/>
+          <Footer />
         </>
       ) : (
         <Preloader loading={loading} loadingImage={false} />

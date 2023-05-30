@@ -3,7 +3,6 @@ import LinkTop from "../../hooks/LinkTop";
 import scss from "./Spine.module.scss";
 
 export default memo(function Spine({ infoList }) {
-  console.log(infoList);
   const [isActive, setActive] = useState(true);
   const [isActive2, setActive2] = useState(true);
 
@@ -75,9 +74,12 @@ export default memo(function Spine({ infoList }) {
           </div>
           <div className={isActive ? scss.line : ""}></div>
           <div className="container">
-              <a className={scss.btnn} href="https://api.whatsapp.com/send/?phone=996555142020&text&type=phone_number&app_absent=0">
-                Записаться к неврологу
-              </a>
+            <a
+              className={scss.btnn}
+              href="https://api.whatsapp.com/send/?phone=996555142020&text&type=phone_number&app_absent=0"
+            >
+              Записаться к неврологу
+            </a>
           </div>
           <div className={scss.shadowLine}></div>
         </div>

@@ -19,8 +19,8 @@ export default memo(function ClinicSpecialistsBlock({ specialists }) {
         <div className={styles.backCard}>
           <div className="container">
             <div className={styles.clinicBlockCard}>
-              {specialists.map((clinic) => (
-                <div key={clinic.id}>
+              {specialists.map((clinic, i) => (
+                <div key={`${clinic.id}_${i}`}>
                   {clinic.notDoctor ? (
                     <>
                       <LinkTop to={"/"}>
@@ -64,8 +64,8 @@ export default memo(function ClinicSpecialistsBlock({ specialists }) {
           </a>
         </h1>
         <div className={styles.slider}>
-          {specialists.map((clinic) => (
-            <div>
+          {specialists.map((clinic, i) => (
+            <div key={`${clinic.id}_${i}`}>
               <div key={clinic.id}>
                 {clinic.notDoctor ? (
                   <>

@@ -90,9 +90,9 @@ const Footer = () => {
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.297272874011!2d74.61727121579307!3d42.82433397915845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb74f343358db%3A0x4bebb2ce7b1bf427!2z0JrQu9C40L3QuNC60LAg0JTQvtC60YLQvtGA0LAg0KDQsNGC0LjQvdC-0LLQsA!5e0!3m2!1sru!2skg!4v1675686882603!5m2!1sru!2skg"
             className={css.map}
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
             title="myFrame"
           ></iframe>
         </div>
