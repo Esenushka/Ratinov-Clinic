@@ -8,9 +8,9 @@ export default memo(function MainSliderCard({ src }) {
         height="289"
         src={src}
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
         style={{
           borderRadius: "7px",
           boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",

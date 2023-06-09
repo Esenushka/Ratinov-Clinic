@@ -54,7 +54,6 @@ export default function Joint({
       </div>
       <div className={scss.shadowLine}></div>
       <div className="container">
-        <h1>Лечение по методу резорбции</h1>
         {therapiesList.map((type) => (
           <div className={scss.therapies_types} key={type.id}>
             <h4

@@ -60,6 +60,7 @@ export default memo(function MainSlider() {
                   target="_blank"
                   href={el.link}
                   className={scss.btn}
+                  key={el.id}
                 >
                   <div className={scss.play}></div>
                   <p>Смотреть видео</p>
@@ -70,7 +71,7 @@ export default memo(function MainSlider() {
       </div>
       <Slider className={scss.slider} {...settings}>
         {sliderContent.map((item) => (
-          <MainSliderCard src={item.src} />
+          <MainSliderCard key={item.src} src={item.src} />
         ))}
       </Slider>
       <div className={scss.adaptive}>
@@ -96,9 +97,9 @@ export default memo(function MainSlider() {
           className={scss.video}
           src="https://www.youtube.com/embed/Pt6f68qRRWQ"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
         <div className={scss.line}></div>
 

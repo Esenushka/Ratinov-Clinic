@@ -3,7 +3,7 @@ import scss from "./Massage.module.scss";
 
 export default memo(function Massage({ massage }) {
   const [isActive, setActive] = useState(true);
-  console.log(isActive);
+
   return (
     <div className={scss.wrapper}>
       <div className="container">

@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 export default function LinkTop({ to, children,className }) {
-
-  const handleClick = () => {
-    window.scrollTo(0, 0)
-  }
+  const location = useLocation()
   return (
-    <Link className={"linkTop " + className} to={to}>
-      <div onClick={handleClick}>
+    <Link aria-disabled className={"linkTop " + className} to={location.pathname === "/services/spine" ? "#?" : to}>
+      <div>
         {children}
       </div>
     </Link>
