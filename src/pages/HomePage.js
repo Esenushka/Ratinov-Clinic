@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import React, { useEffect, useState } from "react";
 import { db } from "../config/firebase";
 import ReactGa from "react-ga";
+import RoundButtons from "./../components/RoundButtons/RoundButtons";
 
 const Preloader = lazy(() => import("../components/Preloader/Preloader"));
 const Header = lazy(() => import("../components/Header/Header"));
@@ -105,6 +106,7 @@ export default React.memo(function HomePage() {
         <FAQ faq={faq} />
         <CallMe />
         <Footer />
+        <RoundButtons />
       </>
     </Suspense>
   );
