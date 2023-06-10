@@ -15,6 +15,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
   const [blockade, setBlocade] = useState("Да");
   const [fileData, setFileData] = useState("");
 
+
   const getUrl = async (name) =>
     await storageRef
       .ref()
@@ -34,37 +35,34 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
       continue: continues,
       blockade: blockade,
     };
-
-    if (fileData) {
-      storageRef
-        .ref("mrt/" + fileData.name)
-        .put(fileData)
-        .then(() => {
-          getUrl(fileData.name).then((url) => {
-            emailjs
-              .send(
-                "service_v7uicjf",
-                "template_mp5ryv4",
-                { ...data, file: url },
-                "9u7Ks_f1ZeJAn8ivx"
-              )
-              .then(
-                () => {
-                  setName("");
-                  setPhone("");
-                  setDate("");
-                  setRange(1);
-                  setDescribe("");
-                  setFileData("");
-                  e.target.reset();
-                },
-                (error) => {
-                  console.log(error.text);
-                }
-              );
-          });
+    storageRef
+      .ref("mrt/" + fileData.name)
+      .put(fileData)
+      .then(() => {
+        getUrl(fileData.name).then((url) => {
+          emailjs
+            .send(
+              "service_c7n4zs6",
+              "template_vne5hgo",
+              { ...data, file: url },
+              "bayX5lJh7w2M_Okjm"
+            )
+            .then(
+              () => {
+                setName("");
+                setPhone("");
+                setDate("");
+                setRange(1);
+                setDescribe("");
+                setFileData("");
+                e.target.reset();
+              },
+              (error) => {
+                alert(error.text);
+              }
+            );
         });
-    }
+      });
   };
 
   const handleChange = (target) => {

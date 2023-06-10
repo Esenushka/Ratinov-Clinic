@@ -57,7 +57,6 @@ const CommentBlock = () => {
         );
       });
   }, []);
-  console.log(comments);
 
   const handleClick = (id, state) => {
     const filtered = [...comments].find((comment) => comment.id === id);
