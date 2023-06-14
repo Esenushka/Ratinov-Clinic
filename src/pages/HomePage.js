@@ -1,99 +1,36 @@
 import { Suspense, lazy } from "react";
-import React, { useEffect, useState } from "react";
-import { db } from "../config/firebase";
-import ReactGa from "react-ga";
 import RoundButtons from "./../components/RoundButtons/RoundButtons";
+import React from "react";
+import Header from "../components/Header/Header";
+import MainSlider from "../components/MainSlider/MainSlider";
+import YouTubeSlider from "../components/YouTubeSlider/YouTubeSlider";
+import OwnerBlock from "../components/OwnerBlock/OwnerBlock";
+import TreatBlock from "../components/TreatBlock/TreatBlock";
+import Consultation from "../components/Consultation/Consultation";
+import CourseOfTreatmentBlock from "../components/CourseOfTreatmentBlock/CourseOfTreatmentBlock";
+import FAQ from "../components/FAQ/FAQ";
+import DoctorSlider from "../components/DoctorSlider/DoctorSlider";
+import CommentBlock from "../components/CommentBlock/CommentBlock";
+import CallMe from "../components/CallMe/CallMe";
+import Footer from "../components/Footer/Footer";
+import ResultsSlider from "../components/ResultsSlider/ResultsSlider";
+import ClinicSpecialistsBlock from "../components/ClinicSpecialists/ClinicSpecialistsBlock";
+import About from "../components/Consultation/About";
 
-const Preloader = lazy(() => import("../components/Preloader/Preloader"));
-const Header = lazy(() => import("../components/Header/Header"));
-const MainSlider = lazy(() => import("../components/MainSlider/MainSlider"));
-const YouTubeSlider = lazy(() =>
-  import("../components/YouTubeSlider/YouTubeSlider")
-);
-const OwnerBlock = lazy(() => import("../components/OwnerBlock/OwnerBlock"));
-const TreatBlock = lazy(() => import("../components/TreatBlock/TreatBlock"));
-const Consultaition = lazy(() =>
-  import("../components/Consultation/Consultation")
-);
-const CourseOfTreatmentBlock = lazy(() =>
-  import("../components/CourseOfTreatmentBlock/CourseOfTreatmentBlock")
-);
-const FAQ = lazy(() => import("../components/FAQ/FAQ"));
-const DoctorSlider = lazy(() =>
-  import("../components/DoctorSlider/DoctorSlider")
-);
-const CommentBlock = lazy(() =>
-  import("../components/CommentBlock/CommentBlock")
-);
-const CallMe = lazy(() => import("../components/CallMe/CallMe"));
-const Footer = lazy(() => import("../components/Footer/Footer"));
-const ResultsSlider = lazy(() =>
-  import("../components/ResultsSlider/ResultsSlider")
-);
-const ClinicSpecialistsBlock = lazy(() =>
-  import("../components/ClinicSpecialists/ClinicSpecialistsBlock")
-);
-const About = lazy(() => import("../components/Consultation/About"));
-
-export default React.memo(function HomePage() {
-  const [about, setAbout] = useState([]);
-  const [specialists, setSpecialists] = useState([]);
-  const [faq, setFaq] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [loadingImage, setLoadingImage] = useState(true);
-
-  useEffect(() => {
-    ReactGa.pageview(window.location.pathname);
-  }, []);
-
-  useEffect(() => {
-    db.collection("about")
-      .get()
-      .then((snapshot) => {
-        const aboutArr = [];
-        snapshot.forEach((doc) => {
-          aboutArr.push({ ...doc.data(), id: doc.id });
-        });
-        setAbout(
-          aboutArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
-        );
-      });
-    db.collection("clinicSpecialists")
-      .orderBy("pos", "asc")
-      .get()
-      .then((snapshot) => {
-        const specialistsArr = [];
-        snapshot.forEach((doc) => {
-          specialistsArr.push({ ...doc.data(), id: doc.id });
-        });
-        setSpecialists(specialistsArr);
-      });
-
-    db.collection("faq")
-      .orderBy("pos", "asc")
-      .get()
-      .then((snapshot) => {
-        const faqArr = [];
-        snapshot.forEach((doc) => {
-          faqArr.push({ ...doc.data(), id: doc.id });
-        });
-        setFaq(faqArr);
-        setLoading(false);
-        setHeader(true);
-      });
-  }, []);
-
-  const [isHeader, setHeader] = useState(true);
-
+export default React.memo(function HomePage({
+  isHeader,
+  setHeader,
+  about,
+  setLoadingImage,
+  specialists,
+  faq,
+}) {
   return (
-    <Suspense
-      fallback={<Preloader loadingImage={loadingImage} loading={loading} />}
-    >
-      <Preloader loading={loading} />
+    <>
       <Header isHeader={isHeader} setHeader={setHeader} />
       <>
         <MainSlider />
-        <Consultaition />
+        <Consultation />
         <About setLoadingImage={setLoadingImage} about={about} />
         <TreatBlock />
         <OwnerBlock />
@@ -108,6 +45,6 @@ export default React.memo(function HomePage() {
         <Footer />
         <RoundButtons />
       </>
-    </Suspense>
+    </>
   );
 });
