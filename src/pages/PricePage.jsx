@@ -33,7 +33,7 @@ export default React.memo(function Price() {
       {isHeader && (
         <>
           <TopBlock bold={"Цены"} path={"Цены"} />
-          <img width={"100%"} src="./images/prices.jpg" alt="prices" />
+          <img className="imgWidth" src="./images/prices.jpg" alt="prices" />
           {price.map((e) => (
             <PriceCard key={e.id} {...e}  isHeader={isHeader}/>
           ))}
