@@ -1,93 +1,103 @@
-import scss from "./Rehabilitation.module.scss"
-import { Link } from "react-router-dom"
-import { memo } from "react"
-import LinkTop from "../../hooks/LinkTop"
+import scss from "./Rehabilitation.module.scss";
+import { Link } from "react-router-dom";
+import { memo } from "react";
+import LinkTop from "../../hooks/LinkTop";
 
-export default memo(function Rehabilitation({setLoadingImage}) {
+export default memo(function Rehabilitation() {
   return (
     <>
       <div className={scss.main_img}>
-        <img
-          onLoad={() => setLoadingImage(false)}
-          src="/images/dedushka.png"
-          alt="Задний фон"
-        />
-        <div className="container">
-          <p>
-            <span>Постковидный синдром - </span>
-            это патологическое состояние после коронавируса,
-            которое может сопровождаться различной симптоматикой.
-          </p>
-          <p>
-            Постковидный синдром может возникнуть вне зависимости от того,
-            в какой форме коронавирус протекал у человека:
-            <span> скрытой, легкой, средней, тяжелой или критической.</span>
-          </p>
+        <div className={scss.mainBgImg}>
+          <img src="/images/dedushka.png" alt="Задний фон" />
         </div>
-      </div>
-      <div className={"container " + scss.wrapper}>
-        <Link className={scss.topLink} to={"#"}>
-          Наше лечение постковидного синдрома составлено
-          по стандартным протоколам лечения постковидного синдрома в РФ.
-        </Link>
-        <div className={scss.block}>
-          <h1>
-            <span>Что входит </span>
-            в лечение?
-          </h1>
-          <p>
-            <span> Лазеротерапия HIL, MLS </span>
-            +
-            <span> Магнитотерапия SIS </span>
-            +
-            <span> Массаж двух видов (общий и лимфодренажный) </span>
-          </p>
-        </div>
-        <div className={scss.block}>
-          <h1>
-            <span>как проходит </span>
-            лечение?
-          </h1>
-          <div>
-            <b>1. Физиотерапия</b>
-            <p>
-              Сначала пациент получает
-              <span> все физиотерапевтические процедуры </span>
-              по протоколам Лазеротерапия 2 руки (вены) и легкие со спины.
-
-            </p>
-            <p>
-              <span>Магнитотерапия</span>
-              2 точки по протоколам "восстановление мышц" и легкие (диафрагма).
-            </p>
-          </div>
-          <div>
-            <b>2. Массаж</b>
-            <p>
-              Вторым этапом пациент проходит курс
-              <span> массажа двух видов (общий+лимфодренажный)</span>
-            </p>
-          </div>
-        </div>
-        <div className={scss.block}>
-          <h1>
-            <span>Какие симптомы </span>
-            мы лечим?
-          </h1>
+        <div className={scss.mainRight}>
+          <h1>Постковидный синдром </h1>
           <ul>
-            <li>затруднение полного вдоха</li>
-            <li>низкая сатурация</li>
-            <li>дистрофия мышц диафрагмы</li>
-            <li>невралгия</li>
-            <li>слабость и подавленное состояние</li>
-            <li>интоксикация организма после вирусной инфекции</li>
+            <li>
+              Постковидный синдром - это патологическое состояние после
+              коронавируса, которое может сопровождаться различной
+              симптоматикой.
+            </li>
+            <li>
+              Постковидный синдром может возникнуть вне зависимости от того, в
+              какой форме коронавирус протекал у человека: скрытой, легкой,
+              средней, тяжелой или критической.
+            </li>
           </ul>
         </div>
-        <h3>Длительность курса 20 дней</h3>
-        <LinkTop to={"/price"}>
-          <button className="btn btn-big-bg">Узнать стоимость</button>
-        </LinkTop>
+      </div>
+      <div className={scss.wrapper}>
+        <div className="container">
+          <h1>Протокол</h1>
+          <Link className={scss.topLink} to={"#"}>
+            Наше лечение постковидного синдрома составлено по стандартным
+            протоколам лечения постковидного синдрома в РФ.
+          </Link>
+        </div>
+        <div className={scss.underLine}></div>
+        <div className={scss.block}>
+          <div className="container">
+            <h1>Что входит в лечение?</h1>
+            <ul className={scss.first}>
+              <li> Лазеротерапия HIL, MLS </li>
+              <li> Магнитотерапия SIS </li>
+              <li> Массаж двух видов (общий и лимфодренажный) </li>
+            </ul>
+          </div>
+        </div>
+        <div className={scss.underLine}></div>
+        <div className={scss.block}>
+          <div className="container">
+            <h1>Как проходит лечение?</h1>
+            <ul>
+              <li>
+                Сначала пациент получает все физиотерапевтические процедуры по
+                протоколам
+              </li>
+              <li>Лазеротерапия 2 руки (вены) и легкие со спины.</li>
+              <li>
+                Магнитотерапия 2 точки по протоколам "восстановление мышц" и
+                легкие (диафрагма).
+              </li>
+              <li>
+                Вторым этапом пациент проходит курс массажа двух видов
+                (общий+лимфодренажный)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={scss.underLine}></div>
+        <div className={scss.block}>
+          <div className="container">
+            <h1>Какие симптомы мы лечим?</h1>
+            <ul>
+              <li>затруднение полного вдоха</li>
+              <li>низкая сатурация</li>
+              <li>дистрофия мышц диафрагмы</li>
+              <li>невралгия</li>
+              <li>слабость и подавленное состояние</li>
+              <li>интоксикация организма после вирусной инфекции</li>
+            </ul>
+          </div>
+        </div>
+        <div className={scss.underLine}></div>
+
+        <div className={scss.block}>
+          <div className="container">
+            <h1>О курсе</h1>
+            <ul>
+              <li>Длительность курса 20 дней по 40 мин в день</li>
+            </ul>
+          </div>
+        </div>
+        <div className={scss.underLine}></div>
+        <div className="container">
+          <LinkTop className={scss.lnk} to={"/price"}>
+            Узнать стоимость
+          </LinkTop>
+        </div>
+        <div className={scss.shadowline}></div>
       </div>
     </>
-  )
-})
+  );
+});

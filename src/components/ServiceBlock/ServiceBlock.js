@@ -9,7 +9,7 @@ export default memo(function ServiceBlock({setLaodingImage, img, title, path }) 
       <div className={scss.text}>
         <span>{title}</span>
         <LinkTop to={"/services/" + path}>
-          <button className="btn btn-small">Подробнее</button>
+          Подробнее
         </LinkTop>
       </div>
     </div>

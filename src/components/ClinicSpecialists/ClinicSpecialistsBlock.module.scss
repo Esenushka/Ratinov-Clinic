@@ -1,112 +1,240 @@
-.clinicWrapper {
-  height: 110vh;
-  position: relative;
+@media (max-width: 776px) {
+  .clinicWrapper {
+    display: none !important;
+  }
+  .title{
+    display: none !important;
+  }
+  .adapt {
+    display: block !important;
+  }
+}
+@media (min-width: 776px) {
+  .adapt {
+    display: none;
+  }
+}
+
+.title {
+  display: flex;
   width: 100%;
-
-  &:before {
-    content: '';
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2FclinicSpecBlockBackground.png?alt=media&token=17575483-475d-4d95-9fa4-b16deab05c4c');
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.35;
-  }
-
-  >div {
-    >div {
-      >p {
-        font-size: 40px;
-        line-height: 49px;
-        text-transform: uppercase;
-        color: #000000;
-      }
-    }
-  }
-
-  >div {
-    >div {
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 37px;
+  color: #333333;
+  margin-bottom: 40px;
+  margin: 0;
+  margin-top: 70px;
+  text-transform: uppercase;
+  a {
+    text-transform: capitalize;
+      margin: 0;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: #939393;
       display: flex;
-      height: 102vh;
-      flex-direction: column;
-      justify-content: flex-end;
+      gap: 10px;
+      align-items: center;
       position: relative;
-    }
-  }
-
-  >div {
-    >div {
-      >a>button {
-        margin: 20px 0;
+      margin-right: 70px;
+      img {
+        position: absolute;
+        right: -60px;
+        transition: ease-in-out 0.3s;
+        width: 40px;
       }
-    }
+      &:hover {
+        img {
+          right: -70px;
+        }
+      }
   }
+}
 
-  .clinicBlockCard {
+.clinicWrapper {
+  width: 100%;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/ratinov-clinic-401b0.appspot.com/o/images%2F3adf859a4afeb4324f4469df256d7dca%201.png?alt=media&token=1839a30e-f9d8-4bef-ac17-d69f15d4fd8f");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden !important;
+  .backCard {
+    background: rgba(0, 151, 219, 0.6);
+    width: 100%;
+    padding: 30px 20px;
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
+    align-items: center;
+    justify-content: center;
 
-  .clinicBlockCard {
-    >div {
+    .clinicBlockCard {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       align-items: flex-start;
-      padding: 25px;
+      justify-content: center;
       gap: 20px;
-      width: 348px;
-      height: 308px;
-      background: #ffffff;
-      box-shadow: 0px 4px 15px rgb(0 0 0 / 10%);
-      border-radius: 10px;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 10px 16px 20px 16px; 
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0px 4px 15px rgb(0 0 0 / 10%);
+        border-radius: 10px;
+        min-height: 321px;
+        position: relative;
+        a {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: #333333;
+          width: 100%;
+        }
+        span {
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 22px;
+          color: #333333;
+        }
+        .line {
+          width: 100%;
+          height: 1px;
+          background-color: #333333;
+        }
+        p {
+          height: 150px;
+          line-height: 19px;
+          color: #6f6f6f;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 22px;
+          color: #6f6f6f;
+        }
+        .btn {
+          width: 100%;
+          button {
+            width: 100%;
+            height: 36px;
+            color: #0097db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
     }
   }
+}
 
-  .clinicBlockCard {
+.hide {
+  color: white;
+  margin: 0;
+  height: 21px;
+}
+
+//Adaptive
+
+.adapt {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  overflow-x: hidden;
+  h1 {
+    width: 100%;
+    align-items: center;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+    padding: 0 24px;
+    margin-top: 30px;
     a {
-      >div {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 24px;
-        color: #000000;
-        height: 40px;
-        white-space: pre-line;
-        transition: .3s;
-      }
-
-      span {
-        transition: .3s;
-        display: block;
-        line-height: 24px;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 24px;
-        color: #000000;
-        white-space: pre-line;
-        text-transform: lowercase;
-      }
-    }
-
-    a>div:hover {
-      color: #0097db;
-
-      span {
-        color: #0097db;
-      }
-    }
-  }
-
-  .clinicBlockCard {
-    p {
-      font-weight: 400;
+      color: #939393 !important;
+      display: flex;
+      align-items: center;
+      color: red;
+      transition: ease-in-out 0.3s;
+      gap: 10px;
+      font-weight: 600;
       font-size: 14px;
       line-height: 17px;
-      color: #000000;
-      height: 110px;
+      color: #939393;
+      margin-top: 10px;
+      img {
+        width: 30px;
+      }
+    }
+  }
+  .slider {
+    overflow-x: scroll;
+    display: flex;
+    gap: 30px;
+    margin-left: 24px;
+    padding: 1px;
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 20px 16px;
+      background: #ffffff;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      min-height: fit-content;
+      position: relative;
+      a {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #333333;
+        width: 260px;
+      }
+      span {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 22px;
+        color: #333333;
+      }
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #333333;
+        margin: 8px 0;
+      }
+      p {
+        height: 150px;
+        line-height: 19px;
+        color: #6f6f6f;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #6f6f6f;
+      }
+      .btn {
+        width: 100%;
+        button {
+          width: 100%;
+          height: 36px;
+          color: #0097db;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover {
+            color: white;
+          }
+        }
+      }
     }
   }
 }

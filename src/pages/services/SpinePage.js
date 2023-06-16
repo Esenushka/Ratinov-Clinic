@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Consultaition from "../../components/Consultation/Consultation";
+import CallMe from "../../components/CallMe/CallMe";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Preloader from "../../components/Preloader/Preloader";
@@ -11,28 +11,36 @@ import { db } from "../../config/firebase";
 export default React.memo(function SpinePage() {
   const [infoList, setInfoList] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [loadingImage, setLoadingImage] = useState(true);
+
   useEffect(() => {
     db.collection("spine")
       .get()
       .then((snapshot) => {
-        const infoArr = []
+        const infoArr = [];
         snapshot.forEach((doc) => {
-          infoArr.push({ ...doc.data(), id: doc.id })
-        })
-        setInfoList(infoArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos)))
-        setLoading(false)
-      })
+          infoArr.push({ ...doc.data(), id: doc.id });
+        });
+        setInfoList(
+          infoArr.sort((a, b) => parseFloat(a.pos) - parseFloat(b.pos))
+        );
+        setLoading(false);
+      });
   }, []);
+  const [isHeader, setHeader] = useState(true);
+
   return (
     <>
-      <Preloader loading={loading} loadingImage={loadingImage} />
-      <Header />
-      <TopBlock bold={"Позвоночника"} text={"Лечение"} reverse path={"Услуги"} secondPath={"Лечение позвночника"} />
-      <Spine setLoadingImage={setLoadingImage} infoList={infoList} />
-      <ResultsSlider />
-      <Consultaition />
-      <Footer />
+      <Preloader loading={loading} />
+      <Header isHeader={isHeader} setHeader={setHeader} />
+      {isHeader && (
+        <>
+          <TopBlock text={"Услуги / Лечение Позвоночника"} path={""} />
+          <Spine infoList={infoList} />
+          <ResultsSlider />
+          <CallMe />
+          <Footer />
+        </>
+      )}
     </>
-  )
-})
+  );
+});

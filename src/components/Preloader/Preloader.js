@@ -3,7 +3,7 @@ import scss from "./Preloader.module.scss"
 export default memo(function Preloader({ loading, loadingImage }) {
   const body = document.querySelector("body");
   if (loading && loadingImage) {
-    body.style.overflowY = "hidden"
+    body.style.overflowY = "visible"
   }
   else if(!loading && !loadingImage) {
     body.style.overflowY = "visible"

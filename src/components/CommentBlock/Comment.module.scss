@@ -1,11 +1,22 @@
+@media (max-width: 776px) {
+  .comment_block {
+    display: none !important;
+  }
+}
+@media (min-width: 776px) {
+  .comment_block {
+    display: block !important;
+  }
+}
+
 .comment_block {
-  padding: 150px 0 0 0;
-  height: 750px;
+  padding: 40px 0 0 0;
   position: relative;
   overflow: hidden;
   z-index: 1;
   background-size: contain;
-
+  margin-bottom: 50px;
+  transition: ease 0.3s;
   .bg_block {
     z-index: -1;
     width: 1500px;
@@ -38,18 +49,48 @@
     grid-gap: 3em;
 
     .title {
-      display: flex;
-      justify-content: space-between;
-
+      margin: 0;
       h1 {
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 49px;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 37px;
+        color: #333333;
         text-transform: uppercase;
         color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0;
+        p {
+          a {
+            div {
+              font-weight: 600 !important;
+              font-size: 18px;
+              line-height: 22px;
+              color: #939393;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              position: relative;
+              margin-right: 70px;
+              img {
+                position: absolute;
+                right: -60px;
+                transition: ease-in-out 0.3s;
+                width: 40px;
+              }
+              &:hover {
+                img {
+                  right: -70px;
+                }
+              }
+            }
+          }
+        }
       }
     }
-    
+
     .comment {
       display: flex;
       flex-wrap: wrap;
@@ -64,15 +105,15 @@
         display: flex;
         flex-direction: column;
         grid-gap: 1em;
-  
+
         .top_block {
           display: flex;
           grid-gap: 1em;
-  
+
           img {
             border-radius: 10px;
           }
-  
+
           .name {
             display: flex;
             flex-direction: column;
@@ -85,16 +126,16 @@
             }
           }
         }
-  
+
         .des {
           display: flex;
           grid-gap: 0.5em;
           align-items: flex-start;
-  
+
           img {
             width: 33px;
           }
-  
+
           p {
             font-weight: 400;
             font-size: 12px;
@@ -105,21 +146,26 @@
       }
     }
     .card {
-      margin: 50px 6px 0 6px;
+      margin: 0px 6px 0 6px;
       background-color: #fff;
       border-radius: 10px;
-      height: 350px;
-      width: 360;
       padding: 25px;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
       grid-gap: 1em;
+      border: 1px solid #6f6f6f;
+      border-radius: 7px;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 7px;
 
       .top_block {
         display: flex;
         grid-gap: 1em;
-
+        .user {
+          width: 50px;
+          height: 100%;
+          border-radius: 50%;
+        }
         img {
           border-radius: 10px;
           width: 50px;
@@ -130,36 +176,91 @@
           display: flex;
           flex-direction: column;
           grid-gap: 0.6em;
+          transition: ease 0.3s;
           h3 {
-            font-weight: 700;
+            font-weight: 600;
             font-size: 16px;
             line-height: 20px;
+            color: #333333;
+          }
+          a {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
             color: #0097db;
           }
         }
       }
 
       .des {
-        display: flex;
         grid-gap: 0.5em;
-        align-items: flex-start;
-
+        transition: ease 0.3s;
         img {
           width: 33px;
         }
-
-        p {
-          font-weight: 400;
-          font-size: 12px;
-          line-height: 15px;
+        span,
+        div {
+          cursor: pointer;
+          font-weight: 700;
           color: #000000;
-          overflow: scroll;
-          height: 240px;
-            &::-webkit-scrollbar {
-              width: 0px;
-            }
+        }
+        p {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 22px;
+          color: #6f6f6f;
+          height: fit-content;
+          transition: ease 0.3s;
+          height: 70px;
+        }
+        .nonAc {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 22px;
+          color: #6f6f6f;
+          height: fit-content;
+          transition: ease 0.3s;
+        }
+        h1 {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 28px;
+          color: #333333;
         }
       }
     }
   }
+}
+
+.arrowL {
+  width: 13px;
+  height: 26px;
+  position: absolute;
+  z-index: 99;
+  left: -2%;
+  top: 45%;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(1%);
+  }
+}
+
+.arrowR {
+  width: 13px;
+  height: 26px;
+  position: absolute;
+  z-index: 99;
+  right: -2%;
+  top: 45%;
+  transform: rotate(180deg);
+  cursor: pointer;
+  &:hover {
+    filter: brightness(1%);
+  }
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #dadada;
 }

@@ -2,42 +2,19 @@ import Slider from "react-slick";
 import MainSliderCard from "./MainSliderCard";
 import scss from "./MainSlider.module.scss";
 import { Link } from "react-router-dom";
-import { memo, useState } from "react";
+import { memo } from "react";
 import { sliderContent } from "../../constants/sliderContent";
+import React from "react";
 
 function SampleNextArrow(props) {
-  const { className, style, onClick, num, setNum } = props;
-  return (
-    <img
-      src="/images/slider-arrow.svg"
-      alt="Стрелка"
-      className={className}
-      style={{ ...style }}
-      onClick={() => {
-        setNum((prev) => (prev < 3 ? prev + 1 : (prev = 3)));
-        num < 3 && onClick();
-      }}
-    />
-  );
+  return "";
 }
 function SamplePrevArrow(props) {
-  const { className, style, onClick, num, setNum } = props;
-  return (
-    <img
-      src="/images/slider-arrow.svg"
-      alt="Стрелка"
-      className={className}
-      style={{ ...style }}
-      onClick={() => {
-        setNum((prev) => (prev > 1 ? prev - 1 : (prev = 1)));
-        num > 1 && onClick();
-      }}
-    />
-  );
+  return "";
 }
 
 export default memo(function MainSlider() {
-  const [num, setNum] = useState(1);
+  const [num, setNum] = React.useState(1);
 
   const settings = {
     dots: true,
@@ -53,18 +30,27 @@ export default memo(function MainSlider() {
     <div className={"container main_slider " + scss.wrapper}>
       <div className={scss.left}>
         <h1>
-          <font >
-          Истории и отзывы </font>  
-        наших пациентов после лечения
+          Истории Наших <br /> пациентов после <br /> лечения
         </h1>
+        <div className={scss.line}></div>
         <p>
           Метод резорбции - уменьшение и заживление грыжи, вплоть до полного ее
           исчезновения или рубцевания.
         </p>
-        <span>Подробнее</span>
+        <span style={{ transition: "ease-in-out .4s" }}>
+          <p>Подробнее</p>
+          <img
+            style={{ marginLeft: "10px" }}
+            src={"/images/nonActiveArrow.svg"}
+            alt="aroow"
+          ></img>
+        </span>
+        <div className={scss.line}></div>
         <div className={scss.btns}>
           <Link to={"/comment"}>
-            <button className="btn btn-big-bg">Отзывы</button>
+            <button style={{ fontWeight: "500" }} className="btn btn-big-bg">
+              Отзывы
+            </button>
           </Link>
           {sliderContent.map(
             (el) =>
@@ -73,19 +59,64 @@ export default memo(function MainSlider() {
                   rel="noreferrer"
                   target="_blank"
                   href={el.link}
-                  className="btn btn-watch"
+                  className={scss.btn}
+                  key={el.id}
                 >
-                  Смотреть видео
+                  <div className={scss.play}></div>
+                  <p>Смотреть видео</p>
                 </a>
               )
           )}
         </div>
       </div>
-      <Slider {...settings}>
+      <Slider className={scss.slider} {...settings}>
         {sliderContent.map((item) => (
-          <MainSliderCard src={item.src} />
+          <MainSliderCard key={item.src} src={item.src} />
         ))}
       </Slider>
+      <div className={scss.adaptive}>
+        <h1>Истории Наших пациентов после лечения</h1>
+        <div className={scss.line}></div>
+        <p>
+          Метод резорбции - уменьшение <br /> и заживление грыжи, вплоть до{" "}
+          <br /> полного ее исчезновения <br /> или рубцевания.
+        </p>
+        <span
+          style={{ transition: "ease-in-out .4s", cursor: "pointer" }}
+          className={scss.more}
+        >
+          <p style={{ color: "#0097db" }}>Подробнее</p>
+          <img
+            style={{ marginLeft: "10px" }}
+            src={"/images/nonActiveArrow.svg"}
+            alt="aroow"
+          ></img>
+        </span>
+        <div className={scss.line}></div>
+        <iframe
+          className={scss.video}
+          src="https://www.youtube.com/embed/Pt6f68qRRWQ"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+        <div className={scss.line}></div>
+
+        <div className={scss.linka}>
+          <Link to={"/comment"}>Отзывы</Link>
+          <Link
+            to={"/result"}
+            // rel="noreferrer"
+            // target="_blank"
+            // href={"https://www.youtube.com/@doctor_ratinov"}
+            className={scss.btn}
+          >
+            <div className={scss.play}></div>
+            Результаты
+          </Link>
+        </div>
+      </div>
     </div>
   );
 });
