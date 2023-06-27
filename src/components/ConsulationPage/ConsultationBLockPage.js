@@ -3,6 +3,8 @@ import PhoneInput from "react-phone-input-2";
 import scss from "./ConsultationPage.module.scss";
 import emailjs from "@emailjs/browser";
 import { storageRef } from "../../config/firebase";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ConsultationBlockPage({ setLoadingImage }) {
   const [name, setName] = useState("");
@@ -13,7 +15,6 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
   const [continues, setContinues] = useState("в течение месяца");
   const [blockade, setBlocade] = useState("Да");
   const [fileData, setFileData] = useState("");
-
 
   const getUrl = async (name) =>
     await storageRef
@@ -55,6 +56,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
                 setDescribe("");
                 setFileData("");
                 e.target.reset();
+                toast("Ваш запрос принят ожидайте ответа")
               },
               (error) => {
                 alert(error.text);
@@ -154,7 +156,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             </label>
             <label className="container">
               <p>Дата рождения</p>
-              <input    
+              <input
                 vlaue={date}
                 onChange={({ target }) => setDate(target.value)}
                 name="date"
@@ -206,7 +208,6 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
                   fontSize: "10px",
                 }}
                 placeholder="(999) 999-999"
-                
               />
             </label>
             <div className={scss.line}></div>
@@ -340,10 +341,15 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
                 <p>{fileData.name}</p>
               </div>
             </div>
-            <button className={"container btn btn-big-bg"}>Отправить</button>
+            <button
+              className={"container btn btn-big-bg"}
+            >
+              Отправить
+            </button>
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }
