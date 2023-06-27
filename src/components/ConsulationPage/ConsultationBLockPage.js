@@ -56,7 +56,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
                 setDescribe("");
                 setFileData("");
                 e.target.reset();
-                toast("Ваш запрос принят ожидайте ответа")
+                toast("Ваша заявка принята ожидайте ответа")
               },
               (error) => {
                 alert(error.text);
