@@ -4,7 +4,7 @@ import scss from "./ConsultationPage.module.scss";
 import emailjs from "@emailjs/browser";
 import { storageRef } from "../../config/firebase";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ConsultationBlockPage({ setLoadingImage }) {
   const [name, setName] = useState("");
@@ -15,6 +15,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
   const [continues, setContinues] = useState("в течение месяца");
   const [blockade, setBlocade] = useState("Да");
   const [fileData, setFileData] = useState("");
+  const [loader, setLoader] = useState(false);
 
   const getUrl = async (name) =>
     await storageRef
@@ -56,7 +57,8 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
                 setDescribe("");
                 setFileData("");
                 e.target.reset();
-                toast("Ваша заявка принята ожидайте ответа")
+                toast("Ваша заявка принята ожидайте ответа");
+                setLoader(false);
               },
               (error) => {
                 alert(error.text);
@@ -73,6 +75,8 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
       reader.readAsDataURL(target.files[0]);
     }
   };
+
+
   const clearFile = (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -146,6 +150,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             <label className="container">
               <p>Введите ваше имя</p>
               <input
+                id="input"
                 value={name}
                 onChange={({ target }) => setName(target.value)}
                 name="name"
@@ -343,8 +348,9 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             </div>
             <button
               className={"container btn btn-big-bg"}
+              onClick={() => (name !== "" ? setLoader(true) : "")}
             >
-              Отправить
+              {loader ? "Отправка..." : "Отправить"}
             </button>
           </form>
         </div>

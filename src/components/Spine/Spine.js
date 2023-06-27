@@ -1,5 +1,4 @@
 import { memo, useState } from "react";
-import LinkTop from "../../hooks/LinkTop";
 import scss from "./Spine.module.scss";
 
 export default memo(function Spine({ infoList }) {
