@@ -103,8 +103,8 @@ export default memo(function Spine({ infoList }) {
                       Курс лечения: {info.from ? "от " + info.from : ""} до{" "}
                       {info.to} процедур
                     </p>
+                    <p>{info.descMore}</p>
                   </div>
-                  <LinkTop to={info.path}>Подробнее</LinkTop>
                 </div>
               ) : (
                 ""
