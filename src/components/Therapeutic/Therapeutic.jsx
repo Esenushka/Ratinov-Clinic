@@ -54,7 +54,7 @@ export default memo(function Therapeutic({ setLoadingImage }) {
     },
     {
       id: 5,
-      title: "Записаться на пробное занятие по лфк",
+      title: "Индивидуальные занятия",
       items: [
         "по 3 раза в неделю месяц - 6000 сомов",
         " по 6 раз в неделю месяц - 10 000 сомов",

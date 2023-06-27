@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
+// import LinkTop from "../../hooks/LinkTop";
 import scss from "./ConsultationPage.module.scss";
 import emailjs from "@emailjs/browser";
 import { storageRef } from "../../config/firebase";
@@ -154,7 +155,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
             </label>
             <label className="container">
               <p>Дата рождения</p>
-              <input    
+              <input
                 vlaue={date}
                 onChange={({ target }) => setDate(target.value)}
                 name="date"
@@ -206,7 +207,7 @@ export default function ConsultationBlockPage({ setLoadingImage }) {
                   fontSize: "10px",
                 }}
                 placeholder="(999) 999-999"
-                
+                required
               />
             </label>
             <div className={scss.line}></div>
