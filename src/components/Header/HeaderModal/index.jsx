@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import scss from "./modalWorker.module.scss";
 import PhoneInput from "react-phone-input-2";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+
 
 const ModalWorker = ({ isOpen, setOpen }) => {
     const [name, setName] = useState("")
@@ -20,9 +22,10 @@ const ModalWorker = ({ isOpen, setOpen }) => {
         emailjs
             .send(
                 "service_c7n4zs6",
-                "template_ktt233c",
+                "template_gworftr",
                 { ...data },
-                "bayX5lJh7w2M_Okjm"
+                "bayX5lJh7w2M_Okjm",
+                toast("Ваша заявка принята ожидайте ответа")
             )
             .then(
                 () => {
@@ -30,6 +33,7 @@ const ModalWorker = ({ isOpen, setOpen }) => {
                     setPlaceJob("");
                     setJob("");
                     setNumber("");
+                    setOpen(false)
                 },
                 (error) => {
                     alert(error.text);
@@ -81,6 +85,7 @@ const ModalWorker = ({ isOpen, setOpen }) => {
                 />
                 <button>Отправить</button>
             </form>
+            <ToastContainer />
         </div>
     )
 }
